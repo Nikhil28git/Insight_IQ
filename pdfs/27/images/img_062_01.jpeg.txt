@@ -1,0 +1,31 @@
+The document is from the "Parker O-Ring Handbook," titled "Static O-Ring Sealing," specifically detailing "Face Seal Glands." Navigation options include "Back," "Section Contents," "Table of Contents," "Search," and "Next >."
+
+The page features a technical diagram illustrating a face seal gland with an O-ring and related dimensional specifications.
+
+**Diagram Details:**
+The main diagram shows a cross-section of a component with an O-ring seated in a gland. Key dimensions labeled are L (Gland Depth), W (Groove Width), R (Groove Radius), G (Gland Detail/Width), O.D. (O-ring Outside Diameter), and I.D. (O-ring Inside Diameter).
+-   **Internal Pressure (outward pressure direction):** Groove dimensioned by O-ring's mean O.D. (H_O), with tolerance = Minus 1% of Mean O.D., but not more than -.060.
+-   **External Pressure (inward pressure direction):** Groove dimensioned by O-ring's mean I.D. (H_I), with tolerance = Plus 1% of Mean I.D., but not more than +.060.
+-   **Gland Detail (magnified view):** Features include a 0° to 5° typical angle, approx. .005 RAD. break corners, and specific surface finishes (X): 32 RMS for liquids and 16 RMS for vacuum and gases. Groove depth (L) equals Gland Depth.
+-   **Section W-W views:** Show O-ring cross-section in groove, indicating .005 Max clearance on the side and .003 Max clearance at the bottom.
+-   All dimensions refer to Design Chart 4-3 below.
+
+**Table: Design Chart 4-3: Design Chart for O-Ring Face Seal Glands**
+This table provides dimensions for face type O-ring seals, primarily for low-temperature applications.
+
+| O-Ring Size Parker No. | W Cross Section Nominal | W Cross Section Actual (mm) | L Gland Depth | Squeeze Actual | Squeeze % | G Groove Width Liquids | G Groove Width Vacuum and Gases | R Groove Radius |
+| :---------------------- | :--------------------- | :------------------------- | :------------ | :------------- | :--------- | :--------------------- | :------------------------------ | :-------------- |
+| 004 through 050         | 1/16                   | .070 ±.003 (1.78)          | .050 to .054  | .013 to .023   | 19 to 32   | .101 to .107           | .084 to .089                    | .005 to .015    |
+| 102 through 178         | 3/32                   | .103 ±.003 (2.62)          | .074 to .080  | .020 to .032   | 20 to 30   | .136 to .142           | .120 to .125                    | .005 to .015    |
+| 201 through 284         | 1/8                    | .139 ±.004 (3.53)          | .101 to .107  | .028 to .042   | 20 to 30   | .177 to .187           | .158 to .164                    | .010 to .025    |
+| 309 through 395         | 3/16                   | .210 ±.005 (5.33)          | .152 to .162  | .043 to .063   | 21 to 30   | .270 to .290           | .239 to .244                    | .020 to .035    |
+| 425 through 475         | 1/4                    | .275 ±.006 (6.99)          | .201 to .211  | .058 to .080   | 21 to 29   | .342 to .362           | .309 to .314                    | .020 to .035    |
+| Special                 | 3/8                    | .375 ±.007 (9.52)          | .276 to .286  | .082 to .106   | 22 to 28   | .475 to .485           | .419 to .424                    | .030 to .045    |
+| Special                 | 1/2                    | .500 ±.008 (12.7)          | .370 to .380  | .112 to .138   | 22 to 27   | .638 to .645           | .560 to .565                    | .030 to .045    |
+
+**Footer Information:**
+-   Page number: 4-18
+-   Company: Parker Hannifin Corporation, O-Ring Division
+-   Address: 2360 Palumbo Drive, Lexington, KY 40509
+-   Contact: Phone: (859) 269-2351, Fax: (859) 335-5128
+-   Website: www.parkerorings.com

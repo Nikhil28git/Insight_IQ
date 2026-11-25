@@ -1,0 +1,11 @@
+{
+  "pdf_id": "22",
+  "pdf_path": "C:\\Users\\souravsethi\\Downloads\\POCimp\\POC!\\POC!\\temp_22.pdf",
+  "processing_date": "2026-06-11T23:07:39.511376",
+  "total_pages": 82,
+  "estimated_words": 10031,
+  "file_size_mb": 0.76,
+  "chunks_count": 189,
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "chromadb_collection": "pdf_22"
+}

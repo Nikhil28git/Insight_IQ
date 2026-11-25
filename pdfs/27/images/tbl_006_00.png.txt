@@ -1,0 +1,1 @@
+Diagram illustrating the installation and removal of a dowel pin in a shaft. A dowel pin is shown above a shaft. The shaft has a blind hole where the dowel pin is to be inserted, indicated by an arrow. Below the shaft, directly opposite the blind hole, is a "Thru hole to push out dowel," indicating its purpose for dowel pin extraction.

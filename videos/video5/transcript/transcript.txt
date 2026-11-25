@@ -1,0 +1,312 @@
+[0.03s → 1.49s] Hey everyone, I'm Shah.
+[1.65s → 7.90s] In this video, I'll be covering machine learning fundamentals that every AI engineer needs to know.
+[8.02s → 20.17s] While you'll find endless textbooks and articles on the subject, my goal with this video is to give builders a short and accessible guide to the most critical concepts in machine learning.
+[20.31s → 22.75s] Here I'm going to focus on five key points.
+[22.97s → 25.51s] I'll first talk about intelligence and world models.
+[25.61s → 27.51s] Then I'll talk about three different ways.
+[27.69s → 34.02s] Computers can learn world models through machine learning, deep learning, and reinforcement learning.
+[34.16s → 38.98s] Finally, I'll talk about the most important ingredient in machine learning, which is data.
+[39.54s → 41.42s] So let's talk about intelligence.
+[41.70s → 45.58s] Intelligence requires understanding how the world works.
+[45.86s → 48.80s] But of course, the world is a big and complicated place.
+[49.00s → 67.03s] So in order to understand it, you need to develop models of the world so that you can compress the complicated, invest reality that we live in into something you can fit into your head and put simply a model is something that allows you to make predictions.
+[67.27s → 82.93s] For example, if you were to look out the window and were to see dark clouds like this, your mental model of the world and understanding that dark clouds typically mean it's going to rain later will allow you to make a prediction that it's going to rain later.
+[83.09s → 90.26s] We all have mental models of the world that allow us to make predictions and to achieve desired outcomes.
+[90.48s → 93.96s] And there are two main ways that we develop these models.
+[94.10s → 102.95s] The first is learning from others, like our parents or mentors, and the second is learning directly from our experiences.
+[103.37s → 109.60s] And as it turns out, computers can learn models of the world in very much the same way.
+[109.72s → 115.02s] Here I'll talk about three different ways computers can develop these models of the world.
+[115.20s → 123.40s] So here when I say the word learning, what I mean by that is getting computers to do things without explicit instructions.
+[123.54s → 138.65s] So this is in contrast to traditional software development where programmers use their own intelligence to develop step-by-step instructions for performing tasks or making decisions and then translating those instructions into computer code.
+[138.81s → 144.55s] Here I'm going to focus on three different ways we can get computers to do things without explicit instructions.
+[144.77s → 152.29s] The first is machine learning, which is actually an umbrella term for everything that I'm going to talk about in this video.
+[152.37s → 156.35s] The second is deep learning, which is a special type of machine learning.
+[156.43s → 166.81s] And then finally, I'll talk about reinforcement learning, which is also a special type of machine learning, but often you'll see it combined with the deep learning in modern applications.
+[167.09s → 174.40s] Starting with way number one, machine learning allows computers to learn tasks directly from data.
+[174.50s → 177.68s] And so machine learning consists of two key phases.
+[177.84s → 179.56s] The first phase is called training.
+[179.68s → 183.10s] And this involves gathering a training data set.
+[183.31s → 189.25s] So basically a set of examples, passing this training data to a so-called learning algorithm.
+[189.39s → 193.81s] And the result of this learning algorithm is a machine learning model.
+[194.07s → 199.07s] Once we have this machine learning model, we can use it to make predictions.
+[199.09s → 211.21s] So this brings us to phase two, which is called inference, where we give our machine learning model new data to make predictions, which we can use in making decisions or solving problems.
+[211.44s → 215.77s] Let's dive into a bit more detail on how each of these two phases works.
+[216.03s → 220.46s] So I actually start with inference, which is phase two because it's a little easier to understand.
+[220.66s → 224.26s] Infrants involves using a model to make predictions.
+[224.48s → 226.21s] For example, suppose we have
+[226.21s → 231.65s] have this simple linear model for predicting tomorrow's high temperature.
+[231.77s → 241.94s] The way this works is we take today's temperature high, which is represented by x, we plug it into this equation to make a prediction about tomorrow's high temperature and
+[242.26s → 251.19s] This mapping between today's temperature and tomorrow's temperature is determined by these two so-called parameters, M and B.
+[251.39s → 259.82s] The quality of our predictions are going to be determined on how well our parameters are aligned with reality.
+[259.92s → 266.54s] But you might be wondering, how do we pick these parameters so that these are going to be accurate predictions?
+[266.78s → 273.57s] That brings us to the training phase, which is where we fit a model's predictions to reality.
+[273.71s → 282.40s] The key intuition here is that in training, we want to minimize the discrepancy between our model's predictions and real world data.
+[282.54s → 290.06s] So the first step in doing this is quantifying the discrepancy between our models predictions and reality.
+[290.30s → 293.19s] One way we can do this is through this equation shown here.
+[293.35s → 297.53s] There's a lot of math on this slide, but I'm going to go through it one step at a time.
+[297.67s → 306.23s] The first thing to look at is this first term here, which corresponds to the actual values of the quantity we're trying to predict.
+[306.39s → 315.49s] For example, if we're trying to predict tomorrow's temperature high, why is just going to be a collection of temperature recordings that we collect from reality?
+[315.65s → 320.82s] The second thing to look at is this term on the right which are our predicted values.
+[321.12s → 328.77s] So this is exactly the same equation we saw on the previous slide, but now we've written it out in terms of multiple examples.
+[328.89s → 334.67s] Instead of just one input x, we have n inputs x1, x2 all the way to xn.
+[334.79s → 342.66s] So here are our input values, and then we have our two parameter values M in B. M gets multiplied by each value in this matrix.
+[342.68s → 350.11s] And then we just write out this matrix of one so we can multiply B by each of these elements to make the math work out here.
+[350.23s → 358.07s] But you can just think of this as n different linear equations, so m times x1 plus b, m times x2 plus b, and so on and so forth.
+[358.27s → 370.70s] By taking the difference between these actual values and our models predictions of the values, we are quantifying the discrepancy between our models predictions and reality.
+[370.85s → 374.11s] We call this quantity our loss function.
+[374.39s → 385.86s] Now that we've quantified this discrepancy, the goal of training is to find the parameter values M and B that corresponds to the smallest possible loss function.
+[385.98s → 397.07s] While we could just randomly guess a bunch of parameter values to try to find the one with the smallest loss function, it turns out that we can solve this problem in a closed form using math.
+[398.01s → 408.00s] The way that looks is we're just going to rewrite some terms, so we'll define this matrix x, which will be all our input values and all these ones stacked side by side.
+[408.16s → 412.11s] Then we'll put our parameter values in their own little column matrix.
+[412.32s → 417.29s] Finally, we'll just define our column of actual values as this vector y.
+[417.85s → 420.88s] With these new terms, we can rewrite our loss function like this.
+[421.24s → 427.02s] So we have the norm squared of y minus x theta, writing this out a different way.
+[427.08s → 427.78s] It looks like this.
+[427.82s → 432.15s] So it's y minus x theta transpose times y minus x theta.
+[432.25s → 432.69s] And then we can
+[432.97s → 439.13s] expand this term out and it looks like this so it looks all long and scary but you don't really have to worry about that.
+[439.23s → 448.60s] The key thing to know here is that we can find the values of theta that minimize this loss function by computing its gradient
+[448.94s → 453.40s] setting it equal to zero and then solving for our parameter values.
+[453.54s → 455.28s] The way that looks is as follows.
+[455.48s → 461.67s] The gradient behaves a lot like a derivative, which you probably learned in high school calculus.
+[461.85s → 467.48s] So if we're taking the gradient of L with respect to theta, we can see that this term goes away.
+[467.63s → 469.58s] This term is linear in theta.
+[469.62s → 470.88s] So this just becomes this.
+[471.06s → 474.44s] And then this term becomes this term here.
+[474.58s → 481.17s] This is our gradient of L, then we can set it equal to zero, which gives us this equation and then rearranging it.
+[481.27s → 483.01s] It'll give us this expression here.
+[483.17s → 489.23s] And then finally, we can just solve for theta and those values will be our optimal parameter values.
+[489.37s → 492.57s] And so if we assume that this matrix here is invertible, then
+[492.89s → 496.96s] this becomes our optimal parameter values for data.
+[497.08s → 498.26s] Okay, so what just happened?
+[498.34s → 502.30s] We just went through all this math and we computed this gradient, did all this complicated stuff.
+[502.34s → 503.68s] But here's the punch line.
+[503.86s → 511.83s] We can get the optimal parameter values for our linear model simply from training examples.
+[511.95s → 512.49s] So what is X?
+[512.79s → 516.59s] X is a set of input data that we collect.
+[516.97s → 520.01s] Y is a set of target data that we collect.
+[520.11s → 523.82s] and we can combine them to find our optimal parameter values.
+[524.02s → 532.99s] So put another way, the key point of machine learning is that computers can fit models to reality using data and math.
+[533.23s → 546.36s] While a linear model is one of the simplest models you can work with in machine learning, this idea of fitting model parameters to real world data is a common thread you'll see throughout all machine learning models.
+[546.58s → 551.04s] And just a list of few other popular machine learning techniques you might come across.
+[551.12s → 561.11s] There's also logistic regression, which is a lot like linear regression, but instead of predicting a continuous target, it predicts a binary target.
+[561.19s → 564.95s] So that's why it lets you do classification instead of regression.
+[565.07s → 573.43s] There's also decision tree, which is a fundamentally different way of training models, but it's also very powerful and relatively easy to interpret.
+[573.58s → 591.16s] And then you have extensions of decision trees by combining many trees together into a so-called forest or boosting decision trees on top of each other like an XG boost, as well as more traditional approaches like support vector machines, which can be used for both regression and classification.
+[591.26s → 595.98s] So all the approaches that we see here is what we might call traditional machine learning.
+[596.08s → 599.66s] While you can go very far with them, they do have their limitations.
+[600.02s → 612.45s] One such limitation is that often to get these approaches to work well, it requires a significant amount of time and domain expertise to choose the right input variables for your model.
+[612.59s → 616.27s] For example, we used today's temperature to predict tomorrow's temperature.
+[616.41s → 620.31s] And so that's probably a pretty good predictor of tomorrow's daily high.
+[620.49s → 632.19s] However, if we use the number of cappuccinos I drank as our predictor, it might have some sort of correlation with tomorrow's temperature high, but it probably wouldn't do a very good job at this prediction task.
+[632.47s → 642.86s] So this process of picking the right input variables to your machine learning model is called feature engineering, and it is something that can make or break your model's performance.
+[643.10s → 650.22s] However, the importance of feature engineering began to wane around 2012 with the rise of deep learning.
+[650.42s → 659.04s] Deep learning is a specific type of machine learning, which involves training neural networks, which can learn optimal features for a specific
+[659.20s → 660.90s] task all on their own.
+[661.20s → 671.19s] A cartoon diagram of this, which chaggity helped me put together, is let's say you're trying to create a deep learning model to do image classification.
+[671.29s → 677.15s] The way this would work is that you would just take raw image pixels as the inputs to your network.
+[677.33s → 682.95s] The early layers of the neural network would represent pretty basic features like edges and
+[683.03s → 694.00s] textures of images, the layers toward the middle would start to represent things like eyes or ears or whiskers higher level features that might be in an image.
+[694.12s → 701.97s] And then the later layers would represent higher level concepts like entire objects or animals or something like that.
+[702.05s → 715.15s] These final layers make it a lot easier to do this prediction task because if you have a quantity that represents the catness of an image, you can basically use a linear model to make this prediction.
+[715.27s → 718.31s] This is the power of deep learning.
+[718.47s → 726.52s] By simply curating raw data with corresponding labels, you can train a neural network to do basically anything.
+[726.58s → 735.02s] The key technique and deep learning are neural networks, which are a series of operations that can approximate practically any function.
+[735.14s → 741.17s] The fundamental building block of a neural network is a so-called neuron, which involves the following steps.
+[741.47s → 747.01s] It takes a set of inputs, multiplies them by some corresponding weights, and sums them together.
+[747.21s → 750.01s] It applies some bias term, so just
+[750.29s → 752.80s] adds a scalar value to the summation.
+[752.96s → 758.62s] And then it passes this whole thing through a non-linear function called an activation function.
+[758.74s → 761.34s] And then this will spit out the neurons output.
+[761.44s → 766.47s] These three stages of summing inputs, adding bias and passing through an activation
+[766.77s → 768.99s] is fundamentally what a neuron is.
+[769.21s → 781.20s] Writing this out mathematically, x i are the inputs to the neuron, w i and b are the parameters of the neuron, g is this non-linear function, and z is the output of the neuron.
+[781.30s → 787.88s] And so looking at this, we see that this looks a lot like the linear model that we saw in the previous slide.
+[787.98s → 793.00s] The key difference, however, is that we now have this non-linear activation function.
+[793.14s → 805.23s] And so this is actually a critical aspect of a neural network because it is these nonlinearities that allow the network to be able to approximate practically any function.
+[805.43s → 812.22s] The way we can build up networks from neurons is we can take these inputs and we combine them into a neuron.
+[812.26s → 816.88s] So basically compressing everything we saw in the previous slide to this single circle.
+[817.02s → 821.61s] But we can combine multiple neurons together to form so-called layers.
+[821.81s → 827.24s] And then we can combine multiple layers together to form entire neural networks.
+[827.38s → 833.58s] So this is how we take that fundamental building block of a neuron, build them into layers, and then build layers into networks.
+[833.80s → 840.51s] But of course neural networks in practice are much more sophisticated than the example I showed on the previous slide.
+[840.63s → 848.74s] So while that vanilla neuron we saw on the previous slide is widely used, there's also another one called a long short term memory neuron or LS.
+[849.26s → 852.64s] which is also pretty common when working with sequenced data.
+[852.82s → 857.77s] Also, there are a wide range of activation functions that are commonly used.
+[857.89s → 862.95s] There are many more than just these, but there's the Relo, which is shown here.
+[863.01s → 865.59s] There's a sigmoid, which is kind of like an S-shaped thing.
+[865.65s → 870.53s] There's a tan H, which is also an S-shaped thing, but it has a different output range.
+[870.65s → 876.86s] And then there's a softmax, which basically translates any inputs to a probability distribution.
+[876.92s → 881.86s] There are also several different types of layers that you'll commonly see in the wild.
+[881.88s → 899.37s] So before we just saw these fully connected layers where every neuron from a previous layer is connected to every neuron in a subsequent layer, but there are also recurrent layers, convolutional layers, attention layers, which are critical in transformers, which is probably the most popular architecture today.
+[899.39s → 903.41s] There are also pulling layers, normalization layers, and dropout layers.
+[903.65s → 912.58s] Finally, there are a zoo of different network architectures before we just saw a simple feed forward neural network, which is the most basic architecture.
+[912.68s → 915.96s] There's also a recurrent neural network, which handles sequential data.
+[916.00s → 920.15s] There's a convolutional neural network, which is used a lot in image processing.
+[920.25s → 928.29s] And then of course, there's the transformer, which is revolutionized natural language processing and the architecture behind large language models.
+[928.43s → 931.21s] So that's the anatomy of neural networks.
+[931.37s → 934.59s] But how do we actually train these objects on our data?
+[934.75s → 944.60s] At the most basic level, just like how we fit our linear model to real world data, we can also fit our neural network to real world data.
+[944.72s → 955.82s] However, the trouble with neural networks is that the loss function is going to be significantly more complicated than the one we saw for the linear model.
+[955.92s → 970.35s] Just to show you a cartoon diagram of this, the loss function of a neural network will have this jagged and messy terrain of different peaks and valleys, which we have to figure out a way to navigate so that we can find the smallest value.
+[970.61s → 984.42s] Again, the fundamental goal of training is to minimize the discrepancy between our model's predictions and reality, which is equivalent to picking parameter values for our model which minimizes the loss function.
+[984.60s → 992.13s] So in terms of this picture here, we want to pick the parameter values that correspond with this point in the loss landscape.
+[992.37s → 1006.03s] But unfortunately, since this lost landscape is so bumpy and perilous, we can't just simply write out a single equation that spits out the optimal values like we saw with the linear model.
+[1006.21s → 1020.89s] So in practice, what we need is some kind of algorithm to search this space of possible parameters in such a way that we get closer and closer to this minimal point that we're trying to reach.
+[1021.08s → 1027.02s] So it turns out we can again turn to our handy gradient to help us do this.
+[1027.28s → 1037.87s] The gradient is helpful because at any spot in this loss landscape, if we compute the gradient, it will point in the direction of greatest ascent.
+[1038.09s → 1043.90s] Basically, it'll point in the direction where the slope of the loss landscape is steepest.
+[1044.18s → 1053.86s] So if we take the minus of the gradient, basically pointing in the opposite direction, this is going to point us in the direction of greatest descent.
+[1054.04s → 1066.40s] What that means is we can use the gradient of our loss function with respect to our parameters as a guide to point us toward the minimal value of this loss landscape.
+[1066.56s → 1078.05s] So what that looks like is if we're at this spot here, we'll compute the gradient and then move in the direction of this black arrow and take a step and then we'll be in a new spot and then we'll do the same thing.
+[1078.13s → 1082.13s] We'll compute the gradient and then take a step in the opposite direction.
+[1082.35s → 1090.62s] Again, compute the gradient, take a step in the opposite direction and then just keep doing that until we get closer and closer to this optimal value.
+[1090.86s → 1100.15s] This algorithm of computing the gradient using it to decide what direction to move in, taking a step, and then repeating the process is called gradient descent.
+[1100.31s → 1104.80s] Put another way, it's an algorithm for updating model parameters to minimize the loss.
+[1105.00s → 1105.58s] The equation
+[1105.74s → 1111.96s] for this is shown here, where theta i are the old parameters of our model.
+[1112.00s → 1113.01s] This will be a vector.
+[1113.03s → 1118.87s] So you can imagine we have hundreds, thousands, millions, billions of parameter values in our neural network.
+[1119.01s → 1121.93s] Theta i1 are the new parameters.
+[1121.99s → 1126.62s] So we're going to update the old parameters in some way to generate the new ones.
+[1126.82s → 1130.24s] And the way we do that is using this term on the right here.
+[1130.42s → 1134.58s] There are two key components of how we update our model parameters.
+[1134.70s → 1139.22s] The first is the gradient, which we just talked about in the previous slide.
+[1139.28s → 1142.02s] So the gradient is telling us which direction to go in.
+[1142.18s → 1149.34s] And the way of this other term here, gamma, also called the learning rate, which controls how big our steps are.
+[1149.52s → 1159.62s] a very large learning rate means we'll take really big leaps when following the gradient, while a really small learning rate corresponds to very small steps in this descent algorithm.
+[1159.69s → 1167.62s] The learning rate is something that you need to tweak and refine because if your learning rate is too big, you might overshoot the optimal value.
+[1167.74s → 1170.99s] While if the learning rate is too small, you may never get there.
+[1171.09s → 1176.25s] But in practice, it's rare people use gradient descent because you can have convergence issues.
+[1176.39s → 1179.95s] The data you use in computing your loss function is the full data set.
+[1180.07s → 1182.75s] And this causes some problems at the other extreme.
+[1182.79s → 1194.28s] There's also stochastic gradient descent where basically the updates are based on picking a random data point in your training data set and doing the parameter updates based on that.
+[1194.36s → 1200.48s] What's much more common is to use so called mini batches instead of using the full data set or just a single data point.
+[1200.70s → 1208.88s] You'll take a random sample of, say, eight or 1632, whatever examples and compute your loss based on those.
+[1209.04s → 1218.33s] But by far the most common optimizer or update strategy for neural networks today is Adam, which is short for adaptive momentum estimation.
+[1218.45s → 1227.55s] This takes into account not just the grading itself, but this momentum term to make the training process more stable and efficient.
+[1227.63s → 1230.54s] So a couple of things came up when we're talking about optimizers.
+[1230.82s → 1244.71s] One is this idea of a learning rate, which is a number that we have to choose as model developers, but also this idea of the mini batch in which we choose the number of samples to include in our loss calculation.
+[1244.89s → 1251.62s] And so the learning rate and the mini batch size can have a significant impact on the success of your model training.
+[1251.82s → 1257.44s] This brings up the idea of hyper parameters, which are values that guide the training process.
+[1257.58s → 1271.02s] So these are not like the model parameters, which we learn from data, but rather these are values that we set manually or that we tune through some other optimization strategy to develop the best final model.
+[1271.06s → 1273.90s] Some of the most common hyper parameters you'll see are epochs.
+[1273.92s → 1282.29s] So basically the number of epochs is the number of times that your optimizer goes through the entirety of your training data set.
+[1282.39s → 1288.43s] The learning rate we already talked about, it controls the step size in your optimization process.
+[1288.55s → 1293.69s] The batch size we also talked about, which is the number of samples you use to compute the loss.
+[1293.71s → 1295.95s] And then finally, there's this dropout term.
+[1296.01s → 1298.89s] So we can introduce dropout layers into our
+[1299.21s → 1315.84s] network and then have some number maybe between 0 and 0.2 which is representing the fraction of neurons to randomly set to 0 during the training process and so dropout is a very powerful approach to help avoid overfitting and making your models more robust.
+[1316.14s → 1322.40s] So far in talking about machine learning and deep learning, we've focused on models that learn by example.
+[1322.56s → 1330.63s] In other words, we curate a training data set of inputs and outputs where we train a model to use the inputs to predict the output.
+[1330.71s → 1339.06s] This is a lot like how you and I might learn from like a teacher or a mentor who shows us how to perform a task through explicit examples.
+[1339.28s → 1341.70s] However, this isn't the only way that we can learn.
+[1341.88s → 1358.21s] In fact, a lot of times, we don't learn from other people through examples, but rather we learn from our own personal experience of basically trying things, making mistakes, and getting negative feedback from our environment or trying things and getting positive feedback from our environment.
+[1358.32s → 1361.78s] It turns out computers can learn in very much the same way.
+[1361.92s → 1365.08s] And this process is called reinforcement learning.
+[1365.20s → 1368.54s] This is where computers can learn through trial and error.
+[1368.72s → 1374.02s] So far, we've talked about supervised learning where you have a human who curates these examples.
+[1374.20s → 1377.14s] So here's our training data set with the set of inputs and outputs.
+[1377.38s → 1381.93s] And then we use these inputs and outputs to train a machine learning model.
+[1382.11s → 1385.51s] However, with reinforcement learning, the strategy is a bit different.
+[1385.63s → 1391.99s] We have a model that can interact directly with reality or some artificial environment that we construct.
+[1392.19s → 1399.56s] And then the model gets rewarded for good actions, which indirectly influences the model parameters.
+[1399.70s → 1405.28s] And it just continues in this feedback loop until we have a model that does what we want it to do.
+[1405.32s → 1412.61s] While reinforcement learning is notoriously hard to get working well, it does hold a ton of promise and potential.
+[1412.73s → 1420.70s] And the central reason for this is that with reinforcement learning, models are not bound by human labeling or expertise.
+[1420.86s → 1432.25s] In supervised learning, the performance of our model is going to be bound by our ability to label high quality data or our existing knowledge or expertise.
+[1432.53s → 1446.51s] However, with reinforcement learning, since the model is interacting with the environment on its own, it can find its own ways of solving problems and potentially surpass even expert human performance.
+[1446.69s → 1455.60s] A real world example of this is AlphaGo, which is a deep learning model that DeepMind developed to play the game of Go.
+[1455.82s → 1470.93s] So there's actually a whole movie about this, but in this nature paper, they showed this plot here comparing a reinforcement learning based deep neural network, a supervised learning based deep neural network, and the elo rating of this Go grand master.
+[1471.05s → 1487.45s] And we can see that the Grand Master has just below a 4,000 elo rating, and that the supervised learning model gets good really quickly because it's learning from experts and grandmasters, but you see that it never can quite surpass the Grand Master level.
+[1487.61s → 1497.12s] On the other hand, the reinforcement learning algorithm, even though it really sucks at the beginning, it learns to play the game of go not from experts, but by playing itself.
+[1497.58s → 1502.72s] and iteratively and slowly getting rewarded for winning games.
+[1502.96s → 1516.39s] This allows the model to be completely decoupled from how humans play the game of go and develop its own novel strategies for playing the game and eventually surpassing human grandmaster performance.
+[1516.63s → 1525.88s] Going one layer deeper into how reinforcement learning works, the basic idea here is to update model parameters to maximize some reward function.
+[1526.06s → 1530.76s] In the game of Go, the reward they used was winning the game, but this could be anything.
+[1530.88s → 1541.65s] More recently in training DeepSeq R1, DeepSeq used the correctness to math encoding solutions as the reward to their model.
+[1541.83s → 1551.07s] And so a key difference between reinforcement learning and the supervised learning approaches we've seen so far is in the quantity we're trying to optimize.
+[1551.25s → 1558.14s] So in linear regression and neural networks, we saw that we had a loss function that we were trying to minimize.
+[1558.26s → 1564.12s] But in reinforcement learning, we instead have a reward function that we're trying to maximize.
+[1564.38s → 1572.15s] One way we can write out this reward function is like this, and I know this is all scary complicated math, but let me walk through it one piece at a time.
+[1572.41s → 1574.29s] So j is our objective.
+[1574.37s → 1577.45s] This is the reward that we're trying to maximize.
+[1577.75s → 1591.18s] Log of pi theta is the model's output and r is the reward at time t. The way to understand this is that in reinforcement learning, the model isn't producing a prediction.
+[1591.40s → 1600.64s] rather it's generating this probability distribution of different actions it might take given the current state of its environment.
+[1600.74s → 1621.20s] So pi is just representing a probability distribution and pi theta is just saying that this probability distribution is parameterized by the parameters theta a is representing the action at time t and then s is representing the state of the environment at time t. And the reason we use log here is that it makes the math a bit nicer to
+[1621.28s → 1621.76s] work with.
+[1621.98s → 1631.15s] And then this reward at time t is basically the feedback the model is getting for its specific action.
+[1631.31s → 1638.99s] So these probabilities and rewards are going to be summed over an entire episode or trajectory.
+[1639.09s → 1645.37s] And so if we're playing the game of go an entire episode would be let's say an entire match of the game.
+[1645.53s → 1653.84s] or if this was like a self-driving car, an episode would be from when the car starts moving to when it reaches its destination or crashes.
+[1653.86s → 1655.26s] And then a bit more details here.
+[1655.34s → 1662.34s] So again, we already said that Pitheta is the probability of taking action A given state S based on model parameters.
+[1662.52s → 1665.56s] Tao is this full rollout of states and actions.
+[1665.82s → 1670.71s] So we have an initial state to which the model has an action to and gets a corresponding
+[1671.59s → 1680.70s] then there's another state which the model has an action to and gets another reward and so on and so forth and then T is just the number of time steps in this full trajectory.
+[1680.80s → 1684.88s] So I know there's a lot of math in terms happening here but here's the key intuition.
+[1685.00s → 1686.08s] What we want is
+[1686.60s → 1695.65s] update these model parameters such that our model gives a high probability to actions which result in a high reward.
+[1695.79s → 1701.70s] So in that case, you know, if this probability is big, when this reward is big, then this whole term will be big.
+[1701.78s → 1707.34s] And then once we average over the whole trajectory, this objective will be as big as possible.
+[1707.48s → 1714.41s] So maximizing the objective is equivalent to having high probabilities for high reward actions.
+[1714.75s → 1721.61s] But from there, we can update our model parameters in very much the same way we did in deep learning.
+[1721.75s → 1729.32s] Namely, we have this parameter update rule, where we have data k, which are the old parameters, data k i, which are the new parameters.
+[1729.44s → 1730.96s] And then we have this update rule.
+[1731.10s → 1737.54s] So again, we take the gradient of our objective to serve as our guide in navigating this landscape.
+[1737.72s → 1739.94s] And then we have the learning rate gamma.
+[1740.10s → 1753.73s] However, since we're not trying to minimize the reward and we're trying to maximize it, all we need to do is change the minus sign from gradient descent to a plus sign to give us this gradient ascent update rule.
+[1753.85s → 1764.52s] So everything I just described is based on this reinforce algorithm, which is the reinforcement learning algorithm that underlies all modern reinforcement learning techniques.
+[1764.66s → 1766.44s] However, that came out in 1992.
+[1766.64s → 1770.92s] And since then, there have been a lot of improvements and new approaches introduced.
+[1771.10s → 1777.79s] So here's a summary table of some popular ones reinforces what we've just been talking about in the previous slides.
+[1777.97s → 1788.57s] There's this trust, region policy optimization approach, which adds this KL divergence term and compares the current model action to the previous version of the models action.
+[1788.73s → 1790.65s] And this just improves training stability.
+[1790.77s → 1793.49s] There's PPO, which was used
+[1793.77s → 1798.34s] in reinforcement learning with human feedback, which is what OpenEI used to make chat GPT.
+[1798.52s → 1805.04s] And they basically do a similar thing as trust region policy optimization, but they don't have this KL divergence term.
+[1805.18s → 1808.78s] Instead they have this clipping term to ensure that training is stable.
+[1808.90s → 1813.62s] Finally, there's this group relative policy optimization approach developed by deepseek.
+[1813.72s → 1816.06s] And this is what they used in deepseek R1.
+[1816.24s → 1819.81s] And it basically combines PPO with this KL divergence
+[1820.05s → 1822.23s] penalty to make training more stable.
+[1822.35s → 1829.89s] Additionally, they batch different examples into a group when computing this objective and updating the model parameters.
+[1830.13s → 1837.27s] For most of this video, I've talked about algorithms for optimizing parameter values and loss functions and
+[1837.39s → 1840.12s] neural networks and sophisticated fancy math.
+[1840.19s → 1844.84s] And this might give you the impression that algorithms are the most important thing when it comes to machine learning.
+[1844.94s → 1851.88s] However, that is very much not the case because at the end of the day, we are simply fitting models to our data.
+[1852.02s → 1860.27s] So if you have bad data, it doesn't matter how sophisticated your algorithm is or how much you tune your hyper parameters.
+[1860.47s → 1864.23s] If you're fitting a model to bad data, you're going to have a bad model.
+[1864.41s → 1869.03s] That's why I wanted to finish this talk to review what makes good data.
+[1869.17s → 1871.86s] And so there are really two properties that make data good.
+[1871.98s → 1873.86s] The first is quantity.
+[1874.00s → 1878.34s] All things equal, more data are better than less data.
+[1878.48s → 1882.79s] When you don't have enough data, your model is prone to overfitting.
+[1882.94s → 1891.75s] So this is basically a situation where your model memorizes your training data set and doesn't generalize well to new examples.
+[1892.07s → 1896.17s] In other words, it leads to models that just aren't very helpful in practice.
+[1896.41s → 1901.65s] However, there is a situation where more data is not necessarily a good thing.
+[1901.81s → 1911.47s] And this is when your data is garbage because if you take bad data and train a model, even if you have a lot of it, you're going to have a bad model.
+[1911.71s → 1916.44s] And this is summarized by the old adage of garbage in garbage out.
+[1916.54s → 1921.02s] That brings us to the second property of good data, which is quality.
+[1921.26s → 1926.96s] The essence of quality is having data that faithfully represents reality.
+[1927.12s → 1929.42s] So there are two key aspects of this.
+[1929.62s → 1934.52s] The first is accuracy, which is the correctness of your data.
+[1934.62s → 1944.34s] For example, if your data set says someone is 35 years old, when in reality, the person is actually 53 years old, that is bad data.
+[1944.49s → 1953.55s] Another example is if your data says someone makes $12,000 a year, when in fact they make $12,000 a month, that's another example of bad, inaccurate data.
+[1953.64s → 1959.51s] The other aspect is diversity, which is basically the representativeness of your data.
+[1959.61s → 1975.91s] For example, if you have some kind of SaaS product and you're trying to predict customer churn and you take data from a bunch of pro users of your SaaS product and you use it to develop a customer churn model, this is completely fine if you're trying to predict churn of users of your pro plan.
+[1976.01s → 1982.89s] However, if you have an enterprise customer, this model probably won't be helpful in predicting the churn of an enterprise
+[1983.07s → 1995.40s] In other words, it's not only important that your data are correct and accurately represent reality, but that they also contain examples of all the different scenarios you want to use your final model in.
+[1995.60s → 2000.44s] Just to summarize, good data comes down to quantity and quality.
+[2000.53s → 2010.91s] So we want more data over less data, we want high quality data over low quality data, and we want less high quality data over more low quality data.
+[2011.09s → 2016.90s] All right, so I covered a ton of information in this video, so I just wanted to recap with a few key takeaways.
+[2017.16s → 2021.81s] First is that solving problems requires an accurate model of the world.
+[2022.13s → 2029.24s] And machine learning gives us a way to align models to reality using data and math.
+[2029.52s → 2038.02s] A specific type of machine learning is deep learning, which involves using neural networks to learn useful features and mappings from raw data.
+[2038.16s → 2047.52s] And a lot of times deep learning is combined with reinforcement learning, which allows computers to learn by interacting with the world through trial and error.
+[2047.72s → 2056.77s] And finally, although there's a lot of math and fancy algorithms and machine learning, training good models comes down to having good data.
+[2056.93s → 2062.01s] And what this means is you need high volume, high quality training data sets.
+[2062.27s → 2065.39s] Although there were many things I couldn't cover in this short overview.
+[2065.45s → 2073.56s] here, I hope it gave you more clarity around some buzzwords in machine learning and the confidence to continue your learning on your own.
+[2073.68s → 2080.99s] Toward that end, if you have any questions or suggestions for future topics you want me to cover, please let me know in the comments below.
+[2081.17s → 2084.47s] And as always, thank you so much for your time and thanks for watching.

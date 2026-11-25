@@ -1,0 +1,1 @@
+Diagram illustrating a turning machining operation. The image displays two views: a side view (orthographic) and an isometric view. Both views show a cutting tool engaged with a cylindrical workpiece, performing an external turning process. The cutting tool consists of a tool holder and a cutting insert, which is shown removing material from the workpiece's outer diameter.

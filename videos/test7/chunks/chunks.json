@@ -1,0 +1,287 @@
+{
+  "total_chunks": 19,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "start": 0.031,
+      "end": 51.365,
+      "text": "Hello, all. My name is Krishnaak and welcome to my YouTube channel. So guys, today in this particular video, I'm going to discuss about this amazing topic to make you understand the differences between Lanchin versus Langrath. Now, I've been making similar kind of videos from past couple of weeks or from past month. And here our main aim is to make our fundamentals quite stronger. Let's say that if I ask you a question and an interview, when should we probably go ahead and use Land Graph? Or what is the differences between Langtion and Land Graph? What would you probably try to explain? Just write down in the comments section before seeing this specific video. And then after you write down the comment, just go through this entire video and then try to see that how many things that I've actually told. Does it matches with all the information that you have, right? So please make sure to do that.",
+      "words": 162,
+      "sentences": 2,
+      "sentence_idxs": [
+        0,
+        1
+      ]
+    },
+    {
+      "chunk_id": 1,
+      "start": 0.031,
+      "end": 80.12,
+      "text": "Hello, all. My name is Krishnaak and welcome to my YouTube channel. So guys, today in this particular video, I'm going to discuss about this amazing topic to make you understand the differences between Lanchin versus Langrath. Now, I've been making similar kind of videos from past couple of weeks or from past month. And here our main aim is to make our fundamentals quite stronger. Let's say that if I ask you a question and an interview, when should we probably go ahead and use Land Graph? Or what is the differences between Langtion and Land Graph? What would you probably try to explain? Just write down in the comments section before seeing this specific video. And then after you write down the comment, just go through this entire video and then try to see that how many things that I've actually told. Does it matches with all the information that you have, right? So please make sure to do that. But in this video, we are going to have a detailed discussion between Langshin versus Langgruff. Trust me, just was that till the end, you will definitely learn a lot many things. Now, if I talk about Langshin, you know, and I hope it is one of the most popular framework, which is basically used to create generative AI application. So first of all, we will just go ahead and talk about Langshin. So let's go ahead and write it down over here, like Langshin.",
+      "words": 247,
+      "sentences": 3,
+      "sentence_idxs": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "chunk_id": 2,
+      "start": 24.55,
+      "end": 105.027,
+      "text": "Let's say that if I ask you a question and an interview, when should we probably go ahead and use Land Graph? Or what is the differences between Langtion and Land Graph? What would you probably try to explain? Just write down in the comments section before seeing this specific video. And then after you write down the comment, just go through this entire video and then try to see that how many things that I've actually told. Does it matches with all the information that you have, right? So please make sure to do that. But in this video, we are going to have a detailed discussion between Langshin versus Langgruff. Trust me, just was that till the end, you will definitely learn a lot many things. Now, if I talk about Langshin, you know, and I hope it is one of the most popular framework, which is basically used to create generative AI application. So first of all, we will just go ahead and talk about Langshin. So let's go ahead and write it down over here, like Langshin. Now, if I talk about Lanchin, in Lanchin, obviously this is, this Lanchin is basically used to create, I probably say it is used to create LLM-powered application, LLM-powered, chatbot assistant, it can be, it can be an application or generative application.",
+      "words": 223,
+      "sentences": 3,
+      "sentence_idxs": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "chunk_id": 3,
+      "start": 51.365,
+      "end": 162.402,
+      "text": "But in this video, we are going to have a detailed discussion between Langshin versus Langgruff. Trust me, just was that till the end, you will definitely learn a lot many things. Now, if I talk about Langshin, you know, and I hope it is one of the most popular framework, which is basically used to create generative AI application. So first of all, we will just go ahead and talk about Langshin. So let's go ahead and write it down over here, like Langshin. Now, if I talk about Lanchin, in Lanchin, obviously this is, this Lanchin is basically used to create, I probably say it is used to create LLM-powered application, LLM-powered, chatbot assistant, it can be, it can be an application or generative application. Okay. Now, when I say LLM powered, that basically means anything that you create, whether you create a chatbot, whether you create a simple app, or whether you create any kind of application, right? At the end of the day, you are specifically using LLMs, right? On top of this LLMs, there are multiple things that can be used. Here, you can use prompts along with the LLMs, you can use tools, you can use different kind of integrations and many more things. So overall, if I probably talk about Lanchin, any application that is basically developed in Lanchin, a generative AI application or a LLM-powered application or a AI chatbot assistant, there are three main important steps that happens in Lanchin. This is my one step. This is my another step and this is my third step. Okay?",
+      "words": 266,
+      "sentences": 4,
+      "sentence_idxs": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "chunk_id": 4,
+      "start": 105.803,
+      "end": 292.61,
+      "text": "Okay. Now, when I say LLM powered, that basically means anything that you create, whether you create a chatbot, whether you create a simple app, or whether you create any kind of application, right? At the end of the day, you are specifically using LLMs, right? On top of this LLMs, there are multiple things that can be used. Here, you can use prompts along with the LLMs, you can use tools, you can use different kind of integrations and many more things. So overall, if I probably talk about Lanchin, any application that is basically developed in Lanchin, a generative AI application or a LLM-powered application or a AI chatbot assistant, there are three main important steps that happens in Lanchin. This is my one step. This is my another step and this is my third step. Okay? So these are the three main components. Now what are these specific components? When I say steps, I'm basically talking about components. The first component is nothing but it is basically called as retrieve. Okay. So here we are basically going to write it as retrieve, retrieve or retrieve. Then the second important component is nothing but summarize. And the third important component is nothing but your final answer or output. Now, when we talk about this components, so here I will just go ahead and write output. When we talk about the specific components in Langshin, whether you generate any kind of generative AI applications or ILL empowered application or AI assistant, these three components will be definitely there. Now the question rises, Krish, what does exactly happen in the directory? In retrieve, there are three main important things that we basically do. One is data ingestion. Now the question arises, what is data injection? Data injection is very simple. We ingest a data. We probably load a data from a specific source. Now, the main thing is that here the source can be different. It can be a PDF file. It can be an external database. It can be an Excel file. It can be a website. You need to probably web scrap the data. There may be various different ways, right, in data injection. So when we talk about data injection, this is also called as we basically use something called as document loader over here. So, we use nothing but document loader. So, in Lanchin, you have a specific class where you have lot of packages and integrations specifically with respect to document loader. Here, the main aim is that you try to load documents from different sources. It can be any source. It can be a PDF file. It can be Excel file. It can be a CSV file. It can even be some third party APIs, likely Wikipedia. It can be R-Sive. It can be anything as such.",
+      "words": 473,
+      "sentences": 9,
+      "sentence_idxs": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "chunk_id": 5,
+      "start": 260.21,
+      "end": 335.388,
+      "text": "So, we use nothing but document loader. So, in Lanchin, you have a specific class where you have lot of packages and integrations specifically with respect to document loader. Here, the main aim is that you try to load documents from different sources. It can be any source. It can be a PDF file. It can be Excel file. It can be a CSV file. It can even be some third party APIs, likely Wikipedia. It can be R-Sive. It can be anything as such. So they are multiple sources and Langen has a huge amount of different different kind of integrations already provided in terms of document loader. And what I feel is that whenever you try to develop any of this kind of application, this is the most important step because here the parsing of the data will happen. The parsing of the data will happen. When you do the parsing, if you do this much more accurately, then you will definitely be able to generate or create a generative AI application with much more accuracy. So now they are dedicated companies who specifically do this particular task, who create this kind of packages with respect to document loader.",
+      "words": 201,
+      "sentences": 4,
+      "sentence_idxs": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "chunk_id": 6,
+      "start": 292.61,
+      "end": 400.002,
+      "text": "So they are multiple sources and Langen has a huge amount of different different kind of integrations already provided in terms of document loader. And what I feel is that whenever you try to develop any of this kind of application, this is the most important step because here the parsing of the data will happen. The parsing of the data will happen. When you do the parsing, if you do this much more accurately, then you will definitely be able to generate or create a generative AI application with much more accuracy. So now they are dedicated companies who specifically do this particular task, who create this kind of packages with respect to document loader. I need to probably I create a document loader to let's say web scrap the data from the internet which will be a very important use case for most of the use case that we specifically implement in the industry. So in document loader this basically happens right and that is a part of data injection. Now coming to the second most important component. The second most important component is nothing but it is called as text splitter. Now, text splitter is also a separate class that is available in Lanxin or a separate package wherein there are multiple ways of splitting the text. Once you read the data from all these kind of sources, I cannot just directly provide the entire data to my LLM model as a context. So what I have to do? Why I cannot provide? Because there is a very important component which is called as context window. Every LLM has a limitation with respect to the context window. So in order to overcome this, what we do is that once we read the data from this data source, we try to divide this data into smaller chunks.",
+      "words": 309,
+      "sentences": 5,
+      "sentence_idxs": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "chunk_id": 7,
+      "start": 360.852,
+      "end": 497.32,
+      "text": "Now, text splitter is also a separate class that is available in Lanxin or a separate package wherein there are multiple ways of splitting the text. Once you read the data from all these kind of sources, I cannot just directly provide the entire data to my LLM model as a context. So what I have to do? Why I cannot provide? Because there is a very important component which is called as context window. Every LLM has a limitation with respect to the context window. So in order to overcome this, what we do is that once we read the data from this data source, we try to divide this data into smaller chunks. into smaller chunks, smaller chunks, smaller chunks. Once we divide this data into smaller chunks, then the next step, because after we divide this, we need to store it somewhere, right? And that is where your third important component comes is nothing but vector databases. Now inside this vector databases, when we are specifically using vector databases, here we also use something called as vector embeddings. Now for vector embeddings, it is nothing but we are converting the text into vectors. That is the main aim with respect to vector embeddings. So this is a kind of a task wherein we convert the text into vectors. Once it is basically converted, we basically store that into the vector database. Now the question arises, why do we store it? Because at the end of the day, from any application, if all my data is basically stored in the vector database, we will definitely be able to do different, different kind of search. One search example is nothing but semantic search. It can be graph DB search, right? And with the help of this search, we will be able to retrieve the right amount of context and give it to our LLM to finally generate the output. And that is really important. Unless and until this is not done accurately and we don't get the right kind of context out of the directed database, we will not be able to accurately give the output to the user.",
+      "words": 360,
+      "sentences": 6,
+      "sentence_idxs": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "chunk_id": 8,
+      "start": 454.222,
+      "end": 585.323,
+      "text": "Because at the end of the day, from any application, if all my data is basically stored in the vector database, we will definitely be able to do different, different kind of search. One search example is nothing but semantic search. It can be graph DB search, right? And with the help of this search, we will be able to retrieve the right amount of context and give it to our LLM to finally generate the output. And that is really important. Unless and until this is not done accurately and we don't get the right kind of context out of the directed database, we will not be able to accurately give the output to the user. And the retrieve component of Langshin, you really need to be good at all the specific things. When you go to model to any companies and if you are probably generating or developing a generative AI-powered application, you will be doing all the specific steps. You need to parse the data. You need to probably store the data in the exact format with respect to the document data type. You need to make sure that you have to do this kind of chunking strategy so that you try to solve this context window size with respect to different LLMs that you are using. And finally, you store all this particular data into the vector database. Now, coming to the next important step, after we probably complete this retrieve component, it is nothing but summarize. Now here is where, you know, and when we talk about summarize or when we talk about building generative AI applications with the help of Langtian, here you specifically follow a sequential order. Okay, this is really important to understand and here you will definitely be understanding the differences between Langtian and Langtian. When we talk about sequential order, now what does this basically mean? In sequential order, here, it basically means that the execution of any task will just happen sequentially. We cannot go back. So this entire language and the generative application that is developed with the help of language and follows a DAG graph, directed a cyclic graph.",
+      "words": 362,
+      "sentences": 6,
+      "sentence_idxs": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "chunk_id": 9,
+      "start": 538.63,
+      "end": 650.9,
+      "text": "Now here is where, you know, and when we talk about summarize or when we talk about building generative AI applications with the help of Langtian, here you specifically follow a sequential order. Okay, this is really important to understand and here you will definitely be understanding the differences between Langtian and Langtian. When we talk about sequential order, now what does this basically mean? In sequential order, here, it basically means that the execution of any task will just happen sequentially. We cannot go back. So this entire language and the generative application that is developed with the help of language and follows a DAG graph, directed a cyclic graph. Okay. That basically means if my execution is basically started from this task, it has to probably go to this task. It has to go to this particular task. Only sequential. I cannot come back. This option is not there. This option is not there. Right. So when we talk about this summarize component, here you'll be able to see that we create some kind of chaining concept. So in LAN chain, whenever a generative AI application is basically developed, here we try to implement this chaining concept. Now in the chaining concept, we first of all go ahead and write our prompt chain. So let's say this is my prompt chain. Sorry, this is my prompt. We basically go ahead and give a prompt. Prompt is just like an instruction to an LLM. Along with this, we try to integrate this prompt with our LLM. So LLM will be my second thing in the chain, right? Second important component in the chain. And then the third important component can be my context, the context that I'm supplying to the LLM. So this will basically be my prompt.",
+      "words": 299,
+      "sentences": 5,
+      "sentence_idxs": [
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "chunk_id": 10,
+      "start": 609.59,
+      "end": 691.012,
+      "text": "So in LAN chain, whenever a generative AI application is basically developed, here we try to implement this chaining concept. Now in the chaining concept, we first of all go ahead and write our prompt chain. So let's say this is my prompt chain. Sorry, this is my prompt. We basically go ahead and give a prompt. Prompt is just like an instruction to an LLM. Along with this, we try to integrate this prompt with our LLM. So LLM will be my second thing in the chain, right? Second important component in the chain. And then the third important component can be my context, the context that I'm supplying to the LLM. So this will basically be my prompt. This will be my LLM and this will basically be my context and this context will be coming from the specific vector database. So internally you will be able to see that this vector database will be connected to this particular chain itself wherein we will be providing the context. And this execution takes place sequentially one after the other. And finally, whatever output you basically get, here we are basically going to use or here we are going to give the answer to the output. Here again, we can use multiple components. One component can be my memory. So here we can use some kind of persistent memory.",
+      "words": 229,
+      "sentences": 4,
+      "sentence_idxs": [
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "chunk_id": 11,
+      "start": 650.9,
+      "end": 762.14,
+      "text": "This will be my LLM and this will basically be my context and this context will be coming from the specific vector database. So internally you will be able to see that this vector database will be connected to this particular chain itself wherein we will be providing the context. And this execution takes place sequentially one after the other. And finally, whatever output you basically get, here we are basically going to use or here we are going to give the answer to the output. Here again, we can use multiple components. One component can be my memory. So here we can use some kind of persistent memory. So if you have been seeing my videos with respect to Lang chain or Lang graph, I have covered all this specific thing. And next thing after this persisting memory, I can also go ahead and probably combine prompt with a separate LLM over here. prompt with a separate LLM over here so that we will be able to get the output. And finally, here you can actually see that finally we generate this specific output. So this can also be created in the form of chain. But understand one thing, everything is basically getting executed sequentially. This is the most important thing in the entire lang chain with respect to developing any generative AI powered applications. So here is what we basically do with the help of lang chain. And again, I will again talk about the differences as we go ahead. Like, what are the main exact differences and all? Here you saw that it is following a sequential order. It follows a director cycle graph. You know, here, everything is in the form of chaining. Here, we have this three important components. How each and every component is basically executed and how it proceeds to finally getting an output. Right. Now similarly, if I talk about lang graph, okay, lang graph.",
+      "words": 323,
+      "sentences": 5,
+      "sentence_idxs": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "chunk_id": 12,
+      "start": 707.043,
+      "end": 833.42,
+      "text": "prompt with a separate LLM over here so that we will be able to get the output. And finally, here you can actually see that finally we generate this specific output. So this can also be created in the form of chain. But understand one thing, everything is basically getting executed sequentially. This is the most important thing in the entire lang chain with respect to developing any generative AI powered applications. So here is what we basically do with the help of lang chain. And again, I will again talk about the differences as we go ahead. Like, what are the main exact differences and all? Here you saw that it is following a sequential order. It follows a director cycle graph. You know, here, everything is in the form of chaining. Here, we have this three important components. How each and every component is basically executed and how it proceeds to finally getting an output. Right. Now similarly, if I talk about lang graph, okay, lang graph. Now, when I talk about Langeroff, here, the main aim is basically to create stateful multi-AI agentic application. Agentic application or AI agents multistate state full multi AI agents itself, right now Here the main aim if I just want to probably break this down here You'll be able to see that we create AI agents and it's not like a simple a single AI agent It'll be multiple AI agents which should be doing separately different task and the best part about this AI agents is that they can communicate with each other to solve a complex workflow, complex workflow. I have already started my entire langraft playlist and I think if you're following them, I've explained this entirely in a much more detailed manner, you know, in the life classes that I've actually taken in my YouTube channel, right. Now, here, the main thing is that it need not be directed or cyclic graph.",
+      "words": 325,
+      "sentences": 5,
+      "sentence_idxs": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "chunk_id": 13,
+      "start": 781.512,
+      "end": 864.284,
+      "text": "Agentic application or AI agents multistate state full multi AI agents itself, right now Here the main aim if I just want to probably break this down here You'll be able to see that we create AI agents and it's not like a simple a single AI agent It'll be multiple AI agents which should be doing separately different task and the best part about this AI agents is that they can communicate with each other to solve a complex workflow, complex workflow. I have already started my entire langraft playlist and I think if you're following them, I've explained this entirely in a much more detailed manner, you know, in the life classes that I've actually taken in my YouTube channel, right. Now, here, the main thing is that it need not be directed or cyclic graph. It even need not be sequential. This can follow in a different ways. Okay, so first of all, we'll talk about what are the important components in langgraph. Okay, some of the important components in langgraph are like tasks. Second important component, we basically use as nodes. Third, it will be something called as edges. Fourth is nothing but graph. So that basically means my entire line graph, the complex workflows that is defined, it will be in a form of a graph.",
+      "words": 221,
+      "sentences": 4,
+      "sentence_idxs": [
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "chunk_id": 14,
+      "start": 833.42,
+      "end": 963.391,
+      "text": "It even need not be sequential. This can follow in a different ways. Okay, so first of all, we'll talk about what are the important components in langgraph. Okay, some of the important components in langgraph are like tasks. Second important component, we basically use as nodes. Third, it will be something called as edges. Fourth is nothing but graph. So that basically means my entire line graph, the complex workflows that is defined, it will be in a form of a graph. And when you see a graph, right, if you probably have some knowledge about graph, let's say here I will just go ahead and write this is my task A, okay, this is my task A, right, so let's say this is my task A, this can be my task B, this can be my task C, this can be my task D, and this can be my final task, that is end, let's say Now, each and every task over here. So let's say if this is my task A, this is my task B, this is my task C, this is my task D. So when we talk about this kind of task, we basically start from start over here, there will be a conditional edge, then we go to task D, then finally we go to end. Now here also I'm showing sequential on it, but one important thing is that you can go back from task B to task K. You can go back to task D to task C. You can re-execute this and get it, you can come. So that is the reason why I'm saying that this two important thing is basically happening. That is communication within this particular task and each and every task is executed by a separate AI agent. You can basically create a separate AI agent and perform the task similarly. And the output of one task can be passed to the output of the other task. It can also be vice versa. So here, a feedback mechanism can also be generated. And even human feedback mechanism can also be included. So this way, you are able to solve a very complex workflow.",
+      "words": 367,
+      "sentences": 6,
+      "sentence_idxs": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "chunk_id": 15,
+      "start": 914.808,
+      "end": 1033.979,
+      "text": "Now here also I'm showing sequential on it, but one important thing is that you can go back from task B to task K. You can go back to task D to task C. You can re-execute this and get it, you can come. So that is the reason why I'm saying that this two important thing is basically happening. That is communication within this particular task and each and every task is executed by a separate AI agent. You can basically create a separate AI agent and perform the task similarly. And the output of one task can be passed to the output of the other task. It can also be vice versa. So here, a feedback mechanism can also be generated. And even human feedback mechanism can also be included. So this way, you are able to solve a very complex workflow. In my recent live session, I gave a hackathon wherein you have to probably implement the entire software development lifecycle with the help of human feedback, with the help of this entire complex workflow. So what is software development lifecycle? first requirement gathering, then business understanding, then documentation, then code creation, then unit testing, then managers probably reviewing the, sorry, code appears reviewing the code review, providing the feedback, quality check, all those kind of check, I'm finally implementing the entire software development lifecycle. And people implemented in a much more beautiful way. So here, if you probably see, we follow an entire graph structure. And this graph structure need not be a directed or cyclic graph. Because here, my task can go from up and down, it can go here and there. So, if you see some of the important differences with respect to the component, here we use components like prompt, LLM, context, we use data ingestion, we use persistent memory, here we specifically use nodes, edges, so these are nothing but these are nodes.",
+      "words": 321,
+      "sentences": 6,
+      "sentence_idxs": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "chunk_id": 16,
+      "start": 999.335,
+      "end": 1075.998,
+      "text": "And people implemented in a much more beautiful way. So here, if you probably see, we follow an entire graph structure. And this graph structure need not be a directed or cyclic graph. Because here, my task can go from up and down, it can go here and there. So, if you see some of the important differences with respect to the component, here we use components like prompt, LLM, context, we use data ingestion, we use persistent memory, here we specifically use nodes, edges, so these are nothing but these are nodes. Right, these are edges. Edge is basically used for flow of the information. And when I say stateful, here the persistent memory is quite more efficient. And the best part about this is that the memory is basically shared between each and every task. Any update that I'm doing in one variable, this all nodes will be able to access those variables. and the persistent memory is quite efficient in lang graph. So if I talk about agent AI application, you may use some of the components that are available in the lang chain, but at the end of the day, you are building an amazing agent AI application with the help of lang graph.",
+      "words": 208,
+      "sentences": 4,
+      "sentence_idxs": [
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "chunk_id": 17,
+      "start": 1034.907,
+      "end": 1153.285,
+      "text": "Right, these are edges. Edge is basically used for flow of the information. And when I say stateful, here the persistent memory is quite more efficient. And the best part about this is that the memory is basically shared between each and every task. Any update that I'm doing in one variable, this all nodes will be able to access those variables. and the persistent memory is quite efficient in lang graph. So if I talk about agent AI application, you may use some of the components that are available in the lang chain, but at the end of the day, you are building an amazing agent AI application with the help of lang graph. Other than that, there are some more differences which you can probably find out over here. So, these are some of the important components. As I said, with respect to persistent memory, this is much more sufficient, efficient. Here, we just use a sequential order. Here, it will not be a sequential order to solve any kind of use cases. And here, we also understood what are the important components and here, what are the important components. Now, the reason of making this specific video is to make your understanding very, very strong. If I ask you a question, when should we probably go ahead and use fine tuning. When should we use RAG? Or when should we probably go ahead and use, let's say, prompt engineering. Many people are not able to clearly say the differences, right? If this is the kind of question, I have already made this kind of videos. This videos, like, see, in the companies now, many people, more than 80 to 90% of the people in the companies are implementing efficient RAG systems. So here also, you'll be able to see that when we create, these are like traditional rags. I'll also talk about traditional rags and agentic rags. So in the traditional rags, you basically create an LLM, right? This, let's say this is my LLM powered application, this will be interacting with my rag database.",
+      "words": 348,
+      "sentences": 5,
+      "sentence_idxs": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "chunk_id": 18,
+      "start": 1099.623,
+      "end": 1242.571,
+      "text": "Now, the reason of making this specific video is to make your understanding very, very strong. If I ask you a question, when should we probably go ahead and use fine tuning. When should we use RAG? Or when should we probably go ahead and use, let's say, prompt engineering. Many people are not able to clearly say the differences, right? If this is the kind of question, I have already made this kind of videos. This videos, like, see, in the companies now, many people, more than 80 to 90% of the people in the companies are implementing efficient RAG systems. So here also, you'll be able to see that when we create, these are like traditional rags. I'll also talk about traditional rags and agentic rags. So in the traditional rags, you basically create an LLM, right? This, let's say this is my LLM powered application, this will be interacting with my rag database. So this will basically be my Ragn database. And this Ragn database will provide the context to the LLM to finally provide the output. Here, if my input is basically going on. So this is what is basically happening in a traditional Ragn. In the case of Agentic Ragn, we create agents. We create AI agents and this agent is responsible whether I have to make a call to my database, whether I have to make the call to my tools or whether I have to take any kind of other action. Automatically, this AI agents will be able to take that particular decision and provide me the response. And then probably let's say that after getting this information, I need to go ahead and hit the tool and provide the get the response. This entire thing is basically implemented in the form of a workflow. So this is how things basically happen. I'm soon going to make a detailed video on different types of lag, which is one of the most important component that is currently right now. Right? So I hope you like this particular video. And this was the basic differences between Lanchion and LandGraph. In the upcoming videos, I'm also going to discuss about other frameworks. Let's say crew AI. Agno and I'm going to probably go ahead and explain you all the specific things and there's all things we detail explain in our live batches all the information will be given in the description of this particular video you can go ahead and check it out. So yes, this was it from my side. I'll see you in the next video. Have a great day. Thank you. And I'll take care. Bye bye.",
+      "words": 444,
+      "sentences": 6,
+      "sentence_idxs": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+CAD model of a mechanical assembly. The core component is a flat, circular plate with three through-holes, arranged approximately equally spaced near its perimeter. This circular plate is clamped between two opposing jaw components.
+
+The left jaw is an L-shaped block, featuring a horizontal clamping surface and a vertical extension with a through-hole for mounting. The right jaw is a rectangular block with a horizontal clamping surface. A recessed socket head cap screw is visible on the outer face of the right jaw component, indicating an adjustment or fastening mechanism.
+
+This assembly describes a clamp designed to hold or position a circular plate, potentially for rotation or fixture applications.

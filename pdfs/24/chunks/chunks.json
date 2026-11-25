@@ -1,0 +1,22 @@
+[
+  {
+    "chunk_id": "chunk_0000",
+    "text": "Building AI powered \napplications with LangChain\nMarch 19, 2024 \nJuan Peredo\nBOLBECK LLC\nJuan Peredo - Your guide in this journey\n• Architect / consultant / developer & everything in \nbetween  \n• Independent Cloud Application Architect \n• Linkedin: linkedin.com/in/juanperedotech \n• Over 15 years of IT experience in companies like: \n• Bolbeck LLC \n• AWS \n• Strategy& (PWC) \n• Booz & Co\nLangChain is a framework aimed at making your life easier\nEvaluation\nTraceability\nMonitoring\nCreation\nDevelopment & \nDeployment\nIntegration\nLangChain helps accelerate app creation\n• App creation \n• Testing \n• Templates \n• Serving (coming soon)\n• Prompt manipulation \n• LLM integration \n• Output parsing \n• Agents & tools\n• Evaluation \n• Monitoring \n• Tracing \n• Playground\nHundreds of integrations: \n• LLM Models \n• Data loaders \n• Embedding models \n• Databases \n• And more…\nEasy to use \n• Examples \n• Templates \n• Prompt sharing\nThriving community\nUsing LangChain\n• Python and Javascript are officially supported \n• There are other community implementations (e.g. Go) \n• Langchain is Open Source (MIT)\nhttps://python.langchain.com/\nhttps://js.langchain.com\nWhat are chains?",
+    "start_index": 0,
+    "end_index": 1161,
+    "word_count": 173,
+    "start_page": 1,
+    "end_page": 6,
+    "page_spans": "Pages 1-6"
+  },
+  {
+    "chunk_id": "chunk_0001",
+    "text": "Chains are a series of steps required to allow interaction \nHuman - LLM interaction\nChain\nUser\nTo the code! https://github.com/camba1/langChainDemo\nLangChain has many advantages, but…\n• AI is changing fast and so is LangChain \n• Many examples in the web are deprecated \n• LCEL vs Legacy chains \n• Multiple potential implementations \n• Like any other frameworks, there are plenty \nof abstractions \nLegacy Chain\nLCEL Chain\nPseudocode\nUseful resources\n• LangSmith Docs: https://docs.smith.langchain.com/tracing \n• Langserve App templates: https://templates.langchain.com \n• LangChain Hub: https://smith.langchain.com/hub \n• LangChain Python docs: https://python.langchain.com/ \n• LangChain JS docs: https://js.langchain.com \n• Blog: https://blog.langchain.dev/ \n• Discord: https://discord.gg/cU2adEyC7w \n• Repos for this demo:  \n• Backend: https://github.com/camba1/langChainDemo \n• Frontend: https://github.com/camba1/langchainDemoClient \nQuestions ? Thanks to AICamp for organizing these meetups\nJuan Peredo\nlinkedin.com/in/juanperedotech\n",
+    "start_index": 1161,
+    "end_index": 2199,
+    "word_count": 120,
+    "start_page": 6,
+    "end_page": 10,
+    "page_spans": "Pages 6-10"
+  }
+]

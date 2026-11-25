@@ -1,0 +1,1 @@
+CAD model showing a cylindrical hub with a central bore and a keyway on its face. A rectangular key is partially inserted into the keyway, indicating an assembled or partially assembled keyed joint. This configuration is used for connecting a shaft (implied) to a rotating component, such as a gear or pulley, to transmit torque and prevent relative rotation.

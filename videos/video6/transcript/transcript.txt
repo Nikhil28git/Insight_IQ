@@ -1,0 +1,209 @@
+[0.21s → 3.93s] Imagine walking into a candy store as a kid.
+[4.19s → 10.62s] At first there were only three cool treats, lollipops, gummy bears and chocolate coins.
+[11.08s → 15.10s] But as time went on, the store kept expanding.
+[15.62s → 19.32s] adding new and exciting candies to its shelves.
+[19.85s → 28.00s] And now it's a Candy Wonderland with over 200 sweets that delight kids and adults from all over the world.
+[28.39s → 35.14s] Well believe it or not, Amazon Web Services or AWS is kind of like that candy store.
+[35.42s → 48.83s] When it first launched in 2006, AWS only offered three core services, EC2 for compute instances, SQS for messaging, and S3 for object storage.
+[49.15s → 54.42s] But just like our candy store, AWS kept growing and innovating.
+[54.82s → 64.76s] And today, it has over 200 different services, that cater to the needs of developers and businesses from all over the world.
+[65.14s → 70.31s] from household names like Netflix and Airbnb to startups and small businesses.
+[70.93s → 77.79s] Everyone is using AWS to bring together their vision and their products for their startups.
+[78.05s → 83.88s] But with so many options, it's easy to feel like a kid in a candy store.
+[84.22s → 87.12s] overwhelmed and unsure on where to start.
+[87.22s → 100.67s] Now don't worry, because today we're going on an AWS crash course for beginners, and we'll be covering the 20 must-know services that will satisfy your cravings for AWS Cloud.
+[100.89s → 110.56s] Before we get started, you should check out my weekly Cloud newsletter where I share free resources, tutorials, bootcamps, and so much more helping you make your Cloud move.
+[110.84s → 122.92s] Okay, so as we are going to dive into the 20 must-known AWS services, I want to quickly share for unknown but powerful AWS services that you didn't know existed.
+[123.22s → 130.83s] These are like the hidden gems in the candy store, the unique lesser-known trees that can really make your project stand out.
+[131.15s → 138.24s] First up, we have AWS Sumerion, a managed service for creating AR and VR applications.
+[138.59s → 146.46s] It's like having a virtual candy store where you can design and build your own immersive experience.
+[146.86s → 156.19s] Now under the hood, Sumerion uses WebGL and WebVR technologies to render interactive scenes in a web browser.
+[156.53s → 166.88s] It provides a web-based editor and a scripting API that lets you add logic and behaviors for your creations without diving deep into complex coding.
+[167.08s → 180.37s] Now you can import 3D assets, create animations and even integrate with other AWS services like AWS Lambda for serverless compute or Amazon Poly for voice interfaces.
+[180.79s → 192.90s] Sumerian handles the heavy lifting of rendering and hosting so you can focus on crafting and building delightful experiences that can be accessed on any device with a browser.
+[193.28s → 202.67s] Next, we have Amazon Poly, a text-to-speech service that uses advanced deep learning to synthesize a natural sounding speech.
+[203.07s → 207.32s] It's like having a voice actor in a box rated in a rate your content.
+[207.66s → 217.50s] Poly supports a wide range of languages and voices, each powered by sophisticated neural network that has been trained on hours of speech data.
+[217.80s → 222.33s] You can customize the pronunciation, add pauses and breathing.
+[222.69s → 227.89s] And even control the speech rate and pitch to match your desired style.
+[228.23s → 233.15s] Poly's API makes it easy to integrate lifelike speech into your applications.
+[233.51s → 243.58s] You simply send the text you want to convert, choose a voice, and Poly returns an audio stream that you can play back or store for later use.
+[243.94s → 249.59s] It's a cost-effective and scalable solution for creating engaging voice experiences.
+[249.91s → 261.36s] The third unknown service is AWS TechStract, a fully managed service that uses machine learning to extract text and data from scanned documents.
+[261.84s → 268.14s] is like having a smart scanner that can understand the structure and content of your documents.
+[268.48s → 278.72s] Textract goes beyond simple OCR, obstacle character recognition, by identifying and extracting key elements like tables, forms and fields.
+[279.10s → 283.73s] It can handle a variety of document formats including PDFs,
+[284.00s → 287.25s] images and even handwritten content.
+[287.45s → 297.97s] Under the herd, TechStrak uses a combination of computer vision and natural language processing to analyze the layouts and semantics of each document.
+[298.27s → 304.77s] It returns structured data that you can easily integrate into your applications or even your workflows.
+[305.04s → 309.20s] saving you hours of manual data entry and processing.
+[309.48s → 317.30s] Last but not least of our hidden gems, we have Amazon recognition, a deep learning, image and video analysis service.
+[317.70s → 326.67s] It's like giving you applications a set of super powered eyes that can detect and recognize all sorts of visual content.
+[326.97s → 337.45s] Recognition uses convolutional neural networks trained on millions of images and videos to detect objects, scenes, faces, and even emotions.
+[337.93s → 343.73s] You can use it for tasks like facial recognition, content moderation, or visual search.
+[344.21s → 356.42s] Recognition provides a simple API that lets you send image or video and receive back a set of labels, bounding boxes and confidence scores for each detected element.
+[356.66s → 359.11s] It scans each frame in your videos.
+[359.39s → 368.61s] You can also train your own custom models using your specific data set to detect unique objects or scenes relevant to your use case.
+[368.97s → 375.50s] Alright, now let's dive into the Core AWS services, starting with the Compute category.
+[375.70s → 384.02s] These services are like the power generators of your candy store, providing the necessary resources to run your applications.
+[384.32s → 388.60s] First up, we have Amazon EC2, or Elastic Compute Cloud.
+[388.94s → 396.11s] It's like having a fleet of virtual machines at your command, ready to crunch numbers and serve your applications.
+[396.49s → 413.82s] Now with EC2, you can provision virtual servers in the cloud, choosing from a variety of instance types that offer different combinations of computing power, such as CPU, memory, storage, and networking capacity.
+[414.12s → 419.74s] It's kind of like picking the right size and flavour of candy for your needs.
+[420.12s → 426.83s] With EC2 you have complete control over your instances from the operating system to the software stack.
+[427.05s → 435.58s] You can scale your fleet up or down based on demand, ensuring you have the right amount of compute power to handle your workload.
+[436.04s → 446.39s] Next, we have Amazon Lambda, AWS Lambda, the serverless computing service that lets you run code without provisioning or managing any servers.
+[446.77s → 451.26s] It's like having a magic wand that can summon compute power on demand.
+[451.60s → 455.26s] Obviously, under the hurdle, Lambda does use servers, but don't tell anyone that.
+[455.62s → 462.53s] With Lambda, you can execute code in response to triggers, like API requests, file uploads or scheduled events.
+[463.01s → 467.81s] You simply upload your code, choose your language runtime, and specify your trigger.
+[468.31s → 475.49s] Lambda takes care of the rest, automatically scaling your code execution based on the incoming requests.
+[475.85s → 482.32s] The beauty of Lambda is that you only pay for the compute time that you consume, measured in milliseconds.
+[482.74s → 488.00s] It's like paying for just a candy that you want to eat rather than buying the whole store.
+[488.24s → 494.81s] This makes it a cost-effective option for your workloads that have variable or unpredictable traffic patterns.
+[495.21s → 497.97s] Moving on, we have AWS Elastic Beanstalk.
+[498.19s → 503.07s] A fully managed service for deploying and scaling web applications.
+[503.33s → 512.16s] Beanstalk is like having a team of expert candy makers that handle all the details of packaging and distribution of your candies.
+[512.52s → 522.26s] With Elastic Beanstalk, you simply upload your application code and choose your language runtime and also specify your environment preferences.
+[522.72s → 531.29s] Elastic Beanstalk automatically handles the deployment from provisioning the underlying resources to load balancing and auto scaling.
+[531.59s → 536.85s] You retain full control over the AWS resources powering your application.
+[537.09s → 540.55s] But Elastic Beanstalk takes care of the management overhead.
+[540.79s → 549.18s] It's a great option and service for developers who want to just focus on writing code and not managing any infrastructure.
+[549.50s → 560.08s] And the final ones of the computer category, we have Amazon ECS and EKS, the container orchestration services that let you run and scale containerized applications.
+[560.56s → 567.18s] It's like having a fleet of candy delivery trucks that automatically route to the right destinations.
+[567.59s → 575.37s] ECS or Elastic Container Service is a fully managed container orchestration platform that supports Docker containers.
+[575.63s → 587.94s] You can define your applications as a set of containers, specify the resources that they need and ECS will handle the deployment and scaling across a cluster of EC2 instances.
+[588.30s → 593.02s] EKS or Elastic Kubernetes service is a managed service for running Kubernetes.
+[593.34s → 604.55s] The popular open source container or construction system with EKS you can deploy and manage Kubernetes clusters on AWS, take an advantage of native Kubernetes features and tools.
+[605.05s → 615.16s] Both ECS and EKS abstract away the complexity of managing containers at scale, letting you focus on designing and shipping your applications.
+[615.64s → 631.79s] If you want to build hands-on projects with AWS and get hired in a cloud role, then you should check out the cloud engineer academy where I take you from zero to cloud engineer hero, teaching you the tools, technologies and projects to get you hired.
+[632.05s → 640.62s] You don't just get access to the videos but weekly coaching calls with me, live hands-on workshops and job preparation.
+[640.84s → 649.12s] We have students from all over the world with different backgrounds and experiences joining the Cloud Engineer Academy every single day.
+[649.36s → 652.72s] One of our recent students actually secured a six-figure job.
+[653.06s → 655.47s] To find out more, check out the link in my bio.
+[655.73s → 659.51s] All right, let's move on to the network and content delivery category.
+[659.79s → 668.20s] These services are like the county delivery system of your applications, ensuring that your content reaches your users quickly and securely.
+[668.51s → 672.30s] First, we have Amazon VPC or Virtual Private Cloud.
+[672.52s → 678.68s] It's like having your own private candy factory completely isolated from the outside world.
+[679.02s → 688.15s] With the PPC, you can provision a logically isolated section of the AWS cloud where you can launch resources in a virtual network that you can define.
+[688.33s → 696.21s] You have complete control over your virtual network environment, including IP ranges, subnets, root tables, and network gateways.
+[696.51s → 704.98s] You can use your VPC to create a secure and private network for your applications, keeping your candy recipes safe from prying eyes.
+[705.36s → 715.50s] You can also establish a VPN connection between your VPCs and your on-premise networks, allowing you to seamlessly extend your existing infrastructure to the cloud.
+[715.80s → 726.10s] Next, we have Amazon Cloud Front, a global content delivery network, also known as a CDN, that accelerates the delivery of your content to users worldwide.
+[726.36s → 735.18s] is like having a fleet of super sonic candy delivery tracks that can instantly teleport your candy to any location around the world.
+[735.40s → 745.61s] With Cloudfront, you can distribute your static and dynamic web content, videos, APIs and other assets to a network of edge locations spread around the globe.
+[745.85s → 752.03s] When a user requests your content, Cloudfront routes the request to the nearest edge location.
+[752.51s → 755.43s] ensuring the fastest possible delivery routes.
+[755.83s → 766.70s] CloudFront also provides advanced features like real-time metrics, access logs and geo-restriction giving you fine-grained control over your content distribution.
+[766.98s → 775.58s] It can help you improve the performance, availability and security of your applications all while reducing the load of your origin servers.
+[775.86s → 777.46s] We also have Amazon Route 53.
+[778.76s → 784.75s] a highly available and scalable domain name system, also known as a DNS web service.
+[785.07s → 790.37s] It's like having a master directory that guides users to the right candy store locations.
+[790.63s → 800.30s] With Route 53, you can register domain names, route traffic to your applications and configure DNS health checks to monitor the availability of your resources.
+[800.54s → 807.58s] You can use it to map friendly domain names to your EC2 instances, load balancers or S3 buckets.
+[808.06s → 812.72s] making it easier for users to find and access your applications.
+[812.96s → 829.13s] Route 53 also supports advanced routing policies like latency-based routing, geolocation-routing, and fail-overrouting allowing you to optimize the performance and availability of your applications based on the location and health of your resources.
+[829.49s → 832.65s] Alright, let's dive into AWS storage services.
+[832.88s → 843.66s] These services are like the pantry of your candy factory, providing you with a place to store and retrieve all the ingredients that you need to make your delicious applications.
+[844.00s → 847.88s] First up, we have Amazon S3, or Simple Storage Service.
+[848.07s → 855.51s] It's like having a bottomless cauldron where you can store and retrieve any type of data at any time from anywhere on the web.
+[855.89s → 863.47s] S3 is an object storage service that offers industry leading scalability, data availability, security and performance.
+[863.82s → 869.34s] You can use it to store and retrieve any amount of data from anywhere in the world and at any time.
+[869.62s → 877.18s] It's like having a magic bag that can hold an infinite amount of candy and you can always reach in and grab exactly what you need.
+[877.46s → 882.29s] With S3, you can store and retrieve files of up to five terabytes in size.
+[882.65s → 893.20s] You can organize your data into buckets and folders, and you can also set fine-grained access controls and encryption options to ensure the security of your data.
+[893.52s → 901.81s] S3 is perfect for storing static content, media files, backups, and any other data that needs to be accessible from the web.
+[902.15s → 912.05s] Next up, we have Amazon EBS and EFS, two powerful storage services that get in-chance your compute instances with reliable and fast storage.
+[912.37s → 919.60s] EBS or elastic block storage provide a persistent block-level storage volumes for using it with EC2 instances.
+[920.10s → 926.88s] It's like having your virtual machines, their own personal candy stash that can be accessed quickly and reliably.
+[927.12s → 935.61s] With EBS, you can create storage volumes from 1GB to 16TB in size, and attach them to your EC2 instances.
+[936.01s → 942.68s] You can choose a variety of volume types, each optimized for different workflows and performance requirements.
+[943.09s → 952.89s] EBS volumes automatically replicate within the availability zones to protect you from component failures, offering high availability and durability.
+[953.30s → 961.97s] EFS' elastic file system provides a simple, scalable and fully managed file system for using it with AWS Compute Services.
+[962.26s → 967.97s] It's like having a shared candy jar that all your compute instances can access simultaneously.
+[968.31s → 977.58s] With EFS, you can create a file system that you can grow and shrink automatically as you add and remove files without needing to provision storage in advance.
+[978.17s → 989.02s] You can mount your EFS file system on multiple e-stu instances, even across multiple availability zones, enabling your applications to scale seamlessly.
+[989.34s → 997.04s] EFS supports the network fast system, NFS protocol, making it compatible with a wide range of applications and tools.
+[997.48s → 1000.18s] Now let's talk about AWS database services.
+[1000.36s → 1003.82s] These services are like the recipe books of your candy factory.
+[1004.04s → 1010.52s] providing you with a place to store and manage all the structured data that your applications need to function.
+[1010.80s → 1015.07s] First up, we have Amazon RDS, or relational database service.
+[1015.21s → 1020.39s] It's like having a master chef that can summon managed databases of all flavors.
+[1020.61s → 1023.53s] So you can focus on cooking up delicious applications.
+[1023.77s → 1034.24s] With RDS you can choose from a variety of popular database engines including MySQL, Postgres, Oracle SQL Server and MariaDB.
+[1034.68s → 1043.76s] RDS takes care of all the boring but important tasks of database administration like provisioning, patching, backup recovery and scaling.
+[1044.12s → 1047.99s] So you can focus on using the database to power your application.
+[1048.29s → 1059.45s] RDS provides a suite of features to enhance the reliability and performance and security of your databases, like automatic failover, reach replicas and encryption at rest.
+[1059.75s → 1066.00s] You can easily scale your databases up and down based on your workload requirements without any downtime.
+[1066.48s → 1073.87s] It's like having a magic recipe book that can adjust ingredients and portions based on how many people you're serving.
+[1074.09s → 1076.29s] Next, we have Amazon DynamoDB.
+[1076.55s → 1084.52s] A fully managed no SQL database service that can handle massive amounts of data with lightning fast performance.
+[1084.84s → 1091.06s] It's like having a secret stash of high powered candy that can fuel your applications at any scale.
+[1091.24s → 1100.97s] With DynamoDB, you can store and retrieve any amount of data and serve any level of request traffic without worry about scaling, sharding or rebalancing.
+[1101.43s → 1113.00s] DynamoDB automatically spreads your data and traffic across a sufficient number of servers to handle your throughput requirements, offering seamless scalability and high availability.
+[1113.22s → 1120.29s] DynamoDB is a key value and document database that provides single digit millisecond latency at any scale.
+[1120.45s → 1130.90s] It's perfect for use cases like user profiles, session data, product catalogs and real-time analytics where you need fast and predictable performance at massive scale.
+[1131.04s → 1139.68s] It's like having a magic candy machine that can instantly dispense any type of candy, no matter how many people are asking for it.
+[1140.00s → 1149.37s] Last but not least, in a database category, we have Amazon elastic cache, a fully managed in-memory caching service that can supercharge your application's performance.
+[1149.59s → 1154.84s] It's like having a secret potion that can make your candy making process lightning fast.
+[1155.13s → 1164.89s] With elastic cash, you can deploy and run high performance memory cash or read its clusters in the cloud without worrying about the underlying infrastructure.
+[1165.15s → 1177.37s] Elastic cache can help you improve the response times of your applications and reduce the load of your databases by storing frequently accessed data in memory for ultra-fast retrieval.
+[1177.65s → 1188.96s] Elastic cache provides a suite of features to enhance the reliability and security of your caching clusters like automatic failover, backup and restore, and encryption in transit.
+[1189.30s → 1196.10s] You can also easily scale your clusters up and down based on your workload requirements, without any downtime.
+[1196.56s → 1203.02s] It's like having a magic spell that can instantly summon more candy, making elves when your factory gets busy.
+[1203.28s → 1215.30s] Alright, let's talk about AWS Security and Identity Services that act as a gatekeeper of your candy factory, ensuring that only all fries personnel can access your delicious creations.
+[1215.64s → 1219.09s] The star of the show is AWS IAM Identity and Access Management.
+[1219.40s → 1225.71s] is like having a highly trained security guard that you can customize to protect the different parts of your candy factory.
+[1225.91s → 1235.93s] With IM or IM, you can create and manage user accounts, groups, roles that can grant specific permissions and access to your AWS resources.
+[1236.57s → 1246.34s] It's like giving each employee a unique security badge that determines which part of the factory that they can enter and what actions that they can perform.
+[1246.74s → 1256.48s] I am allowed you to implement the principle of lease privilege, which means giving each user or role only the permissions that they need to do their job and nothing more.
+[1256.86s → 1266.55s] This helps you reduce the risk of accidental and malicious misuse of your resources, like a rogue employee stealing your secret candy recipes.
+[1267.05s → 1275.26s] I am provides a suite of features to enhance the security of your user accounts like MFA, password policies and access key rotation.
+[1275.62s → 1289.47s] You can also use IAM to grant access to your AWS resources to users or services outside your AWS account, like a business partner or a third-party application without sharing your secret access key.
+[1289.85s → 1304.08s] IAM or IAM is deeply integrated with all other AWS services so you can use it to control access to your EC2 instances, S3 buckets, RDS databases and more, all from a single central location.
+[1304.48s → 1311.67s] It's like having a master key that can lock and unlock all the doors in your candy factory based on who is holding it.
+[1312.07s → 1314.99s] Next, we have the AWS Application Integration Services.
+[1315.29s → 1326.80s] These services are like the digital conveyor belts that help your candy store run smoothly and efficiently, by allowing different parts of your application to communicate and work seamlessly together.
+[1326.96s → 1331.38s] First up, we have Amazon SNS, or simple notification service.
+[1331.68s → 1340.80s] It's like having a magical loudspeaker that can broadcast messages far and wide across your candy factory and even beyond its walls.
+[1341.24s → 1346.56s] With SNS, you can send notifications from your application to a variety of endpoints.
+[1346.94s → 1354.12s] Like mobile devices, email addresses, HTTP and HTTPS endpoints, and even other AWS services.
+[1354.76s → 1362.75s] is like sending a message to all your candy factory employees at once, telling them that the new batch of candy is ready for packaging.
+[1363.15s → 1374.41s] SNS uses a publish-subscribed model where you create topics that represent different subjects or events and then allow other parts of your applications to subscribe to those topics.
+[1374.95s → 1385.35s] when you publish a message to a topic SNS automatically publishes messages to all its subscribers, ensuring that everyone gets the message in real time.
+[1385.91s → 1394.38s] SNS is fully managed and highly scalable so you can send billions of messages per day without worrying about the underlying infrastructure.
+[1394.89s → 1401.90s] It's like having a team of messenger birds that can deliver your messages instantly no matter how many people there are.
+[1402.32s → 1406.16s] Next, we have Amazon SQS or Simple Q service.
+[1406.50s → 1413.86s] It's like having a team of highly disciplined messaging minions that can create unbreakable cues for your candy factory workloads.
+[1414.16s → 1424.76s] With SQS, you can send, store and receive messages between different parts of your applications without losing any messages or requiring all parts to be available at the same time.
+[1425.20s → 1432.67s] It's like having a conveyor belt that can hold onto candy packages until the next workstation is ready to process them.
+[1433.09s → 1440.46s] SQS uses a message queue model, where you can create queues that act as buffers between different parts of your application.
+[1440.70s → 1451.35s] When one part of your application sends messages to a queue, SQS stores the message until another part of your application is ready to receive and process it.
+[1451.63s → 1458.71s] This helps you decouple your application components and ensure that they can work independently without blocking each other.
+[1459.15s → 1467.95s] SQS is fully managed and highly scalable, so you can process hundreds and thousands of messages per second without worrying about the underlying infrastructure.
+[1468.39s → 1478.18s] It's like having a team of tireless message minions that can help you keep your factory workflows running smoothly, no matter how busy that it gets.
+[1478.72s → 1483.08s] Last but not least of the application services we have AWS Amplify.
+[1483.42s → 1491.55s] It's like having a magic wand that can connect your candy factory to the cloud, making easy for you to deploy, build and make your candy applications.
+[1491.85s → 1507.06s] With Amplify, you can build full stack web and mobile applications using your favourite front-end frameworks, like React, Angular or View, and easy connect them to a variety of AWS services, like S3, Lambda and DynamoDB.
+[1507.60s → 1513.20s] It's like having a pre-assembled candy factory kit that you can customize and extend to your needs.
+[1513.63s → 1519.37s] Amplify provides a suite of tools and features to simplify your application development workflow.
+[1519.55s → 1530.56s] Look at CLI for creating and managing your backend resources, a library of UI components for building your front-end and a hosting service for deploying your application with a single command.
+[1530.76s → 1535.38s] It's like having a team of magic elves that can set up your candy factory in the cloud.
+[1535.48s → 1537.99s] So you can focus on making your delicious candy.
+[1538.39s → 1548.86s] Okay, I think we are ready for two magical AWS machine learning services that can help your candy factory become smarter and more efficient.
+[1549.18s → 1550.82s] First off, we have Amazon Lex.
+[1551.02s → 1557.74s] It's like having a friendly wizard that can enhance your applications with the power of natural conversation.
+[1557.94s → 1568.49s] With Lex, you can build chatbots and voice-powered applications that can understand and respond to your customer requests using the same technology that powers Amazon Alexa.
+[1568.75s → 1574.58s] It's like having a team of customer service elves that can answer questions and take orders 24-7.
+[1575.69s → 1586.46s] Lex uses automatic speech recognition and natural language understanding to convert your customer's speech or text into a structured data that your applications can process.
+[1586.78s → 1598.71s] You can define custom intents and slot types to map your customer's request to specific actions or parameters, like ordering a specific type of candy or asking for the status of their delivery.
+[1598.93s → 1607.43s] Lex integrate seamlessly with other AWS services so you can build complete conversational solutions that can scale to millions of users.
+[1607.95s → 1613.55s] Last but not least of our magical and AI powered machine learning services is Amazon Translate.
+[1613.97s → 1621.38s] the most magical service that can break down language barriers and help your candy factory reach customers worldwide.
+[1621.64s → 1630.38s] With Translate, you can build applications that can automatically translate text from one language to another using advanced machine learning techniques.
+[1630.68s → 1640.35s] It's like having a team of polygot translators that can localize your candy packaging, marketing materials and customer support conversations in real time.
+[1640.67s → 1649.90s] Amazon Translate supports a wide variety of languages from Spanish and French to Chinese and Arabic and it can even detect the source language automatically.
+[1650.12s → 1667.29s] you can use it to build a wide variety of applications like a website that can dynamically translate product descriptions and reviews based on customer locations or a customer support system that can automatically route conversations to agents who speak the same language as the customer.
+[1667.53s → 1676.88s] Translate, integrate seamlessly with other AWS services so you can build complete multi-lingual solutions that can scale to millions of users.
+[1677.24s → 1682.43s] And there you have it, the top 20 AWS services and a crash course for beginners.
+[1682.85s → 1688.38s] If you learned something new, hit the like button, subscribe if you haven't already, and I'll see you on the next one.

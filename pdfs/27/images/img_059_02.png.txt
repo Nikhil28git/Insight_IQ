@@ -1,0 +1,1 @@
+The image displays a horizontal split with a white area occupying the top portion and a black area at the bottom. A smooth horizontal gradient band separates these two regions, transitioning from white at the top edge of the band, through shades of gray, to black at the bottom edge of the band, where it meets the solid black area.

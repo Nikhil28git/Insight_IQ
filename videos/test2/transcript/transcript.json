@@ -1,0 +1,993 @@
+{
+  "language": "en",
+  "text": "Today we're going to do a crash course on Langchain, the Python framework for working with and building AI agents. It makes it super simple to interact with standalone models, build complex agents and integrate all sorts of other components like embedding models or vector stores. And all of this without caring about specific differences in API definitions of the various providers. The goal of this video today is to cover as much as possible in a short amount of time. We're going to start by talking about Langchain and its ecosystem. Then we're going to take a look at a couple of simple examples for building agents and working with standalone models. We'll learn how to work with messages, series, stream responses, use tools, generate structured output, handle multimodal input, pass context, and keep track of memory. After that, we'll also build a simple rack example. And finally, we're going to take a look at Langchain's powerful middleware as well as some interesting use cases for it. That's quite a few things to cover and I think you can learn a lot today, especially since we're going to work with the latest version of Langchain 1.0. If you liked this video, let me know by hitting the like button and subscribing, but now let us get rid into it. Alright, so we're going to cover quite a lot today, which is why I'm going to try to speed this up to cover as much as possible in a concise way so we don't waste too much time here. I want to start by just briefly talking one or two minutes about Langchain, the Langchain ecosystem, and also its development history. Now, Langchain itself, as I mentioned, is a Python framework for building and working with AI agents. The main use case where the main benefit of using Langchain is that we can use all these models and related tools in an abstract way. So regardless of the provider, regardless of whether you're using OpenAI or Anthropic or Google, you basically have the same classes and methods everywhere. And if you have a system built on Langchain that uses vector stores and betting models, AI models, agents, whatever, you can easily just swap out the underlying technology and you can keep the code the same for the most part. So that's what I would consider the main selling point of flank chain that you have this abstract high level way of working with agents and related tooling. Now in addition to Langchain, we also have Langgraph, which is more low level. We have more granular control. We can build complex graph-based event-driven agents or agentic systems. We're not going to cover Langgraph in this video today. I do have videos on this channel where we use Langgraph, but it's not going to be the topic of this crash course. And finally, we also have Lang Smith, which is like a collection of tools for observing, evaluating, monitoring, and deploying models. We're not going to cover that either. We're going to focus fully on Langchain today. Speaking of which, Langchain is now on version 1.0. So some of you guys watching this might have already worked with Langchain in the past. Maybe you're already familiar with the package to some degree. But if you take a look at 1.0, you will notice that some things have changed. So when I first used Langchain, the structure was a little bit different. We had Langchain, then we had Langchain Core and Langchain Community, and then you also had Langchain OpenAI, Langchain Anthropic, as separate import packages. So you would do something like from Langchain underscore core, import something, from Langchain underscore OpenAI, import something. Now with 1.0, it seems like, if you look into documentation, everything is going through the main Lank Chain package. So from Lank Chain dot something, we import stuff. The second thing you will notice is that Lank Chain is now much more focused on being a library for agents, not just for integrating tools, not just for using models and vector stores and all that, but actually for building agents, which means that we now have here Lank Chain agents with Create Agent, And in the past, in my opinion, it was more like Langtianist's general toolkit for working with these tools and Langgraph was more about the agent side. So we can still use the packages like Langtian Core and Langtian Community, but for the most part, it's enough to just go with the main Langtian package. That is the modern way of working with this framework. Cool, so now that we covered that, let us go ahead and set up our environment. In my case, I'm going to use UV, which is a Rust-based Python Package Manager. Of course, feel free to use PIP or PIP 3 install. Feel free to use virtual environments with virtual N or VN, whatever you want to choose. In my case, I'm going to go to my tutorial directory, say UV init, and then I'm also going to say UV at Lanching. Now, one thing that's important is if you want to use Langchain together with some AI provider, which you usually want to do, you need to also provide it in square brackets. So, for example, if I want to install Langchain with the OpenAI dependencies, what I will do is I will say OpenAI in square brackets here. So, in my case, UV add Langchain OpenAI. If you use PIP, you do PIP or PIP 3 install Langchain OpenAI. And this will also install packages like, of course, OpenAI. And you have to do that basically for all the providers that you want to use. So you want to do that for Anthropic. You want to do that for Mistral AI. I'm going to actually just do it now to show you how this works. Mistral AI. And you also want to do this for Google Genai, if you plan to use all these models. Now, what we're also going to need is API keys. If you want to use models from providers, of course, you have to authenticate yourself. So we're going to create a file called .nf and this .nf file will contain our keys. So these keys will be the open AI underscore API underscore key. It's going to also be the Mistro API key, the Anthropic. API key, and I'm not sure what the correct name is for the Google one, but I'm just going to say Google API key even though that's probably not the correct one. So what you want to do is you want to go to the providers if you have a counselor, if you have API keys, and you want to paste them here. So I'm going to go to Open AI Console, to Mistral Console, and Proper Console, and to my Google Cloud Platform. there, I'm going to take the API keys, copy, paste them here. I'm not going to show how to obtain them, or maybe I'm going to show them for one of them. So yeah, here, for example, we go to platform.openai.com slash API keys, where you just go to API keys here on the left, and here you can create a new secret key or API key. You do that for the various providers, then you just copy paste the keys here, like this, or you use quotation marks if you want to, and that is our dot n file. So in my case, I already did this, and now I'm going to install an additional package called python dash dot n. This is going to allow us to load these API keys into our Python script. Now to get auto completion, I'm also going to activate this environment here. This is something I just have to do for new of them to get auto completion, so you can ignore that if you're not coding in the terminal. And then we're going to go into our main py file and get started with a first simple example. So instead of just covering the concepts one by one, I'm going to show you how to build a simple agent and we're going to cover a couple of concepts while we're doing that. So we're going to start with the import. Let's import requests. Then also, as I said, from dot n for going to import load dot n. This is for loading the API keys into the environment. And then from langchain.agents, as we saw already in the docs, we're going to import the create agent function. This is like the central function that is going to create agents that we then used to do stuff. And in this function, we can do a lot of things. So we can provide middleware, we can provide tools, we can do a lot of things in that function or with that function. In addition to that, I'm also going to say now from langchain.tools import tool. This is a decorator that we can use to annotate a function to basically make that function a tool. We can also provide some information like a description or the name of the function. So for example, we can say add tool. And I wanted to find a tool that is called getweather. This is going to obviously get the weather. And I can provide a description here for the agent to know what this function is about or what this tool can do. In my case, I'm going to say here return whether information for a given city. Theoretically, you can also say return direct is equal to true if you want to have just the output of that tool immediately returned to the user. In this case, set this to true. We can also explicitly set it to false. I think it's a default. But just so we know it exists, we're going to set it to false. And then we're going to say now the function is get whether it's going to get a city, which is going to be a string as inputs. And we're going to make it very simple here. I don't want to use a mock function. So I'm actually going to ping a weather API, but this one is actually open source and free to use or Maybe not open source, but you don't need an account to use it. So we're going to say here, response is equal to requests.get. And we're going to use HTTPS, colon slash slash WTTR dot in slash city, question mark, format equals J1. And of course, this needs to be an F string. Otherwise, we cannot parse or we cannot format to city into the string here, but this basically gives us a Jason object with temperature and the weather information for a given city. And all we want to do here is we want to return the Jason object that we get here. So return, response dot Jason and then the model the agent can do whatever it wants with that information or whatever it thinks is the most reasonable thing to do. So to keep it simple, we're going to have just this one tool. And now we're going to say agent is equal to create agent. And the first thing we want to do here is want to provide the model. Now the model can just be a string. For example, I can say GPT dash 40. Now 40 doesn't support tool use. So we're not going to use that. but I can go with 4.1 mini, for example. This would be OpenAI. It is automatically recognized as OpenAI, so if I don't have Langchain OpenAI installed, it's not going to work. So for this, a couple of things need to be present. One is an OpenAI API key in the environment, and the other thing is Langchain OpenAI needs to be installed. So these two things need to be given so that we can actually use this model. After that, I can just say give me a list of tools, and this list will contain just get weather. as an entity, so we're not calling the function, we're passing it. And then we can provide a system prompt like you are a helpful weather assistant always cracks jokes and is humorous while remaining helpful. So just to give you an example so that you can see that the system prompt actually affects the agent. And then in order to get something from this agent in order to send something to the agent, I should say, we can just invoke it. So I can say agent dot invoke. And here what we do is we pass a dictionary that contains a field messages. And this messages has to point. So this key message has to point to the value, which is a list. And this list will contain all the messages as dictionaries with role and content as we know it from the typical API. So role is going to be user. and content is going to be whatever you want to ask for. For example, what is the weather like in Vienna? Question mark. So I need to then save this as a response. And down here, I can then print the entire response. So print response, or I can say, if I want to get just a message, I can get from response, the messages, maybe let me do that here with square brackets and string. And then I want to have the last message, so negative one. And then from this message, I'm interested in the content. So I can run this now. And I get a problem because because I'm, of course, not loading the environment variables. So I need to import load.end, but I also need to call it to load the data from the dot and file. So let's go ahead and say UV run main py. I'm doing it outside here so I can see all the outputs. And what you see up here is the raw response object, which contains the entire message history also with all the data that was provided by the API. And as a result down here I get the actual message. The weather in Vienna right now is partly cloudy with a comfortable temperature of about 15 degrees Celsius and then some information about the wind speed and humidity and so on. So actually quite comprehensive. We're going to build on top of this example and extend it later on. But before we go deeper into agents, let me remove all of this. I want to show you how to use standalone models. So maybe you don't want to have an agent, you just want to interact with a simple model and that's it. And you want to do that in a more abstract way. So you can replace the models that you're using. For this, you can also use Lang chain, but not agents. You want to use Lang chain chat models and you want to import the function init chat model. And for this, we're also not going to use tools. We're just going to do it like this. And it's actually quite simple and straightforward. I just say model is equal to init chat model. Then I can provide basic parameters like again, the model identifier, which is going to be 4.1 mini again. And theoretically, if I want to, I can do stuff like temperature 0.1, for example. And once I'm done with all this, I can just say response is equal to model dot invoke. And here I just provide a prompt now like, hello, what is Python question mark? And then I can print the entire response object, or I can just print the response content. So in this case, response dot content since we didn't pass a message history or conversation history. And of course, one more time I forgot the low DOMN. So we're going to add this and run this again. And there you go. We get an answer that tells us what Python is, a high level, interpretive programming language. And we also have again this entire response object. If we want to access different fields like the total amount of tokens and stuff like But you can see how easily this is done in length chain and we can also just swap the model if we want to use a different one. So instead of using GPT, I can say I want to use mistral medium. I just have to provide the proper string from the website and then I can run this and everything else in the application stays the same. I'm now just using mistral medium instead of GPT 4.1 mini. And I'm going to get the response and everything's going to work in the same way. There you go. It's a quite comprehensive response, but we get the answer here from mistral. Let me now switch back to 4.1 Mini. Now, if we want to pass a conversation history and not just a single prompt, we can do that as well with this list and dictionary sort of notation that we used before, but we can also import specific classes for that. I can also say from langchain.messages import human message. AI message and system message. This makes it then super simple to work with. I can just say conversation is equal to a list. And in here, I can say I first have a system message. For example, you are a helpful assistant for questions regarding programming. Then the second message could be something that a human asks like, for example, what is Python question mark? Maybe let's stay consistent here with the quotation marks. Let's use single quotations everywhere. And then we're going to say an AI already answered that we're going to say that it told us Python is an interpretive programming language, not question mark, but period. And then we're going to say the human has a follow up question which relates to the previous messages. And this is when was it released? Question mark. So now instead of invoking on a string, I can also invoke on a conversation and actually I'm missing a T here and here as well. And now the rest says the same and we have a conversation. So Python was first released in 1991 by Guido Fun Rossum. Now, we saw with mistral that responses can be quite long and we need to wait for them to be finished before we can start reading them. If we don't want that, if we want to read them in real time as they're generated, we can also stream the response. So let us maybe go back here to the prompt and let us also change the model back to mistral. So here I'm going to say mistral, medium, 25, 0, 8. And we're going to ask the same question. But instead of just getting the response here, we're going to stream it. So we're not going to invoke, we're going to say model stream. And we're going to iterate over this generator here to generate the chunk. So I'm going to say for chunk in model stream, I'm going to print the chunk dot text. I'm going to have no line breaks after each print. And I'm going to say flush is equal true equal to true. So I can see the output in real time and we're going to delete that and run this. And now you can see how this is generated in real time. And I can read while it's still generating. So let us now come back to our initial example with the agent here and the weather function. We're now going to extend it to incorporate more concept. So on the one hand, I want to have structured output. I want to have the output message or summary. And I also want to have some key information like the temperature or the humidity. Also, I want the agent to be able to realize what location I'm asking this question from so I don't have to specify the city. So I just want to say what's the weather like and the agent should realize that I'm asking from a specific city based on mock database entries that we're going to provide here. And with this context, it's going to then retrieve the proper information. And finally, I would also like to add memory to this agent so it can remember that we had a conversation and we're now continuing that conversation. So we're going to add some imports for all of this. First of all, from core Python, we're going to add here from data classes, the data class. And for Langchain here, we're going to save from Langchain dot models or chat models import in it chat model in addition to tool we're also going to import tool runtime and finally here from lang graph now I said we're not going to do lang graph we're not going to cover the land graph framework, but we're going to use one specific class from there. It's from checkpoint memory, the in-memory saver, which is going to be important for remembering the message history. Cool. So now let us create two data classes. One is going to be for the context. We're going to keep track of the user ID that the model is communicating with so that we can actually look up the location of that user from our database, which we're going to just model as a match case statement in a function. And then we're also going to have a data class for the response format. So we're going to say here at data class, and then it's going to be a class called context quite simple. And it's just going to have a user ID, which is a string. And then for the response format, we're going to say data class class response format. And here, when I have a summary, which is going to be a string, I want to have a temperature in Celsius, which is going to be a float. I want to have the same in Fahrenheit. And I also want to have a humidity, whatever. The unit is here. Cool. So now what we're going to do is we're going to add an additional tool and this tool is going to be a locate user. So the name is going to be locate user and it's going to have the following description. Look up a users. Now I have to use the whole quotations here. Look up a user's city based on the context. Now, the interesting thing is we're not going to pass the user ID as a parameter. We're going to have a tool runtime, which contains context. So the context is going to contain the user ID and we're going to get it from this context. How do we do that? We say def locate user and here we have a runtime. This runtime is going to be a tool runtime and we're going to pass here in square brackets. The context class, the data class, we just created. And here what we're going to do is we're going to get the user ID from runtime.context. And I'm going to use a match statement. So match runtime.context.userID. And depending on the value, we're going to return a different city. So let's make up some cases here. If the user ID is ABC123, I'm just going to return Vienna. Another case could be if the user ID is XYZ456, then I'm going to say that we're in London. Then another case could be hjkl for Vim and then 111, that would return Paris. And if it's none of these, if it's unknown, we're going to say case default is just going to return unknown. Now, you can define unknown behavior in multiple ways. You can provide it in the description. You can even provide it into return value itself. You can provide it in the system prompt. You can also add some custom logic. But basically, we need to somehow instruct a model that if it's unknown, just say it's unknown, maybe it can do it automatically as well, wherever you want to put that, put that somewhere, how you want to handle unknown values. But we're going to look up based on the user ID in the context. So remember the connection here. We have the runtime, the tool runtime pass this tool. which is based on the data class context, which we defined up here, which contains the user ID. So now we're going to go down here, create the model, to show you that we can also pass a model instance. So model is going to be init chat model, GPT-4.1-mini. and a temperature, not this sort of temperature, but the model temperature is going to be 0.3 for example, and then we're going to create a check pointer, which is going to be an in-memory saver. As I said, this is for remembering conversations. We're going to add to the agent invocations a threat ID and this is going to determine the conversation that we're focusing on so we can keep asking questions about the same conversation and now we can combine all of this into the create agent function. So we're going to say agent is equal to create agent model is equal to model tools is equal to get weather and locate user system prompt can stay the same. Now new stuff here is context schema. This is going to be the class, the data class of our context. So just context, then also response format. I think it's not surprising that this will be our class response format. And finally, checkpointer, also not surprising is going to be the checkpointer. So what our agent now does is it has access to a model GPT 4.1 mini. It has access to two tools, one for getting weather information about the city, one for locating the user. So getting the city off the user based on the user ID. We have a system prompt here. We now also have the ability to pass context. So for this, we use the data class context, which again, contains the user ID. Then we have a response format, which means that our model is forced now to answer in a specific format. This format is going to be a summary string and then three floats for temperature and humidity. And finally, we add memory to the model so it can keep track of conversations based on a thread ID. So now when we invoke something, we also need to pass context and thread ID. For this, we're going to start by saying config is equal to dictionary, which is going to have a key called configurable. And this configurable is going to point to another dictionary, which contains thread ID, which itself points to one, for example. And now for the invocation, I'm going to say what is the weather like without specifying a city, but I'm going to specify context and I'm going to pass the configuration. So for the configuration, just config equals config. And for the context, we're going to say context is equal to context and instance of the data class, where we set the user ID to be equal to ABC123. So that would result in Vienna again, we should get the same response. And since we're now working with this response format since we're forcing structured output, we're going to not access just messages, negative one content. We're going to print the entire response object if we want to. Actually, I don't want to do that. I just want to get the structured output itself. And for that, I'm going to say here, response, structured response. And this will give us the entire response object. If I'm interested in specific parts of that, I can just say dot summary or dot temperature Celsius, for example. So now I can run this and we have a problem because we're not closing this curly. bracket early enough. So of course it belongs to this message history, but these are now just keyword arguments. So let me run this again. And we can see the current weather in Vienna is partly cloudy. And then I also get 15.0 for the Celsius temperature. Now, if I change my user ID to something else, like x, y, z, what was it, 4, 5, 6, then I should get the weather for London. There you go, the weather in London is currently sunny with a temperature of 12. Then if I try something completely different like this, something it doesn't recognize, probably it's going to tell me unknown or it's going to do something else. I couldn't find your location so I can tell the weather But hey, if you tell me your city, I'll fetch the weather and 0 is the default value for the temperature. And to show you that this actually works with a follow up, if I provide here again a valid user ID like this for Vienna here, I can also follow up with the same config to keep track of this conversation. So I can just copy this here, paste it down here, and I can say, and is this usual question mark? So when I run this now, and of course, maybe before running this, I should also print the result to just copy this from up here, print structured response summary. And now it should keep track of the information. So we have this in memory savers. So we have still the information that the weather in Vienna is what it is. And then yes, the weather in Vienna being partly cloudy with mild temperatures around 15. degrees Celsius and so on is usual for this time of the year. However, you will notice that if I take this and I change this before I do that, so if I say now the threat ID is two, it's no longer going to be related to that threat, so it doesn't know what I'm talking about. So here I get the information about Vienna and now I would need to know the specific weather conditions or location you're referring to in order to determine if it's usual or not. So since we're in a different threat, it doesn't know what we talked about up until this point. If I may for a second, I would like to plug myself in as the sponsor of my own video. If you go to my website neural9.com, you will find a tab services and a tab tutoring. He you can hire me for all sorts of stuff like data science, machine learning, web development. If you need help with something in a project, he you can book me for one-on-one tutoring. If you want me to teach you personally something that you don't understand, if you like my teaching style on both pages at the bottom, you can contact me via mail and also via LinkedIn. Just wanted to let you know about this. Next, I want to show you how we can work with multimodal inputs. So how can we pass to a model not just text, but for example, image data. For this, I'm going to say here model is equal to a chat model. I'm going to use again, GPT-4.1-mini. And we're now going to create a message in the dictionary format again. I'm going to show you a different way in a second as well. the role for this message is going to be user and the content field now is going to have multiple values. So we're going to say content is pointing to a list and this list will contain multiple pieces of content. For example, the first one will be of type text and we're going to say that the actual text content. So again, text here as a key, not as a value will be describe the contents of this image. Now we can copy that and we can say type image and now we have two ways to provide image content. One is by using URL so this basically points to an image somewhere on the web or we can also pass base64 encoded image bytes. Now we're going to do both but I'm going to start with a URL and for that I have here a link from my website so just neural9.com and the logo on my website. I'm going to pass this here is image content And what I'm going to do then is I'm going to say model dot invoke. I'm going to pass a list of messages and just my one message in here, that's going to be the response. And then I can just say print response dot content. So if I run this, this will take a look at my image and tell me the disease. a logo that reads neural nine and orange text on a black background. The text is stylized with a number one. I think this is just a mistake in the font. And it explains what my logo looks like essentially. So this is what we want. And we can do the same thing with an image from this. So if I open the sidebar here, you can see I have the logo.png. We can also load this and encode it with base 64. So in this case here, just base 64. as the field, as the key here. And I'm also going to say from base 64 import base 64 encode. So the idea is we load the bytes, we encode them with base 64, and then we decode it into a string. So we're going to say here, B64 encode, what are we encoding? We're opening a file from disk called logo.png in reading bytes mode. Then we're reading the content of that file. We're encoding it with base 64 and then we're decoding it into a string so we can actually pass it here to the model. Now, what we also need to pass here, if we use base 64 is a mime type. So let's actually format it like this. And the mime type is going to be image slash png. And actually, I think we need to use underscore not dash. So now when I run this, you can see the image shows a logo with a text neural nine written in orange and basically the same thing as before. Now, we can also do it with the message classes, but we have to do it basically in the same way. So I can say, langchain.messages import human message. And the only thing I would change is I would get rid of the role, but I would still keep the content as it is. So I would say here, the message is equal to human message. And then I would say content is equal to the list. So that is the small difference here. So context would be equal to the list of these two things. And then we would close that with an ordinary bracket, but basically the rest stays the same. So when I run this, we should get the same response. It's just a different way to write it. Now, for the next example, we're going to build a simple rack use case, so retrieval augmented generation. Basically, we're going to use a vector store and an embedding model to find the most similar pieces of content, in our case, simple messages or simple statements, let's say. And for this, we're going to use a lang chain in the old school way. So we're actually going to say up here from lang chain underscore open AI. import open AI embeddings. This is for the embeddings model. And then we're also going to use a vector store. So a vector database in my case, face. And for this, we're going to save from a blank chain underscore community import. And we're going to import a face, but actually not from community directly, but from community. dot vector stores. And since I'm not getting autocompletion, I assume I have to install this separately. So I'm going to say here now UV add and then blank chain dash community. So this install is now additional packages, blank chain community, blank chain classic, blank chain text blitters. So if I now go back into the code, Hopefully, if I type dot something here, there you go. We can see all the modules here. So Langtian Community Vector Store's import face. Now, I think actually for face, we also need to install the face package. So let me leave this and let's say UV add face. And I'm just going to go save here with the CPU. So I don't have to care too much about GPU stuff. This is just face CPU. And now if I go back into the code, we should be able to use them. So the basic idea is I'm going to have a list of statements. These statements will be stuff like I love apples or I like oranges or I like pairs and then something about computers also related to Apple but semantically different because Apple is a company. Apple is also a fruit. So we're going to see if the embeddings can distinguish the concepts and we're going to retrieve the most similar statements from the vector store. So let us start by saying embeddings is going to be equal to open AI embeddings. And we're going to provide the embedding model text dash embedding dash large three. I think this was the identifier. And we're going to say, of course, that this is the model. So model is equal to text embedding three large. Yeah. So actually three large, not large three. Then, I'm gonna copy paste some very, very simple statements, nothing too fancy. Apple makes very good computers, whether that's true or not. I'm just stating it here. I believe Apple is innovative. I love apples. I'm a fan of MacBooks. I enjoy oranges. I like Lenovo thinkpats. I think Paris tastes very good. So theoretically, this message here I like Lenovo Thinkpads should be closer to I'm a fan of MacBooks and even to stuff like Apple makes very good computers, it should be closer and more related than I love Apple's because that has nothing to do with Apple only syntactically only in terms of like the name it has to do something with Apple, but it's a different concept. So we're going to create a vector store from these texts. I'm going to say vector underscore store is going to be equal to face dot from texts. And we're going to pass the list of texts here. Now, in order for this to actually work, we need to pass an embedding model as well. So embedding is going to be equal to embeddings. And this is going to basically take all these texts embed them into vector space and then store them in the vector store. So to see how this works, we can say print vector store dots similarity search. And then I can add something new like apples are my favorite food K equals seven to get all of them just in a specific ranking. And then I'm going to do the same thing with Linux is a great operating. system. Of course Linux is just a kernel, but you get the idea. So I'm going to comment this out and run the first one alone to see what are the most similar statements in the vector store. So you can see here the most similar was I love apples. Then the second one was I think pairs taste very good. So even though the word apple occurred, We are actually there you go. I enjoy oranges was before that. Then I think pairs taste very good. And then only it gives us Apple makes very good computers. I know this is not the best view, but we have these individual documents, the most similar, the second most similar, the third most similar. And you can see that everything related to fruits was ranked as more important and more relevant than Apple, even though that Apple here and Apple here is the same string. It recognizes that the concepts are different. So let's see what we get for Linux. We get I like Lenovo Thinkpads, I'm a fan of MacBooks, and then we get all of Apple's. For whatever reason, the company Apple is ranked lower. So that is how you can use the vector store as a separate component. So just interact with embeddings and vector stores, but now what we want to do is we want to make this part of agents with Lanching. So we want to take this capability of using this rack feature of doing a similarity search. We want to take this and build it into our agent. For this, I want to use a slightly different example. So the code is the same. We still have the same structure here of embeddings, texts, and then from text similarity search, but we have different content. We have I love apples. I enjoy oranges. I think pairs taste very good. I hate bananas. I dislike raspberries. I despise mangoes. I love Linux. I hate windows. And then we have here again the vector store and here we look for what fruit sister person like and what fruit sister person hate. So if I run this, you can see that these two lookups give us the information that we want. I enjoy oranges. I love apples. I think pairs taste very good. then I despise mangoes, I hate bananas, I dislike raspberries. So we have the information by using the similarity search. What we can do now with this vector store is we can turn it into a retriever for our agent. So I can say down here, retriever is equal to vector store as underscore retriever. And we're just going to pass the search keyword arguments. So search underscore quarks is going to be equal to a dictionary, where k is going to be equal to three. So this basically tells us, just give me the top three answers. We're hard coding this to keep it simple here. But basically, this now is a retriever that we can use in our agent. But in order to actually use this retriever in our agent, we need to turn it into a tool. So what we're going to do is another old school import up here from lang chain underscore core. dot tools. We're going to import the create retriever tools. So the idea is we pass a retriever and we turn it into a tool that the agent can use. So quite simple. The retriever underscore tool is going to be equal to create retriever tool. We pass the retriever. And then we pass the name, which is going to be our fruit search. I guess we're actually, let's call it knowledge based search. So KB search. And then the description is search the small product slash fruit database for information. Let me call this knowledge base. And then we can close that. And now the cool thing is this is now just another tool. We can just add it to the list of tools when we create an agent. So for this, we need to import again from Langchain. This is now the modern way of doing things from Langchain.agents import create agent. And now I can just say as we did before agent is equal to create agent, the model is going to be GPT 4.1. Many again, then we can say tools is equal to retriever tool. Then I'm going to copy paste the system prompt, nothing too fancy here, just explaining again your helpful assistant and if there's any questions about max, apples, laptops, whatever, use the tool that you have first, the retriever tool basically retrieve the context, answer in a concise way, and the hint that maybe you have to use this tool multiple times. because if I'm asking a question that needs to combine information, you might have to do it multiple times, which the agent can do since it's not just a prompt. It's an agent that can use tools, then think, then use tools again, and so on. So then we do what we already did before we pass a prompt. I'm just going to say here agent invoke what three fruits does the person like and what three fruits does the person dislike and then we get the answer. So I'm asking two things in a single prompt and up here we use two different similarity searches for that. Let's see if the agent can handle that. I'm going to run this and it says here, the person likes oranges, apples and pears, the person dislikes mangoes, raspberries and bananas. You can see also the retrieval. We're actually cannot see it up here. You can see the retrieval that was done one and then a second call to the tool was done down here. and this gave us the information for this final response. Now we'll get to a very powerful concept and length chain, the middleware. Middleware basically meaning it sits between requesting response, and middleware allows us to do a lot of different things to enhance the capabilities of our agents. For example, we can choose different system prompts depending on the context. We can choose different models based on certain criteria. We can summarize stuff. We can have rate limits. All sorts of things can be done in between this window of getting a request and sending a response. We can do a lot of stuff behind the scenes. And instead of talking about this too long in a theoretical way, what I want to do here is I just want to show you a couple of examples of custom middleware of already existing middleware of different use cases. And then you can just go and explore it yourself. So I want to get started with a simple example right away. I want to show you how we can swap the system prompt based on the level of expertise that the user has. So for this we're going to use context again and I'm going to start by importing from langchain.agents.middleware the following things model request. model response. And in this case, now the decorator called dynamic prompt. So this is middleware that is already implemented. So we don't have to build it and define it ourselves. But what we can do now is we can say that if the user has a certain role, like he's an expert or he's a beginner or maybe even he's a child, we're going to say adjust your answer adjust your style based on that. So we're going to create a data class again called context and actually we need to again import here from data classes import data class. And this context this time will not contain the ID but the user role. So I'm going to say here data class user underscore role is going to be a string. And now we're going to write a function that takes in the context from the model request and returns a system prompt dynamically based on the user role. So I'm going to use here the decorator dynamic prompt and we're going to call this function user role prompt. For example, it will get a request as input, which is a model request. And then we return the string. So that is the structure. And now we can take the context from the request. So I can say here the user role is going to be request dot runtime dot context dot user role. And we can do the same thing as before with the user ID, just a match case statement. So match user role. And then we can have different cases. For example, the user can be an expert. And in this case, we will return a different system prompt. Now, what I want to do here is I want to define a base prompt. So we're going to have just a base prompt. You are a helpful and very concise. assistant. And now if it's an expert, we're going to say here, give me the base prompt, and then just add to it, provides detail, technical response. On the other hand, if we have a beginner, we're going to say, keep your explanations simple and basic. And finally, to see the biggest difference, we're going to say case child, and it's going to basically be explain everything. as if you were literally talking to a five year old. And then the default case would just be, okay, if it's none of that, then we're just going to return to base prompt. Cool. So now basically we do the same thing as before. But this time we don't pass it as context. We don't pass it as a tool. We pass it as middleware. So I say here, create agent. The model is going to be the same as before. GPT 4.1 mini. And now I'm going to say here middleware is equal to, and that's going to be a list, and it's going to contain the user role prompt function. But of course, I still have to pass the context, otherwise it, of course, doesn't work. So context schema still has to be this data class. So then I can say response is equal to agent.invoke. I'm going to have to provide a dictionary again here with messages, role is user, and content is explain PCA. And here now I pass the context. The context is going to be that the user role, let's say in the beginning, is going to be beginner. So user role is equal to beginner print response. And we can see here, content, PCA principle component analysis is the technique used to reduce the number of variables in data while keeping the most important information. It transforms the original data into new variables and so on. So quite simple, but still not something a five year old would understand. So let's go and see what the export explanation would be. And there we can see principle component analysis is a dimensionality reduction technique used to transform a large set of correlated variables into a smaller set of uncorrelated variables called principle components. Yeah, then we get here projection and component selection. Still not, I mean, I can decomposition, okay. It's a little bit more technical, but if I go now to the lowest level here, which is the child, then I should get something really, really simple. So here, okay, imagine you have a big box of crayons with lots of colors. Sometimes you want to choose just a few crayons that can still help you color many pictures. Nicely, PCA is like a magic helper. Yeah, you get the idea. So this is something we can do with middleware here in between the request and response. We can have this dynamic prompt choice based on the user role, based on the context. We can say that we want to do different things. We want to instruct a model to do different things. Now another thing we can do is we can not only select a prompt dynamically, we can also select a model dynamically. For this year, I'm also going to import from langchain.chatmodels, our trusted in a chat model function. I'm going to get rid of dynamic prompt. And I'm going to import RAP model call. This basically means it happens around the model call whenever we want to call the model that is part of the agent. We're going to run our middleware in that moment where I should say in between the model request and the model response. So the idea here would be I want to have a basic model. That would be in a chat model. And then I can say, for example, model is equal to GPT 40 mini. And then I would also have an advanced model, which could be 4.1 mini. The idea now is I define a function called dynamic model selection. This function takes in a request returns a response. So I take in A model request and the output of that function is a model response. In addition to that, we also get a handler as parameter here. And I have to annotate this now with RAP model call. So this actually happens when the model is called. In case you're interested in that, you can also go to the Langchain documentation. You can see how this basically works. Request comes in. Then we have before agent, before model. wrap tool call, wrap model call, after model, after agent result. And we're now doing this here, wrapping the model call with our middleware. So what kind of logic you want to apply here is up to you. In my case, I'm going to keep it simple. If I have more than three messages, I'm going to use the stronger model. Otherwise, I'm going to use the basic model, not the most intelligent choice here, but we're going to do it like this. So message count is going to be equal to length off request state. And then Messages, and then just if the message count is rated in three, the model is going to be equal to basic model. Otherwise, we're going to say it's going to be the advanced model. And then we say request dot model is equal to model and return a handler for that request. So basically we're just taking the request and setting the model to something else depending on some criteria. This could be something more intelligent and then we just handle the request with this change. So that's super easy to integrate again agent is going to be equal to create agent model is going to be basic model by default and then the middleware is going to be our dynamic model selection. Now to keep things a little bit more beautiful here, I'm going to import again from langchain.messages, the system message, the human message and the AI message. And then down here, I'm going to say response is equal to agent in Vogue. I'm going to invoke here on the following dictionary. Messages is going to point to a list of messages. I'm going to start with the system message. You are a helpful assistant human message. What is one plus one? Keeping it very basic. here. And essentially, we can take a look at two things. On the one hand, you can get the idea if you look at the quality of the output. I mean, one plus one is something that every model should be able to do. But you can say here, again, print, response, messages, negative one dot content to just get the answer. But then you can also take a look at the actual model that was used to produce this response. So instead of saying content, you can say response, metadata, and you can target the field called model name. And if we run this now, we can see that we use the wrong model. Why is that? Because we have to swap this. Of course, if we have more messages, we're using the advanced model, otherwise the basic model, but in theory, it works. So if I run this now, I should see that we're using four or many. And if I add more messages, so for example, let's just add the same message a couple of times here. This is going to trigger change and now we're using 4.1 mini. Now in general, I want to show you how you can define your own custom middleware by using these hooks. So we're going to do that with a class here for this. I'm going to create a class called hooks. Let's call it hooks demo. It's going to inherit from a class that we need to import. called agent middleware. So we're now defining our own agent middleware as a class here. And we can just override these methods that are representing the hooks. So in order to do that, let me get rid of all of this. We're also going to need something called the agent state. And basically the constructor is going to be the init method. taking self as a parameter here, calling the constructor of the parent class, so super init. And what we're going to do is we're going to set a start time equal to 0.0. So this is not going to be an actually useful example. I'm just going to show you how we can trigger when the different parts are triggered. And now we can just override before agent, for example, before agent is obviously before we get to the agent before the request comes to the agent, we're going to be running this. It takes self and agent state. So state, which is agent state, and also the run time. And in my case, what I want to do here now is I want to say self dot start time is going to be equal to. And now I need to import from core Python fear time. I'm just going to say time. So importing core Python package time, self dot start times equal to time. And then just so we know it happened, I'm going to say here before agent triggered. Now I'm going to copy paste it here for the other ones. It's just before model, after model, and after agent. Here we're going to do something else so I didn't copy it. But basically here we're just printing before model, after model, whatever you want to do with that. It's basically also you have wrap and so wrap tool called wrap model call. We saw that already. We're just going to keep doing it with these four. And what I'm going to do here is I'm now going to calculate the time difference and I'm going to print a result. So I'm going to say here print after agent and then colon time, so the current time minus self dot start time. And now we can go and say agent is equal to create agents, GPT 4.1 mini. And then we can say middleware is equal to and now we're going to pass hooks demo. as an instance here. So we're creating instance of this class. This is another way to use middleware. And then I can just do the usual stuff from before, just agent and vote some question. And now when I run this, we get a problem, of course, because I cannot just call the module time, of course, I need to say time.time or time perf counter, whatever you want to use here. but that shouldn't be too much of an issue. So now we get before agent triggered, before model, I forgot to add triggered here, but then we should get at some point after model, and then we should get after agent and the difference here in time. Since PCA is probably quite complicated for a model to put into words, it takes some time, but you can see 14 seconds is what we measured here. This is essentially what you can do with these hooks in a length chain when it comes to middleware, you can customize what happens at what point in the workflow in the cycle. So now, last but not least, I would just like to show you a couple of examples of already existing middleware. We're not going to go too deep into this. I'm going to just copy paste one of these examples here into this file, which is going to be summarizing conversation. We're not going to actually use this. I'm just showing you how to use this. Basically, you go from Lankchain agents middleware, summarization middleware. One of the many choices that you have What this basically does is you have a couple of parameters here. You can specify the model for the summarization, which is not necessarily the same as the model that the agent uses. The idea is that after a certain number of tokens, you summarize the conversation. You keep the last 20 messages after 4,000 tokens. And GPT 40 many in this case summarizes the important key points of the conversation up until this point. And then you just continue the conversation. That is one middle where that we can use. And then on the middleware page in the documentation, you can also find some examples. For example, here, human in the loop middleware, this basically means on certain events, on certain tool users, we get an interrupt and then the user has to manually say, okay, continue, edit, approve, reject, whatever. This is of course important in key steps. If you have to do some payment, if you have to send an email or something, it makes sense to have this human in the loop middleware, then we also have model call limit. So basically saying we cannot call the model to often per run or per threat. Same thing exists for tool calls, basically just a limiter for how often you can call a tool in a run or in a limit. Same thing also exists for tool calls, basically how often can you call a tool in a specific threat or run. Then also some interesting stuff, you're like model fallback. If something doesn't work, if you cannot use a model, fallback to a different one, this can be quite useful. Here also PI eye detection, basically personally identifiable information. You can make it redact certain. key pieces of information for compliance reasons, for example, and much more other stuff like retrying tools or having a to-do list. So basically a planning middleware. You can take a look at these examples, but basically middleware allows you to extend the capabilities of your model or of your agent, I should say, because you can tell it what to do in certain scenarios, make it more dynamic, make it more reactive, so to say, which is very useful. So that's it for this video today. I hope you enjoyed it and I'll be learning something. If so, let me know by hitting the like button and leaving a comment in the comment section down below. Also, if you're interested on my website, you will find a tutoring tab and also a services tab. There you can hire me basically for one-on-one tutoring for one-on-one teaching you something. or also for services, machine learning, back-end development, consulting, freelancing, whatever. If you're interested in that, check it out. You can contact me via mail or LinkedIn. And besides that, don't forget to subscribe to this channel and hit the notification bell to not miss a single future video for free. Other than that, thank you for watching. See you in the next video, and bye.",
+  "segments": [
+    {
+      "start": 0.031,
+      "end": 20.129,
+      "text": "Today we're going to do a crash course on Langchain, the Python framework for working with and building AI agents. It makes it super simple to interact with standalone models, build complex agents and integrate all sorts of other components like embedding models or vector stores. And all of this without caring about specific differences in API definitions of the various providers.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 20.129,
+      "end": 47.669,
+      "text": "The goal of this video today is to cover as much as possible in a short amount of time. We're going to start by talking about Langchain and its ecosystem. Then we're going to take a look at a couple of simple examples for building agents and working with standalone models. We'll learn how to work with messages, series, stream responses, use tools, generate structured output, handle multimodal input, pass context, and keep track of memory. After that, we'll also build a simple rack example. And finally, we're going to take a look at Langchain's powerful middleware",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 47.669,
+      "end": 63.532,
+      "text": "as well as some interesting use cases for it. That's quite a few things to cover and I think you can learn a lot today, especially since we're going to work with the latest version of Langchain 1.0. If you liked this video, let me know by hitting the like button and subscribing, but now let us get rid into it.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 70.383,
+      "end": 85.486,
+      "text": "Alright, so we're going to cover quite a lot today, which is why I'm going to try to speed this up to cover as much as possible in a concise way so we don't waste too much time here. I want to start by just briefly talking one or two minutes about Langchain, the Langchain ecosystem, and also its development history.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 85.486,
+      "end": 111.642,
+      "text": "Now, Langchain itself, as I mentioned, is a Python framework for building and working with AI agents. The main use case where the main benefit of using Langchain is that we can use all these models and related tools in an abstract way. So regardless of the provider, regardless of whether you're using OpenAI or Anthropic or Google, you basically have the same classes and methods everywhere. And if you have a system built on Langchain that uses vector stores and betting models,",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 111.642,
+      "end": 126.931,
+      "text": "AI models, agents, whatever, you can easily just swap out the underlying technology and you can keep the code the same for the most part. So that's what I would consider the main selling point of flank chain that you have this abstract high level way of working with agents and related tooling.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 126.931,
+      "end": 144.515,
+      "text": "Now in addition to Langchain, we also have Langgraph, which is more low level. We have more granular control. We can build complex graph-based event-driven agents or agentic systems. We're not going to cover Langgraph in this video today. I do have videos on this channel where we use Langgraph, but it's not going to be the topic of this crash course.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 144.515,
+      "end": 165.17,
+      "text": "And finally, we also have Lang Smith, which is like a collection of tools for observing, evaluating, monitoring, and deploying models. We're not going to cover that either. We're going to focus fully on Langchain today. Speaking of which, Langchain is now on version 1.0. So some of you guys watching this might have already worked with Langchain in the past. Maybe you're already familiar with the package to some degree.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 165.17,
+      "end": 188.896,
+      "text": "But if you take a look at 1.0, you will notice that some things have changed. So when I first used Langchain, the structure was a little bit different. We had Langchain, then we had Langchain Core and Langchain Community, and then you also had Langchain OpenAI, Langchain Anthropic, as separate import packages. So you would do something like from Langchain underscore core, import something, from Langchain underscore OpenAI, import something.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 188.896,
+      "end": 214.04,
+      "text": "Now with 1.0, it seems like, if you look into documentation, everything is going through the main Lank Chain package. So from Lank Chain dot something, we import stuff. The second thing you will notice is that Lank Chain is now much more focused on being a library for agents, not just for integrating tools, not just for using models and vector stores and all that, but actually for building agents, which means that we now have here Lank Chain agents with Create Agent,",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 214.04,
+      "end": 231.826,
+      "text": "And in the past, in my opinion, it was more like Langtianist's general toolkit for working with these tools and Langgraph was more about the agent side. So we can still use the packages like Langtian Core and Langtian Community, but for the most part, it's enough to just go with the main Langtian package. That is the modern way of working with this framework.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 231.826,
+      "end": 254.033,
+      "text": "Cool, so now that we covered that, let us go ahead and set up our environment. In my case, I'm going to use UV, which is a Rust-based Python Package Manager. Of course, feel free to use PIP or PIP 3 install. Feel free to use virtual environments with virtual N or VN, whatever you want to choose. In my case, I'm going to go to my tutorial directory, say UV init, and then I'm also going to say UV at Lanching.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 254.033,
+      "end": 278.367,
+      "text": "Now, one thing that's important is if you want to use Langchain together with some AI provider, which you usually want to do, you need to also provide it in square brackets. So, for example, if I want to install Langchain with the OpenAI dependencies, what I will do is I will say OpenAI in square brackets here. So, in my case, UV add Langchain OpenAI. If you use PIP, you do PIP or PIP 3 install Langchain OpenAI.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 278.367,
+      "end": 293.774,
+      "text": "And this will also install packages like, of course, OpenAI. And you have to do that basically for all the providers that you want to use. So you want to do that for Anthropic. You want to do that for Mistral AI. I'm going to actually just do it now to show you how this works. Mistral AI.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 293.774,
+      "end": 317.872,
+      "text": "And you also want to do this for Google Genai, if you plan to use all these models. Now, what we're also going to need is API keys. If you want to use models from providers, of course, you have to authenticate yourself. So we're going to create a file called .nf and this .nf file will contain our keys. So these keys will be the open AI underscore API underscore key. It's going to also be the Mistro API key, the Anthropic.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 317.872,
+      "end": 338.392,
+      "text": "API key, and I'm not sure what the correct name is for the Google one, but I'm just going to say Google API key even though that's probably not the correct one. So what you want to do is you want to go to the providers if you have a counselor, if you have API keys, and you want to paste them here. So I'm going to go to Open AI Console, to Mistral Console, and Proper Console, and to my Google Cloud Platform.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 338.392,
+      "end": 353.579,
+      "text": "there, I'm going to take the API keys, copy, paste them here. I'm not going to show how to obtain them, or maybe I'm going to show them for one of them. So yeah, here, for example, we go to platform.openai.com slash API keys, where you just go to API keys here on the left, and here you can create a new secret key or API key.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 353.579,
+      "end": 382.047,
+      "text": "You do that for the various providers, then you just copy paste the keys here, like this, or you use quotation marks if you want to, and that is our dot n file. So in my case, I already did this, and now I'm going to install an additional package called python dash dot n. This is going to allow us to load these API keys into our Python script. Now to get auto completion, I'm also going to activate this environment here. This is something I just have to do for new of them to get auto completion, so you can ignore that if you're not coding in the terminal.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 382.047,
+      "end": 404.795,
+      "text": "And then we're going to go into our main py file and get started with a first simple example. So instead of just covering the concepts one by one, I'm going to show you how to build a simple agent and we're going to cover a couple of concepts while we're doing that. So we're going to start with the import. Let's import requests. Then also, as I said, from dot n for going to import load dot n. This is for loading the API keys into the environment.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 404.795,
+      "end": 425.078,
+      "text": "And then from langchain.agents, as we saw already in the docs, we're going to import the create agent function. This is like the central function that is going to create agents that we then used to do stuff. And in this function, we can do a lot of things. So we can provide middleware, we can provide tools, we can do a lot of things in that function or with that function.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 425.078,
+      "end": 446.78,
+      "text": "In addition to that, I'm also going to say now from langchain.tools import tool. This is a decorator that we can use to annotate a function to basically make that function a tool. We can also provide some information like a description or the name of the function. So for example, we can say add tool. And I wanted to find a tool that is called getweather. This is going to obviously get the weather.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 446.78,
+      "end": 473.577,
+      "text": "And I can provide a description here for the agent to know what this function is about or what this tool can do. In my case, I'm going to say here return whether information for a given city. Theoretically, you can also say return direct is equal to true if you want to have just the output of that tool immediately returned to the user. In this case, set this to true. We can also explicitly set it to false. I think it's a default. But just so we know it exists, we're going to set it to false.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 473.577,
+      "end": 488.596,
+      "text": "And then we're going to say now the function is get whether it's going to get a city, which is going to be a string as inputs. And we're going to make it very simple here. I don't want to use a mock function. So I'm actually going to ping a weather API, but this one is actually open source and free to use or",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 488.596,
+      "end": 509.605,
+      "text": "Maybe not open source, but you don't need an account to use it. So we're going to say here, response is equal to requests.get. And we're going to use HTTPS, colon slash slash WTTR dot in slash city, question mark, format equals J1. And of course, this needs to be an F string. Otherwise, we cannot parse or we cannot",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 509.605,
+      "end": 529.214,
+      "text": "format to city into the string here, but this basically gives us a Jason object with temperature and the weather information for a given city. And all we want to do here is we want to return the Jason object that we get here. So return, response dot Jason and then the model the agent can do whatever it wants with that information or whatever it thinks is the most reasonable thing to do.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 529.214,
+      "end": 544.857,
+      "text": "So to keep it simple, we're going to have just this one tool. And now we're going to say agent is equal to create agent. And the first thing we want to do here is want to provide the model. Now the model can just be a string. For example, I can say GPT dash 40. Now 40 doesn't support tool use. So we're not going to use that.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 544.857,
+      "end": 574.642,
+      "text": "but I can go with 4.1 mini, for example. This would be OpenAI. It is automatically recognized as OpenAI, so if I don't have Langchain OpenAI installed, it's not going to work. So for this, a couple of things need to be present. One is an OpenAI API key in the environment, and the other thing is Langchain OpenAI needs to be installed. So these two things need to be given so that we can actually use this model. After that, I can just say give me a list of tools, and this list will contain just get weather.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 574.642,
+      "end": 590.723,
+      "text": "as an entity, so we're not calling the function, we're passing it. And then we can provide a system prompt like you are a helpful weather assistant always cracks jokes and is humorous while remaining",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 590.723,
+      "end": 611.665,
+      "text": "helpful. So just to give you an example so that you can see that the system prompt actually affects the agent. And then in order to get something from this agent in order to send something to the agent, I should say, we can just invoke it. So I can say agent dot invoke. And here what we do is we pass a dictionary that contains a field messages.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 611.665,
+      "end": 627.427,
+      "text": "And this messages has to point. So this key message has to point to the value, which is a list. And this list will contain all the messages as dictionaries with role and content as we know it from the typical API. So role is going to be user.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 627.427,
+      "end": 652.267,
+      "text": "and content is going to be whatever you want to ask for. For example, what is the weather like in Vienna? Question mark. So I need to then save this as a response. And down here, I can then print the entire response. So print response, or I can say, if I want to get just a message, I can get from response, the messages, maybe let me do that here with",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 652.267,
+      "end": 672.989,
+      "text": "square brackets and string. And then I want to have the last message, so negative one. And then from this message, I'm interested in the content. So I can run this now. And I get a problem because because I'm, of course, not loading the environment variables. So I need to import load.end, but I also need to call it to load the data from the dot and file.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 672.989,
+      "end": 688.227,
+      "text": "So let's go ahead and say UV run main py. I'm doing it outside here so I can see all the outputs. And what you see up here is the raw response object, which contains the entire message history also with all the data that was provided by the API.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 688.227,
+      "end": 705.389,
+      "text": "And as a result down here I get the actual message. The weather in Vienna right now is partly cloudy with a comfortable temperature of about 15 degrees Celsius and then some information about the wind speed and humidity and so on. So actually quite comprehensive. We're going to build on top of this example and extend it later on.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 705.389,
+      "end": 730.448,
+      "text": "But before we go deeper into agents, let me remove all of this. I want to show you how to use standalone models. So maybe you don't want to have an agent, you just want to interact with a simple model and that's it. And you want to do that in a more abstract way. So you can replace the models that you're using. For this, you can also use Lang chain, but not agents. You want to use Lang chain chat models and you want to import the function init chat model. And for this, we're also not going to use tools. We're just going to do it like",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 730.448,
+      "end": 745.855,
+      "text": "this. And it's actually quite simple and straightforward. I just say model is equal to init chat model. Then I can provide basic parameters like again, the model identifier, which is going to be 4.1 mini again. And theoretically, if I want to, I can do stuff like",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 745.855,
+      "end": 768.4,
+      "text": "temperature 0.1, for example. And once I'm done with all this, I can just say response is equal to model dot invoke. And here I just provide a prompt now like, hello, what is Python question mark? And then I can print the entire response object, or I can just print the response content. So in this case, response dot content since we didn't pass",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 768.4,
+      "end": 789.123,
+      "text": "a message history or conversation history. And of course, one more time I forgot the low DOMN. So we're going to add this and run this again. And there you go. We get an answer that tells us what Python is, a high level, interpretive programming language. And we also have again this entire response object. If we want to access different fields like the total amount of tokens and stuff like",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 789.123,
+      "end": 817.608,
+      "text": "But you can see how easily this is done in length chain and we can also just swap the model if we want to use a different one. So instead of using GPT, I can say I want to use mistral medium. I just have to provide the proper string from the website and then I can run this and everything else in the application stays the same. I'm now just using mistral medium instead of GPT 4.1 mini. And I'm going to get the response and everything's going to work in the same way. There you go. It's a quite comprehensive response, but we get the answer here from mistral.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 817.608,
+      "end": 837.605,
+      "text": "Let me now switch back to 4.1 Mini. Now, if we want to pass a conversation history and not just a single prompt, we can do that as well with this list and dictionary sort of notation that we used before, but we can also import specific classes for that. I can also say from langchain.messages import human message.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 837.605,
+      "end": 867.237,
+      "text": "AI message and system message. This makes it then super simple to work with. I can just say conversation is equal to a list. And in here, I can say I first have a system message. For example, you are a helpful assistant for questions regarding programming. Then the second message could be something that a human asks like, for example, what is Python question mark? Maybe let's stay consistent here with the quotation marks. Let's use single quotations everywhere.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 867.237,
+      "end": 884.635,
+      "text": "And then we're going to say an AI already answered that we're going to say that it told us Python is an interpretive programming language, not question mark, but period. And then we're going to say the human has a follow up question which relates to the previous messages.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 884.635,
+      "end": 904.784,
+      "text": "And this is when was it released? Question mark. So now instead of invoking on a string, I can also invoke on a conversation and actually I'm missing a T here and here as well. And now the rest says the same and we have a conversation. So Python was first released in 1991 by Guido Fun Rossum.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 904.784,
+      "end": 933.758,
+      "text": "Now, we saw with mistral that responses can be quite long and we need to wait for them to be finished before we can start reading them. If we don't want that, if we want to read them in real time as they're generated, we can also stream the response. So let us maybe go back here to the prompt and let us also change the model back to mistral. So here I'm going to say mistral, medium, 25, 0, 8. And we're going to ask the same question. But instead of just getting the response here, we're going to stream it. So we're not going to invoke, we're going to say model stream.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 933.758,
+      "end": 950.212,
+      "text": "And we're going to iterate over this generator here to generate the chunk. So I'm going to say for chunk in model stream, I'm going to print the chunk dot text. I'm going to have no line breaks after each print. And I'm going to say flush is equal true equal to true.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 950.212,
+      "end": 973.381,
+      "text": "So I can see the output in real time and we're going to delete that and run this. And now you can see how this is generated in real time. And I can read while it's still generating. So let us now come back to our initial example with the agent here and the weather function. We're now going to extend it to incorporate more concept. So on the one hand, I want to have structured output. I want to have the output message or summary.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 973.381,
+      "end": 998.035,
+      "text": "And I also want to have some key information like the temperature or the humidity. Also, I want the agent to be able to realize what location I'm asking this question from so I don't have to specify the city. So I just want to say what's the weather like and the agent should realize that I'm asking from a specific city based on mock database entries that we're going to provide here. And with this context, it's going to then retrieve the proper information.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 998.035,
+      "end": 1016.041,
+      "text": "And finally, I would also like to add memory to this agent so it can remember that we had a conversation and we're now continuing that conversation. So we're going to add some imports for all of this. First of all, from core Python, we're going to add here from data classes, the data class. And for Langchain here, we're going to save from Langchain",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1016.041,
+      "end": 1031.414,
+      "text": "dot models or chat models import in it chat model in addition to tool we're also going to import tool runtime and finally here from lang graph now I said we're not going to do lang graph we're not going to cover",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1031.414,
+      "end": 1059.545,
+      "text": "the land graph framework, but we're going to use one specific class from there. It's from checkpoint memory, the in-memory saver, which is going to be important for remembering the message history. Cool. So now let us create two data classes. One is going to be for the context. We're going to keep track of the user ID that the model is communicating with so that we can actually look up the location of that user from our database, which we're going to just model as a match case statement in a function.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1059.545,
+      "end": 1089.262,
+      "text": "And then we're also going to have a data class for the response format. So we're going to say here at data class, and then it's going to be a class called context quite simple. And it's just going to have a user ID, which is a string. And then for the response format, we're going to say data class class response format. And here, when I have a summary, which is going to be a string, I want to have a temperature in Celsius, which is going to be a float. I want to have the same in Fahrenheit. And I also want to have a humidity, whatever.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1089.262,
+      "end": 1112.718,
+      "text": "The unit is here. Cool. So now what we're going to do is we're going to add an additional tool and this tool is going to be a locate user. So the name is going to be locate user and it's going to have the following description. Look up a users. Now I have to use the whole quotations here. Look up a user's city based on the context.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1112.718,
+      "end": 1138.705,
+      "text": "Now, the interesting thing is we're not going to pass the user ID as a parameter. We're going to have a tool runtime, which contains context. So the context is going to contain the user ID and we're going to get it from this context. How do we do that? We say def locate user and here we have a runtime. This runtime is going to be a tool runtime and we're going to pass here in square brackets. The context class, the data class, we just created.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1138.705,
+      "end": 1168.692,
+      "text": "And here what we're going to do is we're going to get the user ID from runtime.context. And I'm going to use a match statement. So match runtime.context.userID. And depending on the value, we're going to return a different city. So let's make up some cases here. If the user ID is ABC123, I'm just going to return Vienna. Another case could be if the user ID is XYZ456, then I'm going to say that we're in London. Then another case could be",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1168.692,
+      "end": 1189.347,
+      "text": "hjkl for Vim and then 111, that would return Paris. And if it's none of these, if it's unknown, we're going to say case default is just going to return unknown. Now, you can define unknown behavior in multiple ways. You can provide it in the description. You can even provide it into return value itself.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1189.347,
+      "end": 1212.044,
+      "text": "You can provide it in the system prompt. You can also add some custom logic. But basically, we need to somehow instruct a model that if it's unknown, just say it's unknown, maybe it can do it automatically as well, wherever you want to put that, put that somewhere, how you want to handle unknown values. But we're going to look up based on the user ID in the context. So remember the connection here. We have the runtime, the tool runtime pass this tool.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1212.044,
+      "end": 1228.48,
+      "text": "which is based on the data class context, which we defined up here, which contains the user ID. So now we're going to go down here, create the model, to show you that we can also pass a model instance. So model is going to be init chat model, GPT-4.1-mini.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1228.48,
+      "end": 1245.22,
+      "text": "and a temperature, not this sort of temperature, but the model temperature is going to be 0.3 for example, and then we're going to create a check pointer, which is going to be an in-memory saver. As I said, this is for remembering conversations. We're going to add to",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1245.22,
+      "end": 1266.82,
+      "text": "the agent invocations a threat ID and this is going to determine the conversation that we're focusing on so we can keep asking questions about the same conversation and now we can combine all of this into the create agent function. So we're going to say agent is equal to create agent model is equal to model tools is equal to get weather and locate",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1266.82,
+      "end": 1287.425,
+      "text": "user system prompt can stay the same. Now new stuff here is context schema. This is going to be the class, the data class of our context. So just context, then also response format. I think it's not surprising that this will be our class response format. And finally, checkpointer, also not surprising is going to be the checkpointer.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1287.425,
+      "end": 1308.552,
+      "text": "So what our agent now does is it has access to a model GPT 4.1 mini. It has access to two tools, one for getting weather information about the city, one for locating the user. So getting the city off the user based on the user ID. We have a system prompt here. We now also have the ability to pass context. So for this, we use the data class context, which again,",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1308.552,
+      "end": 1338.539,
+      "text": "contains the user ID. Then we have a response format, which means that our model is forced now to answer in a specific format. This format is going to be a summary string and then three floats for temperature and humidity. And finally, we add memory to the model so it can keep track of conversations based on a thread ID. So now when we invoke something, we also need to pass context and thread ID. For this, we're going to start by saying config is equal to dictionary, which is going to have a key called configurable.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1338.539,
+      "end": 1368.526,
+      "text": "And this configurable is going to point to another dictionary, which contains thread ID, which itself points to one, for example. And now for the invocation, I'm going to say what is the weather like without specifying a city, but I'm going to specify context and I'm going to pass the configuration. So for the configuration, just config equals config. And for the context, we're going to say context is equal to context and instance of the data class, where we set the user ID to be equal to ABC123.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1368.526,
+      "end": 1386.464,
+      "text": "So that would result in Vienna again, we should get the same response. And since we're now working with this response format since we're forcing structured output, we're going to not access just messages, negative one content. We're going to print the entire response object if we want to. Actually, I don't want to do that. I just want to get the structured output itself.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1386.464,
+      "end": 1407.676,
+      "text": "And for that, I'm going to say here, response, structured response. And this will give us the entire response object. If I'm interested in specific parts of that, I can just say dot summary or dot temperature Celsius, for example. So now I can run this and we have a problem because we're not closing this curly.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1407.676,
+      "end": 1424.821,
+      "text": "bracket early enough. So of course it belongs to this message history, but these are now just keyword arguments. So let me run this again. And we can see the current weather in Vienna is partly cloudy. And then I also get 15.0 for the Celsius temperature.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1424.821,
+      "end": 1447.467,
+      "text": "Now, if I change my user ID to something else, like x, y, z, what was it, 4, 5, 6, then I should get the weather for London. There you go, the weather in London is currently sunny with a temperature of 12. Then if I try something completely different like this, something it doesn't recognize, probably it's going to tell me unknown or it's going to do something else. I couldn't find your location so I can tell the weather",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1447.467,
+      "end": 1473.64,
+      "text": "But hey, if you tell me your city, I'll fetch the weather and 0 is the default value for the temperature. And to show you that this actually works with a follow up, if I provide here again a valid user ID like this for Vienna here, I can also follow up with the same config to keep track of this conversation. So I can just copy this here, paste it down here, and I can say, and is this usual question mark?",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1473.64,
+      "end": 1495.207,
+      "text": "So when I run this now, and of course, maybe before running this, I should also print the result to just copy this from up here, print structured response summary. And now it should keep track of the information. So we have this in memory savers. So we have still the information that the weather in Vienna is what it is. And then yes, the weather in Vienna being partly cloudy with mild temperatures around 15.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1495.207,
+      "end": 1523.692,
+      "text": "degrees Celsius and so on is usual for this time of the year. However, you will notice that if I take this and I change this before I do that, so if I say now the threat ID is two, it's no longer going to be related to that threat, so it doesn't know what I'm talking about. So here I get the information about Vienna and now I would need to know the specific weather conditions or location you're referring to in order to determine if it's usual or not. So since we're in a different threat, it doesn't know what we talked about up until this point.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1523.692,
+      "end": 1553.105,
+      "text": "If I may for a second, I would like to plug myself in as the sponsor of my own video. If you go to my website neural9.com, you will find a tab services and a tab tutoring. He you can hire me for all sorts of stuff like data science, machine learning, web development. If you need help with something in a project, he you can book me for one-on-one tutoring. If you want me to teach you personally something that you don't understand, if you like my teaching style on both pages at the bottom, you can contact me via mail and also via LinkedIn. Just wanted to let you know about this.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1553.105,
+      "end": 1576.325,
+      "text": "Next, I want to show you how we can work with multimodal inputs. So how can we pass to a model not just text, but for example, image data. For this, I'm going to say here model is equal to a chat model. I'm going to use again, GPT-4.1-mini. And we're now going to create a message in the dictionary format again. I'm going to show you a different way in a second as well.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1576.325,
+      "end": 1601.941,
+      "text": "the role for this message is going to be user and the content field now is going to have multiple values. So we're going to say content is pointing to a list and this list will contain multiple pieces of content. For example, the first one will be of type text and we're going to say that the actual text content. So again, text here as a key, not as a value will be describe the contents of this image.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1601.941,
+      "end": 1630.038,
+      "text": "Now we can copy that and we can say type image and now we have two ways to provide image content. One is by using URL so this basically points to an image somewhere on the web or we can also pass base64 encoded image bytes. Now we're going to do both but I'm going to start with a URL and for that I have here a link from my website so just neural9.com and the logo on my website. I'm going to pass this here is image content",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1630.038,
+      "end": 1649.123,
+      "text": "And what I'm going to do then is I'm going to say model dot invoke. I'm going to pass a list of messages and just my one message in here, that's going to be the response. And then I can just say print response dot content. So if I run this, this will take a look at my image and tell me the disease.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1649.123,
+      "end": 1676.107,
+      "text": "a logo that reads neural nine and orange text on a black background. The text is stylized with a number one. I think this is just a mistake in the font. And it explains what my logo looks like essentially. So this is what we want. And we can do the same thing with an image from this. So if I open the sidebar here, you can see I have the logo.png. We can also load this and encode it with base 64. So in this case here, just base 64.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1676.107,
+      "end": 1701.098,
+      "text": "as the field, as the key here. And I'm also going to say from base 64 import base 64 encode. So the idea is we load the bytes, we encode them with base 64, and then we decode it into a string. So we're going to say here, B64 encode, what are we encoding? We're opening a file from disk called logo.png in reading bytes mode.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1701.098,
+      "end": 1730.225,
+      "text": "Then we're reading the content of that file. We're encoding it with base 64 and then we're decoding it into a string so we can actually pass it here to the model. Now, what we also need to pass here, if we use base 64 is a mime type. So let's actually format it like this. And the mime type is going to be image slash png. And actually, I think we need to use underscore not dash. So now when I run this, you can see the image shows a logo with a text neural nine written in orange and basically the same thing as before.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1730.225,
+      "end": 1751.622,
+      "text": "Now, we can also do it with the message classes, but we have to do it basically in the same way. So I can say, langchain.messages import human message. And the only thing I would change is I would get rid of the role, but I would still keep the content as it is. So I would say here, the message is equal to human message. And then I would say content is equal to the list.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1751.622,
+      "end": 1767.299,
+      "text": "So that is the small difference here. So context would be equal to the list of these two things. And then we would close that with an ordinary bracket, but basically the rest stays the same. So when I run this, we should get the same response. It's just a different way to write it.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1767.299,
+      "end": 1790.333,
+      "text": "Now, for the next example, we're going to build a simple rack use case, so retrieval augmented generation. Basically, we're going to use a vector store and an embedding model to find the most similar pieces of content, in our case, simple messages or simple statements, let's say. And for this, we're going to use a lang chain in the old school way. So we're actually going to say up here from lang chain underscore open AI.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1790.333,
+      "end": 1808.913,
+      "text": "import open AI embeddings. This is for the embeddings model. And then we're also going to use a vector store. So a vector database in my case, face. And for this, we're going to save from a blank chain underscore community import. And we're going to import a face, but actually not from community directly, but from community.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1808.913,
+      "end": 1829.332,
+      "text": "dot vector stores. And since I'm not getting autocompletion, I assume I have to install this separately. So I'm going to say here now UV add and then blank chain dash community. So this install is now additional packages, blank chain community, blank chain classic, blank chain text blitters. So if I now go back into the code,",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1829.332,
+      "end": 1854.661,
+      "text": "Hopefully, if I type dot something here, there you go. We can see all the modules here. So Langtian Community Vector Store's import face. Now, I think actually for face, we also need to install the face package. So let me leave this and let's say UV add face. And I'm just going to go save here with the CPU. So I don't have to care too much about GPU stuff. This is just face CPU. And now if I go back into the code, we should be able to use them.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1854.661,
+      "end": 1876.868,
+      "text": "So the basic idea is I'm going to have a list of statements. These statements will be stuff like I love apples or I like oranges or I like pairs and then something about computers also related to Apple but semantically different because Apple is a company. Apple is also a fruit. So we're going to see if the embeddings can distinguish the concepts and we're going to retrieve the most similar statements from the vector store.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1876.868,
+      "end": 1897.675,
+      "text": "So let us start by saying embeddings is going to be equal to open AI embeddings. And we're going to provide the embedding model text dash embedding dash large three. I think this was the identifier. And we're going to say, of course, that this is the model. So model is equal to text embedding three large. Yeah. So actually three large, not large three.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1897.675,
+      "end": 1916.086,
+      "text": "Then, I'm gonna copy paste some very, very simple statements, nothing too fancy. Apple makes very good computers, whether that's true or not. I'm just stating it here. I believe Apple is innovative. I love apples. I'm a fan of MacBooks. I enjoy oranges. I like Lenovo thinkpats. I think Paris tastes very good.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1916.086,
+      "end": 1938.344,
+      "text": "So theoretically, this message here I like Lenovo Thinkpads should be closer to I'm a fan of MacBooks and even to stuff like Apple makes very good computers, it should be closer and more related than I love Apple's because that has nothing to do with Apple only syntactically only in terms of like the name it has to do something with Apple, but it's a different concept.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1938.344,
+      "end": 1967.943,
+      "text": "So we're going to create a vector store from these texts. I'm going to say vector underscore store is going to be equal to face dot from texts. And we're going to pass the list of texts here. Now, in order for this to actually work, we need to pass an embedding model as well. So embedding is going to be equal to embeddings. And this is going to basically take all these texts embed them into vector space and then store them in the vector store. So to see how this works, we can say print vector store dots similarity search.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1967.943,
+      "end": 1986.893,
+      "text": "And then I can add something new like apples are my favorite food K equals seven to get all of them just in a specific ranking. And then I'm going to do the same thing with Linux is a great operating.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1986.893,
+      "end": 2005.405,
+      "text": "system. Of course Linux is just a kernel, but you get the idea. So I'm going to comment this out and run the first one alone to see what are the most similar statements in the vector store. So you can see here the most similar was I love apples. Then the second one was I think pairs taste very good. So even though the word apple occurred,",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2005.405,
+      "end": 2033.806,
+      "text": "We are actually there you go. I enjoy oranges was before that. Then I think pairs taste very good. And then only it gives us Apple makes very good computers. I know this is not the best view, but we have these individual documents, the most similar, the second most similar, the third most similar. And you can see that everything related to fruits was ranked as more important and more relevant than Apple, even though that Apple here and Apple here is the same string. It recognizes that the concepts are different.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2033.806,
+      "end": 2059.54,
+      "text": "So let's see what we get for Linux. We get I like Lenovo Thinkpads, I'm a fan of MacBooks, and then we get all of Apple's. For whatever reason, the company Apple is ranked lower. So that is how you can use the vector store as a separate component. So just interact with embeddings and vector stores, but now what we want to do is we want to make this part of agents with Lanching. So we want to take this capability of using",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2059.54,
+      "end": 2083.874,
+      "text": "this rack feature of doing a similarity search. We want to take this and build it into our agent. For this, I want to use a slightly different example. So the code is the same. We still have the same structure here of embeddings, texts, and then from text similarity search, but we have different content. We have I love apples. I enjoy oranges. I think pairs taste very good. I hate bananas. I dislike raspberries. I despise mangoes. I love Linux. I hate windows.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2083.874,
+      "end": 2101.002,
+      "text": "And then we have here again the vector store and here we look for what fruit sister person like and what fruit sister person hate. So if I run this, you can see that these two lookups give us the information that we want. I enjoy oranges. I love apples. I think pairs taste very good.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2101.002,
+      "end": 2124.188,
+      "text": "then I despise mangoes, I hate bananas, I dislike raspberries. So we have the information by using the similarity search. What we can do now with this vector store is we can turn it into a retriever for our agent. So I can say down here, retriever is equal to vector store as underscore retriever. And we're just going to pass the search keyword arguments. So search underscore quarks is going to be",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2124.188,
+      "end": 2148.05,
+      "text": "equal to a dictionary, where k is going to be equal to three. So this basically tells us, just give me the top three answers. We're hard coding this to keep it simple here. But basically, this now is a retriever that we can use in our agent. But in order to actually use this retriever in our agent, we need to turn it into a tool. So what we're going to do is another old school import up here from lang chain underscore core.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2148.05,
+      "end": 2172.299,
+      "text": "dot tools. We're going to import the create retriever tools. So the idea is we pass a retriever and we turn it into a tool that the agent can use. So quite simple. The retriever underscore tool is going to be equal to create retriever tool. We pass the retriever. And then we pass the name, which is going to be our fruit search. I guess we're actually, let's call it knowledge based search. So KB search.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2172.299,
+      "end": 2191.334,
+      "text": "And then the description is search the small product slash fruit database for information. Let me call this knowledge base. And then we can close that. And now the cool thing is this is now just another tool. We can just add it to the list of tools when we create an agent.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2191.334,
+      "end": 2207.652,
+      "text": "So for this, we need to import again from Langchain. This is now the modern way of doing things from Langchain.agents import create agent. And now I can just say as we did before agent is equal to create agent, the model is going to be GPT 4.1.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2207.652,
+      "end": 2230.619,
+      "text": "Many again, then we can say tools is equal to retriever tool. Then I'm going to copy paste the system prompt, nothing too fancy here, just explaining again your helpful assistant and if there's any questions about max, apples, laptops, whatever, use the tool that you have first, the retriever tool basically retrieve the context, answer in a concise way, and the hint that maybe you have to use this tool multiple times.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2230.619,
+      "end": 2254.396,
+      "text": "because if I'm asking a question that needs to combine information, you might have to do it multiple times, which the agent can do since it's not just a prompt. It's an agent that can use tools, then think, then use tools again, and so on. So then we do what we already did before we pass a prompt. I'm just going to say here agent invoke what three fruits does the person like and what three fruits does the person dislike and then we get the answer.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2254.396,
+      "end": 2281.025,
+      "text": "So I'm asking two things in a single prompt and up here we use two different similarity searches for that. Let's see if the agent can handle that. I'm going to run this and it says here, the person likes oranges, apples and pears, the person dislikes mangoes, raspberries and bananas. You can see also the retrieval. We're actually cannot see it up here. You can see the retrieval that was done one and then a second call to the tool was done down here.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2281.025,
+      "end": 2296.06,
+      "text": "and this gave us the information for this final response. Now we'll get to a very powerful concept and length chain, the middleware. Middleware basically meaning it sits between requesting response, and middleware allows us to do a lot of different things to enhance the capabilities of our agents.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2296.06,
+      "end": 2324.191,
+      "text": "For example, we can choose different system prompts depending on the context. We can choose different models based on certain criteria. We can summarize stuff. We can have rate limits. All sorts of things can be done in between this window of getting a request and sending a response. We can do a lot of stuff behind the scenes. And instead of talking about this too long in a theoretical way, what I want to do here is I just want to show you a couple of examples of custom middleware of already existing middleware of different use cases. And then you can just go and explore it yourself.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2324.191,
+      "end": 2341.91,
+      "text": "So I want to get started with a simple example right away. I want to show you how we can swap the system prompt based on the level of expertise that the user has. So for this we're going to use context again and I'm going to start by importing from langchain.agents.middleware the following things model request.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2341.91,
+      "end": 2362.025,
+      "text": "model response. And in this case, now the decorator called dynamic prompt. So this is middleware that is already implemented. So we don't have to build it and define it ourselves. But what we can do now is we can say that if the user has a certain role, like he's an expert or he's a beginner or maybe even he's a child,",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2362.025,
+      "end": 2390.324,
+      "text": "we're going to say adjust your answer adjust your style based on that. So we're going to create a data class again called context and actually we need to again import here from data classes import data class. And this context this time will not contain the ID but the user role. So I'm going to say here data class user underscore role is going to be a string. And now we're going to write a function that takes in the context from the model request and returns a system prompt dynamically based on the user role.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2390.324,
+      "end": 2417.695,
+      "text": "So I'm going to use here the decorator dynamic prompt and we're going to call this function user role prompt. For example, it will get a request as input, which is a model request. And then we return the string. So that is the structure. And now we can take the context from the request. So I can say here the user role is going to be request dot runtime dot context dot user role. And we can do the same thing as before with",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2417.695,
+      "end": 2438.08,
+      "text": "the user ID, just a match case statement. So match user role. And then we can have different cases. For example, the user can be an expert. And in this case, we will return a different system prompt. Now, what I want to do here is I want to define a base prompt. So we're going to have just a base prompt. You are a helpful and very concise.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2438.08,
+      "end": 2467.713,
+      "text": "assistant. And now if it's an expert, we're going to say here, give me the base prompt, and then just add to it, provides detail, technical response. On the other hand, if we have a beginner, we're going to say, keep your explanations simple and basic. And finally, to see the biggest difference, we're going to say case child, and it's going to basically be explain everything.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2467.713,
+      "end": 2492.536,
+      "text": "as if you were literally talking to a five year old. And then the default case would just be, okay, if it's none of that, then we're just going to return to base prompt. Cool. So now basically we do the same thing as before. But this time we don't pass it as context. We don't pass it as a tool. We pass it as middleware. So I say here, create agent. The model is going to be the same as before. GPT 4.1 mini.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2492.536,
+      "end": 2521.038,
+      "text": "And now I'm going to say here middleware is equal to, and that's going to be a list, and it's going to contain the user role prompt function. But of course, I still have to pass the context, otherwise it, of course, doesn't work. So context schema still has to be this data class. So then I can say response is equal to agent.invoke. I'm going to have to provide a dictionary again here with messages, role is user, and content is explain PCA.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2521.038,
+      "end": 2545.017,
+      "text": "And here now I pass the context. The context is going to be that the user role, let's say in the beginning, is going to be beginner. So user role is equal to beginner print response. And we can see here, content, PCA principle component analysis is the technique used to reduce the number of variables in data while keeping the most important information. It transforms the original data into new variables and so on.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2545.017,
+      "end": 2562.415,
+      "text": "So quite simple, but still not something a five year old would understand. So let's go and see what the export explanation would be. And there we can see principle component analysis is a dimensionality reduction technique used to transform a large set of correlated variables into a smaller set of uncorrelated variables called principle components.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2562.415,
+      "end": 2587.846,
+      "text": "Yeah, then we get here projection and component selection. Still not, I mean, I can decomposition, okay. It's a little bit more technical, but if I go now to the lowest level here, which is the child, then I should get something really, really simple. So here, okay, imagine you have a big box of crayons with lots of colors. Sometimes you want to choose just a few crayons that can still help you color many pictures. Nicely, PCA is like a magic helper. Yeah, you get the idea.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2587.846,
+      "end": 2615.825,
+      "text": "So this is something we can do with middleware here in between the request and response. We can have this dynamic prompt choice based on the user role, based on the context. We can say that we want to do different things. We want to instruct a model to do different things. Now another thing we can do is we can not only select a prompt dynamically, we can also select a model dynamically. For this year, I'm also going to import from langchain.chatmodels, our trusted in a chat model function. I'm going to get rid of dynamic prompt.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2615.825,
+      "end": 2632.16,
+      "text": "And I'm going to import RAP model call. This basically means it happens around the model call whenever we want to call the model that is part of the agent. We're going to run our middleware in that moment where I should say in between the model request and the model response.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2632.16,
+      "end": 2654.468,
+      "text": "So the idea here would be I want to have a basic model. That would be in a chat model. And then I can say, for example, model is equal to GPT 40 mini. And then I would also have an advanced model, which could be 4.1 mini. The idea now is I define a function called dynamic model selection. This function takes in a request returns a response. So I take in",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2654.468,
+      "end": 2678.532,
+      "text": "A model request and the output of that function is a model response. In addition to that, we also get a handler as parameter here. And I have to annotate this now with RAP model call. So this actually happens when the model is called. In case you're interested in that, you can also go to the Langchain documentation. You can see how this basically works. Request comes in. Then we have before agent, before model.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2678.532,
+      "end": 2705.684,
+      "text": "wrap tool call, wrap model call, after model, after agent result. And we're now doing this here, wrapping the model call with our middleware. So what kind of logic you want to apply here is up to you. In my case, I'm going to keep it simple. If I have more than three messages, I'm going to use the stronger model. Otherwise, I'm going to use the basic model, not the most intelligent choice here, but we're going to do it like this. So message count is going to be equal to length off request state. And then",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2705.684,
+      "end": 2725.816,
+      "text": "Messages, and then just if the message count is rated in three, the model is going to be equal to basic model. Otherwise, we're going to say it's going to be the advanced model. And then we say request dot model is equal to model and return a handler for that request.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2725.816,
+      "end": 2747.77,
+      "text": "So basically we're just taking the request and setting the model to something else depending on some criteria. This could be something more intelligent and then we just handle the request with this change. So that's super easy to integrate again agent is going to be equal to create agent model is going to be basic model by default and then the middleware is going to be our dynamic model selection.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2747.77,
+      "end": 2777.757,
+      "text": "Now to keep things a little bit more beautiful here, I'm going to import again from langchain.messages, the system message, the human message and the AI message. And then down here, I'm going to say response is equal to agent in Vogue. I'm going to invoke here on the following dictionary. Messages is going to point to a list of messages. I'm going to start with the system message. You are a helpful assistant human message. What is one plus one? Keeping it very basic.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2777.757,
+      "end": 2807.204,
+      "text": "here. And essentially, we can take a look at two things. On the one hand, you can get the idea if you look at the quality of the output. I mean, one plus one is something that every model should be able to do. But you can say here, again, print, response, messages, negative one dot content to just get the answer. But then you can also take a look at the actual model that was used to produce this response. So instead of saying content, you can say response, metadata, and you can target the field called model name.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2807.204,
+      "end": 2825.193,
+      "text": "And if we run this now, we can see that we use the wrong model. Why is that? Because we have to swap this. Of course, if we have more messages, we're using the advanced model, otherwise the basic model, but in theory, it works. So if I run this now, I should see that we're using four or many.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2825.193,
+      "end": 2847.755,
+      "text": "And if I add more messages, so for example, let's just add the same message a couple of times here. This is going to trigger change and now we're using 4.1 mini. Now in general, I want to show you how you can define your own custom middleware by using these hooks. So we're going to do that with a class here for this. I'm going to create a class called hooks. Let's call it hooks demo. It's going to inherit from a class that we need to import.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2847.755,
+      "end": 2866.79,
+      "text": "called agent middleware. So we're now defining our own agent middleware as a class here. And we can just override these methods that are representing the hooks. So in order to do that, let me get rid of all of this. We're also going to need something called the agent state. And basically the constructor is going to be the init method.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2866.79,
+      "end": 2896.777,
+      "text": "taking self as a parameter here, calling the constructor of the parent class, so super init. And what we're going to do is we're going to set a start time equal to 0.0. So this is not going to be an actually useful example. I'm just going to show you how we can trigger when the different parts are triggered. And now we can just override before agent, for example, before agent is obviously before we get to the agent before the request comes to the agent, we're going to be running this. It takes self and agent state. So state, which is agent state, and also the",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2896.777,
+      "end": 2917.533,
+      "text": "run time. And in my case, what I want to do here now is I want to say self dot start time is going to be equal to. And now I need to import from core Python fear time. I'm just going to say time. So importing core Python package time, self dot start times equal to time. And then just so we know it happened, I'm going to say here before agent triggered.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2917.533,
+      "end": 2937.732,
+      "text": "Now I'm going to copy paste it here for the other ones. It's just before model, after model, and after agent. Here we're going to do something else so I didn't copy it. But basically here we're just printing before model, after model, whatever you want to do with that. It's basically also you have wrap and so wrap tool called wrap model call. We saw that already. We're just going to keep doing it with these four.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2937.732,
+      "end": 2963.804,
+      "text": "And what I'm going to do here is I'm now going to calculate the time difference and I'm going to print a result. So I'm going to say here print after agent and then colon time, so the current time minus self dot start time. And now we can go and say agent is equal to create agents, GPT 4.1 mini. And then we can say middleware is equal to and now we're going to pass hooks demo.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2963.804,
+      "end": 2983.514,
+      "text": "as an instance here. So we're creating instance of this class. This is another way to use middleware. And then I can just do the usual stuff from before, just agent and vote some question. And now when I run this, we get a problem, of course, because I cannot just call the module time, of course, I need to say time.time or time perf counter, whatever you want to use here.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2983.514,
+      "end": 3010.632,
+      "text": "but that shouldn't be too much of an issue. So now we get before agent triggered, before model, I forgot to add triggered here, but then we should get at some point after model, and then we should get after agent and the difference here in time. Since PCA is probably quite complicated for a model to put into words, it takes some time, but you can see 14 seconds is what we measured here. This is essentially what you can do with these hooks in a length chain when it comes to middleware,",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 3010.632,
+      "end": 3037.75,
+      "text": "you can customize what happens at what point in the workflow in the cycle. So now, last but not least, I would just like to show you a couple of examples of already existing middleware. We're not going to go too deep into this. I'm going to just copy paste one of these examples here into this file, which is going to be summarizing conversation. We're not going to actually use this. I'm just showing you how to use this. Basically, you go from Lankchain agents middleware, summarization middleware. One of the many choices that you have",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 3037.75,
+      "end": 3066.877,
+      "text": "What this basically does is you have a couple of parameters here. You can specify the model for the summarization, which is not necessarily the same as the model that the agent uses. The idea is that after a certain number of tokens, you summarize the conversation. You keep the last 20 messages after 4,000 tokens. And GPT 40 many in this case summarizes the important key points of the conversation up until this point. And then you just continue the conversation. That is one middle where that we can use.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 3066.877,
+      "end": 3096.526,
+      "text": "And then on the middleware page in the documentation, you can also find some examples. For example, here, human in the loop middleware, this basically means on certain events, on certain tool users, we get an interrupt and then the user has to manually say, okay, continue, edit, approve, reject, whatever. This is of course important in key steps. If you have to do some payment, if you have to send an email or something, it makes sense to have this human in the loop middleware, then we also have model call limit. So basically saying we cannot call the model to often per run or",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 3096.526,
+      "end": 3123.408,
+      "text": "per threat. Same thing exists for tool calls, basically just a limiter for how often you can call a tool in a run or in a limit. Same thing also exists for tool calls, basically how often can you call a tool in a specific threat or run. Then also some interesting stuff, you're like model fallback. If something doesn't work, if you cannot use a model, fallback to a different one, this can be quite useful. Here also PI eye detection, basically personally identifiable information. You can make it redact certain.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 3123.408,
+      "end": 3148.366,
+      "text": "key pieces of information for compliance reasons, for example, and much more other stuff like retrying tools or having a to-do list. So basically a planning middleware. You can take a look at these examples, but basically middleware allows you to extend the capabilities of your model or of your agent, I should say, because you can tell it what to do in certain scenarios, make it more dynamic, make it more reactive, so to say, which is very useful.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 3148.366,
+      "end": 3165.629,
+      "text": "So that's it for this video today. I hope you enjoyed it and I'll be learning something. If so, let me know by hitting the like button and leaving a comment in the comment section down below. Also, if you're interested on my website, you will find a tutoring tab and also a services tab. There you can hire me basically for one-on-one tutoring for one-on-one teaching you something.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 3165.629,
+      "end": 3183.584,
+      "text": "or also for services, machine learning, back-end development, consulting, freelancing, whatever. If you're interested in that, check it out. You can contact me via mail or LinkedIn. And besides that, don't forget to subscribe to this channel and hit the notification bell to not miss a single future video for free. Other than that, thank you for watching. See you in the next video, and bye.",
+      "speaker": null,
+      "words": []
+    }
+  ]
+}

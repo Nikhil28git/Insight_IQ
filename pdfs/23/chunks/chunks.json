@@ -1,0 +1,792 @@
+[
+  {
+    "chunk_id": "chunk_0000",
+    "text": "SQL\n(Notes by Apna College)\nWhat is Database? Database is a collection of interrelated data. What is DBMS? DBMS (Database Management System) is software used to create, manage, and organize\ndatabases. What is RDBMS? ●\nRDBMS (Relational Database Management System) - is a DBMS based on the\nconcept of tables (also called relations). ●\nData is organized into tables (also known as relations) with rows (records) and\ncolumns (attributes).",
+    "start_index": 0,
+    "end_index": 435,
+    "word_count": 69,
+    "start_page": 1,
+    "end_page": 1,
+    "page_spans": "Page 1"
+  },
+  {
+    "chunk_id": "chunk_0001",
+    "text": "●\nEg - MySQL, PostgreSQL, Oracle etc.",
+    "start_index": 436,
+    "end_index": 473,
+    "word_count": 7,
+    "start_page": 1,
+    "end_page": 1,
+    "page_spans": "Page 1"
+  },
+  {
+    "chunk_id": "chunk_0002",
+    "text": "What is SQL? SQL is Structured Query Language - used to store, manipulate and retrieve data from\nRDBMS. (It is not a database, it is a language used to interact with database)\nWe use SQL for CRUD Operations :\n●\nCREATE - To create databases, tables, insert tuples in tables etc\n●\nREAD - To read data present in the database. ●\nUPDATE - Modify already inserted data.",
+    "start_index": 473,
+    "end_index": 837,
+    "word_count": 68,
+    "start_page": 1,
+    "end_page": 1,
+    "page_spans": "Page 1"
+  },
+  {
+    "chunk_id": "chunk_0003",
+    "text": "●\nDELETE - Delete database, table or specific data point/tuple/row or multiple rows. *Note - SQL keywords are NOT case sensitive.",
+    "start_index": 837,
+    "end_index": 966,
+    "word_count": 21,
+    "start_page": 1,
+    "end_page": 1,
+    "page_spans": "Page 1"
+  },
+  {
+    "chunk_id": "chunk_0004",
+    "text": "Eg: select is the same as SELECT in SQL. SQL v/s MySQL\nSQL is a language used to perform CRUD operations in Relational DB, while MySQL is a\nRDBMS that uses SQL.",
+    "start_index": 966,
+    "end_index": 1126,
+    "word_count": 32,
+    "start_page": 1,
+    "end_page": 1,
+    "page_spans": "Page 1"
+  },
+  {
+    "chunk_id": "chunk_0005",
+    "text": "SQL Data Types\nIn SQL, data types define the kind of data that can be stored in a column or variable. To See all data types of MYSQL, visit :\nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html\nHere are the frequently used SQL data types:\nDATATYPE\nDESCRIPTION\nUSAGE\nCHAR\nstring(0-255), can store characters of fixed length\nCHAR(50)\nVARCHAR\nstring(0-255), can store characters up to given length\nVARCHAR(50)\nBLOB\nstring(0-65535), can store binary large object\nBLOB(1000)\nINT\ninteger( -2,147,483,648 to 2,147,483,647 )\nINT\nTINYINT\ninteger(-128 to 127)\nTINYINT\nBIGINT\ninteger( -9,223,372,036,854,775,808 to\n9,223,372,036,854,775,807 )\nBIGINT\nBIT\ncan store x-bit values. x can range from 1 to 64\nBIT(2)\nFLOAT\nDecimal number - with precision to 23 digits\nFLOAT\nDOUBLE\nDecimal number - with 24 to 53 digits\nDOUBLE\nBOOLEAN\nBoolean values 0 or 1\nBOOLEAN\nDATE\ndate in format of YYYY-MM-DD ranging from\n1000-01-01 to 9999-12-31\nDATE\nTIME\nHH:MM:SS\nTIME\nYEAR\nyear in 4 digits format ranging from 1901 to 2155\nYEAR\n*Note - CHAR is for fixed length & VARCHAR is for variable length strings.",
+    "start_index": 1126,
+    "end_index": 2206,
+    "word_count": 169,
+    "start_page": 1,
+    "end_page": 2,
+    "page_spans": "Pages 1-2"
+  },
+  {
+    "chunk_id": "chunk_0006",
+    "text": "Generally,\nVARCHAR is better as it only occupies necessary memory & works more efficiently.",
+    "start_index": 2211,
+    "end_index": 2302,
+    "word_count": 14,
+    "start_page": 2,
+    "end_page": 2,
+    "page_spans": "Page 2"
+  },
+  {
+    "chunk_id": "chunk_0007",
+    "text": "We can also use UNSIGNED with datatypes when we only have positive values to add.",
+    "start_index": 2303,
+    "end_index": 2384,
+    "word_count": 15,
+    "start_page": 2,
+    "end_page": 2,
+    "page_spans": "Page 2"
+  },
+  {
+    "chunk_id": "chunk_0008",
+    "text": "Eg - UNSIGNED INT\nTypes of SQL Commands:\n1. DQL (Data Query Language) : Used to retrieve data from databases.",
+    "start_index": 2384,
+    "end_index": 2493,
+    "word_count": 20,
+    "start_page": 2,
+    "end_page": 3,
+    "page_spans": "Pages 2-3"
+  },
+  {
+    "chunk_id": "chunk_0009",
+    "text": "(SELECT)\n2. DDL (Data Definition Language) : Used to create, alter, and delete database objects\nlike tables, indexes, etc. (CREATE, DROP, ALTER, RENAME, TRUNCATE)\n3. DML (Data Manipulation Language): Used to modify the database. (INSERT,\nUPDATE, DELETE)\n4.",
+    "start_index": 2493,
+    "end_index": 2749,
+    "word_count": 38,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0010",
+    "text": "DCL (Data Control Language): Used to grant & revoke permissions. (GRANT,\nREVOKE)\n5.",
+    "start_index": 2752,
+    "end_index": 2835,
+    "word_count": 13,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0011",
+    "text": "TCL (Transaction Control Language): Used to manage transactions. (COMMIT,\nROLLBACK, START TRANSACTIONS, SAVEPOINT)\n1. Data Definition Language (DDL)\nData Definition Language (DDL) is a subset of SQL (Structured Query Language)\nresponsible for defining and managing the structure of databases and their objects. DDL commands enable you to create, modify, and delete database objects like tables,\nindexes, constraints, and more.",
+    "start_index": 2835,
+    "end_index": 3261,
+    "word_count": 59,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0012",
+    "text": "Key DDL Commands are:\n●\nCREATE TABLE:\n○\nUsed to create a new table in the database. ○\nSpecifies the table name, column names, data types, constraints, and more.",
+    "start_index": 3261,
+    "end_index": 3421,
+    "word_count": 29,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0013",
+    "text": "○\nExample:\nCREATE TABLE employees (id INT PRIMARY KEY, name VARCHAR(50),\nsalary DECIMAL(10, 2));\n●\nALTER TABLE:\n○\nUsed to modify the structure of an existing table. ○\nYou can add, modify, or drop columns, constraints, and more. ○\nExample: ALTER TABLE employees ADD COLUMN email VARCHAR(100);\n●\nDROP TABLE:\n○\nUsed to delete an existing table along with its data and structure. ○\nExample: DROP TABLE employees;\n●\nCREATE INDEX:\n○\nUsed to create an index on one or more columns in a table. ○\nImproves query performance by enabling faster data retrieval. ○\nExample: CREATE INDEX idx_employee_name ON employees (name);\n●\nDROP INDEX:\n○\nUsed to remove an existing index from a table. ○\nExample: DROP INDEX idx_employee_name;\n●\nCREATE CONSTRAINT:\n○\nUsed to define constraints that ensure data integrity. ○\nConstraints include PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL,\nand CHECK. ○\nExample: ALTER TABLE orders ADD CONSTRAINT fk_customer FOREIGN\nKEY (customer_id) REFERENCES customers(id);\n●\nDROP CONSTRAINT:\n○\nUsed to remove an existing constraint from a table. ○\nExample: ALTER TABLE orders DROP CONSTRAINT fk_customer;\n●\nTRUNCATE TABLE:\n○\nUsed to delete the data inside a table, but not the table itself.",
+    "start_index": 3421,
+    "end_index": 4619,
+    "word_count": 195,
+    "start_page": 3,
+    "end_page": 4,
+    "page_spans": "Pages 3-4"
+  },
+  {
+    "chunk_id": "chunk_0014",
+    "text": "○\nSyntax – TRUNCATE TABLE table_name\n2. DATA QUERY/RETRIEVAL LANGUAGE (DQL or DRL)\nDQL (Data Query Language) is a subset of SQL focused on retrieving data from databases. The SELECT statement is the foundation of DQL and allows us to extract specific columns\nfrom a table.",
+    "start_index": 4619,
+    "end_index": 4891,
+    "word_count": 46,
+    "start_page": 4,
+    "end_page": 4,
+    "page_spans": "Page 4"
+  },
+  {
+    "chunk_id": "chunk_0015",
+    "text": "●\nSELECT:\nThe SELECT statement is used to select data from a database.",
+    "start_index": 4896,
+    "end_index": 4966,
+    "word_count": 13,
+    "start_page": 4,
+    "end_page": 4,
+    "page_spans": "Page 4"
+  },
+  {
+    "chunk_id": "chunk_0016",
+    "text": "Syntax: SELECT column1, column2, ...",
+    "start_index": 4967,
+    "end_index": 5003,
+    "word_count": 5,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0017",
+    "text": "FROM table_name;\nHere, column1, column2, ...",
+    "start_index": 5004,
+    "end_index": 5048,
+    "word_count": 6,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0018",
+    "text": "are the field names of the table. If you want to select all the fields available in the table, use the following syntax:\nSELECT * FROM table_name;\nEx: SELECT CustomerName, City FROM Customers;\n●\nWHERE:\nThe WHERE clause is used to filter records. Syntax: SELECT column1, column2, ... FROM table_name WHERE condition;\nEx: SELECT * FROM Customers WHERE Country='Mexico';\nOperators used in WHERE are:\n=\n: Equal\n>\n: Greater than\n<\n: Less than\n>= : Greater than or equal\n<= : Less than or equal\n<> : Not equal. Note: In some versions of SQL this operator may be written as !=\n●\nAND, OR and NOT:\n-\nThe WHERE clause can be combined with AND, OR, and NOT operators. -\nThe AND and OR operators are used to filter records based on more than one\ncondition:\n-\nThe AND operator displays a record if all the conditions separated by AND are\nTRUE. -\nThe OR operator displays a record if any of the conditions separated by OR is TRUE.",
+    "start_index": 5048,
+    "end_index": 5964,
+    "word_count": 172,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0019",
+    "text": "-\nThe NOT operator displays a record if the condition(s) is NOT TRUE. Syntax:\nSELECT column1, column2, ...",
+    "start_index": 5964,
+    "end_index": 6070,
+    "word_count": 18,
+    "start_page": 5,
+    "end_page": 6,
+    "page_spans": "Pages 5-6"
+  },
+  {
+    "chunk_id": "chunk_0020",
+    "text": "FROM table_name WHERE condition1 AND condition2 AND\ncondition3 ...;\nSELECT column1, column2, ...",
+    "start_index": 6073,
+    "end_index": 6169,
+    "word_count": 13,
+    "start_page": 6,
+    "end_page": 6,
+    "page_spans": "Page 6"
+  },
+  {
+    "chunk_id": "chunk_0021",
+    "text": "FROM table_name WHERE condition1 OR condition2 OR\ncondition3 ...;\nSELECT column1, column2, ... FROM table_name WHERE NOT condition;\nExample:\nSELECT * FROM Customers WHERE Country=’India’ AND City=’Japan’;\nSELECT * FROM Customers WHERE Country=’America’ AND (City=’India’ OR\nCity=’Korea’);\n●\nDISTINCT:\nRemoves duplicate rows from query results. Syntax: SELECT DISTINCT column1, column2 FROM table_name;\n●\nLIKE:\nThe LIKE operator is used in a WHERE clause to search for a specified pattern in a column. There are two wildcards often used in conjunction with the LIKE operator:\n-\nThe percent sign (%) represents zero, one, or multiple characters\n-\nThe underscore sign (_) represents one, single character\nExample: SELECT * FROM employees WHERE first_name LIKE 'J%';\nWHERE CustomerName LIKE 'a%'\n-\nFinds any values that start with \"a\"\nWHERE CustomerName LIKE '%a'\n-\nFinds any values that end with \"a\"\nWHERE CustomerName LIKE '%or%'\n-\nFinds any values that have \"or\" in any position\nWHERE CustomerName LIKE '_r%'\n-\nFinds any values that have \"r\" in the second position\nWHERE CustomerName LIKE 'a_%'\n-\nFinds any values that start with \"a\" and are at least 2 characters in length\nWHERE CustomerName LIKE 'a__%'\n-\nFinds any values that start with \"a\" and are at least 3 characters in length\nWHERE ContactName LIKE 'a%o'\n-\nFinds any values that start with \"a\" and ends with \"o\"\n●\nIN:\nFilters results based on a list of values in the WHERE clause. Example: SELECT * FROM products WHERE category_id IN (1, 2, 3);\n●\nBETWEEN:\nFilters results within a specified range in the WHERE clause.",
+    "start_index": 6169,
+    "end_index": 7743,
+    "word_count": 259,
+    "start_page": 6,
+    "end_page": 7,
+    "page_spans": "Pages 6-7"
+  },
+  {
+    "chunk_id": "chunk_0022",
+    "text": "Example: SELECT * FROM orders WHERE order_date BETWEEN '2023-01-01' AND\n'2023-06-30';\n●\nIS NULL:\nChecks for NULL values in the WHERE clause. Example: SELECT * FROM customers WHERE email IS NULL;\n●\nAS:\nRenames columns or expressions in query results. Example: SELECT first_name AS \"First Name\", last_name AS \"Last Name\" FROM\nemployees;\n●\nORDER BY\nThe ORDER BY clause allows you to sort the result set of a query based on one or more\ncolumns. Basic Syntax:\n-\nThe ORDER BY clause is used after the SELECT statement to sort query results. -\nSyntax: SELECT column1, column2 FROM table_name ORDER BY column1\n[ASC|DESC];\nAscending and Descending Order:\n-\nBy default, the ORDER BY clause sorts in ascending order (smallest to largest). -\nYou can explicitly specify descending order using the DESC keyword. -\nExample: SELECT product_name, price FROM products ORDER BY price DESC;\nSorting by Multiple Columns:\n-\nYou can sort by multiple columns by listing them sequentially in the ORDER BY\nclause. -\nRows are first sorted based on the first column, and for rows with equal values,\nsubsequent columns are used for further sorting. -\nExample: SELECT first_name, last_name FROM employees ORDER BY last_name,\nfirst_name;\nSorting by Expressions:\n-\nIt's possible to sort by calculated expressions, not just column values. -\nExample: SELECT product_name, price, price * 1.1 AS discounted_price FROM\nproducts ORDER BY discounted_price;\nSorting NULL Values:\n-\nBy default, NULL values are considered the smallest in ascending order and the\nlargest in descending order. -\nYou can control the sorting behaviour of NULL values using the NULLS FIRST or\nNULLS LAST options. -\nExample: SELECT column_name FROM table_name ORDER BY column_name\nNULLS LAST;\nSorting by Position:\n-\nInstead of specifying column names, you can sort by column positions in the ORDER\nBY clause. -\nExample: SELECT product_name, price FROM products ORDER BY 2 DESC, 1\nASC;\n●\nGROUP BY\nThe GROUP BY clause in SQL is used to group rows from a table based on one or more\ncolumns. Syntax:\n-\nThe GROUP BY clause follows the SELECT statement and is used to group rows\nbased on specified columns. -\nSyntax: SELECT column1, aggregate_function(column2) FROM table_name\nGROUP BY column1;\n-\nAggregation Functions:\n○\nAggregation functions (e.g., COUNT, SUM, AVG, MAX, MIN) are often used\nwith GROUP BY to calculate values for each group. ○\nExample: SELECT department, AVG(salary) FROM employees GROUP BY\ndepartment;\n-\nGrouping by Multiple Columns:\n○\nYou can group by multiple columns by listing them in the GROUP BY clause.",
+    "start_index": 7743,
+    "end_index": 10300,
+    "word_count": 417,
+    "start_page": 7,
+    "end_page": 9,
+    "page_spans": "Pages 7-9"
+  },
+  {
+    "chunk_id": "chunk_0023",
+    "text": "○\nThis creates a hierarchical grouping based on the specified columns. ○\nExample: SELECT department, gender, AVG(salary) FROM employees\nGROUP BY department, gender;\n-\nHAVING Clause:\n○\nThe HAVING clause is used with GROUP BY to filter groups based on\naggregate function results. ○\nIt's similar to the WHERE clause but operates on grouped data. ○\nExample: SELECT department, AVG(salary) FROM employees GROUP BY\ndepartment HAVING AVG(salary) > 50000;\n-\nCombining GROUP BY and ORDER BY:\n○\nYou can use both GROUP BY and ORDER BY in the same query to control\nthe order of grouped results. ○\nExample: SELECT department, COUNT(*) FROM employees GROUP BY\ndepartment ORDER BY COUNT(*) DESC;\n●\nAGGREGATE FUNCTIONS\nThese are used to perform calculations on groups of rows or entire result sets.",
+    "start_index": 10300,
+    "end_index": 11082,
+    "word_count": 128,
+    "start_page": 9,
+    "end_page": 9,
+    "page_spans": "Page 9"
+  },
+  {
+    "chunk_id": "chunk_0024",
+    "text": "They provide\ninsights into data by summarising and processing information. Common Aggregate Functions:\n-\nCOUNT():\nCounts the number of rows in a group or result set. -\nSUM():\nCalculates the sum of numeric values in a group or result set. -\nAVG():\nComputes the average of numeric values in a group or result set. -\nMAX():\nFinds the maximum value in a group or result set.",
+    "start_index": 11082,
+    "end_index": 11452,
+    "word_count": 66,
+    "start_page": 9,
+    "end_page": 10,
+    "page_spans": "Pages 9-10"
+  },
+  {
+    "chunk_id": "chunk_0025",
+    "text": "-\nMIN():\nRetrieves the minimum value in a group or result set.",
+    "start_index": 11457,
+    "end_index": 11519,
+    "word_count": 12,
+    "start_page": 10,
+    "end_page": 10,
+    "page_spans": "Page 10"
+  },
+  {
+    "chunk_id": "chunk_0026",
+    "text": "3.",
+    "start_index": 11520,
+    "end_index": 11522,
+    "word_count": 1,
+    "start_page": 10,
+    "end_page": 10,
+    "page_spans": "Page 10"
+  },
+  {
+    "chunk_id": "chunk_0027",
+    "text": "DATA MANIPULATION LANGUAGE\nData Manipulation Language (DML) in SQL encompasses commands that manipulate data\nwithin a database. DML allows you to insert, update, and delete records, ensuring the\naccuracy and currency of your data.",
+    "start_index": 11523,
+    "end_index": 11753,
+    "word_count": 34,
+    "start_page": 10,
+    "end_page": 10,
+    "page_spans": "Page 10"
+  },
+  {
+    "chunk_id": "chunk_0028",
+    "text": "●\nINSERT:\n-\nThe INSERT statement adds new records to a table.",
+    "start_index": 11754,
+    "end_index": 11815,
+    "word_count": 12,
+    "start_page": 10,
+    "end_page": 10,
+    "page_spans": "Page 10"
+  },
+  {
+    "chunk_id": "chunk_0029",
+    "text": "-\nSyntax: INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2,\n...);\n-\nExample: INSERT INTO employees (first_name, last_name, salary) VALUES ('John',\n'Doe', 50000);\n●\nUPDATE:\n-\nThe UPDATE statement modifies existing records in a table. -\nSyntax: UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE\ncondition;\n-\nExample: UPDATE employees SET salary = 55000 WHERE first_name = 'John';\n●\nDELETE:\n-\nThe DELETE statement removes records from a table.",
+    "start_index": 11815,
+    "end_index": 12294,
+    "word_count": 73,
+    "start_page": 10,
+    "end_page": 10,
+    "page_spans": "Page 10"
+  },
+  {
+    "chunk_id": "chunk_0030",
+    "text": "-\nSyntax: DELETE FROM table_name WHERE condition;\n-\nExample: DELETE FROM employees WHERE last_name = 'Doe';\n4. Data Control Language (DCL)\nData Control Language focuses on the management of access rights, permissions, and\nsecurity-related aspects of a database system. DCL commands are used to control who can access the data, modify the data, or perform\nadministrative tasks within a database. DCL is an important aspect of database security, ensuring that data remains protected and\nonly authorised users have the necessary privileges. There are two main DCL commands in SQL: GRANT and REVOKE. 1.",
+    "start_index": 12294,
+    "end_index": 12892,
+    "word_count": 93,
+    "start_page": 10,
+    "end_page": 11,
+    "page_spans": "Pages 10-11"
+  },
+  {
+    "chunk_id": "chunk_0031",
+    "text": "GRANT:\nThe GRANT command is used to provide specific privileges or permissions to users or roles. Privileges can include the ability to perform various actions on tables, views, procedures,\nand other database objects. Syntax:\nGRANT privilege_type\nON object_name\nTO user_or_role;\nIn this syntax:\n●\nprivilege_type refers to the specific privilege or permission being granted (e.g.,\nSELECT, INSERT, UPDATE, DELETE). ●\nobject_name is the name of the database object (e.g., table, view) to which the\nprivilege is being granted. ●\nuser_or_role is the name of the user or role that is being granted the privilege.",
+    "start_index": 12892,
+    "end_index": 13498,
+    "word_count": 94,
+    "start_page": 11,
+    "end_page": 11,
+    "page_spans": "Page 11"
+  },
+  {
+    "chunk_id": "chunk_0032",
+    "text": "Example: Granting SELECT privilege on a table named \"Employees\" to a user named\n\"Analyst\":\nGRANT SELECT ON Employees TO Analyst;\n2. REVOKE:\nThe REVOKE command is used to remove or revoke specific privileges or permissions that\nhave been previously granted to users or roles. Syntax:\nREVOKE privilege_type\nON object_name\nFROM user_or_role;\nIn this syntax:\n●\nprivilege_type is the privilege or permission being revoked. ●\nobject_name is the name of the database object from which the privilege is being\nrevoked. ●\nuser_or_role is the name of the user or role from which the privilege is being\nrevoked. Example: Revoking the SELECT privilege on the \"Employees\" table from the \"Analyst\" user:\nREVOKE SELECT ON Employees FROM Analyst;\nDCL and Database Security:\nDCL plays a crucial role in ensuring the security and integrity of a database system. By controlling access and permissions, DCL helps prevent unauthorised users from\ntampering with or accessing sensitive data. Proper use of GRANT and REVOKE commands\nensures that only users who require specific privileges can perform certain actions on\ndatabase objects.",
+    "start_index": 13498,
+    "end_index": 14610,
+    "word_count": 173,
+    "start_page": 11,
+    "end_page": 12,
+    "page_spans": "Pages 11-12"
+  },
+  {
+    "chunk_id": "chunk_0033",
+    "text": "5. Transaction Control Language (TCL)\nTransaction Control Language (TCL) deals with the management of transactions within a\ndatabase. TCL commands are used to control the initiation, execution, and termination of transactions,\nwhich are sequences of one or more SQL statements that are executed as a single unit of\nwork. Transactions ensure data consistency, integrity, and reliability in a database by grouping\nrelated operations together and either committing or rolling back changes based on the\nsuccess or failure of those operations. There are three main TCL commands in SQL: COMMIT, ROLLBACK, and SAVEPOINT. 1.",
+    "start_index": 14610,
+    "end_index": 15226,
+    "word_count": 93,
+    "start_page": 12,
+    "end_page": 12,
+    "page_spans": "Page 12"
+  },
+  {
+    "chunk_id": "chunk_0034",
+    "text": "COMMIT:\nThe COMMIT command is used to permanently save the changes made during a\ntransaction. It makes all the changes applied to the database since the last COMMIT or ROLLBACK\ncommand permanent. Once a COMMIT is executed, the transaction is considered successful, and the changes are\nmade permanent. Example: Committing changes made during a transaction:\nUPDATE Employees\nSET Salary = Salary * 1.10\nWHERE Department = 'Sales';\nCOMMIT;\n2. ROLLBACK:\nThe ROLLBACK command is used to undo changes made during a transaction.",
+    "start_index": 15226,
+    "end_index": 15746,
+    "word_count": 82,
+    "start_page": 12,
+    "end_page": 13,
+    "page_spans": "Pages 12-13"
+  },
+  {
+    "chunk_id": "chunk_0035",
+    "text": "It reverts all the changes applied to the database since the transaction began. ROLLBACK is typically used when an error occurs during the execution of a transaction,\nensuring that the database remains in a consistent state. Example: Rolling back changes due to an error during a transaction:\nBEGIN;\nUPDATE Inventory\nSET Quantity = Quantity - 10\nWHERE ProductID = 101;\n-- An error occurs here\nROLLBACK;\n3. SAVEPOINT:\nThe SAVEPOINT command creates a named point within a transaction, allowing you to set a\npoint to which you can later ROLLBACK if needed. SAVEPOINTs are useful when you want to undo part of a transaction while preserving other\nchanges. Syntax: SAVEPOINT savepoint_name;\nExample: Using SAVEPOINT to create a point within a transaction:\nBEGIN;\nUPDATE Accounts\nSET Balance = Balance - 100\nWHERE AccountID = 123;\nSAVEPOINT before_withdrawal;\nUPDATE Accounts\nSET Balance = Balance + 100\nWHERE AccountID = 456;\n-- An error occurs here\nROLLBACK TO before_withdrawal;\n-- The first update is still applied\nCOMMIT;\nTCL and Transaction Management:\nTransaction Control Language (TCL) commands are vital for managing the integrity and\nconsistency of a database's data. They allow you to group related changes into transactions, and in the event of errors, either\ncommit those changes or roll them back to maintain data integrity.",
+    "start_index": 15746,
+    "end_index": 17078,
+    "word_count": 212,
+    "start_page": 13,
+    "end_page": 14,
+    "page_spans": "Pages 13-14"
+  },
+  {
+    "chunk_id": "chunk_0036",
+    "text": "TCL commands are used in combination with Data Manipulation Language (DML) and other\nSQL commands to ensure that the database remains in a reliable state despite unforeseen\nerrors or issues. JOINS\nIn a DBMS, a join is an operation that combines rows from two or more tables based on a\nrelated column between them.",
+    "start_index": 17078,
+    "end_index": 17391,
+    "word_count": 54,
+    "start_page": 14,
+    "end_page": 14,
+    "page_spans": "Page 14"
+  },
+  {
+    "chunk_id": "chunk_0037",
+    "text": "Joins are used to retrieve data from multiple tables by linking them together using a common\nkey or column. Types of Joins:\n1.",
+    "start_index": 17391,
+    "end_index": 17517,
+    "word_count": 23,
+    "start_page": 14,
+    "end_page": 14,
+    "page_spans": "Page 14"
+  },
+  {
+    "chunk_id": "chunk_0038",
+    "text": "Inner Join\n2. Outer Join\n3.",
+    "start_index": 17517,
+    "end_index": 17544,
+    "word_count": 6,
+    "start_page": 14,
+    "end_page": 15,
+    "page_spans": "Pages 14-15"
+  },
+  {
+    "chunk_id": "chunk_0039",
+    "text": "Cross Join\n4. Self Join\n1) Inner Join\nAn inner join combines data from two or more tables based on a specified condition, known\nas the join condition. The result of an inner join includes only the rows where the join condition is met in all\nparticipating tables.",
+    "start_index": 17544,
+    "end_index": 17806,
+    "word_count": 48,
+    "start_page": 15,
+    "end_page": 15,
+    "page_spans": "Page 15"
+  },
+  {
+    "chunk_id": "chunk_0040",
+    "text": "It essentially filters out non-matching rows and returns only the rows that have matching\nvalues in both tables. Syntax:\nSELECT columns\nFROM table1\nINNER JOIN table2\nON table1.column = table2.column;\nHere:\n●\ncolumns refers to the specific columns you want to retrieve from the tables. ●\ntable1 and table2 are the names of the tables you are joining.",
+    "start_index": 17806,
+    "end_index": 18155,
+    "word_count": 58,
+    "start_page": 15,
+    "end_page": 15,
+    "page_spans": "Page 15"
+  },
+  {
+    "chunk_id": "chunk_0041",
+    "text": "●\ncolumn is the common column used to match rows between the tables. ●\nThe ON clause specifies the join condition, where you define how the tables are\nrelated.",
+    "start_index": 18155,
+    "end_index": 18314,
+    "word_count": 29,
+    "start_page": 15,
+    "end_page": 15,
+    "page_spans": "Page 15"
+  },
+  {
+    "chunk_id": "chunk_0042",
+    "text": "Example: Consider two tables: Customers and Orders. Customers Table:\nCustomerID\nCustomerName\n1\nAlice\n2\nBob\n3\nCarol\nOrders Table:\nOrderID\nCustomerID\nProduct\n101\n1\nLaptop\n102\n3\nSmartphone\n103\n2\nHeadphones\nInner Join Query:\nSELECT Customers.CustomerName, Orders.Product\nFROM Customers\nINNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;\nResult:\nCustomerName\nProduct\nAlice\nLaptop\nBob\nHeadphones\nCarol\nSmartphone\n2) Outer Join\nOuter joins combine data from two or more tables based on a specified condition, just like\ninner joins. However, unlike inner joins, outer joins also include rows that do not have\nmatching values in both tables.",
+    "start_index": 18314,
+    "end_index": 18958,
+    "word_count": 94,
+    "start_page": 15,
+    "end_page": 16,
+    "page_spans": "Pages 15-16"
+  },
+  {
+    "chunk_id": "chunk_0043",
+    "text": "Outer joins are particularly useful when you want to include data from one table even if there\nis no corresponding match in the other table. Types:\nThere are three types of outer joins: left outer join, right outer join, and full outer join. 1.",
+    "start_index": 18958,
+    "end_index": 19202,
+    "word_count": 44,
+    "start_page": 16,
+    "end_page": 16,
+    "page_spans": "Page 16"
+  },
+  {
+    "chunk_id": "chunk_0044",
+    "text": "Left Outer Join (Left Join):\nA left outer join returns all the rows from the left table and the matching rows from the right\ntable. If there is no match in the right table, the result will still include the left table's row with NULL\nvalues in the right table's columns. Example:\nSELECT Customers.CustomerName, Orders.Product\nFROM Customers\nLEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;\nResult:\nCustomerName\nProduct\nAlice\nLaptop\nBob\nHeadphones\nCarol\nSmartphone\nNULL\nMonitor\nIn this example, the left outer join includes all rows from the Customers table. Since there is no matching customer for the order with OrderID 103 (Monitor), the result\nincludes a row with NULL values in the CustomerName column. 2.",
+    "start_index": 19202,
+    "end_index": 19924,
+    "word_count": 115,
+    "start_page": 16,
+    "end_page": 17,
+    "page_spans": "Pages 16-17"
+  },
+  {
+    "chunk_id": "chunk_0045",
+    "text": "Right Outer Join (Right Join):\nA right outer join is similar to a left outer join, but it returns all rows from the right table and\nthe matching rows from the left table. If there is no match in the left table, the result will still include the right table's row with NULL\nvalues in the left table's columns. Example: Using the same Customers and Orders tables. SELECT Customers.CustomerName, Orders.Product\nFROM Customers\nRIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;\nResult:\nCustomerName\nProduct\nAlice\nLaptop\nCarol\nSmartphone\nBob\nHeadphones\nNULL\nKeyboard\nHere, the right outer join includes all rows from the Orders table. Since there is no matching\norder for the customer with CustomerID 4, the result includes a row with NULL values in the\nCustomerName column.",
+    "start_index": 19924,
+    "end_index": 20705,
+    "word_count": 126,
+    "start_page": 17,
+    "end_page": 18,
+    "page_spans": "Pages 17-18"
+  },
+  {
+    "chunk_id": "chunk_0046",
+    "text": "3. Full Outer Join (Full Join):\nA full outer join returns all rows from both the left and right tables, including matches and\nnon-matches. If there's no match, NULL values appear in columns from the table where there's no\ncorresponding value.",
+    "start_index": 20705,
+    "end_index": 20947,
+    "word_count": 41,
+    "start_page": 18,
+    "end_page": 18,
+    "page_spans": "Page 18"
+  },
+  {
+    "chunk_id": "chunk_0047",
+    "text": "Example: Using the same Customers and Orders tables. SELECT Customers.CustomerName, Orders.Product\nFROM Customers\nFULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;\nResult:\nCustomerName\nProduct\nAlice\nLaptop\nBob\nHeadphones\nCarol\nSmartphone\nNULL\nMonitor\nNULL\nKeyboard\nIn this full outer join example, all rows from both tables are included in the result. Both\nnon-matching rows from the Customers and Orders tables are represented with NULL\nvalues. 3) Cross Join\nA cross join, also known as a Cartesian product, is a type of join operation in a Database\nManagement System (DBMS) that combines every row from one table with every row from\nanother table. Unlike other join types, a cross join does not require a specific condition to match rows\nbetween the tables.",
+    "start_index": 20947,
+    "end_index": 21724,
+    "word_count": 120,
+    "start_page": 18,
+    "end_page": 19,
+    "page_spans": "Pages 18-19"
+  },
+  {
+    "chunk_id": "chunk_0048",
+    "text": "Instead, it generates a result set that contains all possible combinations\nof rows from both tables.",
+    "start_index": 21744,
+    "end_index": 21844,
+    "word_count": 16,
+    "start_page": 19,
+    "end_page": 19,
+    "page_spans": "Page 19"
+  },
+  {
+    "chunk_id": "chunk_0049",
+    "text": "Cross joins can lead to a large result set, especially when the participating tables have many\nrows. Syntax:\nSELECT columns\nFROM table1\nCROSS JOIN table2;\nIn this syntax:\n●\ncolumns refers to the specific columns you want to retrieve from the cross-joined\ntables. ●\ntable1 and table2 are the names of the tables you want to combine using a cross\njoin.",
+    "start_index": 21844,
+    "end_index": 22194,
+    "word_count": 61,
+    "start_page": 19,
+    "end_page": 19,
+    "page_spans": "Page 19"
+  },
+  {
+    "chunk_id": "chunk_0050",
+    "text": "Example: Consider two tables: Students and Courses. Students Table:\nStudentID\nStudentName\n1\nAlice\n2\nBob\nCourses Table:\nCourseID\nCourseName\n101\nMaths\n102\nScience\nCross Join Query:\nSELECT Students.StudentName, Courses.CourseName\nFROM Students\nCROSS JOIN Courses;\nResult:\nStudentName\nCourseName\nAlice\nMaths\nAlice\nScience\nBob\nMaths\nBob\nScience\nIn this example, the cross join between the Students and Courses tables generates all\npossible combinations of rows from both tables. As a result, each student is paired with each\ncourse, leading to a total of four rows in the result set.",
+    "start_index": 22194,
+    "end_index": 22772,
+    "word_count": 87,
+    "start_page": 19,
+    "end_page": 20,
+    "page_spans": "Pages 19-20"
+  },
+  {
+    "chunk_id": "chunk_0051",
+    "text": "4) Self Join\nA self join involves joining a table with itself. This technique is useful when a table contains hierarchical or related data and you need to\ncompare or analyse rows within the same table. Self joins are commonly used to find relationships, hierarchies, or patterns within a single\ntable. In a self join, you treat the table as if it were two separate tables, referring to them with\ndifferent aliases. Syntax:\nThe syntax for performing a self join in SQL is as follows:\nSELECT columns\nFROM table1 AS alias1\nJOIN table1 AS alias2 ON alias1.column = alias2.column;\nIn this syntax:\n●\ncolumns refers to the specific columns you want to retrieve from the self-joined table. ●\ntable1 is the name of the table you're joining with itself.",
+    "start_index": 22772,
+    "end_index": 23515,
+    "word_count": 129,
+    "start_page": 20,
+    "end_page": 21,
+    "page_spans": "Pages 20-21"
+  },
+  {
+    "chunk_id": "chunk_0052",
+    "text": "●\nalias1 and alias2 are aliases you assign to the table instances for differentiation. ●\ncolumn is the column you use as the join condition to link rows from the same table.",
+    "start_index": 23515,
+    "end_index": 23688,
+    "word_count": 32,
+    "start_page": 21,
+    "end_page": 21,
+    "page_spans": "Page 21"
+  },
+  {
+    "chunk_id": "chunk_0053",
+    "text": "Example: Consider an Employees table that contains information about employees and their\nmanagers. Employees Table:\nEmployeeID\nEmployeeName\nManagerID\n1\nAlice\n3\n2\nBob\n3\n3\nCarol\nNULL\n4\nDavid\n1\nSelf Join Query:\nSELECT e1.EmployeeName AS Employee, e2.EmployeeName AS Manager\nFROM Employees AS e1\nJOIN Employees AS e2 ON e1.ManagerID = e2.EmployeeID;\nResult:\nEmployee\nManager\nAlice\nCarol\nBob\nCarol\nDavid\nAlice\nIn this example, the self join is performed on the Employees table to find the relationship\nbetween employees and their managers. The join condition connects the ManagerID column\nin the e1 alias (representing employees) with the EmployeeID column in the e2 alias\n(representing managers). SET OPERATIONS\nSet operations in SQL are used to combine or manipulate the result sets of multiple SELECT\nqueries.",
+    "start_index": 23688,
+    "end_index": 24495,
+    "word_count": 124,
+    "start_page": 21,
+    "end_page": 22,
+    "page_spans": "Pages 21-22"
+  },
+  {
+    "chunk_id": "chunk_0054",
+    "text": "They allow you to perform operations similar to those in set theory, such as union,\nintersection, and difference, on the data retrieved from different tables or queries. Set operations provide powerful tools for managing and manipulating data, enabling you to\nanalyse and combine information in various ways. There are four primary set operations in SQL:\n●\nUNION\n●\nINTERSECT\n●\nEXCEPT (or MINUS)\n●\nUNION ALL\n1. UNION:\nThe UNION operator combines the result sets of two or more SELECT queries into a single\nresult set. It removes duplicates by default, meaning that if there are identical rows in the result sets,\nonly one instance of each row will appear in the final result.",
+    "start_index": 24495,
+    "end_index": 25169,
+    "word_count": 114,
+    "start_page": 22,
+    "end_page": 22,
+    "page_spans": "Page 22"
+  },
+  {
+    "chunk_id": "chunk_0055",
+    "text": "Example:\nAssume we have two tables: Customers and Suppliers.",
+    "start_index": 25176,
+    "end_index": 25236,
+    "word_count": 9,
+    "start_page": 22,
+    "end_page": 22,
+    "page_spans": "Page 22"
+  },
+  {
+    "chunk_id": "chunk_0056",
+    "text": "Customers Table:\nCustomerID\nCustomerName\n1\nAlice\n2\nBob\nSuppliers Table:\nSupplierID\nSupplierName\n101\nSupplierA\n102\nSupplierB\nUNION Query:\nSELECT CustomerName FROM Customers\nUNION\nSELECT SupplierName FROM Suppliers;\nResult:\nCustomerName\nAlice\nBob\nSupplierA\nSupplierB\n2. INTERSECT:\nThe INTERSECT operator returns the common rows that exist in the result sets of two or\nmore SELECT queries.",
+    "start_index": 25237,
+    "end_index": 25623,
+    "word_count": 54,
+    "start_page": 23,
+    "end_page": 23,
+    "page_spans": "Page 23"
+  },
+  {
+    "chunk_id": "chunk_0057",
+    "text": "It only returns distinct rows that appear in all result sets.",
+    "start_index": 25624,
+    "end_index": 25685,
+    "word_count": 11,
+    "start_page": 23,
+    "end_page": 23,
+    "page_spans": "Page 23"
+  },
+  {
+    "chunk_id": "chunk_0058",
+    "text": "Example: Using the same tables as before. SELECT CustomerName FROM Customers\nINTERSECT\nSELECT SupplierName FROM Suppliers;\nResult:\nCustomerName\nIn this example, there are no common names between customers and suppliers, so the\nresult is an empty set.",
+    "start_index": 25685,
+    "end_index": 25935,
+    "word_count": 37,
+    "start_page": 23,
+    "end_page": 24,
+    "page_spans": "Pages 23-24"
+  },
+  {
+    "chunk_id": "chunk_0059",
+    "text": "3. EXCEPT (or MINUS):\nThe EXCEPT operator (also known as MINUS in some databases) returns the distinct rows\nthat are present in the result set of the first SELECT query but not in the result set of the\nsecond SELECT query. Example: Using the same tables as before.",
+    "start_index": 25935,
+    "end_index": 26199,
+    "word_count": 48,
+    "start_page": 24,
+    "end_page": 24,
+    "page_spans": "Page 24"
+  },
+  {
+    "chunk_id": "chunk_0060",
+    "text": "SELECT CustomerName FROM Customers\nEXCEPT\nSELECT SupplierName FROM Suppliers;\nResult:\nCustomerName\nAlice\nBob\nIn this example, the names \"Alice\" and \"Bob\" are customers but not suppliers, so they\nappear in the result set. 4.",
+    "start_index": 26199,
+    "end_index": 26422,
+    "word_count": 34,
+    "start_page": 24,
+    "end_page": 24,
+    "page_spans": "Page 24"
+  },
+  {
+    "chunk_id": "chunk_0061",
+    "text": "UNION ALL:\nThe UNION ALL operator performs the same function as the UNION operator but does not\nremove duplicates from the result set. It simply concatenates all rows from the different\nresult sets.",
+    "start_index": 26426,
+    "end_index": 26624,
+    "word_count": 33,
+    "start_page": 24,
+    "end_page": 24,
+    "page_spans": "Page 24"
+  },
+  {
+    "chunk_id": "chunk_0062",
+    "text": "Example: Using the same tables as before. SELECT CustomerName FROM Customers\nUNION ALL\nSELECT SupplierName FROM Suppliers;\nResult:\nCustomerName\nAlice\nBob\nSupplierA\nSupplierB\nDifference between Set Operations and Joins\nAspect\nSet Operations\nJoins\nPurpose\nManipulate result sets based on\nset theory principles. Combine data from related\ntables based on specified\nconditions.",
+    "start_index": 26624,
+    "end_index": 26996,
+    "word_count": 51,
+    "start_page": 24,
+    "end_page": 25,
+    "page_spans": "Pages 24-25"
+  },
+  {
+    "chunk_id": "chunk_0063",
+    "text": "Data Source\nResult sets of SELECT queries. Tables that are related by\ncommon columns.",
+    "start_index": 26996,
+    "end_index": 27081,
+    "word_count": 14,
+    "start_page": 25,
+    "end_page": 26,
+    "page_spans": "Pages 25-26"
+  },
+  {
+    "chunk_id": "chunk_0064",
+    "text": "Combining Rows\nCombine rows from different\nresult sets.",
+    "start_index": 27084,
+    "end_index": 27139,
+    "word_count": 8,
+    "start_page": 26,
+    "end_page": 26,
+    "page_spans": "Page 26"
+  },
+  {
+    "chunk_id": "chunk_0065",
+    "text": "May remove\nduplicates.",
+    "start_index": 27140,
+    "end_index": 27162,
+    "word_count": 3,
+    "start_page": 26,
+    "end_page": 26,
+    "page_spans": "Page 26"
+  },
+  {
+    "chunk_id": "chunk_0066",
+    "text": "Combine rows from different\ntables based on specified\nconditions. Output Columns\nRequire the SELECT queries to\nhave the same number of output\ncolumns and compatible data\ntypes. Can combine columns from\ndifferent tables, regardless of\ndata types or column numbers.",
+    "start_index": 27162,
+    "end_index": 27425,
+    "word_count": 40,
+    "start_page": 26,
+    "end_page": 26,
+    "page_spans": "Page 26"
+  },
+  {
+    "chunk_id": "chunk_0067",
+    "text": "Common\nOperations\nUNION, INTERSECT, EXCEPT\n(MINUS).",
+    "start_index": 27427,
+    "end_index": 27478,
+    "word_count": 6,
+    "start_page": 26,
+    "end_page": 26,
+    "page_spans": "Page 26"
+  },
+  {
+    "chunk_id": "chunk_0068",
+    "text": "INNER JOIN, LEFT JOIN, RIGHT\nJOIN, FULL JOIN.",
+    "start_index": 27479,
+    "end_index": 27524,
+    "word_count": 8,
+    "start_page": 26,
+    "end_page": 26,
+    "page_spans": "Page 26"
+  },
+  {
+    "chunk_id": "chunk_0069",
+    "text": "Conditional\nRequirements\nNo specific join conditions are\nrequired. Require specified join conditions\nfor combining data. Handling\nDuplicates\nUNION removes duplicates by\ndefault. Joins do not inherently handle\nduplicates; it depends on the join\ntype and data. Usage Scenarios\nUseful for combining and\nanalysing related data from\ndifferent queries or tables.",
+    "start_index": 27524,
+    "end_index": 27880,
+    "word_count": 50,
+    "start_page": 26,
+    "end_page": 27,
+    "page_spans": "Pages 26-27"
+  },
+  {
+    "chunk_id": "chunk_0070",
+    "text": "Used to retrieve and relate data\nfrom different tables based on\ntheir relationships. Result Set\nStructure\nResult sets may have different\ncolumn names, but data types and\ncounts must match. Result sets can have different\ncolumn names, data types, and\ncounts. Performance\nConsiderations\nGenerally faster and less complex\nthan joins.",
+    "start_index": 27880,
+    "end_index": 28210,
+    "word_count": 50,
+    "start_page": 27,
+    "end_page": 27,
+    "page_spans": "Page 27"
+  },
+  {
+    "chunk_id": "chunk_0071",
+    "text": "Joins can be more complex and\nresource-intensive, especially for\nlarger datasets. SUB QUERIES\nSubqueries, also known as nested queries or inner queries, allow you to use the result of\none query (the inner query) as the input for another query (the outer query). Subqueries are often used to retrieve data that will be used for filtering, comparison, or\ncalculation within the context of a larger query.",
+    "start_index": 28210,
+    "end_index": 28612,
+    "word_count": 66,
+    "start_page": 27,
+    "end_page": 27,
+    "page_spans": "Page 27"
+  },
+  {
+    "chunk_id": "chunk_0072",
+    "text": "They are a way to break down complex tasks into smaller, manageable steps. Syntax:\nSELECT columns\nFROM table\nWHERE column OPERATOR (SELECT column FROM table WHERE condition);\nIn this syntax:\n●\ncolumns refers to the specific columns you want to retrieve from the outer query. ●\ntable is the name of the table you're querying.",
+    "start_index": 28612,
+    "end_index": 28936,
+    "word_count": 55,
+    "start_page": 27,
+    "end_page": 28,
+    "page_spans": "Pages 27-28"
+  },
+  {
+    "chunk_id": "chunk_0073",
+    "text": "●\ncolumn is the column you're applying the operator to in the outer query. ●\nOPERATOR is a comparison operator such as =, >, <, IN, NOT IN, etc. ●\n(SELECT column FROM table WHERE condition) is the subquery that provides the\ninput for the comparison.",
+    "start_index": 28936,
+    "end_index": 29185,
+    "word_count": 46,
+    "start_page": 28,
+    "end_page": 28,
+    "page_spans": "Page 28"
+  },
+  {
+    "chunk_id": "chunk_0074",
+    "text": "Example: Consider two tables: Products and Orders.",
+    "start_index": 29191,
+    "end_index": 29241,
+    "word_count": 7,
+    "start_page": 28,
+    "end_page": 28,
+    "page_spans": "Page 28"
+  },
+  {
+    "chunk_id": "chunk_0075",
+    "text": "Products Table:\nProductID\nProductName\nPrice\n1\nLaptop\n1000\n2\nSmartphone\n500\n3\nHeadphones\n50\nOrders Table:\nOrderID\nProductID\nQuantity\n101\n1\n2\n102\n3\n1\nFor Example: Retrieve the product names and quantities for orders with a total cost greater\nthan the average price of all products. SELECT ProductName, Quantity\nFROM Products\nWHERE Price * Quantity > (SELECT AVG(Price) FROM Products);\nResult:\nProductName\nQuantity\nLaptop\n2\nDifferences Between Subqueries and Joins:\nAspect\nSubqueries\nJoins\nPurpose\nRetrieve data for filtering,\ncomparison, or calculation\nwithin the context of a larger\nquery. Combine data from related tables\nbased on specified conditions.",
+    "start_index": 29241,
+    "end_index": 29893,
+    "word_count": 98,
+    "start_page": 28,
+    "end_page": 29,
+    "page_spans": "Pages 28-29"
+  },
+  {
+    "chunk_id": "chunk_0076",
+    "text": "Data Source\nResult of one query used as\ninput for another query. Data from multiple related tables.",
+    "start_index": 29893,
+    "end_index": 29992,
+    "word_count": 17,
+    "start_page": 29,
+    "end_page": 29,
+    "page_spans": "Page 29"
+  },
+  {
+    "chunk_id": "chunk_0077",
+    "text": "Combining Rows\nNot used for combining rows;\nused to filter or evaluate data. Combines rows from different tables\nbased on specified join conditions. Result Set\nStructure\nSubqueries return scalar\nvalues, single-column results,\nor small result sets. Joins return multi-column result\nsets. Performance\nConsiderations\nSubqueries can be slower and\nless efficient, especially when\ndealing with large datasets. Joins can be more efficient for\ncombining data from multiple tables. Complexity\nSubqueries can be easier to\nunderstand for simple tasks or\nsmaller datasets. Joins can become complex, but are\nmore suited for handling large-scale\ndata retrieval and combination\ntasks. Versatility\nSubqueries can be used in\nvarious clauses: WHERE,\nFROM, HAVING, etc. Joins are primarily used in the\nFROM clause for combining tables.",
+    "start_index": 29992,
+    "end_index": 30808,
+    "word_count": 119,
+    "start_page": 29,
+    "end_page": 29,
+    "page_spans": "Page 29"
+  },
+  {
+    "chunk_id": "chunk_0078",
+    "text": "",
+    "start_index": 30808,
+    "end_index": 30808,
+    "word_count": 0,
+    "start_page": 29,
+    "end_page": 29,
+    "page_spans": "Page 29"
+  }
+]

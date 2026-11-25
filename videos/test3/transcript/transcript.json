@@ -1,0 +1,622 @@
+{
+  "language": "en",
+  "text": "Use this information to answer the question. We are also sending the data or the context along with it. Now I need to scrape my site and add the information in the vector database. These splits, we need to embed them into vectors and we need to store them in a database. I am creating a dictionary. Now whatever prompt I am going to get, that I am passing is an input to our alien. Also if you want to see the exact prompt that is going LLMs are trained on a lot of data and they are awesome at answering queries related to that information. But now what if I want my LLM to be able to answer questions related to my company specific data? For example, what if I have an e-commerce platform like Amazon? Now, I want our LLMs to be able to answer questions related to the products that are specific to my particular platform. Or what if I have courses right? I want to create a bot where I'm using LLM to answer questions related to our courses. How can we do that? There are a couple of things that we can do. The first one is fine tuning and for those of you who understand fine tuning you will know the problems associated with it. It is very, very costly, it is very computationally expensive, it will need a lot of time, you will need to pre-process your data, you will need to clean it, you will need ML engineers to actually do the fine tuning. Also, if your data is being updated very frequently for example, we are going to add on products or I am going to add on my courses right then my company specific data is being updated again and again. So, I will need to fine tune my model again and again. So, it is going to be hard to update plus if I need to remove some information then it is very hard to remove the particular course or particular products also. So, there are a lot of problems associated with fine tuning. So, introducing the second solution lag which is what we will be discussing now. The concept behind drag is very, very simple and very, very logical. Let me explain it in very simple terms, forget the term right now. See, we have LLM which is very good at answering questions, but it does not have a data. Where is our data or data is present in the database? Now, what can we do? What if we fetch or we take out the relevant information from this database? And when we are querying our element, we are sending the query to our element. At that time, we are just going to tell see this is the information that we have already gotten from the database. Use this information to answer the question. Exactly. This is as simple as that. This is rack. So what do we do? Let me repeat it. We have a database present. What are we going to do? We are going to get a query. Now based on this query, we are going to fetch only the relevant information from the database. So we're going to retrieve the information from data piece. So we are going to get the information from database. And that we are going to send to our LLM as a prompt along with the question we're going to send. Listen, this is the context. This is the data. Just use this to answer this particular question. So we are sending the question, but we are also sending the data of the context along with it, which our LLM will use and to answer the question. Our LLM is awesome at answering questions, but it does not have the data. So all we are doing is fetching the data from our database and sending it along with the question as simple as that. So, rack stands for retrieval augmented generation retrieval meaning we are retrieving of we are fetching out the relevant information from the database augmented meaning we are augmenting or we are enhancing the query by adding the context of the data that we have gotten from the database. So, we retrieve the information we enhanced our query we added the context of this extra information and then who is generating the answer the lm is generating the answer. So, retrieval augmented generation simple. Before we move ahead, I would like to take a moment over here to say something to those who are technically interested in Jennie. See, there are two sides of Jennie. One is if you are learning to build your own elements, build your own version of chat capacity. The other side is when you are learning to use elements to build your own apps. Now, if you are learning to build your own LLM, you need to understand transformer architecture based on what strategy PTA is built. And for that, the prerequisite is understanding LSTM in R&N, for which the prerequisite is neural network. So, this is how you will be able to build your own version of strategy PTA, neural networks, ANN, CNN, R&N, LSTM's transformer architecture and then you will be ready to build. And when you are talking about building your own apps, that is where long chain drag and all of this comes into pitch up. In our seven weeks hands on Gen. V.I. course with edu courses, we have covered both of these sites in seven weeks. Now, this is a very, very comprehensive course which I am teaching live currently. All the recordings are available for lifetime nodes code. Everything is available. You can check out the curriculum. You can check out the testimonials of our courses. For this course also, we already have such great feedback. I am thoroughly enjoying this course and I am so proud of it. If you are interested in learning live with me or what's the recordings, seven weeks this is very, very comprehensive and we are covering everything. It's very big and friendly. At least check out the details in the description for now. Let's get back to the video. Let's get started with our code and for the example what I'm going to be doing is I'm going to be creating a bot for my courses. So I'm going to retrieve information for a particular query from a database and I'm going to send this information to our LLM and I'm going to fetch the answers. So I'm going to be creating this entire track pipeline. But what is the first thing that I need to do? I need to make sure that the information is present in some database. See, in your case, in your example, you might already have this information present in the database. So you can directly start from there. But in order to demo it, I'm going to show you that how you can also put the information in the vector database. So I'm going to be using ChromaDB as the vector database in our particular example. and I need to make sure that the information for my courses is present over here. Now, this is going to be a one-time effort to put the information in the vector database, right? So, I will also demo that. So, in our case, what I am going to be doing is I have a site educoses.com, I am going to be scraping this site, I am going to be scraping it and putting that relevant information of the courses, whatever information I have about the courses, I am going to be putting it into the vector database. So, that is one-time effort And then in the rack pipeline, for a particular query, I'm going to retrieve the relevant information and I'm going to send it to the LLM. So, let's get started with the code. Let's get started with writing some boilerplate code. So, I'm just quickly installing all the libraries that we are going to read. I'm going to be starting with Langjian community. We are going to be using Langjian hub. And I will let you know for what are we using all of this. We are going to be using Chroma, TPS or vector database. And we are going to be using OpenAI as our LLM. So, we are going to be using GPT. This is going to take a couple of minutes. So just give me a second. And it's quickly set our OpenAI API key. So in Google Collab itself, if you just go to keys, I have a lot of keys over here. I'll be using this particular key. So you can just create your OpenAI API key. It's fairly simple. I've shown it earlier as well. I'll just add the screen recording over here. In order to set up OpenAI API key, just go to platform.openAI.com. You will be able to see all the documentation over here. A lot of details is there. But just go to dashboard, go to API keys. See right now, I have two secret keys. These are for my projects. What you can do is create a new secret key over here. Just give some name, like for example, text project and create the secret key and copy it and keep it somewhere. Make sure you save it because you will not be able to access it later and we've been needing it. Right, and I'm going to import user data. So we are going to have a keys and I use a data and I'm going to be using OS. So I'm just going to set the environment variables quickly. So it's as simple as that. Here our name was this. So this is it. We are done with setting our open API key. Now I need to scrape my site and add the information in the vector database. So let's go to the language and documentation. Here you can see there are a lot of document orders that are available. So you can load PDF files, CSV data, HTML data, JSON data and so on. So we have a web page that we want to scrape, right? So that is what we want to load. So we are going to be using web-based loader. So this is the documentation that I've went through to understand how to load web pages. So everything is available in the documentation. I keep saying this in every video. Everything is available. don't get to overcome that how will I can understand this. Everything is available, it is for free, don't worry about it, okay. My job is to make things easier for you. So, let us do that. I am going to be using web paste loader and that is available in lang chain community. So, let us just quickly from the document loaders, let us just quickly import web paste loader. and in the loader I can just give the paths that I want to load. So, in this web-based loader if I go see you can give a single path like this or you could also give multiple paths. So, if you go over here say let me just actually write it. So, if I write web path you can see you can give either one path or you can give multiple paths. So, you can see this right I can give a list of paths that I want to basically load. So, in our case, I am just loading the educoses site and I am just loading the genie icons right now. So, I am loading one, but you can also give a list of sites like this. Just explaining how you can do that. And once you have the loader, all you have to do is loader.load, that's it. It's as simple as that and we will have all the documents and if you want to see the documents, let's just quickly print them and see how it looks like. So, you can see this is awesome. We have the source. The title is Hanson Geniaicose. The description is something. This is the content. And if you go down, you will be able to see the entire thing. You will be able to see that it is 7 weeks. You will be able to see the entire curriculum, the entire FAQ section. You will be able to see the entire content of the page is now available in this documents. Now that I have the entire page content available with me in this docs variable, do I store the entire docs as it is in the vector database? What do you think? Think about it, see when I have to send some context to my LLM, do I send the entire content of the page? Think about it because our page can be huge. Currently I am scraping only the genie I part. Maybe I am scraping all the courses like I am just scraping it to courses.com. Then the information of all the courses is there. Now if someone is asking just about genie I send the information of all the courses to our LLM, no right. Why do I send so much of irrelevant information? If someone is asking about the duration of the course, why do I send the curriculum and the FAQ to the LLM? It is just going to be too many tokens that I am sending to LLM. It is just going to be too much processing that I am making LLM do for no reason at all. So, what do I want to do? I want to send just the relevant information which is going to be useful in answering the query to our LLM. So, in order to do that, I want to send just some part of this entire document right. So, it makes sense that I split this entire document into some chunks or into some splits and I save it in our vector database. So, that is what we are going to be doing now. And how do I convert this entire data into a split? Again, go back to the language and documentation, I am just going back Just below the document loaders, we have textplitters and we have documentation about how to recursively split text, how to split HTML, how to split code, how to recursively split JSON and so on. So, we just need to split our text. I am going to be using recursive character textplitter. Again, very simple, I am just going to be using the documentation itself. We are going to have something called chunk size in chunk overlap. What is this? Chunk size from the name itself, how big we want our chunk to be, right? So here they have taken really small chunk size 100. We are going to take for demo. We are going to maybe take 1000. You can make it smaller, obviously. They have also taken something called chunk overlap, which they have kept 20. In our case, maybe we will keep 200. And let me explain you, why do we need chunk overlap? Let's take an example. Suppose in my content, currently I have, it's a 7 week scores. Now, suppose I split at between 7 and weeks. Now, 7 is present in one chunk and weeks course is present in the other chunk. So, now the context of 7 weeks is neither present in chunk 1 nor chunk 2, right. So, when I split in between, I will need to do some processing to understand it. Okay, this was 7 which was there in chunk 1 and weeks which was present in chunk 2. Instead of doing all of that, instead of making it more complex, we just have some overlap of chunks. So, that the last 200 characters that were there in the say chunk 1 will also be there in the starting with chunk 2. So, like this you are making sure that context is present if if needed you can send both chunk 1, chunk 2 to LM that is ok. But you are just saving on your computation and you are making sure that the entire context is present. Just to give you another example, suppose my text was no prerequisite needed and I split the chunks between no and prerequisite needed. So, in my second chunk we have prerequisite needed and no went in the first chunk. You get the point at the entire context as lots right. So, it makes sense that I have some overlap between the chunks. I hope that part is clear. If not, let me know in the comments and think of different examples for which you know chunk overlap would make a lot of sense. So, let us get back to writing our code and from lang chain, I am going to be using text splitters and I am going to be importing recursive character text splitter and I am going to be creating the splitter. and chunk size as we discussed, I am probably going to give say 1000. You could also give chunk over lap is 0, but I am giving it as 200. And here we have these splits. And it is as simple as that, you can also print your splits. So let's see how our splits look like. So suppose you want to see splits of 0, splits of 1, you can just check it out like this. So, this is the first split and this is going to be of 1000 characters and there is going to be some overlap. So, if you see in the end part there was ah tensor board mini project implementer gand ah 2 hundred and digit and then it was starting with mini project something I think. And then if we come to the starting of this you can see the gand part is going to be there again. So, you can say implement a GAN to generate 100 integers, mini project the next one is coming like this right. So, there is some overlap. So, the entire V A part was ending over there and then the after that GAN part started again. So, there is some overlap between chunk 1 and chunk 2. Similarly, it is going to be there for the rest of the chunks also. I hope you understood that point, but also if you want to see the total number of splits, it is as simple as just printing the length of the splits. So, if we see that the total number of splits is 11. So, you can actually try printing all of the splits and you can see right. So, you can also write like a for loop or something. This is right. So, here you can see again you will be able to see some overlap between this and the last one. So, here you can see it is starting from nodes state state graph. So, in the second split if I go over here, there should be nodes. So, I am basically talking about graph and let's see. So, you can see, right? Land graph knows a state graph. So, you can see the simple Q&A application that is going to be present in this particular third chunk as well. So, you can see that, right? Now that we have the splits, it is time that we add these splits into our vector database. We are going to be using chroma DB, but say again these splits are just text and vector database from the name itself, we are supposed to store vectors, right? Everything internally in MLEI is basically numbers, it is all vectors. So, what do we need to do? These splits, we need to embed them into vectors and we need to store them in our database. it sounds fancy it is actually very simple we are just converting this text into numbers into vectors and we are trying to understand the meaning of the words in that ok. And we are going to be using everything from library so it is not like we have to write the code for that it is giving me autocomplete so let us actually do that. So, I am going to be using Chroma DB and here I am using OpenAI embeddings to convert our splits into embeddings ok. So, this is what we are going to use to convert this textual information into numbers into vectors. We are embedding these text ok and we are embedding splits and that is what we are storing in our vector store. So, after this we have the information present in our vector DB and once we have that we can actually also print the collection to see that how it is right. So, in our vector store if you want to see the collection and if we see the suppose count of it. you can see there are leaven splits embedded and stored over here. Right, if you also want to see, so instead of the count if you also want to see the suppose IDs of these collections, so if I just do this, these are the IDs for the leaven splits that we had embedded into vector store. And if you also want to print it, we can also print the collections. And I am just printing the first collection for now. And I'm just giving the ID of the first collection. And in Chroma database, so it stores in different values, the embeddings and the documents. So here I'm just going to tell it to include the embeddings. So I want to see the embeddings and the documents over here. So you can see if you want to see the metadata is the document. So you can just give what all you want to see. So, you can see this is the embedding. So, this is the array and in the document you can see the entire document. So, document is basically the original text that you had that is embedded and stored into the embedding. So, like this you can also try printing for multiple collections by any of the collections in fact and you can try checking it out. So, let me just change this. So, like this you can see that these are the embeddings for these particular chunks. So, it is only creating the ID, it is only saving the documents and embeddings. So, how are we doing the embedding using OpenAI embedding? Till now I was just adding the information into my vector database. So you might already have the information vector database and you might not need to do all of this. Now I'm going to get started with the rack pipeline. So I need this vector store to act as my retriever. So I'm just going to create a variable retriever and I'm going to make my vector store act as retriever. That's it as simple as that. And what is the next step that I need to do? I need to do the augmentation. For augmentation, what do we need to do? See, in our vector database, there is a lot of documents now. We are going to fetch the relevant document and along with the question that we are getting, we are going to send this context, this relevant documentation to our LLIM, correct. Now, see, we can create our own prompt ends into LLIM. Let's see, this is the question, this is the context. But there are a lot of prompts that are already available and I just wanted to show it to you. See in Lanchin itself if you see there are so many prompts that are available. So we are going to be using this rack prompt. You could actually just copy this and you could write it yourself also but I want to also show you how you can use the prompts that are available in the hub. So, what this is saying is that you are an assistant for question answering tasks. So, this is the question, this is the context and you are supposed to answer in three sentences maximum and keep the answer concise. So, you can also write your own prompt, you can say that no, I want a more detailed information or I want maybe three word answer or something like that. Whatever you want, right. You can customize your own prompt and you can write your own prompt. I just want to show you that there are prompts available in the hub and you can just use them like this. Okay. So we are going to be using them like this. I'm again saying it you this is just basically copy paste of text. So I can copy it and I can create a prompt or I can use it from the hub as it is. So let's write the code for pulling the prompt. and from launching itself I am going to be importing up and we are going to be pulling the prompt from the hub. And let us run this. So, we have the prompt now. Now, we need to send this prompt to whom to our LLM. So, we need to use our LLM. We are going to be using GPT as our LLM. So, we are going to be using OpenAI as LLM. So, let me just quickly create the LLM. So, we are using OpenAI. And whenever we need to talk to LLM, what do we create chat models? We have covered this in multiple videos. So, I hope this should be clear now. If not, check out the length seen in the long graph videos. You should be clear with these concepts. And we can just create the chat model for chat OpenAI. And we can give the modern name and the temperature or we can just do this and we are going to use the default values. So, we have our RLM now we are ready to create our fraction. What do we send to our LLM? We send the prompt and what does our prompt need? So, if we go to the prompt that we are using, we need the question and the context. So, first we need the context from where are we going to get the context from our retriever. So, the first thing that I need to do is have the variables that I need to send to our prompt. So, I need to send context. So, I need to send context and that I am going to get from the retrieval right. Other than this, what do I need to send? I need to send the question. So, I am sending it in a dictionary right. So, here you can see I have to send context and question. So, I am sending these values in a dictionary. So, I have the context now. Now, I need to send the question. See, whenever we need to just pass the input as it is. So, our question is going to be the input. Whenever we just need to pass the input as it is, we need to use something called runnable pass through. So, let me just quickly import that. So, in launching itself, there are a lot of runnables that are available. So, launching concepts are very, very important over here. So, whenever you just need to pass the question as it is whatever is there whatever you need to pass as it is you use something called runnable pass through. So, it is a runnable. So, basically a task that you are going to be running where we are just passing through the information right. So, here because I need to pass the question I am using runnable pass through. Now, another point over here is that whatever I am going to be retrieving from my vector store. it does not have to be a single document. Maybe I am asking something, maybe I am asking the curriculum for all the 5 weeks. So, the curriculum might be present in multiple splits instead of just one split right. So, whatever context I am getting, I need to join these relevant splits. So, maybe there were a total of 1000 splits And from that I got say 5 or 4 relevant splits right. Now I need to join them and send them together to in my context right. It is not like I am sending a list of 4 or 5 different splits. So, our rack chain I just need to send the context. So, the entire whatever is the context. So, whatever relevant information I got from the vector store, I need to join that and send it in the context. I am repeating that see in our splits right now in our case we have 11 splits. In real cases maybe we have a lot of data, we have say 1000 splits and the relevant information might be in say 4 to 5 splits. So, I need to join this relevant information and send it together in this context. So, I need to do that joining also right. So, here I have whatever the retriever sent me, but I need to do one more thing. So, whatever is the output from this retriever, I am going to pass to my own function and I am going to call this as maybe format documents. ok and let us just write this function and here all I am doing is basically formatting whatever relevant information I have. So, in this I am going to be passing the documents that I have. How am I getting this documents from the retriever? So, retriever is responsible for doing it that whatever is relevant for this particular question give me the documents for that and all that we have to do is join those documents ok. So, here whatever information is there I am just going to join them. So, in the page content and I am going to go through all the docs and I am just going to join. And that's it. So, now I have the context in the question, where do I need to pass this context and question to the prompt? So, this is the first thing. Now, this needs to be passed to the prompt. So, the input is to the prompt. Now, when I get the prompt, that has to be sent to our LLM. And from lm, I'm going to get the output. Now the output is going to have a lot of information. I just need the content out of it. So whenever we have, we have to take out the content, we can use STR output parser. Again, we have used this also in previous videos. It's okay. If you don't know these things, just you'll get used to them as you write more and more code or just go through the lang chain lang graph videos and you'll get used to these things. Okay. So we need to use the STR output parser. And let me just quickly import that. And whatever is the output, I'm going to basically parse out the content from it and that is what I'm going to get as the output. So we have made our rank chain. Let's quickly revise it once what's happening over here. See whenever we create a chain, we create a chain of some runnables or tasks. So what are the different tasks over here? This is one task and what am I doing? I am creating a dictionary of where I am passing the retriever and I'm formatting the documents and I'm passing it as context. And the question I'm passing it as it is. So now these are going to be the inputs to the prompt. Now what is the prompt? This is the prompt and it needed these two as the inputs, right? Now what am I going to get output from this? I'm going to get the prompt. I could have just done create prompt prompt chat prompt template. I could have passed this as it is with the inputs. So, these inputs have passed them as dictionary. Now, whatever prompt I am going to get, that I am passing is an input to our LLM. So, I am passing the prompt to our LLM. Now, what is the output that I get from LLM? There are a lot of things present. I am going to take out just the content of it and I am passing out the content. So, I am passing of the content over here. So, basically here the renewables are or the different tasks are divided by this pipe operator and whatever is the output from this prompt is passed into the LLM. Whatever is the output from the LLM is passed to the person and we take out the content. And what are we doing over here? See, why do we need this function? So, I have a retriever. Retriever is going to take out the relevant documents. Now, maybe they might be like two documents or three documents. I need to join those documents. So, here I am just going through the documents and I am joining the entire content. All I am doing over here is adding one line between those documents and putting the documents together, formatting them together and passing the context and the question. Proming the prompt, passing to the NLM, whatever is the output, I am just passing it out. It's time that we actually check whether this chain is working or not. Let us run this chain and let all we have to do now is invoke the chain and we can just pass the query over here. So, suppose let us ask are the recordings of the course available for how long? Let us see. Okay, there is a mirror in running will pass through. Okay. Oh, sorry. So, I missed this. Let us run it again. Here's the recordings of the course that are available for lifetime access. Nice. So let's probably try for some more queries. Let's try something like are the testimonials for the course available because I just added the testimonials right before recording this video. I was just adding them because the course just ended the live classes. Yes, the testing models for the course are available on this website, those real stories and satisfaction from the courses. Let's see if it can name these students. 9. So, it has named some of these students Ayythya, Manika, Ashish, Satish. So, these are all my students from the Agni-I course. So, these are some of the students that have more testimonials, but this is good enough. We can also probably check for something, some more questions like for example, are these certificates provided? certificates are provided for the course where we let us say what all projects are covered as part of the course. So, maybe it will go through the curriculum and it will tell what all projects are covered right. So, that would be nice. All right. So, it is saying, okay, implementing CAN training, VA, then there is fine tuning techniques, offers hands-on learning experiences, allows participants from many and major projects nice this is so cool we created a rack pipeline and we are able to create basically a pot where we are able to answer questions based on our site right. So like this I have courses you could be having any products and you can make LLM answer questions related to your products also if you want to see the exact prompt that is going into the LLM you can also add probably a print after this so let's try doing that so what I'm going to do is probably create a new chain so rack chain with print something like this ok. And whatever is the output from this prompt, I am getting the prompt right, I need to print it and I need to again pass the prompt to my LLM right. So, in order to print it, what I am going to do is I am going to create my own custom function where I am going to basically create a runnable lambda and to create your own custom function you need to create a runnable lambda ok. So, there are different kinds of runnables. So, if you want to just pass the information as it is we have runnable pass through if you want to create your own function you can basically use runnable lambda. So, let me just quickly import that from blank chain core and And I'm going to be using that and I need to give a function over here. So the function that we are going to be writing is probably going to be primed prompt. And let's just define it. And I'm going to be getting the prompt text over here. And I'm just going to be printing it just to show it to you. and also see whatever will be the output from this Renable Lambda that will be passed to the LLM. So, LLM is still expecting the prompt right. So, I am going to be returning the prompt as it is so that I am making sure it is passed to the LLM right. So, do not do this mistake if you add a print like if you are adding in between for Renable Lambda you need to make sure that the same is passed to the LLM right. So, whatever prompt was the output same thing I am passing to the LLM ok. So, let us quickly run this and let's try again. So, in this particular chain I am going to probably invoke something else. Suppose is there doubt support and let's try running this. So, it is saying I do not know. So, maybe it was not able to get that part. So, let us probably try for this itself. Maybe I need to be better at my FAQ right. So, here we are getting You are an assistant answering questions for question answering tasks, right? So, this was basically the same thing that is going. You are an assistant for question answering tasks use the following pieces of retrieved context. So, the same thing is basically going and we are passing the question and the context. So, if I just go ahead, this is the context and these are probably some chunks that the retriever has taken out for us. maybe you know for what part it did not work, maybe because my chunk size was too huge. So, maybe using that we will get better. And so, the question in the context is passed. So, you can see the question is passed, what are projects are covered in the course and then the entire context basically the splits are passed. Now, you remember I had joined the documents with a end line in between right. So, that is why these are in new lines. So, these are the different chunks that are being passed and based on that we are getting the response. So, nice and this brings us to the end of the video. I hope you enjoyed and you understood drag very well. If there are any questions please let me know in the comments and I would love to answer them. Also, guys, I am planning to be extremely active on YouTube. Now, I am creating a lot of content on YouTube, LinkedIn as well as on my personal interest. That is the personal side. But for YouTube and LinkedIn, I am creating so much of free content. And it would really, really motivate me if you could support me a bit more. Hit the like button and share with your friends. And if you are finding it useful. If you have watched it here, I am hoping that you really found it useful. Please do let me know and please consider sharing more of your support and love. It is going to mean the world to me. It is really going to motivate me a lot. And so even next time, I promise a lot more videos coming up. Stay tuned.",
+  "segments": [
+    {
+      "start": 0.031,
+      "end": 24.5,
+      "text": "Use this information to answer the question. We are also sending the data or the context along with it. Now I need to scrape my site and add the information in the vector database. These splits, we need to embed them into vectors and we need to store them in a database. I am creating a dictionary. Now whatever prompt I am going to get, that I am passing is an input to our alien. Also if you want to see the exact prompt that is going",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 24.5,
+      "end": 52.529,
+      "text": "LLMs are trained on a lot of data and they are awesome at answering queries related to that information. But now what if I want my LLM to be able to answer questions related to my company specific data? For example, what if I have an e-commerce platform like Amazon? Now, I want our LLMs to be able to answer questions related to the products that are specific to my particular platform. Or what if I have courses right? I want to create a bot where I'm using LLM to answer questions related to our courses.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 52.529,
+      "end": 71.463,
+      "text": "How can we do that? There are a couple of things that we can do. The first one is fine tuning and for those of you who understand fine tuning you will know the problems associated with it. It is very, very costly, it is very computationally expensive, it will need a lot of time, you will need to pre-process your data, you will need to clean it, you will need ML engineers to actually do the fine tuning.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 71.463,
+      "end": 98.513,
+      "text": "Also, if your data is being updated very frequently for example, we are going to add on products or I am going to add on my courses right then my company specific data is being updated again and again. So, I will need to fine tune my model again and again. So, it is going to be hard to update plus if I need to remove some information then it is very hard to remove the particular course or particular products also. So, there are a lot of problems associated with fine tuning. So, introducing the second solution lag which is what we will be discussing now.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 101.669,
+      "end": 122.273,
+      "text": "The concept behind drag is very, very simple and very, very logical. Let me explain it in very simple terms, forget the term right now. See, we have LLM which is very good at answering questions, but it does not have a data. Where is our data or data is present in the database? Now, what can we do? What if we fetch or we take out the relevant information from this database?",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 122.273,
+      "end": 147.029,
+      "text": "And when we are querying our element, we are sending the query to our element. At that time, we are just going to tell see this is the information that we have already gotten from the database. Use this information to answer the question. Exactly. This is as simple as that. This is rack. So what do we do? Let me repeat it. We have a database present. What are we going to do? We are going to get a query. Now based on this query, we are going to fetch only the relevant information from the database.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 147.029,
+      "end": 176.223,
+      "text": "So we're going to retrieve the information from data piece. So we are going to get the information from database. And that we are going to send to our LLM as a prompt along with the question we're going to send. Listen, this is the context. This is the data. Just use this to answer this particular question. So we are sending the question, but we are also sending the data of the context along with it, which our LLM will use and to answer the question. Our LLM is awesome at answering questions, but it does not have the data. So all we are doing is fetching the data from our database and sending it along with the question as simple as that.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 176.223,
+      "end": 204.269,
+      "text": "So, rack stands for retrieval augmented generation retrieval meaning we are retrieving of we are fetching out the relevant information from the database augmented meaning we are augmenting or we are enhancing the query by adding the context of the data that we have gotten from the database. So, we retrieve the information we enhanced our query we added the context of this extra information and then who is generating the answer the lm is generating the answer. So, retrieval augmented generation simple.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 204.269,
+      "end": 220.638,
+      "text": "Before we move ahead, I would like to take a moment over here to say something to those who are technically interested in Jennie. See, there are two sides of Jennie. One is if you are learning to build your own elements, build your own version of chat capacity. The other side is when you are learning to use elements to build your own apps.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 220.638,
+      "end": 246.693,
+      "text": "Now, if you are learning to build your own LLM, you need to understand transformer architecture based on what strategy PTA is built. And for that, the prerequisite is understanding LSTM in R&N, for which the prerequisite is neural network. So, this is how you will be able to build your own version of strategy PTA, neural networks, ANN, CNN, R&N, LSTM's transformer architecture and then you will be ready to build. And when you are talking about building your own apps, that is where long chain drag and all of this comes into pitch up.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 246.693,
+      "end": 272.545,
+      "text": "In our seven weeks hands on Gen. V.I. course with edu courses, we have covered both of these sites in seven weeks. Now, this is a very, very comprehensive course which I am teaching live currently. All the recordings are available for lifetime nodes code. Everything is available. You can check out the curriculum. You can check out the testimonials of our courses. For this course also, we already have such great feedback. I am thoroughly enjoying this course and I am so proud of it.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 272.545,
+      "end": 302.093,
+      "text": "If you are interested in learning live with me or what's the recordings, seven weeks this is very, very comprehensive and we are covering everything. It's very big and friendly. At least check out the details in the description for now. Let's get back to the video. Let's get started with our code and for the example what I'm going to be doing is I'm going to be creating a bot for my courses. So I'm going to retrieve information for a particular query from a database and I'm going to send this information to our LLM and I'm going to fetch the answers. So I'm going to be creating this entire track pipeline.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 302.093,
+      "end": 324.2,
+      "text": "But what is the first thing that I need to do? I need to make sure that the information is present in some database. See, in your case, in your example, you might already have this information present in the database. So you can directly start from there. But in order to demo it, I'm going to show you that how you can also put the information in the vector database. So I'm going to be using ChromaDB as the vector database in our particular example.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 324.2,
+      "end": 350.592,
+      "text": "and I need to make sure that the information for my courses is present over here. Now, this is going to be a one-time effort to put the information in the vector database, right? So, I will also demo that. So, in our case, what I am going to be doing is I have a site educoses.com, I am going to be scraping this site, I am going to be scraping it and putting that relevant information of the courses, whatever information I have about the courses, I am going to be putting it into the vector database. So, that is one-time effort",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 350.592,
+      "end": 380.377,
+      "text": "And then in the rack pipeline, for a particular query, I'm going to retrieve the relevant information and I'm going to send it to the LLM. So, let's get started with the code. Let's get started with writing some boilerplate code. So, I'm just quickly installing all the libraries that we are going to read. I'm going to be starting with Langjian community. We are going to be using Langjian hub. And I will let you know for what are we using all of this. We are going to be using Chroma, TPS or vector database. And we are going to be using OpenAI as our LLM. So, we are going to be using GPT.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 383.667,
+      "end": 409.52,
+      "text": "This is going to take a couple of minutes. So just give me a second. And it's quickly set our OpenAI API key. So in Google Collab itself, if you just go to keys, I have a lot of keys over here. I'll be using this particular key. So you can just create your OpenAI API key. It's fairly simple. I've shown it earlier as well. I'll just add the screen recording over here.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 409.52,
+      "end": 438.865,
+      "text": "In order to set up OpenAI API key, just go to platform.openAI.com. You will be able to see all the documentation over here. A lot of details is there. But just go to dashboard, go to API keys. See right now, I have two secret keys. These are for my projects. What you can do is create a new secret key over here. Just give some name, like for example, text project and create the secret key and copy it and keep it somewhere. Make sure you save it because you will not be able to access it later and we've been needing it.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 438.865,
+      "end": 457.597,
+      "text": "Right, and I'm going to import user data. So we are going to have a keys and I use a data and I'm going to be using OS. So I'm just going to set the environment variables quickly. So it's as simple as that. Here our name was this. So this is it. We are done with setting our open API key.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 461.123,
+      "end": 490.283,
+      "text": "Now I need to scrape my site and add the information in the vector database. So let's go to the language and documentation. Here you can see there are a lot of document orders that are available. So you can load PDF files, CSV data, HTML data, JSON data and so on. So we have a web page that we want to scrape, right? So that is what we want to load. So we are going to be using web-based loader. So this is the documentation that I've went through to understand how to load web pages. So everything is available in the documentation. I keep saying this in every video. Everything is available.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 490.283,
+      "end": 510.972,
+      "text": "don't get to overcome that how will I can understand this. Everything is available, it is for free, don't worry about it, okay. My job is to make things easier for you. So, let us do that. I am going to be using web paste loader and that is available in lang chain community. So, let us just quickly from the document loaders, let us just quickly import web paste loader.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 513.166,
+      "end": 535.34,
+      "text": "and in the loader I can just give the paths that I want to load. So, in this web-based loader if I go see you can give a single path like this or you could also give multiple paths. So, if you go over here say let me just actually write it. So, if I write web path you can see you can give either one path or you can give multiple paths. So, you can see this right I can give a list of paths that I want to basically load.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 535.34,
+      "end": 559.488,
+      "text": "So, in our case, I am just loading the educoses site and I am just loading the genie icons right now. So, I am loading one, but you can also give a list of sites like this. Just explaining how you can do that. And once you have the loader, all you have to do is loader.load, that's it. It's as simple as that and we will have all the documents and if you want to see the documents, let's just quickly print them and see how it looks like.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 560.72,
+      "end": 584.328,
+      "text": "So, you can see this is awesome. We have the source. The title is Hanson Geniaicose. The description is something. This is the content. And if you go down, you will be able to see the entire thing. You will be able to see that it is 7 weeks. You will be able to see the entire curriculum, the entire FAQ section. You will be able to see the entire content of the page is now available in this documents.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 587.77,
+      "end": 604.055,
+      "text": "Now that I have the entire page content available with me in this docs variable, do I store the entire docs as it is in the vector database? What do you think? Think about it, see when I have to send some context to my LLM, do I send the entire content of the page?",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 604.055,
+      "end": 631.342,
+      "text": "Think about it because our page can be huge. Currently I am scraping only the genie I part. Maybe I am scraping all the courses like I am just scraping it to courses.com. Then the information of all the courses is there. Now if someone is asking just about genie I send the information of all the courses to our LLM, no right. Why do I send so much of irrelevant information? If someone is asking about the duration of the course, why do I send the curriculum and the FAQ to the LLM?",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 631.342,
+      "end": 649.448,
+      "text": "It is just going to be too many tokens that I am sending to LLM. It is just going to be too much processing that I am making LLM do for no reason at all. So, what do I want to do? I want to send just the relevant information which is going to be useful in answering the query to our LLM. So, in order to do that, I want to send just",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 649.448,
+      "end": 668.365,
+      "text": "some part of this entire document right. So, it makes sense that I split this entire document into some chunks or into some splits and I save it in our vector database. So, that is what we are going to be doing now. And how do I convert this entire data into a split? Again, go back to the language and documentation, I am just going back",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 668.365,
+      "end": 687.383,
+      "text": "Just below the document loaders, we have textplitters and we have documentation about how to recursively split text, how to split HTML, how to split code, how to recursively split JSON and so on. So, we just need to split our text. I am going to be using recursive character textplitter. Again, very simple, I am just going to be using the documentation itself.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 687.383,
+      "end": 716.29,
+      "text": "We are going to have something called chunk size in chunk overlap. What is this? Chunk size from the name itself, how big we want our chunk to be, right? So here they have taken really small chunk size 100. We are going to take for demo. We are going to maybe take 1000. You can make it smaller, obviously. They have also taken something called chunk overlap, which they have kept 20. In our case, maybe we will keep 200. And let me explain you, why do we need chunk overlap? Let's take an example. Suppose in my content, currently I have, it's a 7 week scores.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 716.29,
+      "end": 743.83,
+      "text": "Now, suppose I split at between 7 and weeks. Now, 7 is present in one chunk and weeks course is present in the other chunk. So, now the context of 7 weeks is neither present in chunk 1 nor chunk 2, right. So, when I split in between, I will need to do some processing to understand it. Okay, this was 7 which was there in chunk 1 and weeks which was present in chunk 2. Instead of doing all of that, instead of making it more complex, we just have some overlap of chunks.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 743.83,
+      "end": 761.465,
+      "text": "So, that the last 200 characters that were there in the say chunk 1 will also be there in the starting with chunk 2. So, like this you are making sure that context is present if if needed you can send both chunk 1, chunk 2 to LM that is ok. But you are just saving on your computation and you are making sure that the entire context is present.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 761.465,
+      "end": 777.074,
+      "text": "Just to give you another example, suppose my text was no prerequisite needed and I split the chunks between no and prerequisite needed. So, in my second chunk we have prerequisite needed and no went in the first chunk. You get the point at the entire context as lots right.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 777.074,
+      "end": 803.652,
+      "text": "So, it makes sense that I have some overlap between the chunks. I hope that part is clear. If not, let me know in the comments and think of different examples for which you know chunk overlap would make a lot of sense. So, let us get back to writing our code and from lang chain, I am going to be using text splitters and I am going to be importing recursive character text splitter and I am going to be creating the splitter.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 806.133,
+      "end": 835.31,
+      "text": "and chunk size as we discussed, I am probably going to give say 1000. You could also give chunk over lap is 0, but I am giving it as 200. And here we have these splits. And it is as simple as that, you can also print your splits. So let's see how our splits look like. So suppose you want to see splits of 0, splits of 1, you can just check it out like this.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 837.217,
+      "end": 861.635,
+      "text": "So, this is the first split and this is going to be of 1000 characters and there is going to be some overlap. So, if you see in the end part there was ah tensor board mini project implementer gand ah 2 hundred and digit and then it was starting with mini project something I think. And then if we come to the starting of this you can see the gand part is going to be there again.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 861.635,
+      "end": 885.918,
+      "text": "So, you can say implement a GAN to generate 100 integers, mini project the next one is coming like this right. So, there is some overlap. So, the entire V A part was ending over there and then the after that GAN part started again. So, there is some overlap between chunk 1 and chunk 2. Similarly, it is going to be there for the rest of the chunks also. I hope you understood that point, but also if you want to see the total number of splits, it is as simple as just printing the length of the splits.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 885.918,
+      "end": 911.399,
+      "text": "So, if we see that the total number of splits is 11. So, you can actually try printing all of the splits and you can see right. So, you can also write like a for loop or something. This is right. So, here you can see again you will be able to see some overlap between this and the last one. So, here you can see it is starting from nodes state state graph. So, in the second split if I go over here, there should be nodes. So, I am basically talking about",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 911.855,
+      "end": 923.33,
+      "text": "graph and let's see. So, you can see, right? Land graph knows a state graph. So, you can see the simple Q&A application that is going to be present in this particular third chunk as well. So, you can see that, right?",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 926.637,
+      "end": 950.363,
+      "text": "Now that we have the splits, it is time that we add these splits into our vector database. We are going to be using chroma DB, but say again these splits are just text and vector database from the name itself, we are supposed to store vectors, right? Everything internally in MLEI is basically numbers, it is all vectors. So, what do we need to do? These splits, we need to embed them into vectors and we need to store them in our database.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 950.363,
+      "end": 970.478,
+      "text": "it sounds fancy it is actually very simple we are just converting this text into numbers into vectors and we are trying to understand the meaning of the words in that ok. And we are going to be using everything from library so it is not like we have to write the code for that it is giving me autocomplete so let us actually do that.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 970.478,
+      "end": 997.023,
+      "text": "So, I am going to be using Chroma DB and here I am using OpenAI embeddings to convert our splits into embeddings ok. So, this is what we are going to use to convert this textual information into numbers into vectors. We are embedding these text ok and we are embedding splits and that is what we are storing in our vector store. So, after this we have the information present in our vector DB and once we have that we can actually also",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 997.023,
+      "end": 1008.093,
+      "text": "print the collection to see that how it is right. So, in our vector store if you want to see the collection and if we see the suppose count of it.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1009.747,
+      "end": 1036.865,
+      "text": "you can see there are leaven splits embedded and stored over here. Right, if you also want to see, so instead of the count if you also want to see the suppose IDs of these collections, so if I just do this, these are the IDs for the leaven splits that we had embedded into vector store. And if you also want to print it, we can also print the collections. And I am just printing the first collection for now.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1042.18,
+      "end": 1063.19,
+      "text": "And I'm just giving the ID of the first collection. And in Chroma database, so it stores in different values, the embeddings and the documents. So here I'm just going to tell it to include the embeddings. So I want to see the embeddings and the documents over here. So you can see if you want to see the metadata is the document. So you can just give what all you want to see.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1065.923,
+      "end": 1087.169,
+      "text": "So, you can see this is the embedding. So, this is the array and in the document you can see the entire document. So, document is basically the original text that you had that is embedded and stored into the embedding. So, like this you can also try printing for multiple collections by any of the collections in fact and you can try checking it out. So, let me just change this.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1091.759,
+      "end": 1103.622,
+      "text": "So, like this you can see that these are the embeddings for these particular chunks. So, it is only creating the ID, it is only saving the documents and embeddings. So, how are we doing the embedding using OpenAI embedding?",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1106.997,
+      "end": 1136.208,
+      "text": "Till now I was just adding the information into my vector database. So you might already have the information vector database and you might not need to do all of this. Now I'm going to get started with the rack pipeline. So I need this vector store to act as my retriever. So I'm just going to create a variable retriever and I'm going to make my vector store act as retriever. That's it as simple as that. And what is the next step that I need to do? I need to do the augmentation.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1139.38,
+      "end": 1159.867,
+      "text": "For augmentation, what do we need to do? See, in our vector database, there is a lot of documents now. We are going to fetch the relevant document and along with the question that we are getting, we are going to send this context, this relevant documentation to our LLIM, correct. Now, see, we can create our own prompt ends into LLIM. Let's see, this is the question, this is the context.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1159.867,
+      "end": 1177.028,
+      "text": "But there are a lot of prompts that are already available and I just wanted to show it to you. See in Lanchin itself if you see there are so many prompts that are available. So we are going to be using this rack prompt. You could actually just copy this and you could write it yourself also but I want to also show you how you can use",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1177.028,
+      "end": 1195.54,
+      "text": "the prompts that are available in the hub. So, what this is saying is that you are an assistant for question answering tasks. So, this is the question, this is the context and you are supposed to answer in three sentences maximum and keep the answer concise. So, you can also write your own prompt, you can say that no, I want a more detailed information",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1195.54,
+      "end": 1222.895,
+      "text": "or I want maybe three word answer or something like that. Whatever you want, right. You can customize your own prompt and you can write your own prompt. I just want to show you that there are prompts available in the hub and you can just use them like this. Okay. So we are going to be using them like this. I'm again saying it you this is just basically copy paste of text. So I can copy it and I can create a prompt or I can use it from the hub as it is. So let's write the code for pulling the prompt.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1222.895,
+      "end": 1243.904,
+      "text": "and from launching itself I am going to be importing up and we are going to be pulling the prompt from the hub. And let us run this. So, we have the prompt now. Now, we need to send this prompt to whom to our LLM. So, we need to use our LLM.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1246.975,
+      "end": 1273.537,
+      "text": "We are going to be using GPT as our LLM. So, we are going to be using OpenAI as LLM. So, let me just quickly create the LLM. So, we are using OpenAI. And whenever we need to talk to LLM, what do we create chat models? We have covered this in multiple videos. So, I hope this should be clear now. If not, check out the length seen in the long graph videos. You should be clear with these concepts. And we can just create the chat model for chat OpenAI.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1273.537,
+      "end": 1285.13,
+      "text": "And we can give the modern name and the temperature or we can just do this and we are going to use the default values. So, we have our RLM now we are ready to create our fraction.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1288.589,
+      "end": 1309.835,
+      "text": "What do we send to our LLM? We send the prompt and what does our prompt need? So, if we go to the prompt that we are using, we need the question and the context. So, first we need the context from where are we going to get the context from our retriever. So, the first thing that I need to do is have the variables that I need to send to our prompt. So, I need to send context.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1309.835,
+      "end": 1329.747,
+      "text": "So, I need to send context and that I am going to get from the retrieval right. Other than this, what do I need to send? I need to send the question. So, I am sending it in a dictionary right. So, here you can see I have to send context and question. So, I am sending these values in a dictionary. So, I have the context now. Now, I need to send the question.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1329.747,
+      "end": 1348.158,
+      "text": "See, whenever we need to just pass the input as it is. So, our question is going to be the input. Whenever we just need to pass the input as it is, we need to use something called runnable pass through. So, let me just quickly import that. So, in launching itself, there are a lot of runnables that are available. So, launching concepts are very, very important over here.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1348.158,
+      "end": 1373.572,
+      "text": "So, whenever you just need to pass the question as it is whatever is there whatever you need to pass as it is you use something called runnable pass through. So, it is a runnable. So, basically a task that you are going to be running where we are just passing through the information right. So, here because I need to pass the question I am using runnable pass through. Now, another point over here is that whatever I am going to be retrieving from my vector store.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1373.572,
+      "end": 1392.252,
+      "text": "it does not have to be a single document. Maybe I am asking something, maybe I am asking the curriculum for all the 5 weeks. So, the curriculum might be present in multiple splits instead of just one split right. So, whatever context I am getting, I need to join these relevant splits. So, maybe there were a total of 1000 splits",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1392.252,
+      "end": 1420.45,
+      "text": "And from that I got say 5 or 4 relevant splits right. Now I need to join them and send them together to in my context right. It is not like I am sending a list of 4 or 5 different splits. So, our rack chain I just need to send the context. So, the entire whatever is the context. So, whatever relevant information I got from the vector store, I need to join that and send it in the context. I am repeating that see in our splits right now in our case we have 11 splits.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1420.45,
+      "end": 1449.408,
+      "text": "In real cases maybe we have a lot of data, we have say 1000 splits and the relevant information might be in say 4 to 5 splits. So, I need to join this relevant information and send it together in this context. So, I need to do that joining also right. So, here I have whatever the retriever sent me, but I need to do one more thing. So, whatever is the output from this retriever, I am going to pass to my own function and I am going to call this as maybe format documents.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1449.408,
+      "end": 1479.395,
+      "text": "ok and let us just write this function and here all I am doing is basically formatting whatever relevant information I have. So, in this I am going to be passing the documents that I have. How am I getting this documents from the retriever? So, retriever is responsible for doing it that whatever is relevant for this particular question give me the documents for that and all that we have to do is join those documents ok. So, here whatever information is there I am just going to join them.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1479.395,
+      "end": 1491.308,
+      "text": "So, in the page content and I am going to go through all the docs and I am just going to join.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1492.338,
+      "end": 1512.689,
+      "text": "And that's it. So, now I have the context in the question, where do I need to pass this context and question to the prompt? So, this is the first thing. Now, this needs to be passed to the prompt. So, the input is to the prompt. Now, when I get the prompt, that has to be sent to our LLM.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1512.689,
+      "end": 1542.322,
+      "text": "And from lm, I'm going to get the output. Now the output is going to have a lot of information. I just need the content out of it. So whenever we have, we have to take out the content, we can use STR output parser. Again, we have used this also in previous videos. It's okay. If you don't know these things, just you'll get used to them as you write more and more code or just go through the lang chain lang graph videos and you'll get used to these things. Okay. So we need to use the STR output parser. And let me just quickly import that.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1548.143,
+      "end": 1562.234,
+      "text": "And whatever is the output, I'm going to basically parse out the content from it and that is what I'm going to get as the output. So we have made our rank chain. Let's quickly revise it once what's happening over here.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1565.66,
+      "end": 1594.786,
+      "text": "See whenever we create a chain, we create a chain of some runnables or tasks. So what are the different tasks over here? This is one task and what am I doing? I am creating a dictionary of where I am passing the retriever and I'm formatting the documents and I'm passing it as context. And the question I'm passing it as it is. So now these are going to be the inputs to the prompt. Now what is the prompt? This is the prompt and it needed these two as the inputs, right? Now what am I going to get output from this? I'm going to get the prompt.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1594.786,
+      "end": 1617.618,
+      "text": "I could have just done create prompt prompt chat prompt template. I could have passed this as it is with the inputs. So, these inputs have passed them as dictionary. Now, whatever prompt I am going to get, that I am passing is an input to our LLM. So, I am passing the prompt to our LLM. Now, what is the output that I get from LLM? There are a lot of things present. I am going to take out just the content of it and I am passing out the content.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1617.618,
+      "end": 1634.071,
+      "text": "So, I am passing of the content over here. So, basically here the renewables are or the different tasks are divided by this pipe operator and whatever is the output from this prompt is passed into the LLM. Whatever is the output from the LLM is passed to the person and we take out the content.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1634.071,
+      "end": 1651.553,
+      "text": "And what are we doing over here? See, why do we need this function? So, I have a retriever. Retriever is going to take out the relevant documents. Now, maybe they might be like two documents or three documents. I need to join those documents. So, here I am just going through the documents and I am joining the entire content.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1651.553,
+      "end": 1668.496,
+      "text": "All I am doing over here is adding one line between those documents and putting the documents together, formatting them together and passing the context and the question. Proming the prompt, passing to the NLM, whatever is the output, I am just passing it out. It's time that we actually check whether this chain is working or not.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1671.5,
+      "end": 1698.787,
+      "text": "Let us run this chain and let all we have to do now is invoke the chain and we can just pass the query over here. So, suppose let us ask are the recordings of the course available for how long? Let us see. Okay, there is a mirror in running will pass through. Okay. Oh, sorry. So, I missed this. Let us run it again.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1699.698,
+      "end": 1721.399,
+      "text": "Here's the recordings of the course that are available for lifetime access. Nice. So let's probably try for some more queries. Let's try something like are the testimonials for the course available because I just added the testimonials right before recording this video. I was just adding them because the course just ended the live classes.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1723.998,
+      "end": 1732.115,
+      "text": "Yes, the testing models for the course are available on this website, those real stories and satisfaction from the courses. Let's see if it can name these students.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1737.245,
+      "end": 1755.976,
+      "text": "9. So, it has named some of these students Ayythya, Manika, Ashish, Satish. So, these are all my students from the Agni-I course. So, these are some of the students that have more testimonials, but this is good enough. We can also probably check for something, some more questions like for example, are these certificates provided?",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1761.342,
+      "end": 1788.545,
+      "text": "certificates are provided for the course where we let us say what all projects are covered as part of the course. So, maybe it will go through the curriculum and it will tell what all projects are covered right. So, that would be nice. All right. So, it is saying, okay, implementing CAN training, VA, then there is fine tuning techniques, offers hands-on learning experiences, allows participants from many and major projects",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1791.987,
+      "end": 1821.569,
+      "text": "nice this is so cool we created a rack pipeline and we are able to create basically a pot where we are able to answer questions based on our site right. So like this I have courses you could be having any products and you can make LLM answer questions related to your products also if you want to see the exact prompt that is going into the LLM you can also add probably a print after this so let's try doing that so what I'm going to do is probably create a new chain so rack chain with",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1821.569,
+      "end": 1840.283,
+      "text": "print something like this ok. And whatever is the output from this prompt, I am getting the prompt right, I need to print it and I need to again pass the prompt to my LLM right. So, in order to print it, what I am going to do is I am going to create my own custom",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1840.283,
+      "end": 1864.415,
+      "text": "function where I am going to basically create a runnable lambda and to create your own custom function you need to create a runnable lambda ok. So, there are different kinds of runnables. So, if you want to just pass the information as it is we have runnable pass through if you want to create your own function you can basically use runnable lambda. So, let me just quickly import that from blank chain core and",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1868.954,
+      "end": 1887.685,
+      "text": "And I'm going to be using that and I need to give a function over here. So the function that we are going to be writing is probably going to be primed prompt. And let's just define it. And I'm going to be getting the prompt text over here. And I'm just going to be printing it just to show it to you.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1891.212,
+      "end": 1919.647,
+      "text": "and also see whatever will be the output from this Renable Lambda that will be passed to the LLM. So, LLM is still expecting the prompt right. So, I am going to be returning the prompt as it is so that I am making sure it is passed to the LLM right. So, do not do this mistake if you add a print like if you are adding in between for Renable Lambda you need to make sure that the same is passed to the LLM right. So, whatever prompt was the output same thing I am passing to the LLM ok. So, let us quickly run this",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1921.857,
+      "end": 1935.475,
+      "text": "and let's try again. So, in this particular chain I am going to probably invoke something else. Suppose is there doubt support and let's try running this.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1938.142,
+      "end": 1953.278,
+      "text": "So, it is saying I do not know. So, maybe it was not able to get that part. So, let us probably try for this itself. Maybe I need to be better at my FAQ right. So, here we are getting",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1953.278,
+      "end": 1976.549,
+      "text": "You are an assistant answering questions for question answering tasks, right? So, this was basically the same thing that is going. You are an assistant for question answering tasks use the following pieces of retrieved context. So, the same thing is basically going and we are passing the question and the context. So, if I just go ahead, this is the context and these are probably some chunks that the retriever has taken out for us.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1976.549,
+      "end": 1999.043,
+      "text": "maybe you know for what part it did not work, maybe because my chunk size was too huge. So, maybe using that we will get better. And so, the question in the context is passed. So, you can see the question is passed, what are projects are covered in the course and then the entire context basically the splits are passed. Now, you remember I had joined the documents with a",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1999.043,
+      "end": 2017.302,
+      "text": "end line in between right. So, that is why these are in new lines. So, these are the different chunks that are being passed and based on that we are getting the response. So, nice and this brings us to the end of the video. I hope you enjoyed and you understood drag very well. If there are any questions please let me know in the comments and I would love to answer them.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2017.302,
+      "end": 2037.805,
+      "text": "Also, guys, I am planning to be extremely active on YouTube. Now, I am creating a lot of content on YouTube, LinkedIn as well as on my personal interest. That is the personal side. But for YouTube and LinkedIn, I am creating so much of free content. And it would really, really motivate me if you could support me a bit more. Hit the like button and share with your friends. And if you are finding it useful.",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 2037.805,
+      "end": 2053.972,
+      "text": "If you have watched it here, I am hoping that you really found it useful. Please do let me know and please consider sharing more of your support and love. It is going to mean the world to me. It is really going to motivate me a lot. And so even next time, I promise a lot more videos coming up. Stay tuned.",
+      "speaker": null,
+      "words": []
+    }
+  ]
+}

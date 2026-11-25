@@ -1,0 +1,7 @@
+CAD models of six different engineering components or assemblies:
+1.  **Car chassis:** Transparent chassis with four wheels and two cylindrical internal components (motors/batteries).
+2.  **Tapping Machine:** Vertical machine featuring a large spool/drum, an electric motor, and a linear or rotational drive mechanism.
+3.  **Table:** Rectangular frame structure with two parallel plates and four posts, each plate having two circular cutouts.
+4.  **Submersible Chassis (fits in tube):** Cylindrical structure composed of two end plates, four connecting posts, and a transparent central tube section, designed for submersible applications.
+5.  **Winch:** Frame-mounted spool system with two disks on a horizontal axle, includes a drive mechanism.
+6.  **3 post design:** Triangular top plate with a circular cutout connected by three posts to a circular base plate with a central circular cutout.

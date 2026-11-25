@@ -1,0 +1,2322 @@
+[
+  {
+    "chunk_id": "chunk_0000",
+    "text": "Introduction to Python and\nProgramming\nWhat is Programming? Programming is the process of giving instructions to a computer to perform\nspecific tasks. It involves writing code in a programming language that the\ncomputer can understand and execute. Why Python? Python is a high-level, interpreted programming language known for its\nsimplicity and readability. It is widely used in:\nWeb Development (Django, Flask)\nData Science and Machine Learning (Pandas, NumPy, TensorFlow)\nAutomation and Scripting\nGame Development (Pygame)\nPython has a large community and extensive libraries, making it\nbeginner-friendly. Setting Up Python and IDEs\nInstalling Python\nDownload Python:\nVisit the official Python website: python.org.",
+    "start_index": 0,
+    "end_index": 717,
+    "word_count": 101,
+    "start_page": 2,
+    "end_page": 2,
+    "page_spans": "Page 2"
+  },
+  {
+    "chunk_id": "chunk_0001",
+    "text": "1.",
+    "start_index": 718,
+    "end_index": 720,
+    "word_count": 1,
+    "start_page": 2,
+    "end_page": 2,
+    "page_spans": "Page 2"
+  },
+  {
+    "chunk_id": "chunk_0002",
+    "text": "2. 3. 4. 5. 6. 7. 1.",
+    "start_index": 720,
+    "end_index": 740,
+    "word_count": 7,
+    "start_page": 2,
+    "end_page": 2,
+    "page_spans": "Page 2"
+  },
+  {
+    "chunk_id": "chunk_0003",
+    "text": "1.",
+    "start_index": 746,
+    "end_index": 748,
+    "word_count": 1,
+    "start_page": 2,
+    "end_page": 2,
+    "page_spans": "Page 2"
+  },
+  {
+    "chunk_id": "chunk_0004",
+    "text": "Download the latest version for your operating system (Windows, macOS,\nor Linux). Install Python:\nRun the installer and ensure you check the box to Add Python to PATH\n(important for running Python from the command line). Verify Installation:\nOpen a terminal or command prompt and type:\nThis should display the installed Python version (e.g., Python 3.13.5 ). Choosing an IDE\nWhat is an IDE? An Integrated Development Environment (IDE) is a software application\nthat provides tools for writing, testing, and debugging code. Popular Python IDEs:\nVS Code: Lightweight, customizable, and supports extensions for Python.",
+    "start_index": 748,
+    "end_index": 1363,
+    "word_count": 94,
+    "start_page": 2,
+    "end_page": 3,
+    "page_spans": "Pages 2-3"
+  },
+  {
+    "chunk_id": "chunk_0005",
+    "text": "(We will use this one as our primary IDE)\nPyCharm: Powerful IDE with advanced features for professional\ndevelopers. Jupyter Notebook: Great for data science and interactive coding.",
+    "start_index": 1363,
+    "end_index": 1543,
+    "word_count": 27,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0006",
+    "text": "IDLE: Comes pre-installed with Python; good for beginners. Writing Your First Python Program\nThe \"Hello, World!\" Program\nOpen a folder in your VS code and type the following code in a new file\nnamed hello.py :\n2. 1.",
+    "start_index": 1543,
+    "end_index": 1758,
+    "word_count": 38,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0007",
+    "text": "1. 1.",
+    "start_index": 1758,
+    "end_index": 1763,
+    "word_count": 2,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0008",
+    "text": "1. python --version\n1. 1.",
+    "start_index": 1763,
+    "end_index": 1788,
+    "word_count": 5,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0009",
+    "text": "2. 3. 4. 5. 6. 7.",
+    "start_index": 1788,
+    "end_index": 1805,
+    "word_count": 6,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0010",
+    "text": "1.",
+    "start_index": 1831,
+    "end_index": 1833,
+    "word_count": 1,
+    "start_page": 3,
+    "end_page": 3,
+    "page_spans": "Page 3"
+  },
+  {
+    "chunk_id": "chunk_0011",
+    "text": "Make sure to save the file with a .py  extension (e.g., hello.py ). Run the program:\nUse the run button at the top of your IDE or alternatively type this in your\nVS Code integrated terminal:\nOutput:\nKey Takeaways:\nprint()  is a built-in function used to display output. Python code is executed line by line. Understanding Python Syntax and Basics\nPython Syntax Rules\nIndentation:\nPython uses indentation (spaces or tabs) to define blocks of code. Example:\nprint(\"Hello, World!\")\n1.",
+    "start_index": 1833,
+    "end_index": 2314,
+    "word_count": 79,
+    "start_page": 3,
+    "end_page": 4,
+    "page_spans": "Pages 3-4"
+  },
+  {
+    "chunk_id": "chunk_0012",
+    "text": "2.",
+    "start_index": 2318,
+    "end_index": 2320,
+    "word_count": 1,
+    "start_page": 4,
+    "end_page": 4,
+    "page_spans": "Page 4"
+  },
+  {
+    "chunk_id": "chunk_0013",
+    "text": "1. python hello.py\n1. Hello, World!",
+    "start_index": 2320,
+    "end_index": 2355,
+    "word_count": 6,
+    "start_page": 4,
+    "end_page": 4,
+    "page_spans": "Page 4"
+  },
+  {
+    "chunk_id": "chunk_0014",
+    "text": "1.",
+    "start_index": 2362,
+    "end_index": 2364,
+    "word_count": 1,
+    "start_page": 4,
+    "end_page": 4,
+    "page_spans": "Page 4"
+  },
+  {
+    "chunk_id": "chunk_0015",
+    "text": "2. 1. 1.",
+    "start_index": 2364,
+    "end_index": 2372,
+    "word_count": 3,
+    "start_page": 4,
+    "end_page": 4,
+    "page_spans": "Page 4"
+  },
+  {
+    "chunk_id": "chunk_0016",
+    "text": "2. Whitespace:\nPython is sensitive to whitespace. Ensure consistent indentation to avoid\nerrors.",
+    "start_index": 2372,
+    "end_index": 2468,
+    "word_count": 13,
+    "start_page": 4,
+    "end_page": 5,
+    "page_spans": "Pages 4-5"
+  },
+  {
+    "chunk_id": "chunk_0017",
+    "text": "Ideally, use 4 spaces for indentation. Statements:\nEach line of code is a statement. You can write multiple statements on one\nline using a semicolon ( ; ), but this is not recommended. Comments:\nUse #  for single-line comments.",
+    "start_index": 2468,
+    "end_index": 2695,
+    "word_count": 39,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0018",
+    "text": "Use '''  or \"\"\"  for multi-line comments. Example:\nNotes from Instructor\nPython is a versatile and beginner-friendly programming language. Setting up Python and choosing the right IDE is the first step to writing\ncode. Python syntax is simple but requires attention to indentation and\nwhitespace.",
+    "start_index": 2695,
+    "end_index": 2991,
+    "word_count": 45,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0019",
+    "text": "Start with small programs like \"Hello, World!\" to get comfortable with the\nbasics. if 5 > 2:\nprint(\"Five is greater than two!\")\n# Spaces before print are called indentation\n1. 1.",
+    "start_index": 2991,
+    "end_index": 3169,
+    "word_count": 31,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0020",
+    "text": "1. 1. 1. 1. 2.",
+    "start_index": 3169,
+    "end_index": 3183,
+    "word_count": 5,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0021",
+    "text": "3. # This is a single-line comment\n'''\nThis is a\nmulti-line comment\n'''\n1. 2.",
+    "start_index": 3183,
+    "end_index": 3260,
+    "word_count": 16,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0022",
+    "text": "3.",
+    "start_index": 3283,
+    "end_index": 3285,
+    "word_count": 1,
+    "start_page": 5,
+    "end_page": 5,
+    "page_spans": "Page 5"
+  },
+  {
+    "chunk_id": "chunk_0023",
+    "text": "4. Python Fundamentals\nVariables and Data Types in Python\nWhat are Variables? Variables are used to store data that can be used and manipulated in a\nprogram. A variable is created when you assign a value to it using the =  operator. Example:\nVariable Naming Rules\nVariable names can contain letters, numbers, and underscores. Variable names must start with a letter or underscore. Variable names are case-sensitive. Avoid using Python keywords as variable names (e.g., print , if , else ). Best Practices\nUse descriptive names that reflect the purpose of the variable. Use lowercase letters for variable names.",
+    "start_index": 3285,
+    "end_index": 3895,
+    "word_count": 99,
+    "start_page": 5,
+    "end_page": 6,
+    "page_spans": "Pages 5-6"
+  },
+  {
+    "chunk_id": "chunk_0024",
+    "text": "Separate words using underscores for readability (e.g., first_name , \ntotal_amount ). • \n• \n• \nname = \"Alice\"\nage = 25\nheight = 5.6\n• \n• \n• \n• \n• \n• \n• \nData Types in Python\nPython supports several built-in data types:\nIntegers ( int ): Whole numbers (e.g., 10 , -5 ). Floats ( float ): Decimal numbers (e.g., 3.14 , -0.001 ).",
+    "start_index": 3895,
+    "end_index": 4221,
+    "word_count": 62,
+    "start_page": 6,
+    "end_page": 7,
+    "page_spans": "Pages 6-7"
+  },
+  {
+    "chunk_id": "chunk_0025",
+    "text": "Strings ( str ): Text data enclosed in quotes (e.g., \"Hello\" , 'Python' ).",
+    "start_index": 4226,
+    "end_index": 4300,
+    "word_count": 14,
+    "start_page": 7,
+    "end_page": 7,
+    "page_spans": "Page 7"
+  },
+  {
+    "chunk_id": "chunk_0026",
+    "text": "Booleans ( bool ): Represents True  or False .",
+    "start_index": 4301,
+    "end_index": 4347,
+    "word_count": 9,
+    "start_page": 7,
+    "end_page": 7,
+    "page_spans": "Page 7"
+  },
+  {
+    "chunk_id": "chunk_0027",
+    "text": "Lists: Ordered, mutable collections (e.g., [1, 2, 3] ).",
+    "start_index": 4348,
+    "end_index": 4403,
+    "word_count": 9,
+    "start_page": 7,
+    "end_page": 7,
+    "page_spans": "Page 7"
+  },
+  {
+    "chunk_id": "chunk_0028",
+    "text": "Tuples: Ordered, immutable collections (e.g., (1, 2, 3) ). Sets: Unordered collections of unique elements (e.g., {1, 2, 3} ). Dictionaries: Key-value pairs (e.g., {\"name\": \"Alice\", \"age\": 25} ). Checking Data Types\nUse the type()  function to check the data type of a variable. Typecasting in Python\nWhat is Typecasting? Typecasting is the process of converting one data type to another. Python provides built-in functions for typecasting: \nint() : Converts to integer. float() : Converts to float.",
+    "start_index": 4403,
+    "end_index": 4901,
+    "word_count": 77,
+    "start_page": 7,
+    "end_page": 7,
+    "page_spans": "Page 7"
+  },
+  {
+    "chunk_id": "chunk_0029",
+    "text": "str() : Converts to string.",
+    "start_index": 4903,
+    "end_index": 4930,
+    "word_count": 5,
+    "start_page": 7,
+    "end_page": 7,
+    "page_spans": "Page 7"
+  },
+  {
+    "chunk_id": "chunk_0030",
+    "text": "bool() : Converts to boolean. • \n• \n• \n• \n• \n• \n• \n• \n• \nprint(type(10))\n# Output: <class 'int'>\nprint(type(\"Hello\"))\n# Output: <class 'str'>\n• \n• \n• \n• \n• \n• \nExamples:\nTaking User Input in Python\nUsing the input()  Function\nThe input()  function allows you to take user input from the keyboard. By default, input()  returns a string.",
+    "start_index": 4930,
+    "end_index": 5265,
+    "word_count": 58,
+    "start_page": 7,
+    "end_page": 8,
+    "page_spans": "Pages 7-8"
+  },
+  {
+    "chunk_id": "chunk_0031",
+    "text": "You can convert it to other data types as\nneeded. Example:\n# Convert string to integer\nnum_str = \"10\"\nnum_int = int(num_str)\nprint(num_int)\n# Output: 10\n# Convert integer to string\nnum = 25\nnum_str = str(num)\nprint(num_str)\n# Output: \"25\"\n# Convert float to integer\npi = 3.14\npi_int = int(pi)\nprint(pi_int)\n# Output: 3\n• \n• \n• \nname = input(\"Enter your name: \")\nage = int(input(\"Enter your age: \"))\nprint(f\"Hello {name}, you are {age} years old.\")\nComments, Escape Sequences & Print Statement\nComments\nComments are used to explain code and are ignored by the Python\ninterpreter. Single-line comments start with # .",
+    "start_index": 5265,
+    "end_index": 5879,
+    "word_count": 104,
+    "start_page": 8,
+    "end_page": 9,
+    "page_spans": "Pages 8-9"
+  },
+  {
+    "chunk_id": "chunk_0032",
+    "text": "Multi-line comments are enclosed in '''  or \"\"\" . Escape Sequences\nEscape sequences are used to include special characters in strings. Common escape sequences:\n\\n : Newline\n\\t : Tab\n\\\\ : Backslash\n\\\" : Double quote\n\\' : Single quote\nExample:\nPrint Statement\nThe print()  function is used to display output. • \n• \n• \n# This is a single-line comment\n'''\nThis is a\nmulti-line comment\n'''\n• \n• \n• \n• \n• \n• \n• \n• \nprint(\"Hello\\nWorld!\")\nprint(\"This is a tab\\tcharacter.\")\n• \nYou can use sep  and end  parameters to customize the output. Operators in Python\nTypes of Operators\nArithmetic Operators: \n+  (Addition), -  (Subtraction), *  (Multiplication), /  (Division), %\n(Modulus), **  (Exponentiation), //  (Floor Division). Example:\nComparison Operators: \n==  (Equal), !=  (Not Equal), >  (Greater Than), <  (Less Than), >=\n(Greater Than or Equal), <=  (Less Than or Equal). Example:\nLogical Operators: \nand , or , not . Example:\n• \nprint(\"Hello\", \"World\", sep=\", \", end=\"!\\n\")\n1.",
+    "start_index": 5879,
+    "end_index": 6855,
+    "word_count": 157,
+    "start_page": 9,
+    "end_page": 10,
+    "page_spans": "Pages 9-10"
+  },
+  {
+    "chunk_id": "chunk_0033",
+    "text": "1.",
+    "start_index": 6856,
+    "end_index": 6858,
+    "word_count": 1,
+    "start_page": 10,
+    "end_page": 10,
+    "page_spans": "Page 10"
+  },
+  {
+    "chunk_id": "chunk_0034",
+    "text": "2. print(10 + 5)\n# Output: 15\nprint(10 ** 2)\n# Output: 100\n2. 1. 2. print(10 > 5)\n# Output: True\nprint(10 == 5)\n# Output: False\n3. 1.",
+    "start_index": 6858,
+    "end_index": 6991,
+    "word_count": 30,
+    "start_page": 10,
+    "end_page": 10,
+    "page_spans": "Page 10"
+  },
+  {
+    "chunk_id": "chunk_0035",
+    "text": "2. print(True and False)\n# Output: False\nprint(True or False)\n# Output: True\nprint(not True)\n# Output: False\nAssignment Operators: \n= , += , -= , *= , /= , %= , **= , //= . Example:\nMembership Operators: \nin , not in .",
+    "start_index": 6991,
+    "end_index": 7209,
+    "word_count": 44,
+    "start_page": 10,
+    "end_page": 11,
+    "page_spans": "Pages 10-11"
+  },
+  {
+    "chunk_id": "chunk_0036",
+    "text": "Example:\nIdentity Operators: \nis , is not . Example:\nSummary\nVariables store data, and Python supports multiple data types.",
+    "start_index": 7209,
+    "end_index": 7332,
+    "word_count": 19,
+    "start_page": 11,
+    "end_page": 11,
+    "page_spans": "Page 11"
+  },
+  {
+    "chunk_id": "chunk_0037",
+    "text": "Typecasting allows you to convert between data types. Use input()  to take user input and print()  to display output.",
+    "start_index": 7332,
+    "end_index": 7449,
+    "word_count": 19,
+    "start_page": 11,
+    "end_page": 11,
+    "page_spans": "Page 11"
+  },
+  {
+    "chunk_id": "chunk_0038",
+    "text": "Comments and escape sequences help make your code more readable. Python provides a variety of operators for performing operations on data. 4.",
+    "start_index": 7449,
+    "end_index": 7590,
+    "word_count": 22,
+    "start_page": 11,
+    "end_page": 11,
+    "page_spans": "Page 11"
+  },
+  {
+    "chunk_id": "chunk_0039",
+    "text": "1.",
+    "start_index": 7609,
+    "end_index": 7611,
+    "word_count": 1,
+    "start_page": 11,
+    "end_page": 11,
+    "page_spans": "Page 11"
+  },
+  {
+    "chunk_id": "chunk_0040",
+    "text": "2. x = 10\nx += 5\n# Equivalent to x = x + 5\nprint(x)\n# Output: 15\n5. 1.",
+    "start_index": 7611,
+    "end_index": 7681,
+    "word_count": 21,
+    "start_page": 11,
+    "end_page": 11,
+    "page_spans": "Page 11"
+  },
+  {
+    "chunk_id": "chunk_0041",
+    "text": "2. fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(\"banana\" in fruits)\n# Output: True\n6. 1.",
+    "start_index": 7681,
+    "end_index": 7769,
+    "word_count": 14,
+    "start_page": 11,
+    "end_page": 11,
+    "page_spans": "Page 11"
+  },
+  {
+    "chunk_id": "chunk_0042",
+    "text": "2. x = 10\ny = 10\nprint(x is y)\n# Output: True\n• \n• \n• \n• \n• \nControl Flow and Loops\nIf-Else Conditional Statements\nWhat are Conditional Statements? Conditional statements allow you to execute code based on certain conditions. Python uses if , elif , and else  for decision-making. Syntax:\nExample:\n• \n• \nif condition1:\n# Code to execute if condition1 is True\nelif condition2:\n# Code to execute if condition2 is True\nelse:\n# Code to execute if all conditions are False\nage = 18\nif age < 18:\nprint(\"You are a minor.\")\nelif age == 18:\nprint(\"You just became an adult!\")\nelse:\nprint(\"You are an adult.\")\nMatch Case Statements in Python (Python 3.10+)\nWhat is Match-Case? Match-case is a new feature introduced in Python 3.10 for pattern matching.",
+    "start_index": 7769,
+    "end_index": 8511,
+    "word_count": 131,
+    "start_page": 11,
+    "end_page": 13,
+    "page_spans": "Pages 11-13"
+  },
+  {
+    "chunk_id": "chunk_0043",
+    "text": "It simplifies complex conditional logic.",
+    "start_index": 8523,
+    "end_index": 8563,
+    "word_count": 5,
+    "start_page": 13,
+    "end_page": 13,
+    "page_spans": "Page 13"
+  },
+  {
+    "chunk_id": "chunk_0044",
+    "text": "Syntax:\nExample:\nFor Loops in Python\nWhat are For Loops? For loops are used to iterate over a sequence (e.g., list, string, range). They execute a block of code repeatedly for each item in the sequence. • \n• \nmatch value:\ncase pattern1:\n# Code to execute if value matches pattern1\ncase pattern2:\n# Code to execute if value matches pattern2\ncase _:\n# Default case (if no patterns match)\nstatus = 404\nmatch status:\ncase 200:\nprint(\"Success!\")\ncase 404:\nprint(\"Not Found\")\ncase _:\nprint(\"Unknown Status\")\n• \n• \nSyntax:\nExample:\nUsing range() :\nThe range()  function generates a sequence of numbers. Example:\nWhile Loops in Python\nWhat are While Loops?",
+    "start_index": 8563,
+    "end_index": 9211,
+    "word_count": 109,
+    "start_page": 13,
+    "end_page": 14,
+    "page_spans": "Pages 13-14"
+  },
+  {
+    "chunk_id": "chunk_0045",
+    "text": "While loops execute a block of code as long as a condition is True . They are useful when the number of iterations is not known in advance. Syntax:\nfor item in sequence:\n# Code to execute for each item\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\nprint(fruit)\n• \n• \nfor i in range(5):\nprint(i)\n# Output: 0, 1, 2, 3, 4\n• \n• \nwhile condition:\n# Code to execute while condition is True\nExample:\nInfinite Loops:\nBe careful to avoid infinite loops by ensuring the condition eventually\nbecomes False . Example of an infinite loop:\nBreak, Continue, and Pass Statements\nBreak\nThe break  statement is used to exit a loop prematurely. Example:\nContinue\nThe continue  statement skips the rest of the code in the current iteration\nand moves to the next iteration. count = 0\nwhile count < 5:\nprint(count)\n    count += 1\n• \n• \nwhile True:\nprint(\"This will run forever!\")\n• \n• \nfor i in range(10):\nif i == 5:\nbreak\nprint(i)\n# Output: 0, 1, 2, 3, 4\n• \nExample:\nPass\nThe pass  statement is a placeholder that does nothing. It is used when syntax\nrequires a statement but no action is needed.",
+    "start_index": 9211,
+    "end_index": 10300,
+    "word_count": 198,
+    "start_page": 14,
+    "end_page": 16,
+    "page_spans": "Pages 14-16"
+  },
+  {
+    "chunk_id": "chunk_0046",
+    "text": "Example:\nSummary\nUse if , elif , and else  for decision-making. Use match-case  for pattern matching (Python 3.10+). Use for  loops to iterate over sequences and while  loops for repeated\nexecution based on a condition.",
+    "start_index": 10300,
+    "end_index": 10519,
+    "word_count": 35,
+    "start_page": 16,
+    "end_page": 16,
+    "page_spans": "Page 16"
+  },
+  {
+    "chunk_id": "chunk_0047",
+    "text": "Control loop execution with break , continue , and pass . • \nfor i in range(5):\nif i == 2:\ncontinue\nprint(i)\n# Output: 0, 1, 3, 4\n• \n• \nfor i in range(5):\nif i == 3:\npass\n# Do nothing\nprint(i)\n# Output: 0, 1, 2, 3, 4\n• \n• \n• \n• \nStrings in Python\nIntroduction\nStrings are one of the most fundamental data types in Python. A string is a\nsequence of characters enclosed within either single quotes ( ' ), double quotes\n( \" ), or triple quotes ( '''  or “““). Creating Strings\nYou can create strings in Python using different types of quotes:\nString Indexing\nEach character in a string has an index:\n# Single-quoted string\na = 'Hello, Python!'\n# Double-quoted string\nb = \"Hello, World!\"\n# Triple-quoted string (useful for multi-line strings)\nc = '''This is\na multi-line\nstring.'''\ntext = \"Python\"\nprint(text[0])\n# Output: P\nprint(text[1])\n# Output: y\nprint(text[-1]) # Output: n (last character)\nString Slicing\nYou can extract parts of a string using slicing:\nString Methods\nPython provides several built-in methods to manipulate strings:\nString Formatting\nPython offers multiple ways to format strings:\nMultiline Strings\nTriple quotes allow you to create multi-line strings:\ntext = \"Hello, Python!\"\nprint(text[0:5])\n# Output: Hello\nprint(text[:5])\n# Output: Hello\nprint(text[7:])\n# Output: Python! print(text[::2])\n# Output: Hlo Pto!",
+    "start_index": 10519,
+    "end_index": 11850,
+    "word_count": 225,
+    "start_page": 16,
+    "end_page": 18,
+    "page_spans": "Pages 16-18"
+  },
+  {
+    "chunk_id": "chunk_0048",
+    "text": "text = \" hello world \"\nprint(text.upper())\n# Output: \" HELLO WORLD \"\nprint(text.lower())\n# Output: \" hello world \"\nprint(text.strip())\n# Output: \"hello world\"\nprint(text.replace(\"world\", \"Python\")) # Output: \" hello Python \"\nprint(text.split())\n# Output: ['hello', 'world']\nname = \"John\"\nage = 25\n# Using format()\nprint(\"My name is {} and I am {} years old.\".format(name, age))\n# Using f-strings (Python 3.6+)\nprint(f\"My name is {name} and I am {age} years old.\")\nyhn\nSummary\nStrings are sequences of characters. Use single, double, or triple quotes to define strings.",
+    "start_index": 11850,
+    "end_index": 12418,
+    "word_count": 89,
+    "start_page": 18,
+    "end_page": 19,
+    "page_spans": "Pages 18-19"
+  },
+  {
+    "chunk_id": "chunk_0049",
+    "text": "Indexing and slicing allow accessing parts of a string. String methods help modify and manipulate strings. f-strings provide an efficient way to format strings. String Slicing and Indexing\nIntroduction\nIn Python, strings are sequences of characters, and each character has an index. You can access individual characters using indexing and extract substrings using\nslicing. String Indexing\nEach character in a string has a unique index, starting from 0 for the first character\nand -1 for the last character. message = '''\nHello,\nThis is a multi-line string example.",
+    "start_index": 12418,
+    "end_index": 12982,
+    "word_count": 88,
+    "start_page": 19,
+    "end_page": 19,
+    "page_spans": "Page 19"
+  },
+  {
+    "chunk_id": "chunk_0050",
+    "text": "Goodbye! '''\nprint(message)\n• \n• \n• \n• \n• \ntext = \"Python\"\nprint(text[0])\n# Output: P\nprint(text[1])\n# Output: y\nprint(text[-1]) # Output: n (last character)\nprint(text[-2]) # Output: o\nString Slicing\nSlicing allows you to extract a portion of a string using the syntax \nstring[start:stop:step] . Step Parameter\nThe step  parameter defines the interval of slicing. Practical Uses of Slicing\nString slicing is useful in many scenarios: - Extracting substrings - Reversing strings\n- Removing characters - Manipulating text efficiently\nSummary\nIndexing allows accessing individual characters. Positive indexing starts from 0, negative indexing starts from -1.",
+    "start_index": 12982,
+    "end_index": 13638,
+    "word_count": 96,
+    "start_page": 19,
+    "end_page": 20,
+    "page_spans": "Pages 19-20"
+  },
+  {
+    "chunk_id": "chunk_0051",
+    "text": "Slicing helps extract portions of a string.",
+    "start_index": 13646,
+    "end_index": 13689,
+    "word_count": 7,
+    "start_page": 20,
+    "end_page": 20,
+    "page_spans": "Page 20"
+  },
+  {
+    "chunk_id": "chunk_0052",
+    "text": "The step parameter defines the interval for selection. text = \"Hello, Python!\"\nprint(text[0:5])\n# Output: Hello\nprint(text[:5])\n# Output: Hello (same as text[0:5])\nprint(text[7:])\n# Output: Python!",
+    "start_index": 13689,
+    "end_index": 13886,
+    "word_count": 27,
+    "start_page": 20,
+    "end_page": 20,
+    "page_spans": "Page 20"
+  },
+  {
+    "chunk_id": "chunk_0053",
+    "text": "(from index 7 to end)\nprint(text[::2])\n# Output: Hlo Pto! print(text[-6:-1]) # Output: ython (negative indexing)\ntext = \"Python Programming\"\nprint(text[::2])\n# Output: Pto rgamn\nprint(text[::-1])\n# Output: gnimmargorP nohtyP (reverses string)\ntext = \"Welcome to Python!\"\nprint(text[:7])\n# Output: Welcome\nprint(text[-7:])\n# Output: Python! print(text[3:-3]) # Output: come to Pyt\n• \n• \n• \n• \nyhn\nUsing [::-1]  reverses a string. String Methods and Functions\nIntroduction\nPython provides a variety of built-in string methods and functions to manipulate\nand process strings efficiently. Common String Methods\nChanging Case\nRemoving Whitespace\nFinding and Replacing\nSplitting and Joining\n• \ntext = \"hello world\"\nprint(text.upper())\n# Output: \"HELLO WORLD\"\nprint(text.lower())\n# Output: \"hello world\"\nprint(text.title())\n# Output: \"Hello World\"\nprint(text.capitalize())\n# Output: \"Hello world\"\ntext = \"  hello world  \"\nprint(text.strip())\n# Output: \"hello world\"\nprint(text.lstrip()) # Output: \"hello world  \"\nprint(text.rstrip()) # Output: \"  hello world\"\ntext = \"Python is fun\"\nprint(text.find(\"is\"))\n# Output: 7\nprint(text.replace(\"fun\", \"awesome\"))\n# Output: \"Python is aweso\ntext = \"apple,banana,orange\"\nfruits = text.split(\",\")\nprint(fruits)\n# Output: ['apple', 'banana', 'orange']\nChecking String Properties\nUseful Built-in String Functions\nlen()  - Get Length of a String\nord()  and chr()  - Character Encoding\nformat()  and f-strings\nSummary\nPython provides various string methods for modification and analysis. new_text = \" - \".join(fruits)\nprint(new_text)\n# Output: \"apple - banana - orange\"\ntext = \"Python123\"\nprint(text.isalpha())\n# Output: False\nprint(text.isdigit())\n# Output: False\nprint(text.isalnum())\n# Output: True\nprint(text.isspace())\n# Output: False\ntext = \"Hello, Python!\"\nprint(len(text))\n# Output: 14\nprint(ord('A'))\n# Output: 65\nprint(chr(65))\n# Output: 'A'\nname = \"Alice\"\nage = 30\nprint(\"My name is {} and I am {} years old.\".format(name, age))\nprint(f\"My name is {name} and I am {age} years old.\")\n• \nCase conversion, trimming, finding, replacing, splitting, and joining are\ncommonly used. Functions like len() , ord() , and chr()  are useful for working with string\nproperties.",
+    "start_index": 13886,
+    "end_index": 16089,
+    "word_count": 306,
+    "start_page": 20,
+    "end_page": 23,
+    "page_spans": "Pages 20-23"
+  },
+  {
+    "chunk_id": "chunk_0054",
+    "text": "String Formatting and f-Strings\nIntroduction\nString formatting is a powerful feature in Python that allows you to insert variables\nand expressions into strings in a structured way. Python provides multiple ways to\nformat strings, including the older .format()  method and the modern \nf-strings . Using .format()  Method\nThe .format()  method allows inserting values into placeholders {} :\nYou can also specify positional and keyword arguments:\nf-Strings (Formatted String Literals)\nIntroduced in Python 3.6, f-strings are the most concise and readable way to\nformat strings:\n• \n• \nname = \"Alice\"\nage = 30\nprint(\"My name is {} and I am {} years old.\".format(name, age))\nprint(\"{1} is learning {0}\".format(\"Python\", \"Alice\"))\n# Output:\nprint(\"{name} is {age} years old\".format(name=\"Bob\", age=25))\nname = \"Alice\"\nage = 30\nprint(f\"My name is {name} and I am {age} years old.\")\nUsing Expressions in f-Strings\nYou can perform calculations directly inside f-strings:\nFormatting Numbers\nPadding and Alignment\nImportant Notes\nEscape Sequences: Use \\n , \\t , \\' , \\\" , and \\\\  to handle special\ncharacters in strings. Raw Strings: Use r\"string\"  to prevent escape sequence interpretation.",
+    "start_index": 16089,
+    "end_index": 17268,
+    "word_count": 178,
+    "start_page": 23,
+    "end_page": 24,
+    "page_spans": "Pages 23-24"
+  },
+  {
+    "chunk_id": "chunk_0055",
+    "text": "String Encoding & Decoding: Use .encode()  and .decode()  to work\nwith different text encodings. String Immutability: Strings in Python are immutable, meaning they\ncannot be changed after creation. Performance Considerations: Using ''.join(list_of_strings)  is more\nefficient than concatenation in loops.",
+    "start_index": 17268,
+    "end_index": 17572,
+    "word_count": 39,
+    "start_page": 24,
+    "end_page": 24,
+    "page_spans": "Page 24"
+  },
+  {
+    "chunk_id": "chunk_0056",
+    "text": "Summary\n.format()  allows inserting values into placeholders.",
+    "start_index": 17577,
+    "end_index": 17638,
+    "word_count": 7,
+    "start_page": 24,
+    "end_page": 24,
+    "page_spans": "Page 24"
+  },
+  {
+    "chunk_id": "chunk_0057",
+    "text": "f-strings provide an intuitive and readable way to format strings.",
+    "start_index": 17639,
+    "end_index": 17705,
+    "word_count": 10,
+    "start_page": 24,
+    "end_page": 24,
+    "page_spans": "Page 24"
+  },
+  {
+    "chunk_id": "chunk_0058",
+    "text": "f-strings support expressions, calculations, and formatting options. x = 10\ny = 5\nprint(f\"The sum of {x} and {y} is {x + y}\")\npi = 3.14159265\nprint(f\"Pi rounded to 2 decimal places: {pi:.2f}\")\ntext = \"Python\"\nprint(f\"{text:>10}\")\n# Right align\nprint(f\"{text:<10}\")\n# Left align\nprint(f\"{text:^10}\")\n# Center align\n• \n• \n• \n• \n• \n• \n• \n• \nFunctions and Modules\n1. Defining Functions in Python\nFunctions help in reusability and modularity in Python.",
+    "start_index": 17705,
+    "end_index": 18152,
+    "word_count": 72,
+    "start_page": 24,
+    "end_page": 25,
+    "page_spans": "Pages 24-25"
+  },
+  {
+    "chunk_id": "chunk_0059",
+    "text": "Syntax:\nKey Points:\nDefined using def  keyword.",
+    "start_index": 18154,
+    "end_index": 18201,
+    "word_count": 7,
+    "start_page": 25,
+    "end_page": 25,
+    "page_spans": "Page 25"
+  },
+  {
+    "chunk_id": "chunk_0060",
+    "text": "Function name should be meaningful.",
+    "start_index": 18202,
+    "end_index": 18237,
+    "word_count": 5,
+    "start_page": 25,
+    "end_page": 25,
+    "page_spans": "Page 25"
+  },
+  {
+    "chunk_id": "chunk_0061",
+    "text": "Use return  to send a value back.",
+    "start_index": 18238,
+    "end_index": 18271,
+    "word_count": 7,
+    "start_page": 25,
+    "end_page": 25,
+    "page_spans": "Page 25"
+  },
+  {
+    "chunk_id": "chunk_0062",
+    "text": "2.",
+    "start_index": 18272,
+    "end_index": 18274,
+    "word_count": 1,
+    "start_page": 25,
+    "end_page": 25,
+    "page_spans": "Page 25"
+  },
+  {
+    "chunk_id": "chunk_0063",
+    "text": "Function Arguments & Return Values\nFunctions can take parameters and return values. Types of Arguments:\nPositional Arguments\ndef greet(name):\nreturn f\"Hello, {name}!\"\nprint(greet(\"Alice\"))\n# Output: Hello, Alice! • \n• \n• \n1.",
+    "start_index": 18274,
+    "end_index": 18498,
+    "word_count": 31,
+    "start_page": 25,
+    "end_page": 25,
+    "page_spans": "Page 25"
+  },
+  {
+    "chunk_id": "chunk_0064",
+    "text": "def add(a, b):\nreturn a + b\nDefault Arguments\nKeyword Arguments\n3. Lambda Functions in Python\nLambda functions are anonymous, inline functions.",
+    "start_index": 18501,
+    "end_index": 18644,
+    "word_count": 22,
+    "start_page": 25,
+    "end_page": 26,
+    "page_spans": "Pages 25-26"
+  },
+  {
+    "chunk_id": "chunk_0065",
+    "text": "Syntax:\nExample:\nprint(add(5, 3))\n# Output: 8\n2.",
+    "start_index": 18645,
+    "end_index": 18693,
+    "word_count": 8,
+    "start_page": 26,
+    "end_page": 26,
+    "page_spans": "Page 26"
+  },
+  {
+    "chunk_id": "chunk_0066",
+    "text": "def greet(name=\"Guest\"):\nreturn f\"Hello, {name}!\"\nprint(greet())\n# Output: Hello, Guest! 3.",
+    "start_index": 18693,
+    "end_index": 18784,
+    "word_count": 11,
+    "start_page": 26,
+    "end_page": 26,
+    "page_spans": "Page 26"
+  },
+  {
+    "chunk_id": "chunk_0067",
+    "text": "def student(name, age):\nprint(f\"Name: {name}, Age: {age}\")\nstudent(age=20, name=\"Bob\")\nsquare = lambda x: x * x\nprint(square(4))\n# Output: 16\nnumbers = [1, 2, 3, 4]\nsquared = list(map(lambda x: x**2, numbers))\nprint(squared)\n# Output: [1, 4, 9, 16]\n4. Recursion in Python\nA function calling itself to solve a problem.",
+    "start_index": 18788,
+    "end_index": 19105,
+    "word_count": 51,
+    "start_page": 26,
+    "end_page": 27,
+    "page_spans": "Pages 26-27"
+  },
+  {
+    "chunk_id": "chunk_0068",
+    "text": "Example: Factorial using Recursion\nImportant Notes:\nMust have a base case to avoid infinite recursion. Used in algorithms like Fibonacci, Tree Traversals.",
+    "start_index": 19105,
+    "end_index": 19259,
+    "word_count": 22,
+    "start_page": 27,
+    "end_page": 27,
+    "page_spans": "Page 27"
+  },
+  {
+    "chunk_id": "chunk_0069",
+    "text": "5. Modules and Pip - Using External Libraries\nImporting Modules\nPython provides built-in and third-party modules. Example: Using the math  module\nCreating Your Own Module\nSave this as mymodule.py :\ndef factorial(n):\nif n == 1:\nreturn 1\nreturn n * factorial(n-1)\nprint(factorial(5))\n# Output: 120\n• \n• \nimport math\nprint(math.sqrt(16))\n# Output: 4.0\nImport in another file:\nInstalling External Libraries with pip\nExample usage:\n6. Function Scope and Lifetime\nIn Python, variables have scope (where they can be accessed) and lifetime (how\nlong they exist). Variables are created when a function is called and destroyed\nwhen it returns. Understanding scope helps avoid unintended errors and improves\ncode organization. Types of Scope in Python\nLocal Scope (inside a function) – Variables declared inside a function are\naccessible only within that function. Global Scope (accessible everywhere) – Variables declared outside any\nfunction can be used throughout the program. def greet(name):\nreturn f\"Hello, {name}!\"\nimport mymodule\nprint(mymodule.greet(\"Alice\"))\n# Output: Hello, Alice!",
+    "start_index": 19259,
+    "end_index": 20340,
+    "word_count": 159,
+    "start_page": 27,
+    "end_page": 28,
+    "page_spans": "Pages 27-28"
+  },
+  {
+    "chunk_id": "chunk_0070",
+    "text": "pip install requests\nimport requests\nresponse = requests.get(\"https://api.github.com\")\nprint(response.status_code)\n1.",
+    "start_index": 20343,
+    "end_index": 20460,
+    "word_count": 10,
+    "start_page": 28,
+    "end_page": 28,
+    "page_spans": "Page 28"
+  },
+  {
+    "chunk_id": "chunk_0071",
+    "text": "2.",
+    "start_index": 20462,
+    "end_index": 20464,
+    "word_count": 1,
+    "start_page": 28,
+    "end_page": 28,
+    "page_spans": "Page 28"
+  },
+  {
+    "chunk_id": "chunk_0072",
+    "text": "Example:\nUsing the global  Keyword\nTo modify a global variable inside a function, use the global  keyword:\nThis allows functions to change global variables, but excessive use of global  is\ndiscouraged as it can make debugging harder. 7.",
+    "start_index": 20464,
+    "end_index": 20700,
+    "word_count": 38,
+    "start_page": 28,
+    "end_page": 29,
+    "page_spans": "Pages 28-29"
+  },
+  {
+    "chunk_id": "chunk_0073",
+    "text": "Docstrings - Writing Function Documentation\nDocstrings are used to document functions, classes, and modules. In Python, they\nare written in triple quotes.",
+    "start_index": 20703,
+    "end_index": 20857,
+    "word_count": 22,
+    "start_page": 29,
+    "end_page": 29,
+    "page_spans": "Page 29"
+  },
+  {
+    "chunk_id": "chunk_0074",
+    "text": "They are accessible using the __doc__  attribute. Here’s\nan example:\nx = 10\n# Global variable\ndef my_func():\n    x = 5\n# Local variable\nprint(x)\n# Output: 5\nmy_func()\nprint(x)\n# Output: 10 (global x remains unchanged)\nx = 10\n# Global variable\ndef modify_global():\nglobal x\n    x = 5\n# Modifies the global x\nmodify_global()\nprint(x)\n# Output: 5\ndef add(a, b):\n\"\"\"Returns the sum of two numbers.\"\"\"\nreturn a + b\nHere is even proper way to write docstrings:\nSummary\nFunctions help in reusability and modularity. Functions can take arguments and return values.",
+    "start_index": 20857,
+    "end_index": 21413,
+    "word_count": 95,
+    "start_page": 29,
+    "end_page": 30,
+    "page_spans": "Pages 29-30"
+  },
+  {
+    "chunk_id": "chunk_0075",
+    "text": "Lambda functions are short, inline functions. Recursion is a technique where a function calls itself. Modules help in organizing code and using external libraries.",
+    "start_index": 21413,
+    "end_index": 21576,
+    "word_count": 24,
+    "start_page": 30,
+    "end_page": 30,
+    "page_spans": "Page 30"
+  },
+  {
+    "chunk_id": "chunk_0076",
+    "text": "Scope and lifetime of variables decide their accessibility.",
+    "start_index": 21579,
+    "end_index": 21638,
+    "word_count": 8,
+    "start_page": 30,
+    "end_page": 30,
+    "page_spans": "Page 30"
+  },
+  {
+    "chunk_id": "chunk_0077",
+    "text": "Docstrings are used to document functions, classes, and modules. print(add.__doc__)\n# Output: Returns the sum of two numbers.",
+    "start_index": 21638,
+    "end_index": 21763,
+    "word_count": 18,
+    "start_page": 30,
+    "end_page": 30,
+    "page_spans": "Page 30"
+  },
+  {
+    "chunk_id": "chunk_0078",
+    "text": "def add(a, b):\n\"\"\"\n    Returns the sum of two numbers. Parameters:\n    a (int): The first number. b (int): The second number. Returns:\n    int: The sum of the two numbers. \"\"\"\nreturn a + b\n• \n• \n• \n• \n• \n• \n• \nData Structures in Python\nPython provides powerful built-in data structures to store and manipulate\ncollections of data efficiently.",
+    "start_index": 21763,
+    "end_index": 22105,
+    "word_count": 59,
+    "start_page": 30,
+    "end_page": 31,
+    "page_spans": "Pages 30-31"
+  },
+  {
+    "chunk_id": "chunk_0079",
+    "text": "1.",
+    "start_index": 22124,
+    "end_index": 22126,
+    "word_count": 1,
+    "start_page": 31,
+    "end_page": 31,
+    "page_spans": "Page 31"
+  },
+  {
+    "chunk_id": "chunk_0080",
+    "text": "Lists and List Methods\nLists are ordered, mutable (changeable) collections of items. Creating a List:\nCommon List Methods:\nList Comprehensions (Efficient List Creation)\nnumbers = [1, 2, 3, 4, 5]\nmixed = [10, \"hello\", 3.14]\nmy_list = [1, 2, 3]\nmy_list.append(4)\n# [1, 2, 3, 4]\nmy_list.insert(1, 99)\n# [1, 99, 2, 3, 4]\nmy_list.remove(2)\n# [1, 99, 3, 4]\nmy_list.pop()\n# Removes last element -> [1, 99, 3]\nmy_list.reverse()\n# [3, 99, 1]\nmy_list.sort()\n# [1, 3, 99]\nsquared = [x**2 for x in range(5)]\nprint(squared)\n# Output: [0, 1, 4, 9, 16]\n2. Tuples and Operations on Tuples\nTuples are ordered but immutable collections (cannot be changed after creation). Creating a Tuple:\nAccessing Tuple Elements:\nTuple Unpacking:\nCommon Tuple Methods:\nMethod\nDescription\nExample\nOutput\ncount(x)\nReturns the number of\ntimes x  appears in\nthe tuple\n(1, 2, 2,\n3).count(2)\n2\nindex(x)\nReturns the index of\nthe first occurrence of \nx\n(10, 20,\n30).index(20)\n1\nmy_tuple = (10, 20, 30)\nsingle_element = (5,)\n# Tuple with one element (comma required)\nprint(my_tuple[1])\n# Output: 20\na, b, c = my_tuple\nprint(a, b, c)\n# Output: 10 20 30\nmy_tuple = (1, 2, 2, 3, 4)\nprint(my_tuple.count(2))\n# Output: 2\nprint(my_tuple.index(3))\n# Output: 3\nWhy Use Tuples? Faster than lists (since they are immutable)\nUsed as dictionary keys (since they are hashable)\nSafe from unintended modifications\n3.",
+    "start_index": 22126,
+    "end_index": 23486,
+    "word_count": 226,
+    "start_page": 31,
+    "end_page": 33,
+    "page_spans": "Pages 31-33"
+  },
+  {
+    "chunk_id": "chunk_0081",
+    "text": "Sets and Set Methods\nSets are unordered, unique collections (no duplicates). Creating a Set:\nKey Set Methods:\nSet Operations:\nUse Case: Sets are great for eliminating duplicate values. • \n• \n• \nfruits = {\"apple\", \"banana\", \"cherry\"}\nmy_set = {1, 2, 3, 4}\nmy_set.add(5)\n# {1, 2, 3, 4, 5}\nmy_set.remove(2)\n# {1, 3, 4, 5}\nmy_set.discard(10)\n# No error if element not found\nmy_set.pop()\n# Removes random element\na = {1, 2, 3}\nb = {3, 4, 5}\nprint(a.union(b))\n# {1, 2, 3, 4, 5}\nprint(a.intersection(b))\n# {3}\nprint(a.difference(b))\n# {1, 2}\n4. Dictionaries and Dictionary Methods\nDictionaries store key-value pairs and allow fast lookups.",
+    "start_index": 23486,
+    "end_index": 24118,
+    "word_count": 105,
+    "start_page": 33,
+    "end_page": 34,
+    "page_spans": "Pages 33-34"
+  },
+  {
+    "chunk_id": "chunk_0082",
+    "text": "Creating a Dictionary:\nAccessing & Modifying Values:\nCommon Dictionary Methods:\nDictionary Comprehensions:\n5.",
+    "start_index": 24121,
+    "end_index": 24230,
+    "word_count": 13,
+    "start_page": 34,
+    "end_page": 34,
+    "page_spans": "Page 34"
+  },
+  {
+    "chunk_id": "chunk_0083",
+    "text": "When to Use Each Data Structure? Data Structure\nFeatures\nBest For\nList\nOrdered, Mutable\nStoring sequences, dynamic data\nTuple\nOrdered, Immutable\nFixed collections, dictionary keys\nstudent = {\"name\": \"Alice\", \"age\": 21, \"grade\": \"A\"}\nprint(student[\"name\"])\n# Output: Alice\nstudent[\"age\"] = 22\n# Updating value\nstudent[\"city\"] = \"New York\"\n# Adding new key-value pair\nprint(student.keys())\n# dict_keys(['name', 'age', 'grade', 'ci\nprint(student.values())\n# dict_values(['Alice', 22, 'A', 'New Yo\nprint(student.items())\n# dict_items([('name', 'Alice'), ('age',\nstudent.pop(\"age\")\n# Removes \"age\" key\nstudent.clear()\n# Empties dictionary\nsquares = {x: x**2 for x in range(5)}\nprint(squares)\n# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\nData Structure\nFeatures\nBest For\nSet\nUnordered, Unique\nRemoving duplicates, set operations\nDictionary\nKey-Value Pairs\nFast lookups, structured data\nObject-Oriented Programming (OOP) in\nPython\nWe’ll now explore how to organize and structure your Python code using objects,\nmaking it more manageable, reusable, and easier to understand. 1.",
+    "start_index": 24230,
+    "end_index": 25288,
+    "word_count": 146,
+    "start_page": 34,
+    "end_page": 36,
+    "page_spans": "Pages 34-36"
+  },
+  {
+    "chunk_id": "chunk_0084",
+    "text": "What is OOP Anyway? Imagine you’re building with LEGOs. Instead of just having a pile of individual\nbricks (like in procedural programming), OOP lets you create pre-assembled units –\nlike a car, a house, or a robot. These units have specific parts (data) and things they\ncan do (actions). That’s what OOP is all about. It’s a way of programming that focuses on creating\n“objects.” An object is like a self-contained unit that bundles together:\nData (Attributes): Information about the object. For a car, this might be its\ncolor, model, and speed.",
+    "start_index": 25288,
+    "end_index": 25834,
+    "word_count": 92,
+    "start_page": 36,
+    "end_page": 36,
+    "page_spans": "Page 36"
+  },
+  {
+    "chunk_id": "chunk_0085",
+    "text": "Actions (Methods): Things the object can do. A car can accelerate, brake, and\nturn.",
+    "start_index": 25837,
+    "end_index": 25920,
+    "word_count": 14,
+    "start_page": 36,
+    "end_page": 36,
+    "page_spans": "Page 36"
+  },
+  {
+    "chunk_id": "chunk_0086",
+    "text": "Why Bother with OOP? OOP offers several advantages:\nOrganization: Your code becomes more structured and easier to navigate. Large projects become much more manageable.",
+    "start_index": 25920,
+    "end_index": 26087,
+    "word_count": 24,
+    "start_page": 36,
+    "end_page": 36,
+    "page_spans": "Page 36"
+  },
+  {
+    "chunk_id": "chunk_0087",
+    "text": "Reusability: You can use the same object “blueprints” (classes) multiple times,\nsaving you from writing the same code over and over. Easier Debugging: When something goes wrong, it’s often easier to pinpoint\nthe problem within a specific, self-contained object.",
+    "start_index": 26087,
+    "end_index": 26348,
+    "word_count": 39,
+    "start_page": 36,
+    "end_page": 36,
+    "page_spans": "Page 36"
+  },
+  {
+    "chunk_id": "chunk_0088",
+    "text": "Real-World Modeling: OOP allows you to represent real-world things and\ntheir relationships in a natural way. • \n• \n• \n• \n• \n• \nThe Four Pillars of OOP\nOOP is built on four fundamental principles:\nAbstraction: Think of driving a car. You use the steering wheel, pedals, and\ngearshift, but you don’t need to know the complex engineering under the\nhood.",
+    "start_index": 26348,
+    "end_index": 26698,
+    "word_count": 60,
+    "start_page": 36,
+    "end_page": 37,
+    "page_spans": "Pages 36-37"
+  },
+  {
+    "chunk_id": "chunk_0089",
+    "text": "Abstraction means hiding complex details and showing only the\nessential information to the user. Encapsulation: This is like putting all the car’s engine parts inside a protective\ncasing. Encapsulation bundles data (attributes) and the methods that operate\non that data within a class. This protects the data from being accidentally\nchanged or misused from outside the object.",
+    "start_index": 26698,
+    "end_index": 27074,
+    "word_count": 57,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0090",
+    "text": "It controls access. Inheritance: Imagine creating a “SportsCar” class. Instead of starting from\nscratch, you can build it upon an existing “Car” class. The “SportsCar” inherits\nall the features of a “Car” (like wheels and an engine) and adds its own special\nfeatures (like a spoiler).",
+    "start_index": 27074,
+    "end_index": 27358,
+    "word_count": 46,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0091",
+    "text": "This promotes code reuse and reduces redundancy.",
+    "start_index": 27364,
+    "end_index": 27412,
+    "word_count": 7,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0092",
+    "text": "Polymorphism: “Poly” means many, and “morph” means forms. This means\nobjects of different classes can respond to the same “message” (method call)\nin their own specific way.",
+    "start_index": 27413,
+    "end_index": 27585,
+    "word_count": 27,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0093",
+    "text": "For example, both a “Dog” and a “Cat” might have a \nmake_sound()  method. The dog will bark, and the cat will meow – same\nmethod name, different behavior.",
+    "start_index": 27586,
+    "end_index": 27740,
+    "word_count": 28,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0094",
+    "text": "2. Classes and Objects: The Blueprint and the Building\nClass: Think of a class as a blueprint or a template. It defines what an object \nwill be like – what data it will hold and what actions it can perform.",
+    "start_index": 27741,
+    "end_index": 27947,
+    "word_count": 40,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0095",
+    "text": "It doesn’t\ncreate the object itself, just the instructions for creating it.",
+    "start_index": 27948,
+    "end_index": 28023,
+    "word_count": 12,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0096",
+    "text": "It’s like an\narchitectural plan for a house. Object (Instance): An object is a specific instance created from the class\nblueprint. If “Car” is the class, then your red Honda Civic is an object (an\ninstance) of the “Car” class.",
+    "start_index": 28023,
+    "end_index": 28249,
+    "word_count": 40,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0097",
+    "text": "Each object has its own unique set of data.",
+    "start_index": 28251,
+    "end_index": 28294,
+    "word_count": 9,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0098",
+    "text": "It’s like\nthe actual house built from the architectural plan. Let’s see this in Python:\n1.",
+    "start_index": 28294,
+    "end_index": 28384,
+    "word_count": 16,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0099",
+    "text": "2.",
+    "start_index": 28387,
+    "end_index": 28389,
+    "word_count": 1,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0100",
+    "text": "3.",
+    "start_index": 28391,
+    "end_index": 28393,
+    "word_count": 1,
+    "start_page": 37,
+    "end_page": 37,
+    "page_spans": "Page 37"
+  },
+  {
+    "chunk_id": "chunk_0101",
+    "text": "4. • \n• \nclass Dog:\n# We define a class called \"Dog\"\n    species = \"Canis familiaris\" # A class attribute (shared by a\nself  Explained: Inside a class, self  is like saying “this particular object.” It’s\na way for the object to refer to itself. It’s always the first parameter in a\nmethod definition, but Python handles it automatically when you call the\nmethod.",
+    "start_index": 28393,
+    "end_index": 28755,
+    "word_count": 64,
+    "start_page": 37,
+    "end_page": 38,
+    "page_spans": "Pages 37-38"
+  },
+  {
+    "chunk_id": "chunk_0102",
+    "text": "You don’t type self  when calling the method; Python inserts it for\nyou.",
+    "start_index": 28759,
+    "end_index": 28831,
+    "word_count": 13,
+    "start_page": 38,
+    "end_page": 38,
+    "page_spans": "Page 38"
+  },
+  {
+    "chunk_id": "chunk_0103",
+    "text": "Class vs.",
+    "start_index": 28832,
+    "end_index": 28841,
+    "word_count": 2,
+    "start_page": 38,
+    "end_page": 38,
+    "page_spans": "Page 38"
+  },
+  {
+    "chunk_id": "chunk_0104",
+    "text": "Instance Attributes:\nClass Attributes: These are shared by all objects of the class. Like \nspecies  in our Dog  class.",
+    "start_index": 28842,
+    "end_index": 28960,
+    "word_count": 19,
+    "start_page": 38,
+    "end_page": 38,
+    "page_spans": "Page 38"
+  },
+  {
+    "chunk_id": "chunk_0105",
+    "text": "All dogs belong to the same species. They are\ndefined outside of any method, directly within the class.",
+    "start_index": 28961,
+    "end_index": 29064,
+    "word_count": 18,
+    "start_page": 38,
+    "end_page": 38,
+    "page_spans": "Page 38"
+  },
+  {
+    "chunk_id": "chunk_0106",
+    "text": "Instance Attributes: These are specific to each individual object. name\nand breed  are instance attributes. Each dog has its own name and breed. They are usually defined within the __init__  method. def __init__(self, name, breed):\n# The constructor (explaine\n        self.name = name     # An instance attribute to store the\n        self.breed = breed   # An instance attribute to store the\ndef bark(self):\n# A method (an action the dog can do\nprint(f\"{self.name} says Woof!\")\n# Now, let's create some Dog objects:\nmy_dog = Dog(\"Buddy\", \"Golden Retriever\")\n# Creating an object c\nanother_dog = Dog(\"Lucy\", \"Labrador\")\n# Creating another obje\n# We can access their attributes:\nprint(my_dog.name)\n# Output: Buddy\nprint(another_dog.breed)\n# Output: Labrador\n# And make them perform actions:\nmy_dog.bark()\n# Output: Buddy says Woof! print(Dog.species)\n# Output: Canis familiaris\n• \n• \n• \n• \n3.",
+    "start_index": 29064,
+    "end_index": 29954,
+    "word_count": 134,
+    "start_page": 38,
+    "end_page": 39,
+    "page_spans": "Pages 38-39"
+  },
+  {
+    "chunk_id": "chunk_0107",
+    "text": "The Constructor: Setting Things Up ( __init__ )\nThe __init__  method is special.",
+    "start_index": 29956,
+    "end_index": 30036,
+    "word_count": 13,
+    "start_page": 39,
+    "end_page": 39,
+    "page_spans": "Page 39"
+  },
+  {
+    "chunk_id": "chunk_0108",
+    "text": "It’s called the constructor. It’s automatically run\nwhenever you create a new object from a class. What’s it for? The constructor’s job is to initialize the object’s attributes – to give\nthem their starting values. It sets up the initial state of the object. You can also set default values for parameters in the constructor, making them\noptional when creating an object:\nclass Dog:\ndef __init__(self, name, breed):\n# The constructor\n        self.name = name      # Setting the name attribute\n        self.breed = breed    # Setting the breed attribute\n# When we do this:\nmy_dog = Dog(\"Fido\", \"Poodle\")\n# The __init__ method is automati\n# It's like we're saying:\n# 1. Create a new Dog object.",
+    "start_index": 30036,
+    "end_index": 30728,
+    "word_count": 114,
+    "start_page": 39,
+    "end_page": 39,
+    "page_spans": "Page 39"
+  },
+  {
+    "chunk_id": "chunk_0109",
+    "text": "# 2. Run the __init__ method on this new object:\n#    - Set my_dog.name to \"Fido\"\n#    - Set my_dog.breed to \"Poodle\"\nclass Dog:\ndef __init__(self, name=\"Unknown\", breed=\"Mixed\"):\n        self.name = name\n        self.breed = breed\ndog1 = Dog()\n# name will be \"Unknown\", breed will be \"Mi\ndog2 = Dog(\"Rex\")\n# name will be \"Rex\", breed will be \"Mixed\"\ndog3 = Dog(\"Bella\", \"Labrador\") # name will be \"Bella\", breed wil\n4. Inheritance: Building Upon Existing Classes\nInheritance is like a family tree.",
+    "start_index": 30730,
+    "end_index": 31228,
+    "word_count": 81,
+    "start_page": 39,
+    "end_page": 40,
+    "page_spans": "Pages 39-40"
+  },
+  {
+    "chunk_id": "chunk_0110",
+    "text": "A child class (or subclass) inherits traits (attributes\nand methods) from its parent class (or superclass). This allows you to create new\nclasses that are specialized versions of existing classes, without rewriting all the\ncode. super() : Inside a child class, super()  lets you call methods from the parent\nclass. This is useful when you want to extend the parent’s behavior instead of\ncompletely replacing it.",
+    "start_index": 31228,
+    "end_index": 31639,
+    "word_count": 66,
+    "start_page": 40,
+    "end_page": 40,
+    "page_spans": "Page 40"
+  },
+  {
+    "chunk_id": "chunk_0111",
+    "text": "It’s especially important when initializing the parent\nclass’s part of a child object. class Animal:\n# Parent class (superclass)\ndef __init__(self, name):\n        self.name = name\ndef speak(self):\nprint(\"Generic animal sound\")\nclass Dog(Animal):\n# Dog inherits from Animal (Dog is a subclass\ndef speak(self):\n# We *override* the speak method (more on t\nprint(\"Woof!\")\nclass Cat(Animal):\n# Cat also inherits from Animal\ndef speak(self):\nprint(\"Meow!\")\n# Create objects:\nmy_dog = Dog(\"Rover\")\nmy_cat = Cat(\"Fluffy\")\n# They both have a 'name' attribute (inherited from Animal):\nprint(my_dog.name)\n# Output: Rover\nprint(my_cat.name)\n# Output: Fluffy\n# They both have a 'speak' method, but it behaves differently:\nmy_dog.speak()\n# Output: Woof! my_cat.speak()\n# Output: Meow!",
+    "start_index": 31639,
+    "end_index": 32409,
+    "word_count": 110,
+    "start_page": 40,
+    "end_page": 40,
+    "page_spans": "Page 40"
+  },
+  {
+    "chunk_id": "chunk_0112",
+    "text": "• \n5. Polymorphism: One Name, Many Forms\nPolymorphism, as we saw with the speak()  method in the inheritance example,\nmeans that objects of different classes can respond to the same method call in\ntheir own specific way. This allows you to write code that can work with objects of\ndifferent types without needing to know their exact class.",
+    "start_index": 32412,
+    "end_index": 32751,
+    "word_count": 58,
+    "start_page": 40,
+    "end_page": 41,
+    "page_spans": "Pages 40-41"
+  },
+  {
+    "chunk_id": "chunk_0113",
+    "text": "6. Method Overriding: Customizing Inherited\nBehavior\nMethod overriding is how polymorphism is achieved in inheritance. When a child\nclass defines a method with the same name as a method in its parent class, the\nchild’s version overrides the parent’s version for objects of the child class.",
+    "start_index": 32752,
+    "end_index": 33041,
+    "word_count": 46,
+    "start_page": 41,
+    "end_page": 41,
+    "page_spans": "Page 41"
+  },
+  {
+    "chunk_id": "chunk_0114",
+    "text": "This allows\nspecialized behavior in subclasses. The parent class’s method is still available (using \nsuper() ), but when you call the method on a child class object, the child’s version\nis executed. 7. Operator Overloading: Making Operators Work\nwith Your Objects\nPython lets you define how standard operators (like + , - , == ) behave when\nused with objects of your own classes. This is done using special methods called\n“magic methods” (or “dunder methods” because they have double underscores\nbefore and after the name). # Calling Parent Constructor with super()\nclass Bird(Animal):\ndef __init__(self, name, wingspan):\nsuper().__init__(name)\n# Call Animal's __init__ to set t\n        self.wingspan = wingspan # Add a Bird-specific attribute\nmy_bird = Bird(\"Tweety\", 10)\nprint(my_bird.name)\n# Output: Tweety (set by Animal's constr\nprint(my_bird.wingspan)\n# Output: 10   (set by Bird's constructo\nOther useful magic methods: (You don’t need to memorize them all, but be aware\nthey exist!)\n__sub__  ( - ), __mul__  ( * ), __truediv__  ( / ), __eq__  ( == ), __ne__\n( != ), __lt__  ( < ), __gt__  ( > ), __len__  ( len() ), __getitem__ , \n__setitem__ , __delitem__  (for list/dictionary-like behavior – allowing you\nto use []  with your objects). 8.",
+    "start_index": 33041,
+    "end_index": 34290,
+    "word_count": 200,
+    "start_page": 41,
+    "end_page": 42,
+    "page_spans": "Pages 41-42"
+  },
+  {
+    "chunk_id": "chunk_0115",
+    "text": "Getters and Setters: Controlling Access to\nAttributes\nGetters and setters are methods that you create to control how attributes of your\nclass are accessed and modified. They are a key part of the principle of \nencapsulation. Instead of directly accessing an attribute (like \nclass Point:\ndef __init__(self, x, y):\n        self.x = x\n        self.y = y\ndef __add__(self, other):\n# Overloading the + operator\n#  'other' refers to the object on the *right* side of th\nreturn Point(self.x + other.x, self.y + other.y)\ndef __str__(self): # String representation (for print() and s\nreturn f\"({self.x}, {self.y})\"\ndef __eq__(self, other): # Overloading == operator\nreturn self.x == other.x and self.y == other.y\np1 = Point(1, 2)\np2 = Point(3, 4)\np3 = p1 + p2  # This now works! It calls p1.__add__(p2)\nprint(p3)\n# Output: (4, 6)  (This uses the __str__ method)\nprint(p1 == p2) # Output: False (This uses the __eq__ method)\n• \nmy_object.attribute ), you use methods to get and set its value. This might seem\nlike extra work, but it provides significant advantages.",
+    "start_index": 34290,
+    "end_index": 35346,
+    "word_count": 173,
+    "start_page": 42,
+    "end_page": 43,
+    "page_spans": "Pages 42-43"
+  },
+  {
+    "chunk_id": "chunk_0116",
+    "text": "Why use them? Validation: You can add checks within the setter to make sure the attribute is\nset to a valid value. For example, you could prevent an age from being\nnegative. Read-Only Attributes: You can create a getter without a setter, making the\nattribute effectively read-only from outside the class. This protects the\nattribute from being changed accidentally.",
+    "start_index": 35346,
+    "end_index": 35711,
+    "word_count": 59,
+    "start_page": 43,
+    "end_page": 43,
+    "page_spans": "Page 43"
+  },
+  {
+    "chunk_id": "chunk_0117",
+    "text": "Side Effects: You can perform other actions when an attribute is accessed or\nmodified. For instance, you could update a display or log a change whenever a\nvalue is set. Maintainability and Flexibility: If you decide to change how an attribute is\nstored internally (maybe you switch from storing degrees Celsius to\nFahrenheit), you only need to update the getter and setter methods. You don’t\nneed to change every other part of your code that uses the attribute.",
+    "start_index": 35711,
+    "end_index": 36172,
+    "word_count": 78,
+    "start_page": 43,
+    "end_page": 43,
+    "page_spans": "Page 43"
+  },
+  {
+    "chunk_id": "chunk_0118",
+    "text": "This\nmakes your code much easier to maintain and modify in the future. • \n• \n• \n• \nclass Person:\ndef __init__(self, name, age):\n        self.name = name\n        self._age = age  # Convention: _age indicates it's intend\ndef get_age(self):\n# Getter for age\nreturn self._age\ndef set_age(self, new_age):\n# Setter for age\nif new_age >= 0 and new_age <= 150:\n# Validation\n            self._age = new_age\nelse:\nprint(\"Invalid age!\")\nperson = Person(\"Alice\", 30)\nprint(person.get_age())\n# Output: 30\nperson.set_age(35)\nprint(person.get_age())\n# Output: 35\nThe Pythonic Way: @property  Decorator\nPython offers a more elegant and concise way to define getters and setters using\nthe @property  decorator. This is the preferred way to implement them in modern\nPython. With @property , accessing and setting the age  attribute looks like you’re\nworking directly with a regular attribute, but you’re actually using the getter and\nsetter methods behind the scenes. This combines the convenience of direct access\nwith the control and protection of encapsulation. Private Variables (and the _  convention):\nperson.set_age(-5)\n# Output: Invalid age! print(person.get_age())\n# Output: 35 (age wasn't changed)\nclass Person:\ndef __init__(self, name, age):\n        self.name = name\n        self._age = age  # Convention: _age for \"private\" attribu\n@property\n# This makes 'age' a property (the getter)\ndef age(self):\nreturn self._age\n@age.setter # This defines the setter for the 'age' property\ndef age(self, new_age):\nif new_age >= 0 and new_age <= 150:\n            self._age = new_age\nelse:\nprint(\"Invalid age!\")\nperson = Person(\"Bob\", 40)\nprint(person.age)\n# Output: 40  (Looks like direct attribute a\nperson.age = 45\n# (Calls the setter – looks like attribute a\nprint(person.age)\nperson.age = -22 #Output: Invalid age! It’s important to understand that Python does not have truly private attributes in\nthe same way that languages like Java or C++ do.",
+    "start_index": 36172,
+    "end_index": 38103,
+    "word_count": 287,
+    "start_page": 43,
+    "end_page": 45,
+    "page_spans": "Pages 43-45"
+  },
+  {
+    "chunk_id": "chunk_0119",
+    "text": "There’s no keyword that\ncompletely prevents access to an attribute from outside the class. Instead, Python uses a convention: An attribute name starting with a single\nunderscore ( _ ) signals to other programmers that this attribute is intended for \ninternal use within the class. It’s a strong suggestion: “Don’t access this directly\nfrom outside the class; use the provided getters and setters instead.” It’s like a\n“Please Do Not Touch” sign. While you can still access obj._internal_value  directly, doing so is considered\nbad practice and can lead to problems if the internal implementation of the class\nchanges. Always respect the underscore convention!",
+    "start_index": 38103,
+    "end_index": 38762,
+    "word_count": 103,
+    "start_page": 45,
+    "end_page": 45,
+    "page_spans": "Page 45"
+  },
+  {
+    "chunk_id": "chunk_0120",
+    "text": "It’s about good coding style\nand collaboration. class MyClass:\ndef __init__(self):\n        self._internal_value = 0\n#  Convention: _ means \"private\ndef get_value(self):\nreturn self._internal_value\nobj = MyClass()\n# print(obj._internal_value)  # This *works*, but it's against co\nprint(obj.get_value())\n# This is the preferred way\nPython: Advanced Concepts\nThis section covers several advanced concepts in Python, including decorators,\ngetters and setters, static and class methods, magic methods, exception handling,\nmap/filter/reduce, the walrus operator, and *args/**kwargs. Decorators in Python\nIntroduction\nDecorators in Python are a powerful and expressive feature that allows you to\nmodify or enhance functions and methods in a clean and readable way. They\nprovide a way to wrap additional functionality around an existing function without\npermanently modifying it. This is often referred to as metaprogramming, where one\npart of the program tries to modify another part of the program at compile time. Decorators use Python’s higher-order function capability, meaning functions can\naccept other functions as arguments and return new functions. Understanding Decorators\nA decorator is simply a callable (usually a function) that takes another function as\nan argument and returns a replacement function. The replacement function\ntypically extends or alters the behavior of the original function. Basic Example of a Decorator\ndef my_decorator(func):\ndef wrapper():\nprint(\"Something is happening before the function is call\n        func()\nprint(\"Something is happening after the function is calle\nreturn wrapper\nOutput:\nHere, @my_decorator  is syntactic sugar for say_hello =\nmy_decorator(say_hello) . It modifies the behavior of say_hello()  by wrapping\nit inside wrapper() . The wrapper  function adds behavior before and after the\noriginal function call.",
+    "start_index": 38762,
+    "end_index": 40622,
+    "word_count": 258,
+    "start_page": 45,
+    "end_page": 47,
+    "page_spans": "Pages 45-47"
+  },
+  {
+    "chunk_id": "chunk_0121",
+    "text": "Using Decorators with Arguments\nDecorators themselves can also accept arguments. This requires another level of\nnesting: an outer function that takes the decorator’s arguments and returns the\nactual decorator function. @my_decorator\ndef say_hello():\nprint(\"Hello!\")\nsay_hello()\nSomething is happening before the function is called. Hello! Something is happening after the function is called. def repeat(n):\ndef decorator(func):\ndef wrapper(a):\nfor _ in range(n):\n                func(a)\nreturn wrapper\nreturn decorator\n@repeat(3)\ndef greet(name):\nprint(f\"Hello, {name}!\")\nOutput:\nIn this example, repeat(3) returns the decorator function. The @  syntax then\napplies that returned decorator to greet .",
+    "start_index": 40622,
+    "end_index": 41322,
+    "word_count": 92,
+    "start_page": 47,
+    "end_page": 48,
+    "page_spans": "Pages 47-48"
+  },
+  {
+    "chunk_id": "chunk_0122",
+    "text": "The argument in the wrapper  function\nensures that the decorator can be used with functions that take any number of\npositional and keyword arguments. Chaining Multiple Decorators\nYou can apply multiple decorators to a single function. Decorators are applied from\nbottom to top (or, equivalently, from the innermost to the outermost).",
+    "start_index": 41322,
+    "end_index": 41655,
+    "word_count": 51,
+    "start_page": 48,
+    "end_page": 48,
+    "page_spans": "Page 48"
+  },
+  {
+    "chunk_id": "chunk_0123",
+    "text": "greet(\"world\")\nHello, world!",
+    "start_index": 41666,
+    "end_index": 41694,
+    "word_count": 3,
+    "start_page": 48,
+    "end_page": 48,
+    "page_spans": "Page 48"
+  },
+  {
+    "chunk_id": "chunk_0124",
+    "text": "Hello, world!",
+    "start_index": 41695,
+    "end_index": 41708,
+    "word_count": 2,
+    "start_page": 48,
+    "end_page": 48,
+    "page_spans": "Page 48"
+  },
+  {
+    "chunk_id": "chunk_0125",
+    "text": "Hello, world! def uppercase(func):\ndef wrapper():\nreturn func().upper()\nreturn wrapper\ndef exclaim(func):\ndef wrapper():\nreturn func() + \"!!!\"\nreturn wrapper\n@uppercase\n@exclaim\ndef greet():\nreturn \"hello\"\nprint(greet())\nOutput:\nHere, greet  is first decorated by exclaim , and then the result of that is\ndecorated by uppercase . It’s equivalent to greet = uppercase(exclaim(greet)) . Recap\nDecorators are a key feature in Python that enable code reusability and cleaner\nfunction modifications. They are commonly used for:\nLogging: Recording when a function is called and its arguments.",
+    "start_index": 41708,
+    "end_index": 42294,
+    "word_count": 85,
+    "start_page": 48,
+    "end_page": 49,
+    "page_spans": "Pages 48-49"
+  },
+  {
+    "chunk_id": "chunk_0126",
+    "text": "Timing: Measuring how long a function takes to execute. Authentication and Authorization: Checking if a user has permission to access\na function. Caching: Storing the results of a function call so that subsequent calls with the\nsame arguments can be returned quickly. Rate Limiting: Controlling how often a function can be called.",
+    "start_index": 42294,
+    "end_index": 42624,
+    "word_count": 52,
+    "start_page": 49,
+    "end_page": 49,
+    "page_spans": "Page 49"
+  },
+  {
+    "chunk_id": "chunk_0127",
+    "text": "Input Validation: Checking if the arguments to a function meet certain criteria.",
+    "start_index": 42627,
+    "end_index": 42707,
+    "word_count": 12,
+    "start_page": 49,
+    "end_page": 49,
+    "page_spans": "Page 49"
+  },
+  {
+    "chunk_id": "chunk_0128",
+    "text": "Instrumentation: Adding monitoring and profiling to functions.",
+    "start_index": 42708,
+    "end_index": 42770,
+    "word_count": 7,
+    "start_page": 49,
+    "end_page": 49,
+    "page_spans": "Page 49"
+  },
+  {
+    "chunk_id": "chunk_0129",
+    "text": "Frameworks like Flask and Django use decorators extensively for routing,\nauthentication, and defining middleware. Getters and Setters in Python\nIntroduction\nIn object-oriented programming, getters and setters are methods used to control\naccess to an object’s attributes (also known as properties or instance variables). They provide a way to encapsulate the internal representation of an object,\nallowing you to validate data, enforce constraints, and perform other operations\nwhen an attribute is accessed or modified.",
+    "start_index": 42770,
+    "end_index": 43289,
+    "word_count": 73,
+    "start_page": 49,
+    "end_page": 49,
+    "page_spans": "Page 49"
+  },
+  {
+    "chunk_id": "chunk_0130",
+    "text": "While Python doesn’t have private\nHELLO!!! • \n• \n• \n• \n• \n• \n• \nvariables in the same way as languages like Java, the convention is to use a leading\nunderscore ( _ ) to indicate that an attribute is intended for internal use. Using getters and setters helps:\nEncapsulate data and enforce validation: You can check if the new value\nmeets certain criteria before assigning it. Control access to “private” attributes: By convention, attributes starting with\nan underscore are considered private, and external code should use getters/\nsetters instead of direct access. Make the code more maintainable: Changes to the internal representation of\nan object don’t necessarily require changes to code that uses the object.",
+    "start_index": 43289,
+    "end_index": 44002,
+    "word_count": 115,
+    "start_page": 49,
+    "end_page": 50,
+    "page_spans": "Pages 49-50"
+  },
+  {
+    "chunk_id": "chunk_0131",
+    "text": "Add additional logic: Logic can be added when getting or setting attributes. Using Getters and Setters\nTraditional Approach (Using Methods)\nA basic approach is to use explicit getter and setter methods:\n• \n• \n• \n• \nclass Person:\ndef __init__(self, name):\n        self._name = name  # Convention: underscore (_) denotes a\ndef get_name(self):\nreturn self._name\ndef set_name(self, new_name):\n        self._name = new_name \np = Person(\"Alice\")\nprint(p.get_name())\n# Alice\np.set_name(\"Bob\")\nprint(p.get_name())\n# Bob \nUsing @property  (Pythonic Approach)\nPython provides a more elegant and concise way to implement getters and setters\nusing the @property  decorator. This allows you to access and modify attributes\nusing the usual dot notation (e.g., p.name ) while still having the benefits of getter\nand setter methods. Benefits of @property :\nAttribute-like access: You can use obj.name  instead of obj.get_name()  and \nobj.set_name() , making the code cleaner and more readable. Consistent interface: The external interface of your class remains consistent\neven if you later decide to add validation or other logic to the getter or setter.",
+    "start_index": 44002,
+    "end_index": 45140,
+    "word_count": 165,
+    "start_page": 50,
+    "end_page": 51,
+    "page_spans": "Pages 50-51"
+  },
+  {
+    "chunk_id": "chunk_0132",
+    "text": "Read-only properties: You can create read-only properties by simply omitting\nthe @property.setter  method (see the next section).",
+    "start_index": 45144,
+    "end_index": 45273,
+    "word_count": 17,
+    "start_page": 51,
+    "end_page": 51,
+    "page_spans": "Page 51"
+  },
+  {
+    "chunk_id": "chunk_0133",
+    "text": "@property.deleter : deletes a property. Here is an example:\nclass Person:\ndef __init__(self, name):\n        self._name = name\n@property\ndef name(self):\n# Getter\nreturn self._name\n@name.setter\ndef name(self, new_name):\n# Setter\n        self._name = new_name \np = Person(\"Alice\")\nprint(p.name)\n# Alice (calls the getter)\np.name = \"Bob\"\n# Calls the setter\nprint(p.name)\n# Bob\n• \n• \n• \n• \nRead-Only Properties\nIf you want an attribute to be read-only, define only the @property  decorator (the\ngetter) and omit the @name.setter  method. Attempting to set the attribute will\nthen raise an AttributeError . class Person:\ndef __init__(self, name):\n        self._name = name\n@property\ndef name(self):\n# Getter\nreturn self._name\n@name.setter\ndef name(self, new_name):\n# Setter\n        self._name = new_name \n@name.deleter\ndef name(self):\ndel self._name\np = Person(\"Alice\")\nprint(p.name)\n# Alice\ndel p.name\nprint(p.name)\n# AttributeError: 'Person' object has no attrib\nclass Circle:\ndef __init__(self, radius):\n        self._radius = radius\n@property\ndef radius(self):\nreturn self._radius\n@property\nRecap\nGetters and Setters provide controlled access to an object’s attributes,\npromoting encapsulation and data validation. The @property  decorator offers a cleaner and more Pythonic way to\nimplement getters and setters, allowing attribute-like access.",
+    "start_index": 45273,
+    "end_index": 46615,
+    "word_count": 182,
+    "start_page": 51,
+    "end_page": 53,
+    "page_spans": "Pages 51-53"
+  },
+  {
+    "chunk_id": "chunk_0134",
+    "text": "You can create read-only properties by defining only a getter (using \n@property  without a corresponding @<attribute>.setter ). Using @property , you can dynamically compute values (like the area  in the \nCircle  example) while maintaining an attribute-like syntax. Static and Class Methods in Python\nIntroduction\nIn Python, methods within a class can be of three main types:\nInstance Methods: These are the most common type of method. They operate\non instances of the class (objects) and have access to the instance’s data\nthrough the self  parameter.",
+    "start_index": 46615,
+    "end_index": 47167,
+    "word_count": 85,
+    "start_page": 53,
+    "end_page": 53,
+    "page_spans": "Page 53"
+  },
+  {
+    "chunk_id": "chunk_0135",
+    "text": "Class Methods: These methods are bound to the class itself, not to any\nparticular instance. They have access to class-level attributes and can be used\nto modify the class state.",
+    "start_index": 47170,
+    "end_index": 47347,
+    "word_count": 30,
+    "start_page": 53,
+    "end_page": 53,
+    "page_spans": "Page 53"
+  },
+  {
+    "chunk_id": "chunk_0136",
+    "text": "They receive the class itself (conventionally named \ncls ) as the first argument. def area(self):\n# Read-only computed property\nreturn 3.1416 * self._radius * self._radius\nc = Circle(5)\nprint(c.radius)\n# 5\nprint(c.area)\n# 78.54\n# c.radius = 10  # Raises AttributeError: can't set attribute\n# c.area = 20 # Raises AttributeError: can't set attribute\n• \n• \n• \n• \n• \n• \nStatic Methods: These methods are associated with the class, but they don’t\nhave access to either the instance ( self ) or the class ( cls ). They are\nessentially regular functions that are logically grouped within a class for\norganizational purposes.",
+    "start_index": 47347,
+    "end_index": 47965,
+    "word_count": 102,
+    "start_page": 53,
+    "end_page": 54,
+    "page_spans": "Pages 53-54"
+  },
+  {
+    "chunk_id": "chunk_0137",
+    "text": "Instance Methods (Default Behavior)\nInstance methods are the default type of method in Python classes. They require\nan instance of the class to be called, and they automatically receive the instance as\nthe first argument ( self ). Class Methods ( @classmethod )\nA class method is marked with the @classmethod  decorator. It takes the class itself\n( cls ) as its first parameter, rather than the instance ( self ). Class methods are\noften used for:\nModifying class attributes: They can change the state of the class, which\naffects all instances of the class. Factory methods: They can be used as alternative constructors to create\ninstances of the class in different ways. • \nclass Dog:\ndef __init__(self, name):\n        self.name = name  # Instance attribute\ndef speak(self):\nreturn f\"{self.name} says Woof!\"\ndog = Dog(\"Buddy\")\nprint(dog.speak())\n# Buddy says Woof! • \n• \nclass Animal:\n    species = \"Mammal\"\n# Class attribute\nExample: Alternative Constructor\nIn this example, from_string  acts as a factory method, providing an alternative\nway to create Person  objects from a string. @classmethod\ndef set_species(cls, new_species):\n        cls.species = new_species  # Modifies class attribute\n@classmethod\ndef get_species(cls):\nreturn cls.species\nprint(Animal.get_species())\n# Mammal\nAnimal.set_species(\"Reptile\")\nprint(Animal.get_species())\n# Reptile\n# You can also call class methods on instances, but it's less com\na = Animal()\nprint(a.get_species()) # Reptile\nclass Person:\ndef __init__(self, name, age):\n        self.name = name\n        self.age = age\n@classmethod\ndef from_string(cls, data):\n        name, age = data.split(\"-\")\nreturn cls(name, int(age))\n# Creates a new Person instan\np = Person.from_string(\"Alice-30\")\nprint(p.name, p.age)\n# Alice 30\nStatic Methods ( @staticmethod )\nStatic methods are marked with the @staticmethod  decorator. They are similar to\nregular functions, except they are defined within the scope of a class.",
+    "start_index": 47965,
+    "end_index": 49911,
+    "word_count": 280,
+    "start_page": 54,
+    "end_page": 56,
+    "page_spans": "Pages 54-56"
+  },
+  {
+    "chunk_id": "chunk_0138",
+    "text": "They don’t take self  or cls  as parameters. They are useful when a method is logically related to a class but doesn’t need\nto access or modify the instance or class state.",
+    "start_index": 49911,
+    "end_index": 50083,
+    "word_count": 32,
+    "start_page": 56,
+    "end_page": 56,
+    "page_spans": "Page 56"
+  },
+  {
+    "chunk_id": "chunk_0139",
+    "text": "Often used for utility functions that are related to the class\nWhen to Use Static Methods? When a method is logically related to a class but doesn’t require access to\ninstance-specific or class-specific data. For utility functions that perform operations related to the class’s purpose\n(e.g., mathematical calculations, string formatting, validation checks). Key Differences Between Method Types\nMethod\nType\nRequires\nself ? Requires\ncls ? Can Access\nInstance\nAttributes?",
+    "start_index": 50083,
+    "end_index": 50553,
+    "word_count": 69,
+    "start_page": 56,
+    "end_page": 56,
+    "page_spans": "Page 56"
+  },
+  {
+    "chunk_id": "chunk_0140",
+    "text": "Can Modify\nClass Attributes? Instance\nMethod\n✅ Yes\n❌ No\n✅ Yes\n✅ Yes\n(indirectly)\n• \n• \n• \nclass MathUtils:\n@staticmethod\ndef add(a, b):\nreturn a + b\nprint(MathUtils.add(3, 5))\n# 8\n#Can also be called on an instance\nm = MathUtils()\nprint(m.add(4,5)) # 9\n• \n• \nMethod\nType\nRequires\nself ? Requires\ncls ?",
+    "start_index": 50553,
+    "end_index": 50854,
+    "word_count": 55,
+    "start_page": 56,
+    "end_page": 57,
+    "page_spans": "Pages 56-57"
+  },
+  {
+    "chunk_id": "chunk_0141",
+    "text": "Can Access\nInstance\nAttributes?",
+    "start_index": 50860,
+    "end_index": 50891,
+    "word_count": 4,
+    "start_page": 57,
+    "end_page": 57,
+    "page_spans": "Page 57"
+  },
+  {
+    "chunk_id": "chunk_0142",
+    "text": "Can Modify\nClass Attributes? Class\nMethod\n❌ No\n✅ Yes\n❌ No (directly)\n✅ Yes\nStatic\nMethod\n❌ No\n❌ No\n❌ No\n❌ No\nRecap\nInstance methods are the most common type and operate on individual\nobjects ( self ). Class methods operate on the class itself ( cls ) and are often used for factory\nmethods or modifying class-level attributes. Static methods are utility functions within a class that don’t depend on the\ninstance or class state.",
+    "start_index": 50891,
+    "end_index": 51319,
+    "word_count": 79,
+    "start_page": 57,
+    "end_page": 57,
+    "page_spans": "Page 57"
+  },
+  {
+    "chunk_id": "chunk_0143",
+    "text": "They’re like regular functions that are logically grouped\nwith a class. Magic (Dunder) Methods in Python\nIntroduction\nMagic methods, also called dunder (double underscore) methods, are special\nmethods in Python that have double underscores at the beginning and end of their\nnames (e.g., __init__ , __str__ , __add__ ). These methods allow you to define\nhow your objects interact with built-in Python operators, functions, and language\nconstructs.",
+    "start_index": 51319,
+    "end_index": 51765,
+    "word_count": 67,
+    "start_page": 57,
+    "end_page": 57,
+    "page_spans": "Page 57"
+  },
+  {
+    "chunk_id": "chunk_0144",
+    "text": "They provide a way to implement operator overloading and customize\nthe behavior of your classes in a Pythonic way. They are used to:\nCustomize object creation and initialization ( __init__ , __new__ ). Enable operator overloading (e.g., + , - , * , == , < , > ).",
+    "start_index": 51765,
+    "end_index": 52027,
+    "word_count": 49,
+    "start_page": 57,
+    "end_page": 57,
+    "page_spans": "Page 57"
+  },
+  {
+    "chunk_id": "chunk_0145",
+    "text": "• \n• \n• \n• \n• \nProvide string representations of objects ( __str__ , __repr__ ). Control attribute access ( __getattr__ , __setattr__ , __delattr__ ). Make objects callable ( __call__ ). Implement container-like behavior ( __len__ , __getitem__ , __setitem__ , \n__delitem__ , __contains__ ). Support with context managers ( __enter__ , __exit__ )\nCommon Magic Methods\n1.",
+    "start_index": 52027,
+    "end_index": 52397,
+    "word_count": 58,
+    "start_page": 57,
+    "end_page": 58,
+    "page_spans": "Pages 57-58"
+  },
+  {
+    "chunk_id": "chunk_0146",
+    "text": "__init__  – Object Initialization\nThe __init__  method is the constructor. It’s called automatically when a new\ninstance of a class is created. It’s used to initialize the object’s attributes.",
+    "start_index": 52402,
+    "end_index": 52594,
+    "word_count": 29,
+    "start_page": 58,
+    "end_page": 58,
+    "page_spans": "Page 58"
+  },
+  {
+    "chunk_id": "chunk_0147",
+    "text": "2. __str__  and __repr__  – String Representation\n__str__ : This method should return a human-readable, informal string\nrepresentation of the object. It’s used by the str()  function and by \nprint() . __repr__ : This method should return an unambiguous, official string\nrepresentation of the object. Ideally, this string should be a valid Python\nexpression that could be used to recreate the object. It’s used by the repr()\nfunction and in the interactive interpreter when you just type the object’s\nname and press Enter. • \n• \n• \n• \n• \nclass Person:\ndef __init__(self, name, age):\n        self.name = name\n        self.age = age\np = Person(\"Alice\", 30)\nprint(p.name, p.age)\n# Alice 30\n• \n• \nIf __str__  is not defined, Python will use __repr__  as a fallback for str()  and \nprint() . It’s good practice to define at least __repr__  for every class you create.",
+    "start_index": 52594,
+    "end_index": 53455,
+    "word_count": 141,
+    "start_page": 58,
+    "end_page": 59,
+    "page_spans": "Pages 58-59"
+  },
+  {
+    "chunk_id": "chunk_0148",
+    "text": "3. __len__  – Define Behavior for len()\nThis method allows objects of your class to work with the built-in len()  function. It should return the “length” of the object (however you define that). class Person:\ndef __init__(self, name, age):\n        self.name = name\n        self.age = age\ndef __str__(self):\nreturn f\"Person({self.name}, {self.age})\"\n# User-friendl\ndef __repr__(self):\nreturn f\"Person(name='{self.name}', age={self.age})\"\n# U\np = Person(\"Alice\", 30)\nprint(str(p))\n# Person(Alice, 30)\nprint(repr(p))\n# Person(name='Alice', age=30)\nprint(p)\n# Person(Alice, 30)  # print() uses __str__ if \nclass Book:\ndef __init__(self, title, pages):\n        self.title = title\n        self.pages = pages\ndef __len__(self):\nreturn self.pages\nb = Book(\"Python 101\", 250)\nprint(len(b))\n# 250\n4. __add__ , __sub__ , __mul__ , etc.",
+    "start_index": 53455,
+    "end_index": 54279,
+    "word_count": 112,
+    "start_page": 59,
+    "end_page": 60,
+    "page_spans": "Pages 59-60"
+  },
+  {
+    "chunk_id": "chunk_0149",
+    "text": "– Operator Overloading\nThese methods allow you to define how your objects behave with standard\narithmetic and comparison operators. Other common operator overloading methods include:\n__eq__  (==)\n__ne__  (!=)\n__lt__  (<)\n__gt__  (>)\n__le__  (<=)\nclass Vector:\ndef __init__(self, x, y):\n        self.x = x\n        self.y = y\ndef __add__(self, other):\nreturn Vector(self.x + other.x, self.y + other.y)\ndef __sub__(self, other):\nreturn Vector(self.x - other.x, self.y - other.y)\ndef __mul__(self, scalar):\nreturn Vector(self.x * scalar, self.y * scalar)\ndef __str__(self):\nreturn f\"Vector({self.x}, {self.y})\"\nv1 = Vector(2, 3)\nv2 = Vector(4, 5)\nv3 = v1 + v2  # Calls __add__\nprint(v3)\n# Vector(6, 8)\nv4 = v3 - v1\nprint(v4)\n# Vector(4, 5)\nv5 = v1 * 5\nprint(v5) # Vector(10, 15)\n• \n• \n• \n• \n• \n__ge__  (>=)\n__truediv__  (/)\n__floordiv__  (//)\n__mod__  (%)\n__pow__  (**)\nRecap\nMagic (dunder) methods are a powerful feature of Python that allows you to:\nCustomize how your objects interact with built-in operators and functions. Make your code more intuitive and readable by using familiar Python syntax.",
+    "start_index": 54279,
+    "end_index": 55377,
+    "word_count": 171,
+    "start_page": 60,
+    "end_page": 61,
+    "page_spans": "Pages 60-61"
+  },
+  {
+    "chunk_id": "chunk_0150",
+    "text": "Implement operator overloading, container-like behavior, and other advanced\nfeatures.",
+    "start_index": 55381,
+    "end_index": 55466,
+    "word_count": 9,
+    "start_page": 61,
+    "end_page": 61,
+    "page_spans": "Page 61"
+  },
+  {
+    "chunk_id": "chunk_0151",
+    "text": "Define string representation. Exception Handling and Custom Errors in Python\nIntroduction\nExceptions are events that occur during the execution of a program that disrupt\nthe normal flow of instructions. Python provides a robust mechanism for handling\nexceptions using try-except  blocks. This allows your program to gracefully\nrecover from errors or unexpected situations, preventing crashes and providing\ninformative error messages. You can also define your own custom exceptions to\nrepresent specific error conditions in your application. Basic Exception Handling\nThe try-except  block is the fundamental construct for handling exceptions:\nThe try  block contains the code that might raise an exception. • \n• \n• \n• \n• \n• \n• \n• \n• \n• \nThe except  block contains the code that will be executed if a specific\nexception occurs within the try  block. Output:\nHandling Multiple Exceptions\nYou can handle multiple types of exceptions using multiple except  blocks or by\nspecifying a tuple of exception types in a single except  block. • \ntry:\n    x = 10 / 0\n# This will raise a ZeroDivisionError\nexcept ZeroDivisionError:\nprint(\"Cannot divide by zero!\")\nCannot divide by zero! try:\n    num = int(input(\"Enter a number: \"))\n    result = 10 / num\nexcept ZeroDivisionError:\nprint(\"You can't divide by zero!\")\nexcept ValueError:\nprint(\"Invalid input! Please enter a number.\")\n# Alternative using a tuple:\ntry:\n  num = int(input(\"Enter a number: \"))\n  result = 10 / num\nexcept (ZeroDivisionError, ValueError) as e:\nprint(f\"An error occurred: {e}\")\nUsing else  and finally\nelse : The else  block is optional and is executed only if no exception occurs\nwithin the try  block. It’s useful for code that should run only when the try\nblock succeeds.",
+    "start_index": 55466,
+    "end_index": 57200,
+    "word_count": 268,
+    "start_page": 61,
+    "end_page": 63,
+    "page_spans": "Pages 61-63"
+  },
+  {
+    "chunk_id": "chunk_0152",
+    "text": "finally : The finally  block is also optional and is always executed,\nregardless of whether an exception occurred or not. It’s typically used for\ncleanup operations, such as closing files or releasing resources.",
+    "start_index": 57202,
+    "end_index": 57413,
+    "word_count": 33,
+    "start_page": 63,
+    "end_page": 63,
+    "page_spans": "Page 63"
+  },
+  {
+    "chunk_id": "chunk_0153",
+    "text": "Raising Exceptions ( raise )\nYou can manually raise exceptions using the raise  keyword.",
+    "start_index": 57414,
+    "end_index": 57502,
+    "word_count": 14,
+    "start_page": 63,
+    "end_page": 63,
+    "page_spans": "Page 63"
+  },
+  {
+    "chunk_id": "chunk_0154",
+    "text": "This is useful for\nsignaling error conditions in your own code. • \n• \ntry:\nfile = open(\"test.txt\", \"r\")\n    content = file.read()\nexcept FileNotFoundError:\nprint(\"File not found!\")\nelse:\nprint(\"File read successfully.\")\nprint(f\"File contents:\\n{content}\")\nfinally:\nfile.close()\n# Ensures the file is closed no matter what\ndef check_age(age):\nif age < 18:\nraise ValueError(\"Age must be 18 or older!\")\nreturn \"Access granted.\"\ntry:\nprint(check_age(20))\n# Access granted. print(check_age(16))\n# Raises ValueError\nexcept ValueError as e:\nprint(f\"Error: {e}\")\nCustom Exceptions\nPython allows you to define your own custom exception classes by creating a new\nclass that inherits (directly or indirectly) from the built-in Exception  class (or one\nof its subclasses).",
+    "start_index": 57502,
+    "end_index": 58262,
+    "word_count": 106,
+    "start_page": 63,
+    "end_page": 64,
+    "page_spans": "Pages 63-64"
+  },
+  {
+    "chunk_id": "chunk_0155",
+    "text": "This makes your error handling more specific and informative.",
+    "start_index": 58264,
+    "end_index": 58325,
+    "word_count": 9,
+    "start_page": 64,
+    "end_page": 64,
+    "page_spans": "Page 64"
+  },
+  {
+    "chunk_id": "chunk_0156",
+    "text": "By defining custom exceptions, you can:\nCreate a hierarchy of exceptions that reflect the specific error conditions in\nyour application. Provide more informative error messages tailored to your application’s needs.",
+    "start_index": 58325,
+    "end_index": 58539,
+    "word_count": 30,
+    "start_page": 64,
+    "end_page": 64,
+    "page_spans": "Page 64"
+  },
+  {
+    "chunk_id": "chunk_0157",
+    "text": "Make it easier for other parts of your code (or other developers) to handle\nspecific errors appropriately. Conclusion\ntry-except  blocks are essential for handling errors and preventing program\ncrashes.",
+    "start_index": 58539,
+    "end_index": 58741,
+    "word_count": 29,
+    "start_page": 64,
+    "end_page": 64,
+    "page_spans": "Page 64"
+  },
+  {
+    "chunk_id": "chunk_0158",
+    "text": "Multiple except  blocks or a tuple of exception types can be used to handle\ndifferent kinds of errors. class InvalidAgeError(Exception):\n\"\"\"Custom exception for invalid age.\"\"\"\ndef __init__(self, message=\"Age must be 18 or older!\"):\n        self.message = message\nsuper().__init__(self.message)\ndef verify_age(age):\nif age < 18:\nraise InvalidAgeError()\n# Raise your custom exception\nreturn \"Welcome!\"\ntry:\nprint(verify_age(16))\nexcept InvalidAgeError as e:\nprint(f\"Error: {e}\")\n• \n• \n• \n• \n• \nThe else  block executes only if no exception occurs in the try  block. The finally  block always executes, making it suitable for cleanup tasks.",
+    "start_index": 58741,
+    "end_index": 59379,
+    "word_count": 89,
+    "start_page": 64,
+    "end_page": 65,
+    "page_spans": "Pages 64-65"
+  },
+  {
+    "chunk_id": "chunk_0159",
+    "text": "The raise  keyword allows you to manually trigger exceptions.",
+    "start_index": 59383,
+    "end_index": 59444,
+    "word_count": 9,
+    "start_page": 65,
+    "end_page": 65,
+    "page_spans": "Page 65"
+  },
+  {
+    "chunk_id": "chunk_0160",
+    "text": "Custom exceptions (subclasses of Exception ) provide a way to represent\napplication-specific errors and improve error handling clarity. Map, Filter, and Reduce\nIntroduction\nmap , filter , and reduce  are higher-order functions in Python (and many other\nprogramming languages) that operate on iterables (lists, tuples, etc.). They provide\na concise and functional way to perform common operations on sequences of data\nwithout using explicit loops.",
+    "start_index": 59444,
+    "end_index": 59890,
+    "word_count": 65,
+    "start_page": 65,
+    "end_page": 65,
+    "page_spans": "Page 65"
+  },
+  {
+    "chunk_id": "chunk_0161",
+    "text": "While they were more central to Python’s functional\nprogramming style in earlier versions, list comprehensions and generator\nexpressions often provide a more readable alternative in modern Python. Map\nThe map()  function applies a given function to each item of an iterable and\nreturns an iterator that yields the results. Syntax: map(function, iterable, ...)\nfunction : The function to apply to each item. iterable : The iterable (e.g., list, tuple) whose items will be processed. ...",
+    "start_index": 59890,
+    "end_index": 60375,
+    "word_count": 75,
+    "start_page": 65,
+    "end_page": 65,
+    "page_spans": "Page 65"
+  },
+  {
+    "chunk_id": "chunk_0162",
+    "text": ": map can take multiple iterables. The function must take the same\nnumber of arguments\n• \n• \n• \n• \n• \n• \n• \nnumbers = [1, 2, 3, 4, 5]\n# Square each number using map\nsquared_numbers = map(lambda x: x**2, numbers)\nprint(list(squared_numbers))\n# Output: [1, 4, 9, 16, 25]\nFilter\nThe filter()  function constructs an iterator from elements of an iterable for\nwhich a function returns True . In other words, it filters the iterable based on a\ncondition. Syntax: filter(function, iterable)\nfunction : A function that returns True  or False  for each item. If None  is\npassed, it defaults to checking if the element is True (truthy value).",
+    "start_index": 60375,
+    "end_index": 61007,
+    "word_count": 109,
+    "start_page": 65,
+    "end_page": 66,
+    "page_spans": "Pages 65-66"
+  },
+  {
+    "chunk_id": "chunk_0163",
+    "text": "iterable : The iterable to be filtered. #Example with multiple iterables\nnumbers1 = [1, 2, 3]\nnumbers2 = [4, 5, 6]\nsummed = map(lambda x, y: x + y, numbers1, numbers2)\nprint(list(summed)) # Output: [5, 7, 9]\n# Equivalent list comprehension:\nsquared_numbers_lc = [x**2 for x in numbers]\nprint(squared_numbers_lc)\n# Output: [1, 4, 9, 16, 25]\n• \n• \nnumbers = [1, 2, 3, 4, 5, 6]\n# Get even numbers using filter\neven_numbers = filter(lambda x: x % 2 == 0, numbers)\nprint(list(even_numbers))\n# Output: [2, 4, 6]\n# Equivalent list comprehension:\neven_numbers_lc = [x for x in numbers if x % 2 == 0]\nprint(even_numbers_lc) # Output: [2, 4, 6]\n# Example with None as function\nvalues = [0, 1, [], \"hello\", \"\", None, True, False]\ntruthy_values = filter(None, values)\nprint(list(truthy_values)) # Output: [1, 'hello', True]\nReduce\nThe reduce()  function applies a function of two arguments cumulatively to the\nitems of an iterable, from left to right, so as to reduce the iterable to a single value. reduce  is not a built-in function; it must be imported from the functools\nmodule.",
+    "start_index": 61007,
+    "end_index": 62077,
+    "word_count": 182,
+    "start_page": 66,
+    "end_page": 67,
+    "page_spans": "Pages 66-67"
+  },
+  {
+    "chunk_id": "chunk_0164",
+    "text": "Syntax: reduce(function, iterable[, initializer])\nfunction : A function that takes two arguments. iterable : The iterable to be reduced. initializer  (optional): If provided, it’s placed before the items of the\niterable in the calculation and serves as a default when the iterable is empty. • \n• \n• \nfrom functools import reduce\nnumbers = [1, 2, 3, 4, 5]\n# Calculate the sum of all numbers using reduce\nsum_of_numbers = reduce(lambda x, y: x + y, numbers)\nprint(sum_of_numbers)\n# Output: 15\n# Calculate the product of all numbers using reduce\nproduct_of_numbers = reduce(lambda x, y: x * y, numbers)\nprint(product_of_numbers)\n# Output: 120\n#reduce with initializer\nempty_list_sum = reduce(lambda x,y: x+y, [], 0)\nprint(empty_list_sum) # 0\n# Without the initializer:\n# empty_list_sum = reduce(lambda x,y: x+y, []) # raises TypeError\n# Equivalent using a loop (for sum):\ntotal = 0\nfor x in numbers:\n    total += x\nprint(total)\n# 15\nWhen to use map, filter, reduce vs. list comprehensions/generator expressions:\nReadability: List comprehensions and generator expressions are often more\nreadable and easier to understand, especially for simple operations.",
+    "start_index": 62077,
+    "end_index": 63228,
+    "word_count": 177,
+    "start_page": 67,
+    "end_page": 68,
+    "page_spans": "Pages 67-68"
+  },
+  {
+    "chunk_id": "chunk_0165",
+    "text": "Performance: In many cases, list comprehensions/generator expressions can\nbe slightly faster than map  and filter . Complex Operations: reduce  can be useful for more complex aggregations\nwhere\nComplex Operations: reduce  can be useful for more complex aggregations\nwhere the logic is not easily expressed in a list comprehension. map  and \nfilter  may also be preferable when you already have a named function that\nyou want to apply.",
+    "start_index": 63228,
+    "end_index": 63662,
+    "word_count": 67,
+    "start_page": 68,
+    "end_page": 68,
+    "page_spans": "Page 68"
+  },
+  {
+    "chunk_id": "chunk_0166",
+    "text": "Functional Programming Style: If you’re working in a more functional\nprogramming style, map , filter , and reduce  can fit naturally into your\ncode. Walrus Operator (:=)\nIntroduction\nThe walrus operator ( := ), introduced in Python 3.8, is an assignment expression\noperator. It allows you to assign a value to a variable within an expression. This can\nmake your code more concise and, in some cases, more efficient by avoiding\nrepeated calculations or function calls. The name “walrus operator” comes from the\noperator’s resemblance to the eyes and tusks of a walrus. Use Cases\nConditional Expressions: The most common use case is within if\nstatements, while  loops, and list comprehensions, where you need to both\ntest a condition and use the value that was tested. • \n• \n• \n• \n• \n1. # Without walrus operator\ndata = input(\"Enter a value (or 'quit' to exit): \")\nIn the “with walrus” example, the input is assigned to data and compared to\n“quit” in a single expression. List Comprehensions: You can avoid repeated calculations or function calls\nwithin a list comprehension. Reading Files: You can read lines from a file and process them within a loop. while data != \"quit\":\nprint(f\"You entered: {data}\")\n    data = input(\"Enter a value (or 'quit' to exit): \")\n# With walrus operator\nwhile (data := input(\"Enter a value (or 'quit' to exit): \"))\nprint(f\"You entered: {data}\")\n2. numbers = [1, 2, 3, 4, 5]\n# Without walrus operator:  calculate x * 2 twice\nresults = [x * 2 for x in numbers if x * 2 > 5]\n# With walrus operator: calculate x * 2 only once\nresults = [y for x in numbers if (y := x * 2) > 5]\n3. # Without Walrus\nwith open(\"my_file.txt\", \"r\") as f:\n    line = f.readline()\nwhile line:\nprint(line.strip())\n        line = f.readline()\n# With Walrus\nwith open(\"my_file.txt\", \"r\") as f:\nwhile (line := f.readline()):\nprint(line.strip())\nConsiderations\nReadability: While the walrus operator can make code more concise, it can\nalso make it harder to read if overused. Use it judiciously where it improves\nclarity.",
+    "start_index": 63662,
+    "end_index": 65679,
+    "word_count": 345,
+    "start_page": 68,
+    "end_page": 70,
+    "page_spans": "Pages 68-70"
+  },
+  {
+    "chunk_id": "chunk_0167",
+    "text": "Scope: The variable assigned using :=  is scoped to the surrounding block\n(e.g., the if  statement, while  loop, or list comprehension). Precedence: The walrus operator has lower precedence than most other\noperators.",
+    "start_index": 65679,
+    "end_index": 65895,
+    "word_count": 32,
+    "start_page": 70,
+    "end_page": 70,
+    "page_spans": "Page 70"
+  },
+  {
+    "chunk_id": "chunk_0168",
+    "text": "Parentheses are often needed to ensure the expression is evaluated\nas intended. Args and Kwargs\nIntroduction\n*args  and **kwargs  are special syntaxes in Python function definitions that\nallow you to pass a variable number of arguments to a function. They are used\nwhen you don’t know in advance how many arguments a function might need to\naccept. *args : Allows you to pass a variable number of positional arguments. **kwargs : Allows you to pass a variable number of keyword arguments. *args  (Positional Arguments)\n*args  collects any extra positional arguments passed to a function into a tuple. The name args  is just a convention; you could use any valid variable name\npreceded by a single asterisk (e.g., *values , *numbers ). • \n• \n• \n• \n• \ndef my_function(*args):\nprint(type(args))\n# <class 'tuple'>\nfor arg in args:\nprint(arg)\nmy_function(1, 2, 3, \"hello\")\n# Output: 1 2 3 hello\nIn this example, *args  collects all positional arguments passed to my_function\ninto the args  tuple. **kwargs  (Keyword Arguments)\n**kwargs  collects any extra keyword arguments passed to a function into a \ndictionary. Again, kwargs  is the conventional name, but you could use any valid\nvariable name preceded by two asterisks (e.g., **data , **options ). In this example, **kwargs  collects all keyword arguments into the kwargs\ndictionary. Combining *args  and **kwargs\nYou can use both *args  and **kwargs  in the same function definition. The order\nis important: *args  must come before **kwargs .",
+    "start_index": 65895,
+    "end_index": 67387,
+    "word_count": 239,
+    "start_page": 70,
+    "end_page": 71,
+    "page_spans": "Pages 70-71"
+  },
+  {
+    "chunk_id": "chunk_0169",
+    "text": "You can also include regular\npositional and keyword parameters. my_function()\n# No output (empty tuple)\nmy_function(\"a\", \"b\")\n# Output: a b\ndef my_function(**kwargs):\nprint(type(kwargs))\n# <class 'dict'>\nfor key, value in kwargs.items():\nprint(f\"{key}: {value}\")\nmy_function(name=\"Alice\", age=30, city=\"New York\")\n# Output:\n# name: Alice\n# age: 30\n# city: New York\nmy_function()\n# No output (empty dictionary)\nmy_function(a=1, b=2)\n# Output:\n# a: 1\n# b: 2\nUse Cases\nFlexible Function Design: *args  and **kwargs  make your functions more\nflexible, allowing them to handle a varying number of inputs without needing\nto define a specific number of parameters. Decorator Implementation: Decorators often use *args  and **kwargs  to\nwrap functions that might have different signatures.",
+    "start_index": 67387,
+    "end_index": 68168,
+    "word_count": 113,
+    "start_page": 71,
+    "end_page": 72,
+    "page_spans": "Pages 71-72"
+  },
+  {
+    "chunk_id": "chunk_0170",
+    "text": "Function Composition: You can use *args  and **kwargs  to pass arguments\nthrough multiple layers of function calls.",
+    "start_index": 68183,
+    "end_index": 68298,
+    "word_count": 17,
+    "start_page": 72,
+    "end_page": 72,
+    "page_spans": "Page 72"
+  },
+  {
+    "chunk_id": "chunk_0171",
+    "text": "Inheritance: Subclasses can accept extra parameters to those defined by\nparent classes. def my_function(a, b, *args, c=10, **kwargs):\nprint(f\"a: {a}\")\nprint(f\"b: {b}\")\nprint(f\"args: {args}\")\nprint(f\"c: {c}\")\nprint(f\"kwargs: {kwargs}\")\nmy_function(1, 2, 3, 4, 5, c=20, name=\"Bob\", country=\"USA\")\n# Output:\n# a: 1\n# b: 2\n# args: (3, 4, 5)\n# c: 20\n# kwargs: {'name': 'Bob', 'country': 'USA'}\nmy_function(1,2)\n# Output:\n# a: 1\n# b: 2\n# args: ()\n# c: 10\n# kwargs: {}\n• \n• \n• \n• \n# Example showing use in inheritance\nclass Animal:\ndef __init__(self, name):\n    self.name = name\nclass Dog(Animal):\ndef __init__(self, name, breed, *args, **kwargs):\nsuper().__init__(name)\n    self.breed = breed\n# Process any additional arguments or keyword arguments here\nprint(f\"args: {args}\")\nprint(f\"kwargs: {kwargs}\")\ndog1 = Dog(\"Buddy\", \"Golden Retriever\")\ndog2 = Dog(\"Lucy\", \"Labrador\", 1,2,3, color=\"Black\", age = 5)\nSection 9: File Handling and OS Operations\nThis section introduces you to file handling in Python, which allows your programs\nto interact with files on your computer. We’ll also explore basic operating system\n(OS) interactions using Python’s built-in modules.",
+    "start_index": 68298,
+    "end_index": 69457,
+    "word_count": 172,
+    "start_page": 72,
+    "end_page": 74,
+    "page_spans": "Pages 72-74"
+  },
+  {
+    "chunk_id": "chunk_0172",
+    "text": "File I/O in Python\nFile Input/Output (I/O) refers to reading data from and writing data to files. Python\nprovides built-in functions to make this process straightforward.",
+    "start_index": 69459,
+    "end_index": 69629,
+    "word_count": 26,
+    "start_page": 74,
+    "end_page": 74,
+    "page_spans": "Page 74"
+  },
+  {
+    "chunk_id": "chunk_0173",
+    "text": "Working with files\ngenerally involves these steps:\nOpening a file: You need to open a file before you can read from it or write to\nit. This creates a connection between your program and the file. Performing operations: You can then read data from the file or write data to\nit. Closing the file: It’s crucial to close the file when you’re finished with it. This\nreleases the connection and ensures that any changes you’ve made are saved. Read, Write, and Append Files\nPython provides several modes for opening files:\n‘r’ (Read mode): Opens the file for reading. This is the default mode.",
+    "start_index": 69629,
+    "end_index": 70215,
+    "word_count": 103,
+    "start_page": 74,
+    "end_page": 74,
+    "page_spans": "Page 74"
+  },
+  {
+    "chunk_id": "chunk_0174",
+    "text": "If the file\ndoesn’t exist, you’ll get an error. ‘w’ (Write mode): Opens the file for writing. If the file exists, its contents will\nbe overwritten.",
+    "start_index": 70215,
+    "end_index": 70362,
+    "word_count": 26,
+    "start_page": 74,
+    "end_page": 74,
+    "page_spans": "Page 74"
+  },
+  {
+    "chunk_id": "chunk_0175",
+    "text": "If the file doesn’t exist, a new file will be created. ‘a’ (Append mode): Opens the file for appending. Data will be added to the\nend of the file.",
+    "start_index": 70362,
+    "end_index": 70508,
+    "word_count": 29,
+    "start_page": 74,
+    "end_page": 74,
+    "page_spans": "Page 74"
+  },
+  {
+    "chunk_id": "chunk_0176",
+    "text": "If the file doesn’t exist, a new file will be created. Here are some examples:\nReading from a file:\n1.",
+    "start_index": 70508,
+    "end_index": 70610,
+    "word_count": 20,
+    "start_page": 74,
+    "end_page": 74,
+    "page_spans": "Page 74"
+  },
+  {
+    "chunk_id": "chunk_0177",
+    "text": "2.",
+    "start_index": 70616,
+    "end_index": 70618,
+    "word_count": 1,
+    "start_page": 74,
+    "end_page": 74,
+    "page_spans": "Page 74"
+  },
+  {
+    "chunk_id": "chunk_0178",
+    "text": "3. • \n• \n• \ntry:\nfile = open(\"my_file.txt\", \"r\")\n# Open in read mode\nWriting to a file:\nAppending to a file:\nUsing with  statement (recommended):\nThe with  statement provides a cleaner way to work with files. It automatically\ncloses the file, even if errors occur. content = file.read()\n# Read the entire file content\nprint(content)\nfile.close()\n# Close the file\nexcept FileNotFoundError:\nprint(\"File not found.\")\n# Reading line by line\ntry:\nfile = open(\"my_file.txt\", \"r\")\nfor line in file: # Efficient for large files\nprint(line.strip()) # Remove newline characters\nfile.close()\nexcept FileNotFoundError:\nprint(\"File not found.\")\nfile = open(\"new_file.txt\", \"w\")\n# Open in write mode (creates o\nfile.write(\"Hello, world!\\n\")\n# Write some text\nfile.write(\"This is a new line.\\n\")\nfile.close()\nfile = open(\"my_file.txt\", \"a\")\n# Open in append mode\nfile.write(\"This is appended text.\\n\")\nfile.close()\ntry:\nwith open(\"my_file.txt\", \"r\") as file:\n        content = file.read()\nprint(content)\nOS and Shutil Modules in Python\nPython’s os  module provides functions for interacting with the operating system,\nsuch as working with directories and files. The shutil  module offers higher-level\nfile operations.",
+    "start_index": 70618,
+    "end_index": 71820,
+    "word_count": 174,
+    "start_page": 74,
+    "end_page": 76,
+    "page_spans": "Pages 74-76"
+  },
+  {
+    "chunk_id": "chunk_0179",
+    "text": "os  module examples:\nexcept FileNotFoundError:\nprint(\"File not found.\")\nwith open(\"output.txt\", \"w\") as file:\nfile.write(\"Data written using 'with'.\\n\")\nimport os\n# Get the current working directory\ncurrent_dir = os.getcwd()\nprint(\"Current directory:\", current_dir)\n# Create a new directory\n# os.mkdir(\"new_directory\")  # creates only one level of director\n# os.makedirs(\"path/to/new_directory\") # creates nested directori\n# Change the current directory\n# os.chdir(\"new_directory\")\n# List files and directories in a directory\nfiles = os.listdir(\".\") # \".\" represents current directory\nprint(\"Files in current directory:\", files)\n# Remove a file or directory\n# os.remove(\"my_file.txt\")\n# os.rmdir(\"new_directory\") # removes empty directory\n# shutil.rmtree(\"path/to/new_directory\") # removes non-empty dire\n# Rename a file or directory\n# os.rename(\"old_name.txt\", \"new_name.txt\")\nshutil  module examples:\nCreating Command Line Utilities\nYou can use Python to create simple command-line utilities. The argparse  module\nmakes it easier to handle command-line arguments.",
+    "start_index": 71828,
+    "end_index": 72893,
+    "word_count": 134,
+    "start_page": 76,
+    "end_page": 77,
+    "page_spans": "Pages 76-77"
+  },
+  {
+    "chunk_id": "chunk_0180",
+    "text": "# Check if a file or directory exists\nif os.path.exists(\"my_file.txt\"):\nprint(\"File exists\")\n# Join path components in a platform-independent way\npath = os.path.join(\"folder\", \"subfolder\", \"file.txt\")\nprint(\"Joined path:\", path)\nimport shutil\n# Copy a file\n# shutil.copy(\"my_file.txt\", \"my_file_copy.txt\")\n# Move a file or directory\n# shutil.move(\"my_file.txt\", \"new_directory/\")\nimport argparse\nparser = argparse.ArgumentParser(description=\"A simple command-li\nparser.add_argument(\"filename\", help=\"The file to process.\")\nparser.add_argument(\"-n\", \"--number\", type=int, default=1, help=\"\nargs = parser.parse_args()\ntry:\nwith open(args.filename, \"r\") as file:\n        content = file.read()\nfor _ in range(args.number):\nprint(content)\nTo run this script from the command line:\nThis will print the contents of my_file.txt  three times. You can learn more about \nargparse  in the Python documentation.",
+    "start_index": 72894,
+    "end_index": 73792,
+    "word_count": 107,
+    "start_page": 77,
+    "end_page": 78,
+    "page_spans": "Pages 77-78"
+  },
+  {
+    "chunk_id": "chunk_0181",
+    "text": "except FileNotFoundError:\nprint(\"File not found.\")\npython my_script.py my_file.txt -n 3\nSection 10: Working with External Libraries\nThis section introduces you to the world of external libraries in Python. These\nlibraries extend Python’s capabilities and allow you to perform complex tasks more\neasily.",
+    "start_index": 73793,
+    "end_index": 74095,
+    "word_count": 42,
+    "start_page": 78,
+    "end_page": 79,
+    "page_spans": "Pages 78-79"
+  },
+  {
+    "chunk_id": "chunk_0182",
+    "text": "We’ll cover virtual environments, package management, working with APIs,\nregular expressions, and asynchronous programming. Virtual Environments & Package Management\nAs you start working on more Python projects, you’ll likely use different versions of\nlibraries. Virtual environments help isolate project dependencies, preventing\nconflicts between different projects. Virtual Environments:\nA virtual environment is a self-contained directory that contains its own Python\ninterpreter and libraries. This means that libraries installed in one virtual\nenvironment won’t interfere with libraries in another. Creating a virtual environment (using venv  - recommended):\nActivating the virtual environment:\nWindows: my_env\\Scripts\\activate\nmacOS/Linux: source my_env/bin/activate\nOnce activated, you’ll see the virtual environment’s name in your terminal prompt\n(e.g., (my_env) ). Package Management (using pip ):\npip  is Python’s package installer.",
+    "start_index": 74095,
+    "end_index": 75037,
+    "word_count": 119,
+    "start_page": 79,
+    "end_page": 79,
+    "page_spans": "Page 79"
+  },
+  {
+    "chunk_id": "chunk_0183",
+    "text": "It’s used to install, upgrade, and manage\nexternal libraries. Installing a package:\npython3 -m venv my_env  # Creates a virtual environment named \"my\n• \n• \nListing installed packages:\nUpgrading a package:\nUninstalling a package:\nGenerating a requirements file:\nA requirements.txt  file lists all the packages your project depends on. This\nmakes it easy to recreate the environment on another machine.",
+    "start_index": 75037,
+    "end_index": 75437,
+    "word_count": 60,
+    "start_page": 79,
+    "end_page": 80,
+    "page_spans": "Pages 79-80"
+  },
+  {
+    "chunk_id": "chunk_0184",
+    "text": "Deactivating the virtual environment:\nRequests Module - Working with APIs\nThe requests  library simplifies making HTTP requests.",
+    "start_index": 75440,
+    "end_index": 75568,
+    "word_count": 17,
+    "start_page": 80,
+    "end_page": 80,
+    "page_spans": "Page 80"
+  },
+  {
+    "chunk_id": "chunk_0185",
+    "text": "This is essential for\ninteracting with web APIs (Application Programming Interfaces). pip install requests  # Installs the \"requests\" library\npip install numpy==1.20.0 # Installs a specific version\npip list\npip install --upgrade requests\npip uninstall requests\npip freeze > requirements.txt  # Creates the requirements file\npip install -r requirements.txt  # Installs packages from the fil\ndeactivate\nimport requests\nurl = \"https://api.github.com/users/octocat\"\n# Example API endpo\nRegular Expressions in Python\nRegular expressions (regex) are powerful tools for pattern matching in strings. Python’s re  module provides support for regex.",
+    "start_index": 75568,
+    "end_index": 76207,
+    "word_count": 87,
+    "start_page": 80,
+    "end_page": 81,
+    "page_spans": "Pages 80-81"
+  },
+  {
+    "chunk_id": "chunk_0186",
+    "text": "response = requests.get(url)\nif response.status_code == 200:\n    data = response.json()\n# Parse the JSON response\nprint(data[\"name\"])\n# Access data from the JSON\nelse:\nprint(f\"Error: {response.status_code}\")\n# Making a POST request (for sending data to an API):\n# data = {\"key\": \"value\"}\n# response = requests.post(url, json=data)  # Sends data as JSON\n# Other HTTP methods: put(), delete(), etc. import re\ntext = \"The quick brown fox jumps over the lazy dog.\"\n# Search for a pattern\nmatch = re.search(\"brown\", text)\nif match:\nprint(\"Match found!\")\nprint(\"Start index:\", match.start())\nprint(\"End index:\", match.end())\n# Find all occurrences of a pattern\nmatches = re.findall(\"the\", text, re.IGNORECASE)\n# Case-insensit\nprint(\"Matches:\", matches)\n# Replace all occurrences of a pattern\nnew_text = re.sub(\"fox\", \"cat\", text)\nprint(\"New text:\", new_text)\n# Compile a regex for efficiency (if used multiple times)\nLets understand the regex pattern re.compile(r\"\\b\\w+\\b\")  used in the above\ncode: | Part | Meaning | |——|———| | \\b  | Word boundary (ensures we match full\nwords, not parts of words) | | \\w+  | One or more word characters (letters, digits,\nunderscores) | | \\b  | Word boundary (ensures we match entire words) |\nMultithreading\nThese techniques allow your programs to perform multiple tasks concurrently,\nimproving performance. Multithreading (using threading  module):\nMultithreading is suitable for I/O-bound tasks (e.g., waiting for network requests).",
+    "start_index": 76207,
+    "end_index": 77669,
+    "word_count": 214,
+    "start_page": 81,
+    "end_page": 82,
+    "page_spans": "Pages 81-82"
+  },
+  {
+    "chunk_id": "chunk_0187",
+    "text": "pattern = re.compile(r\"\\b\\w+\\b\")\n# Matches whole words\nwords = pattern.findall(text)\nprint(\"Words:\", words)\nimport threading\nimport time\ndef worker(num):\nprint(f\"Thread {num}: Starting\")\n    time.sleep(2)\n# Simulate some work\nprint(f\"Thread {num}: Finishing\")\nthreads = []\nfor i in range(3):\n    thread = threading.Thread(target=worker, args=(i,))\n    threads.append(thread)\n    thread.start()\nfor thread in threads:\n    thread.join()\n# Wait for all threads to finish\nprint(\"All threads completed.\")\nIntroduction to Version Control & Git\nWhat is Version Control? Definition: Version control is a system that records changes to files over time so\nyou can recall specific versions later.",
+    "start_index": 77669,
+    "end_index": 78354,
+    "word_count": 87,
+    "start_page": 82,
+    "end_page": 83,
+    "page_spans": "Pages 82-83"
+  },
+  {
+    "chunk_id": "chunk_0188",
+    "text": "It’s like a time machine for your code.",
+    "start_index": 78358,
+    "end_index": 78397,
+    "word_count": 8,
+    "start_page": 83,
+    "end_page": 83,
+    "page_spans": "Page 83"
+  },
+  {
+    "chunk_id": "chunk_0189",
+    "text": "Why use it? Tracks changes over time. Restores older versions when something breaks. Allows multiple people to work on the same project. Helps experiment safely.",
+    "start_index": 78397,
+    "end_index": 78558,
+    "word_count": 25,
+    "start_page": 83,
+    "end_page": 83,
+    "page_spans": "Page 83"
+  },
+  {
+    "chunk_id": "chunk_0190",
+    "text": "The problem without version control:\nThis is messy, error-prone, and hard to manage. Centralized vs Distributed Version Control\nCentralized (CVCS) – e.g., SVN\nOne central server stores the code. If the server goes down, no one can commit changes.",
+    "start_index": 78558,
+    "end_index": 78804,
+    "word_count": 39,
+    "start_page": 83,
+    "end_page": 83,
+    "page_spans": "Page 83"
+  },
+  {
+    "chunk_id": "chunk_0191",
+    "text": "• \n• \n• \n• \nindex.html\nindex_final.html\nindex_final_final.html\nindex_final_v2_really_final.html\n• \n• \n• \nDistributed (DVCS) – e.g., Git\nEvery developer has a complete copy of the repository. You can commit changes offline.",
+    "start_index": 78804,
+    "end_index": 79026,
+    "word_count": 30,
+    "start_page": 83,
+    "end_page": 84,
+    "page_spans": "Pages 83-84"
+  },
+  {
+    "chunk_id": "chunk_0192",
+    "text": "More robust against server failures.",
+    "start_index": 79030,
+    "end_index": 79066,
+    "word_count": 5,
+    "start_page": 84,
+    "end_page": 84,
+    "page_spans": "Page 84"
+  },
+  {
+    "chunk_id": "chunk_0193",
+    "text": "What is Git? Git is a distributed version control system created by Linus Torvalds (the\ncreator of Linux) in 2005. Git tracks changes in your files, especially source code.",
+    "start_index": 79066,
+    "end_index": 79238,
+    "word_count": 29,
+    "start_page": 84,
+    "end_page": 84,
+    "page_spans": "Page 84"
+  },
+  {
+    "chunk_id": "chunk_0194",
+    "text": "Works locally first and then syncs with remote repositories. Git vs GitHub\nGit → The tool that manages your code history (installed on your computer). GitHub → A hosting service for Git repositories (like Google Drive for your Git\nprojects). Also alternatives: GitLab, Bitbucket. Installing Git\nWindows\nGo to https://git-scm.com/. Download the installer.",
+    "start_index": 79238,
+    "end_index": 79592,
+    "word_count": 53,
+    "start_page": 84,
+    "end_page": 84,
+    "page_spans": "Page 84"
+  },
+  {
+    "chunk_id": "chunk_0195",
+    "text": "Follow the prompts (use default settings if unsure).",
+    "start_index": 79595,
+    "end_index": 79647,
+    "word_count": 8,
+    "start_page": 84,
+    "end_page": 84,
+    "page_spans": "Page 84"
+  },
+  {
+    "chunk_id": "chunk_0196",
+    "text": "macOS\n• \n• \n• \n• \n• \n• \n• \n• \n• \n1.",
+    "start_index": 79648,
+    "end_index": 79683,
+    "word_count": 11,
+    "start_page": 84,
+    "end_page": 84,
+    "page_spans": "Page 84"
+  },
+  {
+    "chunk_id": "chunk_0197",
+    "text": "2.",
+    "start_index": 79685,
+    "end_index": 79687,
+    "word_count": 1,
+    "start_page": 84,
+    "end_page": 84,
+    "page_spans": "Page 84"
+  },
+  {
+    "chunk_id": "chunk_0198",
+    "text": "3. brew install git\nLinux (Debian/Ubuntu)\nConfiguring Git\nRun these commands in your terminal after installing Git:\nTo check your config:\nGit Workflow Basics\nGit has three key areas:\nWorking Directory – Where you edit files. Staging Area – Where you prepare files for committing.",
+    "start_index": 79687,
+    "end_index": 79966,
+    "word_count": 45,
+    "start_page": 84,
+    "end_page": 85,
+    "page_spans": "Pages 84-85"
+  },
+  {
+    "chunk_id": "chunk_0199",
+    "text": "Repository – Where committed changes are stored permanently. Basic flow:\nsudo apt update\nsudo apt install git\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\"\ngit config --global core.editor \"code --wait\"\n# optional, sets VS Code as editor\ngit config --list\n1. 2.",
+    "start_index": 79966,
+    "end_index": 80271,
+    "word_count": 46,
+    "start_page": 85,
+    "end_page": 85,
+    "page_spans": "Page 85"
+  },
+  {
+    "chunk_id": "chunk_0200",
+    "text": "3. Edit files → git add → git commit\nFirst Git Commands\nLet’s try:\nOutput:\nYou’ve just created your first local Git repository. Mini Exercise\nInstall Git on your system. Configure your name and email. Create a folder named my-first-repo . Initialize it with git init .",
+    "start_index": 80271,
+    "end_index": 80539,
+    "word_count": 47,
+    "start_page": 85,
+    "end_page": 86,
+    "page_spans": "Pages 85-86"
+  },
+  {
+    "chunk_id": "chunk_0201",
+    "text": "Run git status  and see what it says. mkdir my-first-git-project\ncd my-first-git-project\ngit init\nInitialized empty Git repository in ... 1.",
+    "start_index": 80539,
+    "end_index": 80679,
+    "word_count": 21,
+    "start_page": 86,
+    "end_page": 86,
+    "page_spans": "Page 86"
+  },
+  {
+    "chunk_id": "chunk_0202",
+    "text": "2. 3. 4.",
+    "start_index": 80679,
+    "end_index": 80687,
+    "word_count": 3,
+    "start_page": 86,
+    "end_page": 86,
+    "page_spans": "Page 86"
+  },
+  {
+    "chunk_id": "chunk_0203",
+    "text": "5. First Steps with Git\nCreating a Repository\nThere are two ways to start working with Git:\n1. Starting from scratch\nYou’ll see:\nThis .git  folder is the brain of your repository — it stores the entire history of\nyour project. 2. Cloning an existing repository\nThis downloads the entire project with history from a remote server like GitHub. Adding Files\nLet’s create a file:\nmkdir my-first-repo\ncd my-first-repo\ngit init\nInitialized empty Git repository in /path/to/my-first-repo/.git/\ngit clone https://github.com/user/repo.git\nCheck what Git sees:\nYou’ll see:\nUntracked means Git sees the file but hasn’t started tracking it. Staging Changes\nTo start tracking the file:\nTo stage everything at once:\nAt this point, the file is staged — ready to be saved into history. Committing Changes\nA commit is like taking a snapshot of your project:\necho \"Hello Git!\" > hello.txt\ngit status\nUntracked files:\n  hello.txt\ngit add hello.txt\ngit add . git commit -m \"Add hello.txt with a greeting\"\nCommit messages should describe why the change was made, not just what\nchanged. Viewing History\nTo see the commit history:\nFor a shorter, cleaner view:\nExample:\nUnderstanding the Git Workflow\nFiles in Git move through three main states:\nUntracked – not being tracked yet. Staged – ready to be committed.",
+    "start_index": 80687,
+    "end_index": 81975,
+    "word_count": 209,
+    "start_page": 86,
+    "end_page": 89,
+    "page_spans": "Pages 86-89"
+  },
+  {
+    "chunk_id": "chunk_0204",
+    "text": "Committed – saved permanently in the Git history. Basic flow:\ngit log\ngit log --oneline\na1b2c3d Add hello.txt with a greeting\n1. 2.",
+    "start_index": 81975,
+    "end_index": 82106,
+    "word_count": 23,
+    "start_page": 89,
+    "end_page": 89,
+    "page_spans": "Page 89"
+  },
+  {
+    "chunk_id": "chunk_0205",
+    "text": "3. Working Directory → git add → Staging Area → git commit → Repository\nMaking Further Changes\nEdit the file:\nCheck the status:\nYou’ll see it’s “modified.” Stage and commit:\nQuick Command Recap\nPractice Challenge\nCreate a folder git-practice . Initialize it as a Git repo.",
+    "start_index": 82106,
+    "end_index": 82378,
+    "word_count": 46,
+    "start_page": 89,
+    "end_page": 90,
+    "page_spans": "Pages 89-90"
+  },
+  {
+    "chunk_id": "chunk_0206",
+    "text": "Add a file notes.txt  with some text. Stage and commit it with a clear message. echo \"This is my first change\" >> hello.txt\ngit status\ngit add hello.txt\ngit commit -m \"Update hello.txt with a new line\"\ngit init                # start a new repository\ngit clone <url>\n# copy a repository\ngit status              # check file states\ngit add <file>\n# stage changes\ngit commit -m \"msg\"\n# save staged changes\ngit log --oneline       # view history in short form\n1. 2.",
+    "start_index": 82378,
+    "end_index": 82840,
+    "word_count": 82,
+    "start_page": 90,
+    "end_page": 90,
+    "page_spans": "Page 90"
+  },
+  {
+    "chunk_id": "chunk_0207",
+    "text": "3.",
+    "start_index": 82865,
+    "end_index": 82867,
+    "word_count": 1,
+    "start_page": 90,
+    "end_page": 90,
+    "page_spans": "Page 90"
+  },
+  {
+    "chunk_id": "chunk_0208",
+    "text": "4. Modify notes.txt  and commit the change. Run git log --oneline  to see your commits.",
+    "start_index": 82867,
+    "end_index": 82954,
+    "word_count": 15,
+    "start_page": 90,
+    "end_page": 91,
+    "page_spans": "Pages 90-91"
+  },
+  {
+    "chunk_id": "chunk_0209",
+    "text": "5.",
+    "start_index": 82958,
+    "end_index": 82960,
+    "word_count": 1,
+    "start_page": 91,
+    "end_page": 91,
+    "page_spans": "Page 91"
+  },
+  {
+    "chunk_id": "chunk_0210",
+    "text": "6. Tracking & Managing Changes\nChecking Status\nThe most important diagnostic command in Git:\nThis tells you:\nWhich branch you’re on\nWhat files are modified\nWhat files are staged\nWhat files are untracked\nStatus States\ngit status\n• \n• \n• \n• \n# Untracked (new file)\nUntracked files:\n  newfile.txt\n# Modified (changed but not staged)\nChanges not staged for commit:\n  modified: existing.txt\n# Staged (ready to commit)\nChanges to be committed:\n  new file: newfile.txt\n  modified: existing.txt\nViewing Changes\nSee Unstaged Changes\nShows what you’ve changed but haven’t staged yet. See Staged Changes\nShows what will go into your next commit.",
+    "start_index": 82960,
+    "end_index": 83594,
+    "word_count": 99,
+    "start_page": 91,
+    "end_page": 93,
+    "page_spans": "Pages 91-93"
+  },
+  {
+    "chunk_id": "chunk_0211",
+    "text": "See Changes Between Commits\nCompares the last commit with the current one. Undoing Changes\nGit provides several ways to undo changes depending on where they are:\n1. Discard Working Directory Changes\nTo restore a file to its last committed state:\nOr for all files:\ngit diff\ngit diff --staged\ngit diff HEAD~1 HEAD\ngit restore file.txt\ngit restore . Warning: This permanently discards uncommitted changes!",
+    "start_index": 83594,
+    "end_index": 83996,
+    "word_count": 65,
+    "start_page": 93,
+    "end_page": 94,
+    "page_spans": "Pages 93-94"
+  },
+  {
+    "chunk_id": "chunk_0212",
+    "text": "2. Unstage Files\nTo remove files from staging area but keep changes:\nOr the older syntax:\n3. Amend the Last Commit\nForgot to include a file or want to change the commit message?",
+    "start_index": 84001,
+    "end_index": 84178,
+    "word_count": 33,
+    "start_page": 94,
+    "end_page": 94,
+    "page_spans": "Page 94"
+  },
+  {
+    "chunk_id": "chunk_0213",
+    "text": "4. Reset to a Previous Commit\nSoft Reset (keeps changes in staging):\nMixed Reset (keeps changes in working directory):\nHard Reset (discards all changes):\ngit restore --staged file.txt\ngit reset HEAD file.txt\n# Stage the forgotten file\ngit add forgotten.txt\n# Amend the previous commit\ngit commit --amend -m \"New commit message\"\ngit reset --soft HEAD~1\ngit reset HEAD~1\nWarning: --hard  permanently deletes uncommitted work! Ignoring Files\nNot all files should be tracked by Git (e.g., passwords, compiled files, system files).",
+    "start_index": 84178,
+    "end_index": 84704,
+    "word_count": 81,
+    "start_page": 94,
+    "end_page": 95,
+    "page_spans": "Pages 94-95"
+  },
+  {
+    "chunk_id": "chunk_0214",
+    "text": "Creating .gitignore\nCreate a .gitignore  file in your repository root:\nCommon .gitignore Patterns\ngit reset --hard HEAD~1\ntouch .gitignore\n# Ignore specific files\nsecret.txt\nconfig.env\n# Ignore file types\n*.log\n*.tmp\n*.cache\n# Ignore directories\nnode_modules/\nbuild/\ndist/\n# Ignore files in any directory\n**/*.bak\nGlobal .gitignore\nSet up a global ignore file for all repositories:\nCommon .gitignore Templates\nFor Node.js projects:\nFor Python projects:\nFor IDE/Editor files:\n# Exception: Track this file even if ignored\n!important.log\ngit config --global core.excludesfile ~/.gitignore_global\nnode_modules/\nnpm-debug.log\n.env\ndist/\n*.log\n__pycache__/\n*.py[cod]\n*$py.class\nvenv/\n.env\n*.egg-info/\n.vscode/\n.idea/\n*.swp\n.DS_Store\nThumbs.db\nRemoving Files from Git\nRemove File from Repository and Disk\nRemove File from Repository but Keep on Disk\nThis is useful when you accidentally committed a file that should be ignored. Moving/Renaming Files\nGit tracks file movements:\nThis is equivalent to:\ngit rm file.txt\ngit commit -m \"Remove file.txt\"\ngit rm --cached file.txt\ngit commit -m \"Stop tracking file.txt\"\ngit mv oldname.txt newname.txt\ngit commit -m \"Rename oldname.txt to newname.txt\"\nmv oldname.txt newname.txt\ngit rm oldname.txt\ngit add newname.txt\nPractical Examples\nExample 1: Fixing a Mistake\nExample 2: Cleaning Up Working Directory\n# You accidentally staged a file\ngit add passwords.txt\n# Unstage it\ngit restore --staged passwords.txt\n# Add it to .gitignore\necho \"passwords.txt\" >> .gitignore\n# Stage and commit .gitignore\ngit add .gitignore\ngit commit -m \"Add .gitignore to exclude sensitive files\"\n# See what's changed\ngit status\n# Review the changes\ngit diff\n# Discard changes to a specific file\ngit restore style.css\n# Or discard all changes\ngit restore .",
+    "start_index": 84704,
+    "end_index": 86471,
+    "word_count": 262,
+    "start_page": 95,
+    "end_page": 98,
+    "page_spans": "Pages 95-98"
+  },
+  {
+    "chunk_id": "chunk_0215",
+    "text": "Command Summary\nCommand\nDescription\ngit status\nShow working tree status\ngit diff\nShow unstaged changes\ngit diff --staged\nShow staged changes\ngit restore [file]\nDiscard working directory changes\ngit restore --staged [file]\nUnstage files\ngit reset --soft HEAD~1\nUndo last commit, keep changes staged\ngit reset HEAD~1\nUndo last commit, keep changes unstaged\ngit reset --hard HEAD~1\nUndo last commit, discard changes\ngit rm [file]\nRemove file from repository\ngit rm --cached [file]\nStop tracking file\ngit mv [old] [new]\nRename/move file\nExercise\nCreate a new repository with several files\nMake changes to multiple files\nUse git status  and git diff  to review changes\nStage only some changes\nCreate a .gitignore  file and add patterns\nPractice undoing changes with git restore\nTry amending a commit with git commit --amend\nExperiment with different reset options (be careful with --hard !)\nChallenge: Create a file with sensitive data, commit it, then properly remove it from\nhistory and add it to .gitignore . 1.",
+    "start_index": 86471,
+    "end_index": 87480,
+    "word_count": 161,
+    "start_page": 98,
+    "end_page": 99,
+    "page_spans": "Pages 98-99"
+  },
+  {
+    "chunk_id": "chunk_0216",
+    "text": "2. 3. 4. 5. 6. 7.",
+    "start_index": 87480,
+    "end_index": 87497,
+    "word_count": 6,
+    "start_page": 99,
+    "end_page": 99,
+    "page_spans": "Page 99"
+  },
+  {
+    "chunk_id": "chunk_0217",
+    "text": "8. Branching & Merging\nWhy Branches Matter\nBranches allow you to:\nWork on features without affecting the main code\nExperiment safely\nCollaborate without conflicts\nMaintain multiple versions of your project\nThink of branches as parallel universes of your code. Understanding Branches\nWhat is a Branch? A branch is a movable pointer to a commit. The default branch is usually called \nmain  (or master  in older repositories). View Current Branch\nThe asterisk (*) shows your current branch:\n• \n• \n• \n• \ngit branch\n* main\n  feature-login\n  bugfix-header\nView All Branches (Including Remote)\nCreating and Switching Branches\nCreate a New Branch\nSwitch to a Branch\nOr with the newer command:\nCreate and Switch in One Command\nOr:\ngit branch -a\ngit branch feature-navbar\ngit checkout feature-navbar\ngit switch feature-navbar\ngit checkout -b feature-navbar\ngit switch -c feature-navbar\nWorking with Branches\nMaking Changes on a Branch\nSwitching Between Branches\nMerging Branches\nFast-Forward Merge\nWhen there are no divergent commits, Git simply moves the pointer forward:\n# Create and switch to new branch\ngit checkout -b feature-login\n# Make changes\necho \"Login form\" > login.html\ngit add login.html\ngit commit -m \"Add login form\"\n# Your changes exist only on this branch\n# Switch back to main\ngit checkout main\n# login.html doesn't exist here! # Switch back to feature branch\ngit checkout feature-login\n# login.html is back! # On main branch\ngit checkout main\nOutput:\nThree-Way Merge\nWhen branches have diverged, Git creates a merge commit:\nGit will open an editor for the merge commit message. Resolving Merge Conflicts\nConflicts occur when the same lines are changed in different branches. What a Conflict Looks Like\nOutput:\n# Merge feature branch\ngit merge feature-navbar\nFast-forward\n navbar.html | 10 ++++++++++\n1 file changed, 10 insertions(+)\ngit checkout main\ngit merge feature-login\ngit merge feature-branch\nAuto-merging index.html\nCONFLICT (content): Merge conflict in index.html\nAutomatic merge failed; fix conflicts and then commit the result. Conflict Markers in File\nResolving Conflicts\nOpen the conflicted file\nDecide which changes to keep\nRemove conflict markers\nStage and commit\nConflict Resolution Strategies\nUnderstanding “ours” and “theirs”:\nDuring a merge conflict, Git uses specific terminology: - “ours” = The branch you’re\ncurrently on (the branch you’re merging INTO) - “theirs” = The branch you’re\nmerging FROM (the incoming changes)\nKeep current branch changes (ours):\nThis keeps the version from your current branch, discarding all changes from the\nincoming branch. Works properly when: - You’re certain your current branch has\nthe correct implementation - The incoming changes are outdated or incorrect -\nYou want to maintain consistency with other files in your branch\nKeep incoming branch changes (theirs):\n<<<<<<< HEAD\n<h1>Welcome to Our Site</h1>\n=======\n<h1>Welcome to My Website</h1>\n>>>>>>> feature-branch\n1.",
+    "start_index": 87497,
+    "end_index": 90434,
+    "word_count": 449,
+    "start_page": 99,
+    "end_page": 104,
+    "page_spans": "Pages 99-104"
+  },
+  {
+    "chunk_id": "chunk_0218",
+    "text": "2.",
+    "start_index": 90449,
+    "end_index": 90451,
+    "word_count": 1,
+    "start_page": 104,
+    "end_page": 104,
+    "page_spans": "Page 104"
+  },
+  {
+    "chunk_id": "chunk_0219",
+    "text": "3.",
+    "start_index": 90453,
+    "end_index": 90455,
+    "word_count": 1,
+    "start_page": 104,
+    "end_page": 104,
+    "page_spans": "Page 104"
+  },
+  {
+    "chunk_id": "chunk_0220",
+    "text": "4. # After editing the file\ngit add index.html\ngit commit -m \"Resolve merge conflict in index.html\"\ngit checkout --ours index.html\nThis accepts all changes from the branch you’re merging, discarding your current\nbranch’s version. Works properly when: - The incoming branch has the most up-to-\ndate or correct version - Your current changes are no longer needed - You want to\nfully adopt the incoming implementation\nImportant Note: These commands work ONLY during an active merge conflict.",
+    "start_index": 90455,
+    "end_index": 90943,
+    "word_count": 78,
+    "start_page": 104,
+    "end_page": 105,
+    "page_spans": "Pages 104-105"
+  },
+  {
+    "chunk_id": "chunk_0221",
+    "text": "They replace the entire file with either version, not individual conflict sections. Use a merge tool:\nBranch Management\nDelete a Branch\nAfter merging, you can delete the branch:\nRename a Branch\ngit checkout --theirs index.html\ngit mergetool\n# Delete local branch\ngit branch -d feature-navbar\n# Force delete (if not merged)\ngit branch -D feature-navbar\n# Rename current branch\ngit branch -m new-name\n# Rename a different branch\ngit branch -m old-name new-name\nList Merged/Unmerged Branches\nBranching Strategies\nFeature Branch Workflow\nHotfix Workflow\n# Show merged branches\ngit branch --merged\n# Show unmerged branches\ngit branch --no-merged\n# 1. Create feature branch\ngit checkout -b feature-shopping-cart\n# 2.",
+    "start_index": 90943,
+    "end_index": 91653,
+    "word_count": 108,
+    "start_page": 105,
+    "end_page": 106,
+    "page_spans": "Pages 105-106"
+  },
+  {
+    "chunk_id": "chunk_0222",
+    "text": "Work on feature\n# ...",
+    "start_index": 91658,
+    "end_index": 91679,
+    "word_count": 5,
+    "start_page": 106,
+    "end_page": 106,
+    "page_spans": "Page 106"
+  },
+  {
+    "chunk_id": "chunk_0223",
+    "text": "make commits ...",
+    "start_index": 91680,
+    "end_index": 91696,
+    "word_count": 3,
+    "start_page": 106,
+    "end_page": 106,
+    "page_spans": "Page 106"
+  },
+  {
+    "chunk_id": "chunk_0224",
+    "text": "# 3. Merge back to main\ngit checkout main\ngit merge feature-shopping-cart\n# 4. Delete feature branch\ngit branch -d feature-shopping-cart\n# 1. Create hotfix from main\ngit checkout main\ngit checkout -b hotfix-security\n# 2.",
+    "start_index": 91697,
+    "end_index": 91917,
+    "word_count": 36,
+    "start_page": 106,
+    "end_page": 106,
+    "page_spans": "Page 106"
+  },
+  {
+    "chunk_id": "chunk_0225",
+    "text": "Fix the issue\n# ...",
+    "start_index": 91918,
+    "end_index": 91937,
+    "word_count": 5,
+    "start_page": 106,
+    "end_page": 106,
+    "page_spans": "Page 106"
+  },
+  {
+    "chunk_id": "chunk_0226",
+    "text": "make changes ... git commit -m \"Fix security vulnerability\"\nVisualizing Branches\nSee Branch Graph\nOutput:\nSee Branch Divergence\nShows commits in feature-branch that aren’t in main. Best Practices\nKeep branches focused - One feature per branch\n# 3.",
+    "start_index": 91937,
+    "end_index": 92184,
+    "word_count": 38,
+    "start_page": 106,
+    "end_page": 107,
+    "page_spans": "Pages 106-107"
+  },
+  {
+    "chunk_id": "chunk_0227",
+    "text": "Merge to main\ngit checkout main\ngit merge hotfix-security\n# 4. Also merge to develop if exists\ngit checkout develop\ngit merge hotfix-security\ngit log --graph --oneline --all\n* 3a4f5d6 (HEAD -> main) Merge feature-login\n|\\\n| * 8b9c0d1 (feature-login) Add login form\n* | 7e2f3a5 Update homepage\n|/\n* 1d2e3f4 Initial commit\ngit log main..feature-branch\n1. Use descriptive names - feature-user-auth  not new-stuff\nDelete merged branches - Keep repository clean\nMerge regularly - Don’t let branches diverge too much\nTest before merging - Ensure branch works correctly\nCommon Branch Naming Conventions\nfeature/  - New features (feature/user-login)\nbugfix/  - Bug fixes (bugfix/header-alignment)\nhotfix/  - Urgent production fixes (hotfix/security-patch)\nrelease/  - Release preparation (release/v2.0)\nchore/  - Maintenance tasks (chore/update-dependencies)\nCommand Summary\nCommand\nDescription\ngit branch\nList branches\ngit branch [name]\nCreate branch\ngit checkout [branch]\nSwitch branch\ngit checkout -b [branch]\nCreate and switch\ngit switch [branch]\nSwitch branch (newer)\ngit switch -c [branch]\nCreate and switch (newer)\ngit merge [branch]\nMerge branch into current\ngit branch -d [branch]\nDelete branch\ngit branch -m [new-name]\nRename branch\ngit log --graph --oneline --all\nVisualize branches\n2. 3.",
+    "start_index": 92184,
+    "end_index": 93475,
+    "word_count": 185,
+    "start_page": 107,
+    "end_page": 108,
+    "page_spans": "Pages 107-108"
+  },
+  {
+    "chunk_id": "chunk_0228",
+    "text": "4.",
+    "start_index": 93481,
+    "end_index": 93483,
+    "word_count": 1,
+    "start_page": 108,
+    "end_page": 108,
+    "page_spans": "Page 108"
+  },
+  {
+    "chunk_id": "chunk_0229",
+    "text": "5. • \n• \n• \n• \n• \nPractice Exercise\nCreate a new repository\nCreate a file main.txt  with “Main branch content”\nCreate a branch called feature-a\nAdd a file feature-a.txt  and commit\nSwitch back to main\nCreate another branch feature-b  from main\nAdd a file feature-b.txt  and commit\nMerge feature-a  into main\nMerge feature-b  into main\nCreate a conflict intentionally and resolve it\nAdvanced: Try rebasing instead of merging to maintain a linear history. 1.",
+    "start_index": 93483,
+    "end_index": 93939,
+    "word_count": 74,
+    "start_page": 108,
+    "end_page": 109,
+    "page_spans": "Pages 108-109"
+  },
+  {
+    "chunk_id": "chunk_0230",
+    "text": "2. 3. 4. 5. 6. 7. 8. 9.",
+    "start_index": 93939,
+    "end_index": 93962,
+    "word_count": 8,
+    "start_page": 109,
+    "end_page": 109,
+    "page_spans": "Page 109"
+  },
+  {
+    "chunk_id": "chunk_0231",
+    "text": "10. Essential Remote Repository Commands\nConnecting to Remotes\nView Remotes\nAdd Remote\nChange Remote URL\nCore Operations\nClone Repository\nPush Changes\ngit remote -v\ngit remote add origin https://github.com/username/repository.git\ngit remote set-url origin https://github.com/username/new-repo.git\ngit clone https://github.com/username/repository.git\n# First push (set upstream)\ngit push -u origin main\nPull Changes\nFetch Changes\nBranch Management\nList Remote Branches\nDelete Remote Branch\n# Regular push\ngit push\n# Push specific branch\ngit push origin branch-name\n# Pull (fetch + merge)\ngit pull\n# Pull specific branch\ngit pull origin branch-name\n# Fetch without merging\ngit fetch\n# Fetch all remotes\ngit fetch --all\ngit branch -r\ngit push origin --delete branch-name\nGit Stash - Essential Commands\nWhat is Git Stash? Git stash temporarily saves your uncommitted changes so you can work on\nsomething else, then come back and re-apply them later. Core Stash Commands\nSave Changes to Stash\nView Stashes\nOutput example:\n# Stash all changes\ngit stash\n# Stash with a message\ngit stash save \"work in progress on feature X\"\n# Include untracked files\ngit stash -u\n# List all stashes\ngit stash list\nstash@{0}: On main: work in progress on feature X\nstash@{1}: WIP on develop: 5002d47 fix conflict\nApply Stash\nRemove Stashes\nUseful Stash Operations\nView Stash Contents\n# Apply most recent stash\ngit stash apply\n# Apply specific stash\ngit stash apply stash@{2}\n# Apply and remove from stash list\ngit stash pop\n# Remove most recent stash\ngit stash drop\n# Remove specific stash\ngit stash drop stash@{1}\n# Clear all stashes\ngit stash clear\n# Show files in latest stash\ngit stash show\n# Show detailed diff\ngit stash show -p\n# Show specific stash diff\ngit stash show -p stash@{1}\nCreate Branch from Stash\nStash Specific Files\nCommon Use Cases\nSwitch Branches Quickly\nPull Without Committing\n# Create new branch and apply stash\ngit stash branch new-feature-branch\n# Interactive stash\ngit stash -p\n# Working on feature, need to fix bug on main\ngit stash\ngit checkout main\n# Fix bug... git checkout feature-branch\ngit stash pop\ngit stash\ngit pull\ngit stash pop\nCommands Summary\nCommand\nDescription\ngit stash\nSave changes to stash\ngit stash list\nList all stashes\ngit stash apply\nApply stash without removing\ngit stash pop\nApply and remove stash\ngit stash drop\nDelete a stash\ngit stash show\nView stash contents\ngit stash clear\nRemove all stashes\ngit stash branch [name]\nCreate branch from stash\n",
+    "start_index": 93962,
+    "end_index": 96436,
+    "word_count": 405,
+    "start_page": 109,
+    "end_page": 115,
+    "page_spans": "Pages 109-115"
+  }
+]
